@@ -67,4 +67,668 @@
          </fil:FiltroLocalizacaoEstabelecimentoSaude>
       </est:requestLocalizarEstabelecimentoSaude>
    </soap:Body>
-</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://servicos.saude.gov.br/cnes/v1r0/estabelecimentosaudeservice/EstabelecimentoSaudeServicePortType/localizarEstabelecimentoSaudeRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://servicos.saude.gov.br/cnes/v1r0/estabelecimentosaudeservice/EstabelecimentoSaudeServicePortType/localizarEstabelecimentoSaudeRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="868c4b58-b3f0-4d5d-ad6e-1252ec84152b" wsaVersion="NONE" name="VinculacaoProfissionalServiceSOAP12Binding" type="wsdl" bindingName="{http://servicos.saude.gov.br/cnes/v1r0/vinculacaoprofissionalservice}VinculacaoProfissionalServiceSOAP12Binding" soapVersion="1_2" anonymous="optional" definition="https://servicoshm.saude.gov.br/cnes/VinculacaoProfissionalService/v1r0?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://servicoshm.saude.gov.br/cnes/VinculacaoProfissionalService/v1r0?wsdl"><con:part><con:url>https://servicoshm.saude.gov.br/cnes/VinculacaoProfissionalService/v1r0?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="VinculacaoProficionalService" targetNamespace="http://servicos.saude.gov.br/cnes/v1r0/vinculacaoprofissionalservice" xmlns:tns="http://servicos.saude.gov.br/cnes/v1r0/vinculacaoprofissionalservice" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msfalha="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/msfalha">
+  <wsdl:types>
+    <xs:schema>
+      <xs:import namespace="http://servicos.saude.gov.br/cnes/v1r0/vinculacaoprofissionalservice" schemaLocation="https://servicoshm.saude.gov.br/cnes/VinculacaoProfissionalService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Fsebast%2FDesenvolvimento%2FOSB%2FCNES%2Fxsd%2Fmensageria%2FVinculacaoProfissionalService.v1.xsd"/>
+      <xs:import namespace="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/msfalha" schemaLocation="https://servicoshm.saude.gov.br/cnes/VinculacaoProfissionalService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Fsebast%2FDesenvolvimento%2FOSB%2FRESOURCES50%2Fxsd%2Fmensageria%2Ffalha%2Fmsfalha.v5r0.xsd"/>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="RequestVinculacaos">
+    <wsdl:part element="tns:RequestVinculacaos" name="RequestVinculacaos"/>
+  </wsdl:message>
+  <wsdl:message name="ResponseVinculacaos">
+    <wsdl:part element="tns:ResponseVinculacaos" name="ResponseVinculacaos"/>
+  </wsdl:message>
+  <wsdl:message name="RequestVinculacao">
+    <wsdl:part element="tns:RequestVinculacao" name="RequestVinculacao"/>
+  </wsdl:message>
+  <wsdl:message name="ResponseVinculacao">
+    <wsdl:part element="tns:ResponseVinculacao" name="ResponseVinculacao"/>
+  </wsdl:message>
+  <wsdl:message name="VinculacaoFault">
+    <wsdl:part name="fault" element="msfalha:MSFalha"/>
+  </wsdl:message>
+  <wsdl:portType name="VinculacaoPortType">
+    <wsdl:operation name="pesquisarVinculacaoProfissionalSaude">
+      <wsdl:documentation>pesquisarVinculacaoProfissionalSaude</wsdl:documentation>
+      <wsdl:input name="RequestVinculacaos" message="tns:RequestVinculacaos"/>
+      <wsdl:output name="ResponseVinculacaos" message="tns:ResponseVinculacaos"/>
+      <wsdl:fault name="VinculacaoFault" message="tns:VinculacaoFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="detalharVinculacaoProfissionalSaude">
+      <wsdl:documentation>detalharVinculacaoProfissionalSaude</wsdl:documentation>
+      <wsdl:input name="RequestVinculacao" message="tns:RequestVinculacao"/>
+      <wsdl:output name="ResponseVinculacao" message="tns:ResponseVinculacao"/>
+      <wsdl:fault name="VinculacaoFault" message="tns:VinculacaoFault"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="VinculacaoProfissionalServiceSOAP12Binding" type="tns:VinculacaoPortType">
+    <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="pesquisarVinculacaoProfissionalSaude">
+      <wsdl:documentation>pesquisar Vinculacao para um profissional e estabelecimento.</wsdl:documentation>
+      <soap12:operation soapAction=""/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="VinculacaoFault">
+        <soap12:fault name="VinculacaoFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="detalharVinculacaoProfissionalSaude">
+      <wsdl:documentation>detalhar Vinculacao para um profissional, estabelecimento e ind de vinculacao 6 digitos.</wsdl:documentation>
+      <soap12:operation soapAction=""/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="VinculacaoFault">
+        <soap12:fault name="VinculacaoFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="VinculacaoProfissionalServiceSOAP11Binding" type="tns:VinculacaoPortType">
+    <soap11:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="pesquisarVinculacaoProfissionalSaude">
+      <wsdl:documentation>Pesquisar Vinculacao para um profissional e estabelecimento.</wsdl:documentation>
+      <soap11:operation soapAction=""/>
+      <wsdl:input>
+        <soap11:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="VinculacaoFault">
+        <soap11:fault name="VinculacaoFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="detalharVinculacaoProfissionalSaude">
+      <wsdl:documentation>detalhar Vinculacao para um profissional, estabelecimento e ind de vinculacao 6 digitos.</wsdl:documentation>
+      <soap11:operation soapAction=""/>
+      <wsdl:input>
+        <soap11:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="VinculacaoFault">
+        <soap11:fault name="VinculacaoFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="VinculacaoProfissionalService">
+    <wsdl:port binding="tns:VinculacaoProfissionalServiceSOAP12Binding" name="VinculacaoProfissionalServicePort">
+      <soap12:address location="http://servicos.saude.gov.br/cnes/VinculacaoProfissionalService/v1"/>
+    </wsdl:port>
+    <wsdl:port binding="tns:VinculacaoProfissionalServiceSOAP11Binding" name="VinculacaoProfissionalServiceSOAP11Port">
+      <soap11:address location="http://servicos.saude.gov.br/cnes/VinculacaoProfissionalService/v1r0"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cnes/VinculacaoProfissionalService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Fsebast%2FDesenvolvimento%2FOSB%2FCNES%2Fxsd%2Fmensageria%2FVinculacaoProfissionalService.v1.xsd</con:url><con:content><![CDATA[<xs:schema version="1.0" targetNamespace="http://servicos.saude.gov.br/cnes/v1r0/vinculacaoprofissionalservice" xmlns:tns="http://servicos.saude.gov.br/cnes/v1r0/vinculacaoprofissionalservice" xmlns:vinc="http://servicos.saude.gov.br/schema/cnes/v1r0/vinculacao" xmlns:filvincs="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/filtropesquisavinculacaos" xmlns:filvinc="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/filtropesquisavinculacao" xmlns:pag="http://servicos.saude.gov.br/wsdl/mensageria/v1/paginacao" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import id="filvincs" namespace="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/filtropesquisavinculacaos" schemaLocation="https://servicoshm.saude.gov.br/cnes/VinculacaoProfissionalService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Fsebast%2FDesenvolvimento%2FOSB%2FRESOURCES50%2Fxsd%2Fmensageria%2Ffiltropesquisavinculacaos.v1r0.xsd"/>
+  <xs:import id="filvinc" namespace="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/filtropesquisavinculacao" schemaLocation="https://servicoshm.saude.gov.br/cnes/VinculacaoProfissionalService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Fsebast%2FDesenvolvimento%2FOSB%2FRESOURCES50%2Fxsd%2Fmensageria%2Ffiltropesquisavinculacao.v1r0.xsd"/>
+  <xs:import id="vinc" namespace="http://servicos.saude.gov.br/schema/cnes/v1r0/vinculacao" schemaLocation="https://servicoshm.saude.gov.br/cnes/VinculacaoProfissionalService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Fsebast%2FDesenvolvimento%2FOSB%2FRESOURCES50%2Fxsd%2Fcnes%2Fvinculacao%2Fvinculacao.v1r0.xsd"/>
+  <xs:import id="pag" namespace="http://servicos.saude.gov.br/wsdl/mensageria/v1/paginacao" schemaLocation="https://servicoshm.saude.gov.br/cnes/VinculacaoProfissionalService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Fsebast%2FDesenvolvimento%2FOSB%2FRESOURCES50%2Fxsd%2Fmensageria%2Fpaginacao.v1.xsd"/>
+  <xs:element name="RequestVinculacaos" type="tns:RequestVinculacaos"/>
+  <xs:element name="ResponseVinculacaos" type="tns:ResponseVinculacaos"/>
+  <xs:element name="RequestVinculacao" type="tns:RequestVinculacao"/>
+  <xs:element name="ResponseVinculacao" type="tns:ResponseVinculacao"/>
+  <xs:complexType name="RequestVinculacaos">
+    <xs:sequence>
+      <xs:element ref="filvincs:FiltroPesquisaVinculacaos" minOccurs="0"/>
+      <xs:element name="Paginacao" type="pag:PaginacaoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ResponseVinculacaos">
+    <xs:sequence>
+      <xs:element ref="vinc:Vinculacaos" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Paginacao" type="pag:PaginacaoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RequestVinculacao">
+    <xs:sequence>
+      <xs:element ref="filvinc:FiltroPesquisaVinculacao" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ResponseVinculacao">
+    <xs:sequence>
+      <xs:element ref="vinc:Vinculacaos" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cnes/VinculacaoProfissionalService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Fsebast%2FDesenvolvimento%2FOSB%2FRESOURCES50%2Fxsd%2Fmensageria%2Ffiltropesquisavinculacaos.v1r0.xsd</con:url><con:content><![CDATA[<xs:schema targetNamespace="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/filtropesquisavinculacaos" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/filtropesquisavinculacaos" xmlns:codigocnes="http://servicos.saude.gov.br/schema/cnes/v1r0/codigocnes" xmlns:cnpj="http://servicos.saude.gov.br/schema/corporativo/pessoajuridica/v1r0/cnpj" xmlns:cns="http://servicos.saude.gov.br/schema/cadsus/v5r0/cns" xmlns:cpf="http://servicos.saude.gov.br/schema/corporativo/documento/v1r2/cpf">
+  <xs:import id="codigocnes" namespace="http://servicos.saude.gov.br/schema/cnes/v1r0/codigocnes" schemaLocation="https://servicoshm.saude.gov.br/cnes/VinculacaoProfissionalService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Fsebast%2FDesenvolvimento%2FOSB%2FRESOURCES50%2Fxsd%2Fcnes%2Fcodigocnes.v1r0.xsd"/>
+  <xs:import id="cnpj" namespace="http://servicos.saude.gov.br/schema/corporativo/pessoajuridica/v1r0/cnpj" schemaLocation="https://servicoshm.saude.gov.br/cnes/VinculacaoProfissionalService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Fsebast%2FDesenvolvimento%2FOSB%2FRESOURCES50%2Fxsd%2Fcorporativo%2Fpessoajuridica%2Fcnpj.v1r0.xsd"/>
+  <xs:import id="cns" namespace="http://servicos.saude.gov.br/schema/cadsus/v5r0/cns" schemaLocation="https://servicoshm.saude.gov.br/cnes/VinculacaoProfissionalService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Fsebast%2FDesenvolvimento%2FOSB%2FRESOURCES50%2Fxsd%2Fcadsus%2Fcns.v5r0.xsd"/>
+  <xs:import id="cpf" namespace="http://servicos.saude.gov.br/schema/corporativo/documento/v1r2/cpf" schemaLocation="https://servicoshm.saude.gov.br/cnes/VinculacaoProfissionalService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Fsebast%2FDesenvolvimento%2FOSB%2FRESOURCES50%2Fxsd%2Fcorporativo%2Fdocumento%2Fcpf.v1r2.xsd"/>
+  <xs:annotation>
+    <xs:documentation>Representa o objeto de filtro da pesquisa da vinculacao de um profissional com um estabelecimento</xs:documentation>
+  </xs:annotation>
+  <xs:element name="FiltroPesquisaVinculacaos" type="FiltroPesquisaVinculacaosType"/>
+  <xs:complexType name="FiltroPesquisaVinculacaosType">
+    <xs:sequence>
+      <xs:element name="IdentificacaoProfissional" type="ProfissionalVinculacaoType" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="IdentificacaoEstabelecimento" type="EstabelecimentoVinculacaoType" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ProfissionalVinculacaoType">
+    <xs:choice>
+      <xs:element name="cpf" type="cpf:CPFType"/>
+      <xs:element name="cns" type="cns:NumeroCNSType"/>
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="EstabelecimentoVinculacaoType">
+    <xs:choice>
+      <xs:element name="cnes" type="codigocnes:CodigoCNESType"/>
+      <xs:element name="cnpj" type="cnpj:CNPJType"/>
+    </xs:choice>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cnes/VinculacaoProfissionalService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Fsebast%2FDesenvolvimento%2FOSB%2FRESOURCES50%2Fxsd%2Fcnes%2Fcodigocnes.v1r0.xsd</con:url><con:content><![CDATA[<xs:schema targetNamespace="http://servicos.saude.gov.br/schema/cnes/v1r0/codigocnes" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/cnes/v1r0/codigocnes">
+  <xs:annotation>
+    <xs:documentation>Este esquema representa a Código do Estabelecimento de Saúde no CNES.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="CodigoCNES" type="CodigoCNESType"/>
+  <xs:complexType name="CodigoCNESType">
+    <xs:sequence>
+      <xs:element name="codigo" type="FormatoNumeroCNESType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="FormatoNumeroCNESType">
+    <xs:annotation>
+      <xs:documentation>Código do Estabelecimento de Saúde.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="7"/>
+      <xs:maxLength value="7"/>
+      <xs:pattern value="[0-9]*"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cnes/VinculacaoProfissionalService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Fsebast%2FDesenvolvimento%2FOSB%2FRESOURCES50%2Fxsd%2Fcorporativo%2Fpessoajuridica%2Fcnpj.v1r0.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/corporativo/pessoajuridica/v1r0/cnpj" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/corporativo/pessoajuridica/v1r0/cnpj">
+  <xs:annotation>
+    <xs:documentation>Este esquema representa o documento Cadastro Nacional de Pessoas Júridica (CNPJ) da Receita Federal do Brasil.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="CNPJ" type="CNPJType"/>
+  <xs:complexType name="CNPJType">
+    <xs:sequence>
+      <xs:element name="numeroCNPJ" minOccurs="1" maxOccurs="1">
+        <xs:simpleType>
+          <xs:annotation>
+            <xs:documentation>Numero do CNPJ sem formatacao. Ex: 09999999999999</xs:documentation>
+          </xs:annotation>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="14"/>
+            <xs:maxLength value="14"/>
+            <xs:pattern value="[0-9]*"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cnes/VinculacaoProfissionalService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Fsebast%2FDesenvolvimento%2FOSB%2FRESOURCES50%2Fxsd%2Fcadsus%2Fcns.v5r0.xsd</con:url><con:content><![CDATA[<xs:schema targetNamespace="http://servicos.saude.gov.br/schema/cadsus/v5r0/cns" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/cadsus/v5r0/cns">
+  <xs:annotation>
+    <xs:documentation>Este esquema representa o Cartao Nacional de Saude (CNS) do usuario do SUS.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="CNS" type="CNSType"/>
+  <xs:complexType name="CNSType">
+    <xs:sequence>
+      <xs:element name="numeroCNS" type="FormatoNumeroCNSType">
+        <xs:annotation>
+          <xs:documentation>Numero do CNS do usuario do SUS.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="dataAtribuicao" type="xs:dateTime" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Data de atribuição do CNS ao usuario do SUS.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="tipoCartao" type="TipoCNSType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Tipo do CNS associada ao usuario do SUS. D: definitivo, P: provisorio.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="manual" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Flag que identifica se o o cartao foi adicionado manualmente.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="justificativaManual" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Justificativa para a adicao do cartao manual.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ListaCNS" type="ListaCNSType"/>
+  <xs:complexType name="ListaCNSType">
+    <xs:sequence>
+      <xs:element ref="CNS" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="TipoCNSType">
+    <xs:annotation>
+      <xs:documentation>Tipo do CNS associada ao usuario do SUS. D: definitivo, P: provisorio.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="D"/>
+      <xs:enumeration value="P"/>
+      <!--DEFINITIVO-->
+      <!--PROVISÓRIO-->
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="NumeroCNSType">
+    <xs:sequence>
+      <xs:element name="numeroCNS" type="FormatoNumeroCNSType">
+        <xs:annotation>
+          <xs:documentation>Numero do CNS do usuario do SUS.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="FormatoNumeroCNSType">
+    <xs:annotation>
+      <xs:documentation>Numero do CNS do usuario do SUS.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="15"/>
+      <xs:maxLength value="15"/>
+      <xs:pattern value="[0-9]*"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cnes/VinculacaoProfissionalService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Fsebast%2FDesenvolvimento%2FOSB%2FRESOURCES50%2Fxsd%2Fcorporativo%2Fdocumento%2Fcpf.v1r2.xsd</con:url><con:content><![CDATA[<xs:schema targetNamespace="http://servicos.saude.gov.br/schema/corporativo/documento/v1r2/cpf" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/corporativo/documento/v1r2/cpf">
+  <xs:annotation>
+    <xs:documentation>Este esquema representa o documento Cadastro Nacional de Pessoas Fisicas (CPF) da Receita Federal do Brasil.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="CPF" type="CPFType"/>
+  <xs:complexType name="CPFType">
+    <xs:annotation>
+      <xs:documentation>Número do CPF.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="numeroCPF" type="NumeroCPFType"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="NumeroCPFType">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="11"/>
+      <xs:maxLength value="11"/>
+      <xs:pattern value="[0-9]*"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cnes/VinculacaoProfissionalService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Fsebast%2FDesenvolvimento%2FOSB%2FRESOURCES50%2Fxsd%2Fmensageria%2Ffiltropesquisavinculacao.v1r0.xsd</con:url><con:content><![CDATA[<xs:schema targetNamespace="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/filtropesquisavinculacao" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/filtropesquisavinculacao" xmlns:codigocnes="http://servicos.saude.gov.br/schema/cnes/v1r0/codigocnes" xmlns:cnpj="http://servicos.saude.gov.br/schema/corporativo/pessoajuridica/v1r0/cnpj" xmlns:cns="http://servicos.saude.gov.br/schema/cadsus/v5r0/cns" xmlns:cpf="http://servicos.saude.gov.br/schema/corporativo/documento/v1r2/cpf">
+  <xs:import id="codigocnes" namespace="http://servicos.saude.gov.br/schema/cnes/v1r0/codigocnes" schemaLocation="https://servicoshm.saude.gov.br/cnes/VinculacaoProfissionalService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Fsebast%2FDesenvolvimento%2FOSB%2FRESOURCES50%2Fxsd%2Fcnes%2Fcodigocnes.v1r0.xsd"/>
+  <xs:import id="cnpj" namespace="http://servicos.saude.gov.br/schema/corporativo/pessoajuridica/v1r0/cnpj" schemaLocation="https://servicoshm.saude.gov.br/cnes/VinculacaoProfissionalService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Fsebast%2FDesenvolvimento%2FOSB%2FRESOURCES50%2Fxsd%2Fcorporativo%2Fpessoajuridica%2Fcnpj.v1r0.xsd"/>
+  <xs:import id="cns" namespace="http://servicos.saude.gov.br/schema/cadsus/v5r0/cns" schemaLocation="https://servicoshm.saude.gov.br/cnes/VinculacaoProfissionalService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Fsebast%2FDesenvolvimento%2FOSB%2FRESOURCES50%2Fxsd%2Fcadsus%2Fcns.v5r0.xsd"/>
+  <xs:import id="cpf" namespace="http://servicos.saude.gov.br/schema/corporativo/documento/v1r2/cpf" schemaLocation="https://servicoshm.saude.gov.br/cnes/VinculacaoProfissionalService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Fsebast%2FDesenvolvimento%2FOSB%2FRESOURCES50%2Fxsd%2Fcorporativo%2Fdocumento%2Fcpf.v1r2.xsd"/>
+  <xs:annotation>
+    <xs:documentation>Representa o objeto de filtro da pesquisa da vinculacao de um profissional com um estabelecimento</xs:documentation>
+  </xs:annotation>
+  <xs:element name="FiltroPesquisaVinculacao" type="FiltroPesquisaVinculacaoType"/>
+  <xs:complexType name="FiltroPesquisaVinculacaoType">
+    <xs:sequence>
+      <xs:element name="IdentificacaoProfissional" type="ProfissionalVinculacaoType" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="IdentificacaoEstabelecimento" type="EstabelecimentoVinculacaoType" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="IdentificacaoVinculacao" type="TipoVinculacaoType" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ProfissionalVinculacaoType">
+    <xs:choice>
+      <xs:element name="cpf" type="cpf:CPFType"/>
+      <xs:element name="cns" type="cns:NumeroCNSType"/>
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="EstabelecimentoVinculacaoType">
+    <xs:choice>
+      <xs:element name="cnes" type="codigocnes:CodigoCNESType"/>
+      <xs:element name="cnpj" type="cnpj:CNPJType"/>
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="TipoVinculacaoType">
+    <xs:sequence>
+      <xs:element name="tipoVinculacao">
+        <xs:simpleType>
+          <xs:annotation>
+            <xs:documentation>1.Vinculo empregaticio 2.Autonomo 3.Cooperativa 4.Outros 5.Residencia 6.Estagio 7.Bolsa 8.Intermediado 9.Informal</xs:documentation>
+          </xs:annotation>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="1"/>
+            <xs:pattern value="[1-9]*"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cnes/VinculacaoProfissionalService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Fsebast%2FDesenvolvimento%2FOSB%2FRESOURCES50%2Fxsd%2Fcnes%2Fvinculacao%2Fvinculacao.v1r0.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/cnes/v1r0/vinculacao" xmlns:vincbo="http://servicos.saude.gov.br/schema/cnes/v1r0/vinculacaocbotype" xmlns:est="http://servicos.saude.gov.br/schema/cnes/v1r0/dadosbasicosestabelecimento" xmlns:prof="http://servicos.saude.gov.br/schema/cnes/v1r0/dadosbasicosprofissional" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/cnes/v1r0/vinculacao">
+  <xs:annotation>
+    <xs:documentation>Este esquema representa uma vinculacao.</xs:documentation>
+  </xs:annotation>
+  <xs:import id="vincbo" namespace="http://servicos.saude.gov.br/schema/cnes/v1r0/vinculacaocbotype" schemaLocation="https://servicoshm.saude.gov.br/cnes/VinculacaoProfissionalService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Fsebast%2FDesenvolvimento%2FOSB%2FRESOURCES50%2Fxsd%2Fcnes%2Fvinculacao%2Fvinculacaocbotype.v1r0.xsd"/>
+  <xs:import id="est" namespace="http://servicos.saude.gov.br/schema/cnes/v1r0/dadosbasicosestabelecimento" schemaLocation="https://servicoshm.saude.gov.br/cnes/VinculacaoProfissionalService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Fsebast%2FDesenvolvimento%2FOSB%2FRESOURCES50%2Fxsd%2Fcnes%2Fdadosbasicosestabelecimento%2Fdadosbasicosestabelecimento.v1r0.xsd"/>
+  <xs:import id="prof" namespace="http://servicos.saude.gov.br/schema/cnes/v1r0/dadosbasicosprofissional" schemaLocation="https://servicoshm.saude.gov.br/cnes/VinculacaoProfissionalService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Fsebast%2FDesenvolvimento%2FOSB%2FRESOURCES50%2Fxsd%2Fcnes%2Fdadosbasicosprofissional%2Fdadosbasicosprofissional.v1r0.xsd"/>
+  <xs:element name="VinculacaoService" nillable="true" type="VinculacaoServiceType"/>
+  <xs:complexType name="VinculacaoServiceType">
+    <xs:sequence>
+      <xs:element name="Vinculacaos" minOccurs="0" maxOccurs="1" type="VinculacaosType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Vinculacaos" type="VinculacaosType"/>
+  <xs:complexType name="VinculacaosType">
+    <xs:sequence>
+      <xs:element name="Vinculacao" minOccurs="0" maxOccurs="unbounded" type="VinculacaoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="VinculacaoType">
+    <xs:sequence>
+      <xs:element name="Profissional" minOccurs="1" maxOccurs="1" type="prof:DadosBasicosProfissionalType"/>
+      <xs:element name="Estabelecimento" minOccurs="1" maxOccurs="1" type="est:DadosBasicosEstabelecimentoType"/>
+      <xs:element name="indVinculacao" minOccurs="1" maxOccurs="1" type="xs:string"/>
+      <xs:element name="codigoModVinculo" minOccurs="1" maxOccurs="1" type="xs:string"/>
+      <xs:element name="desCodigoModVinculo" minOccurs="1" maxOccurs="1" type="xs:string"/>
+      <xs:element name="codigoTipoModVinculo" minOccurs="1" maxOccurs="1" type="xs:string"/>
+      <xs:element name="desTipoCodigoModVinculo" minOccurs="1" maxOccurs="1" type="xs:string"/>
+      <xs:element name="codigoSubTipoModVinculo" minOccurs="1" maxOccurs="1" type="xs:string"/>
+      <xs:element name="desSubTipoCodigoModVinculo" minOccurs="1" maxOccurs="1" type="xs:string"/>
+      <xs:element name="CBOs" minOccurs="0" maxOccurs="1" type="vincbo:ListaVinculacaoCBOType"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cnes/VinculacaoProfissionalService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Fsebast%2FDesenvolvimento%2FOSB%2FRESOURCES50%2Fxsd%2Fcnes%2Fvinculacao%2Fvinculacaocbotype.v1r0.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/cnes/v1r0/vinculacaocbotype" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/cnes/v1r0/vinculacaocbotype">
+  <xs:annotation>
+    <xs:documentation>Este esquema representa a vinculacao do professional com um cbo e horario.</xs:documentation>
+  </xs:annotation>
+  <xs:complexType name="ListaVinculacaoCBOType">
+    <xs:sequence>
+      <xs:element name="CBO" minOccurs="1" maxOccurs="unbounded" type="VinculacaoCBOType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="VinculacaoCBOType">
+    <xs:sequence>
+      <xs:element name="codigoCBO" minOccurs="1" maxOccurs="1" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Código do CBO</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="descricaoCBO" minOccurs="0" maxOccurs="1" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Descrição do CBO</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="qtCargaHorariaAmbulatotial" minOccurs="0" maxOccurs="1" type="xs:string"/>
+      <xs:element name="qtCargaHorariaOutros" minOccurs="0" maxOccurs="1" type="xs:string"/>
+      <xs:element name="qtCargaHorariaHospSus" minOccurs="0" maxOccurs="1" type="xs:string"/>
+      <xs:element name="comptInicio" minOccurs="1" maxOccurs="1" type="xs:date"/>
+      <xs:element name="comptFin" minOccurs="1" maxOccurs="1" type="xs:date"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cnes/VinculacaoProfissionalService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Fsebast%2FDesenvolvimento%2FOSB%2FRESOURCES50%2Fxsd%2Fcnes%2Fdadosbasicosestabelecimento%2Fdadosbasicosestabelecimento.v1r0.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/cnes/v1r0/dadosbasicosestabelecimento" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/cnes/v1r0/dadosbasicosestabelecimento" xmlns:nomejuridico="http://servicos.saude.gov.br/schema/corporativo/pessoajuridica/v1r0/nomejuridico" xmlns:codigocnes="http://servicos.saude.gov.br/schema/cnes/v1r0/codigocnes">
+  <xs:import id="nomejuridico" namespace="http://servicos.saude.gov.br/schema/corporativo/pessoajuridica/v1r0/nomejuridico" schemaLocation="https://servicoshm.saude.gov.br/cnes/VinculacaoProfissionalService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Fsebast%2FDesenvolvimento%2FOSB%2FRESOURCES50%2Fxsd%2Fcorporativo%2Fpessoajuridica%2Fnomejuridico.v1r0.xsd"/>
+  <xs:import id="codigocnes" namespace="http://servicos.saude.gov.br/schema/cnes/v1r0/codigocnes" schemaLocation="https://servicoshm.saude.gov.br/cnes/VinculacaoProfissionalService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Fsebast%2FDesenvolvimento%2FOSB%2FRESOURCES50%2Fxsd%2Fcnes%2Fcodigocnes.v1r0.xsd"/>
+  <xs:annotation>
+    <xs:documentation>Representa o objeto a informação básica Estabelecimento de Saúde.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="DadosBasicosEstabelecimento" type="DadosBasicosEstabelecimentoType"/>
+  <xs:complexType name="DadosBasicosEstabelecimentoType">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" ref="codigocnes:CodigoCNES">
+        <xs:annotation>
+          <xs:documentation>Código do Estabelecimento de Saúde..</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="NomeFantasia" minOccurs="0" maxOccurs="1" type="nomejuridico:NomeJuridicoType">
+        <xs:annotation>
+          <xs:documentation>Nome fantasia da empresa.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cnes/VinculacaoProfissionalService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Fsebast%2FDesenvolvimento%2FOSB%2FRESOURCES50%2Fxsd%2Fcorporativo%2Fpessoajuridica%2Fnomejuridico.v1r0.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/corporativo/pessoajuridica/v1r0/nomejuridico" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/corporativo/pessoajuridica/v1r0/nomejuridico">
+  <xs:annotation>
+    <xs:documentation>Este esquema representa o nome de uma pessoa jurídica.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="NomeJuridico" type="NomeJuridicoType"/>
+  <xs:complexType name="NomeJuridicoType">
+    <xs:sequence>
+      <xs:element name="Nome" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Nomes atribuidos da pessoa jurídica (Empresarial e Fantasia).</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="150"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cnes/VinculacaoProfissionalService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Fsebast%2FDesenvolvimento%2FOSB%2FRESOURCES50%2Fxsd%2Fcnes%2Fdadosbasicosprofissional%2Fdadosbasicosprofissional.v1r0.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/cnes/v1r0/dadosbasicosprofissional" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:cns="http://servicos.saude.gov.br/schema/cadsus/v5r0/cns" xmlns:nome="http://servicos.saude.gov.br/schema/corporativo/pessoafisica/v1r2/nomecompleto" xmlns:cpf="http://servicos.saude.gov.br/schema/corporativo/documento/v1r2/cpf" xmlns="http://servicos.saude.gov.br/schema/cnes/v1r0/dadosbasicosprofissional">
+  <xs:import id="cns" namespace="http://servicos.saude.gov.br/schema/cadsus/v5r0/cns" schemaLocation="https://servicoshm.saude.gov.br/cnes/VinculacaoProfissionalService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Fsebast%2FDesenvolvimento%2FOSB%2FRESOURCES50%2Fxsd%2Fcadsus%2Fcns.v5r0.xsd"/>
+  <xs:import id="cpf" namespace="http://servicos.saude.gov.br/schema/corporativo/documento/v1r2/cpf" schemaLocation="https://servicoshm.saude.gov.br/cnes/VinculacaoProfissionalService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Fsebast%2FDesenvolvimento%2FOSB%2FRESOURCES50%2Fxsd%2Fcorporativo%2Fdocumento%2Fcpf.v1r2.xsd"/>
+  <xs:import id="nome" namespace="http://servicos.saude.gov.br/schema/corporativo/pessoafisica/v1r2/nomecompleto" schemaLocation="https://servicoshm.saude.gov.br/cnes/VinculacaoProfissionalService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Fsebast%2FDesenvolvimento%2FOSB%2FRESOURCES50%2Fxsd%2Fcorporativo%2Fpessoafisica%2Fnomecompleto.v1r2.xsd"/>
+  <xs:annotation>
+    <xs:documentation>Este esquema representa os dados basicos do profissional.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="DadosBasicosProfissionais" type="DadosBasicosProfissionaisType"/>
+  <xs:complexType name="DadosBasicosProfissionaisType">
+    <xs:sequence>
+      <xs:element name="DadosBasicosProfissional" minOccurs="0" maxOccurs="unbounded" type="DadosBasicosProfissionalType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DadosBasicosProfissional" type="DadosBasicosProfissionalType"/>
+  <xs:complexType name="DadosBasicosProfissionalType">
+    <xs:sequence>
+      <xs:element name="Nome" minOccurs="1" maxOccurs="1" type="nome:NomeCompletoType"/>
+      <xs:element name="CPF" minOccurs="1" maxOccurs="1" type="cpf:CPFType"/>
+      <xs:element name="CNS" minOccurs="1" maxOccurs="unbounded" type="cns:CNSType"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cnes/VinculacaoProfissionalService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Fsebast%2FDesenvolvimento%2FOSB%2FRESOURCES50%2Fxsd%2Fcorporativo%2Fpessoafisica%2Fnomecompleto.v1r2.xsd</con:url><con:content><![CDATA[<xs:schema targetNamespace="http://servicos.saude.gov.br/schema/corporativo/pessoafisica/v1r2/nomecompleto" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/corporativo/pessoafisica/v1r2/nomecompleto">
+  <xs:annotation>
+    <xs:documentation>Este esquema representa o nome completo de uma pessoa fisica.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="NomeCompleto" type="FormatoNomeCompletoType"/>
+  <xs:complexType name="NomeCompletoType">
+    <xs:sequence>
+      <xs:element name="Nome" type="FormatoNomeCompletoType">
+        <xs:annotation>
+          <xs:documentation>Nomes atribuidos da pessoa fisica.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="FormatoNomeCompletoType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="70"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cnes/VinculacaoProfissionalService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Fsebast%2FDesenvolvimento%2FOSB%2FRESOURCES50%2Fxsd%2Fmensageria%2Fpaginacao.v1.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/wsdl/mensageria/v1/paginacao" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/wsdl/mensageria/v1/paginacao">
+  <xs:annotation>
+    <xs:documentation>Estrutura destinada à paginação de resultados.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="Paginacao" type="PaginacaoType"/>
+  <xs:complexType name="PaginacaoType">
+    <xs:sequence>
+      <xs:element name="registroInicial" minOccurs="1" maxOccurs="1" nillable="false">
+        <xs:annotation>
+          <xs:documentation>O valor numérico identificador da registro inicial solicitado/atual.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:integer">
+            <xs:minInclusive value="1"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="quantidadeRegistros" minOccurs="1" maxOccurs="1" nillable="false">
+        <xs:annotation>
+          <xs:documentation>O valor numérico que determina a quantidade de registros presentes na página solicitada/atual.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:integer">
+            <xs:minInclusive value="1"/>
+            <xs:maxInclusive value="100"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="totalRegistros" minOccurs="0" maxOccurs="1" nillable="false">
+        <xs:annotation>
+          <xs:documentation>O valor numérico que determina a quantidade total de registros.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:integer">
+            <xs:minInclusive value="0"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cnes/VinculacaoProfissionalService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Fsebast%2FDesenvolvimento%2FOSB%2FRESOURCES50%2Fxsd%2Fmensageria%2Ffalha%2Fmsfalha.v5r0.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/msfalha" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mensagem="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/mensagem" xmlns="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/msfalha">
+  <xs:import id="mensagem" namespace="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/mensagem" schemaLocation="https://servicoshm.saude.gov.br/cnes/VinculacaoProfissionalService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Fsebast%2FDesenvolvimento%2FOSB%2FRESOURCES50%2Fxsd%2Fmensageria%2Ffalha%2Fmensagem.v5r0.xsd">
+    <xs:annotation>
+      <xs:documentation>O objeto corresponde as mensagens padronizadas de
+				retorno. Exemplo: Toda e
+				qualquer mensagem que retornara para
+				a acao
+				solicitada, este objeto servira como base para
+				apresentar o codigo da
+				mensagem e se necessario a descricao da mensagem.</xs:documentation>
+    </xs:annotation>
+  </xs:import>
+  <xs:annotation>
+    <xs:documentation>Objeto de tratamento de falhas que podem ocorrer nas
+			diversas chamadas aos
+			servicos do Ministerio da Saude.
+			Exemplo: Toda e
+			qualquer solicitacao pode ocorrer uma falha na
+			aplicacao, ou seja, o
+			seu retorno estara comprometido e sera
+			preenchido este objeto com a
+			informacao, codigo e descricao da falha.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="MSFalha">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" nillable="true" name="identificador" type="xs:string"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="Mensagem" type="mensagem:MensagemType"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cnes/VinculacaoProfissionalService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Fsebast%2FDesenvolvimento%2FOSB%2FRESOURCES50%2Fxsd%2Fmensageria%2Ffalha%2Fmensagem.v5r0.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/mensagem" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/mensagem">
+  <xs:annotation>
+    <xs:documentation>O objeto corresponde as mensagens padronizadas de retorno. Exemplo: Toda e qualquer mensagem que retornara para a acao solicitada, este objeto servira como base para apresentar o codigo da mensagem e se necessario a descricao da mensagem.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="Mensagem" type="MensagemType"/>
+  <xs:complexType name="MensagemType">
+    <xs:sequence>
+      <xs:element name="codigo" minOccurs="0" maxOccurs="1" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Codigo da mensagem padronizada.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="descricao" minOccurs="0" maxOccurs="1" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Descricao da mensagem.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://servicos.saude.gov.br/cnes/VinculacaoProfissionalService/v1</con:endpoint></con:endpoints><con:operation id="0d6ad7ef-3749-4e4a-a29c-1e69fd342566" isOneWay="false" action="" name="detalharVinculacaoProfissionalSaude" bindingOperationName="detalharVinculacaoProfissionalSaude" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="d5827ecf-66f7-4312-a35f-f90c4da952cf" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://servicos.saude.gov.br/cnes/VinculacaoProfissionalService/v1</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:vin="http://servicos.saude.gov.br/cnes/v1r0/vinculacaoprofissionalservice" xmlns:fil="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/filtropesquisavinculacao" xmlns:cpf="http://servicos.saude.gov.br/schema/corporativo/documento/v1r2/cpf" xmlns:cns="http://servicos.saude.gov.br/schema/cadsus/v5r0/cns" xmlns:cod="http://servicos.saude.gov.br/schema/cnes/v1r0/codigocnes" xmlns:cnpj="http://servicos.saude.gov.br/schema/corporativo/pessoajuridica/v1r0/cnpj">
+   <soap:Header/>
+   <soap:Body>
+      <vin:RequestVinculacao>
+         <!--Optional:-->
+         <fil:FiltroPesquisaVinculacao>
+            <fil:IdentificacaoProfissional>
+               <!--You have a CHOICE of the next 2 items at this level-->
+               <fil:cpf>
+                  <cpf:numeroCPF>?</cpf:numeroCPF>
+               </fil:cpf>
+               <fil:cns>
+                  <cns:numeroCNS>?</cns:numeroCNS>
+               </fil:cns>
+            </fil:IdentificacaoProfissional>
+            <fil:IdentificacaoEstabelecimento>
+               <!--You have a CHOICE of the next 2 items at this level-->
+               <fil:cnes>
+                  <cod:codigo>?</cod:codigo>
+               </fil:cnes>
+               <fil:cnpj>
+                  <cnpj:numeroCNPJ>?</cnpj:numeroCNPJ>
+               </fil:cnpj>
+            </fil:IdentificacaoEstabelecimento>
+            <fil:IdentificacaoVinculacao>
+               <fil:tipoVinculacao>?</fil:tipoVinculacao>
+            </fil:IdentificacaoVinculacao>
+         </fil:FiltroPesquisaVinculacao>
+      </vin:RequestVinculacao>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://servicos.saude.gov.br/cnes/v1r0/vinculacaoprofissionalservice/VinculacaoPortType/detalharVinculacaoProfissionalSaudeRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="d09035f1-89ae-4766-9206-ce545bd1de21" isOneWay="false" action="" name="pesquisarVinculacaoProfissionalSaude" bindingOperationName="pesquisarVinculacaoProfissionalSaude" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="a183eb6f-25a8-4bbe-b637-d85ac25eadbb" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://servicos.saude.gov.br/cnes/VinculacaoProfissionalService/v1</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:vin="http://servicos.saude.gov.br/cnes/v1r0/vinculacaoprofissionalservice" xmlns:fil="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/filtropesquisavinculacaos" xmlns:cpf="http://servicos.saude.gov.br/schema/corporativo/documento/v1r2/cpf" xmlns:cns="http://servicos.saude.gov.br/schema/cadsus/v5r0/cns" xmlns:cod="http://servicos.saude.gov.br/schema/cnes/v1r0/codigocnes" xmlns:cnpj="http://servicos.saude.gov.br/schema/corporativo/pessoajuridica/v1r0/cnpj" xmlns:pag="http://servicos.saude.gov.br/wsdl/mensageria/v1/paginacao">
+   <soap:Header/>
+   <soap:Body>
+      <vin:RequestVinculacaos>
+         <!--Optional:-->
+         <fil:FiltroPesquisaVinculacaos>
+            <fil:IdentificacaoProfissional>
+               <!--You have a CHOICE of the next 2 items at this level-->
+               <fil:cpf>
+                  <cpf:numeroCPF>?</cpf:numeroCPF>
+               </fil:cpf>
+               <fil:cns>
+                  <cns:numeroCNS>?</cns:numeroCNS>
+               </fil:cns>
+            </fil:IdentificacaoProfissional>
+            <fil:IdentificacaoEstabelecimento>
+               <!--You have a CHOICE of the next 2 items at this level-->
+               <fil:cnes>
+                  <cod:codigo>?</cod:codigo>
+               </fil:cnes>
+               <fil:cnpj>
+                  <cnpj:numeroCNPJ>?</cnpj:numeroCNPJ>
+               </fil:cnpj>
+            </fil:IdentificacaoEstabelecimento>
+         </fil:FiltroPesquisaVinculacaos>
+         <Paginacao>
+            <pag:registroInicial>?</pag:registroInicial>
+            <pag:quantidadeRegistros>?</pag:quantidadeRegistros>
+            <!--Optional:-->
+            <pag:totalRegistros>?</pag:totalRegistros>
+         </Paginacao>
+      </vin:RequestVinculacaos>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://servicos.saude.gov.br/cnes/v1r0/vinculacaoprofissionalservice/VinculacaoPortType/pesquisarVinculacaoProfissionalSaudeRequest"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="eb5cb5f0-96fa-43cc-935d-89adabe7848f" wsaVersion="NONE" name="ProfissionalSaudeServiceSOAP12Binding" type="wsdl" bindingName="{http://servicos.saude.gov.br/cnes/v1r0/profissionalsaudeservice}ProfissionalSaudeServiceSOAP12Binding" soapVersion="1_2" anonymous="optional" definition="https://servicoshm.saude.gov.br/cnes/ProfissionalSaudeService/v1r0?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>https://servicos.saude.gov.br/cnes/ProfissionalSaudeService/v1r0</con:endpoint></con:endpoints><con:operation id="532e4c46-6227-4f0c-b7a5-394f21d107cc" isOneWay="false" action="" name="consultarProfissionaisSaude" bindingOperationName="consultarProfissionaisSaude" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="c6adf3f7-ab02-4230-bcff-4887b7593878" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://servicos.saude.gov.br/cnes/ProfissionalSaudeService/v1r0</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:prof="http://servicos.saude.gov.br/cnes/v1r0/profissionalsaudeservice" xmlns:fil="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/filtropesquisaestabelecimentosaude" xmlns:cod="http://servicos.saude.gov.br/schema/cnes/v1r0/codigocnes" xmlns:cnpj="http://servicos.saude.gov.br/schema/corporativo/pessoajuridica/v1r0/cnpj">
+   <soap:Header/>
+   <soap:Body>
+      <prof:requestConsultarProfissionaisSaude>
+         <fil:FiltroPesquisaEstabelecimentoSaude>
+            <!--Optional:-->
+            <cod:CodigoCNES>
+               <cod:codigo>?</cod:codigo>
+            </cod:CodigoCNES>
+            <!--Optional:-->
+            <cnpj:CNPJ>
+               <cnpj:numeroCNPJ>?</cnpj:numeroCNPJ>
+            </cnpj:CNPJ>
+         </fil:FiltroPesquisaEstabelecimentoSaude>
+      </prof:requestConsultarProfissionaisSaude>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://servicos.saude.gov.br/cnes/v1r0/profissionalsaudeservice/ProfissionalSaudeServicePortType/consultarProfissionaisSaudeRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="11cc2b78-ca61-41f8-9dd7-8da39b387d36" isOneWay="false" action="" name="consultarProfissionalSaude" bindingOperationName="consultarProfissionalSaude" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="9bb8b074-c085-42ab-ba73-cc6d5565c5ee" name="consultar-profissional"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://servicos.saude.gov.br/cnes/ProfissionalSaudeService/v1r0</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:prof="http://servicos.saude.gov.br/cnes/v1r0/profissionalsaudeservice" xmlns:fil="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/filtropesquisaprofissionalsaude" xmlns:cns="http://servicos.saude.gov.br/schema/cadsus/v5r0/cns" xmlns:cpf="http://servicos.saude.gov.br/schema/corporativo/documento/v1r2/cpf">
+<soap:Header>
+      <wsse:Security soap:mustUnderstand="true" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+         <wsse:UsernameToken wsu:Id="UsernameToken-5FCA58BED9F27C406E14576381084652">
+            <wsse:Username>CNES.PUBLICO</wsse:Username>
+            <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">cnes#2015public</wsse:Password>
+         </wsse:UsernameToken>
+      </wsse:Security>
+</soap:Header>
+
+   <soap:Body>
+      <prof:requestConsultarProfissionalSaude>
+         <fil:FiltroPesquisaProfissionalSaude>
+            <cns:CNS>
+               <cns:numeroCNS>980016280595043</cns:numeroCNS>
+            </cns:CNS>
+         </fil:FiltroPesquisaProfissionalSaude>
+      </prof:requestConsultarProfissionalSaude>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://servicos.saude.gov.br/cnes/v1r0/profissionalsaudeservice/ProfissionalSaudeServicePortType/consultarProfissionalSaudeRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
