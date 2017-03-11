@@ -38,29 +38,33 @@
          </fil:FiltroPesquisaPrecadastroCnes>
       </est:requestConsultarPrecadastroCNES>
    </soap:Body>
-</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://servicos.saude.gov.br/cnes/v1r0/estabelecimentosaudeservice/EstabelecimentoSaudeServicePortType/consultarPrecadastroCNESRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="1341ca01-fd8a-43cc-8e41-1d22c4e1943d" isOneWay="false" action="" name="localizarEstabelecimentoSaude" bindingOperationName="localizarEstabelecimentoSaude" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="44e7dd96-5b2a-4f5b-9007-2d9da519e104" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://servicos.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:est="http://servicos.saude.gov.br/cnes/v1r0/estabelecimentosaudeservice" xmlns:fil="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/filtrolocalizacaoestabelecimentosaude" xmlns:loc="http://servicos.saude.gov.br/schema/cnes/v1r0/localizacao" xmlns:tip="http://servicos.saude.gov.br/schema/cnes/v1r0/tipounidade" xmlns:pag="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/paginacao">
-   <soap:Header/>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://servicos.saude.gov.br/cnes/v1r0/estabelecimentosaudeservice/EstabelecimentoSaudeServicePortType/consultarPrecadastroCNESRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="1341ca01-fd8a-43cc-8e41-1d22c4e1943d" isOneWay="false" action="" name="localizarEstabelecimentoSaude" bindingOperationName="localizarEstabelecimentoSaude" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="44e7dd96-5b2a-4f5b-9007-2d9da519e104" name="localizar-estabelecimento"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://servicos.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:est="http://servicos.saude.gov.br/cnes/v1r0/estabelecimentosaudeservice" xmlns:fil="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/filtrolocalizacaoestabelecimentosaude" xmlns:loc="http://servicos.saude.gov.br/schema/cnes/v1r0/localizacao" xmlns:tip="http://servicos.saude.gov.br/schema/cnes/v1r0/tipounidade" xmlns:pag="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/paginacao">
+   <soap:Header>
+<wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+<wsse:UsernameToken wsu:Id="Id-0001334008436683-000000002c4a1908-1" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+<wsse:Username>CNES.PUBLICO</wsse:Username>
+<wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">cnes#2015public</wsse:Password>
+</wsse:UsernameToken>
+</wsse:Security></soap:Header>
    <soap:Body>
       <est:requestLocalizarEstabelecimentoSaude>
          <fil:FiltroLocalizacaoEstabelecimentoSaude>
             <loc:Localizacao>
-               <loc:longitude>?</loc:longitude>
-               <loc:latitude>?</loc:latitude>
-               <!--Optional:-->
-               <loc:geoJson>?</loc:geoJson>
+               <loc:longitude>-45.99400</loc:longitude>
+               <loc:latitude>-3.56500</loc:latitude>
             </loc:Localizacao>
             <tip:tipoUnidade>
-               <tip:codigo>?</tip:codigo>
-               <tip:descricao>?</tip:descricao>
+               <tip:codigo>05</tip:codigo>
+               <tip:descricao>HOSPITAL GERAL</tip:descricao>
             </tip:tipoUnidade>
             <!--Optional:-->
             <pag:Paginacao>
-               <pag:posicaoRegistroInicio>?</pag:posicaoRegistroInicio>
-               <pag:quantidadeRegistrosPorPagina>?</pag:quantidadeRegistrosPorPagina>
+               <pag:posicaoRegistroInicio>1</pag:posicaoRegistroInicio>
+               <pag:quantidadeRegistrosPorPagina>1</pag:quantidadeRegistrosPorPagina>
                <!--Optional:-->
-               <pag:quantidadeRegistros>?</pag:quantidadeRegistros>
+               <pag:quantidadeRegistros>1</pag:quantidadeRegistros>
             </pag:Paginacao>
          </fil:FiltroLocalizacaoEstabelecimentoSaude>
       </est:requestLocalizarEstabelecimentoSaude>
    </soap:Body>
-</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://servicos.saude.gov.br/cnes/v1r0/estabelecimentosaudeservice/EstabelecimentoSaudeServicePortType/localizarEstabelecimentoSaudeRequest"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://servicos.saude.gov.br/cnes/v1r0/estabelecimentosaudeservice/EstabelecimentoSaudeServicePortType/localizarEstabelecimentoSaudeRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
