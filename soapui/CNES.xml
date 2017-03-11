@@ -1,0 +1,1345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="033237c4-9b67-425e-8a64-d10de7e392d9" activeEnvironment="Default" name="CNES" resourceRoot="" soapui-version="5.3.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="f0c78c52-bbb3-4647-aee2-dfed7f03b1a4" wsaVersion="NONE" name="EstabelecimentoSaudeServiceSOAP12Binding" type="wsdl" bindingName="{http://servicos.saude.gov.br/cnes/v1r0/estabelecimentosaudeservice}EstabelecimentoSaudeServiceSOAP12Binding" soapVersion="1_2" anonymous="optional" definition="https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>https://servicos.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0</con:endpoint></con:endpoints><con:operation id="a37899e3-1503-4b6c-ac89-e90f834d1edf" isOneWay="false" action="" name="consultarEstabelecimentoSaude" bindingOperationName="consultarEstabelecimentoSaude" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="96e37d85-1382-4a4b-b6b8-98311c019163" name="consultar-estabelecimento"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://servicos.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:est="http://servicos.saude.gov.br/cnes/v1r0/estabelecimentosaudeservice" xmlns:fil="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/filtropesquisaestabelecimentosaude" xmlns:cod="http://servicos.saude.gov.br/schema/cnes/v1r0/codigocnes" xmlns:cnpj="http://servicos.saude.gov.br/schema/corporativo/pessoajuridica/v1r0/cnpj">
+<soap:Header>
+      <wsse:Security soap:mustUnderstand="true" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+         <wsse:UsernameToken wsu:Id="UsernameToken-5FCA58BED9F27C406E14576381084652">
+            <wsse:Username>CNES.PUBLICO</wsse:Username>
+            <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">cnes#2015public</wsse:Password>
+         </wsse:UsernameToken>
+      </wsse:Security>
+</soap:Header>
+
+   <soap:Body>
+      <est:requestConsultarEstabelecimentoSaude>
+         <fil:FiltroPesquisaEstabelecimentoSaude>
+            <cod:CodigoCNES>
+               <cod:codigo>2530031</cod:codigo>
+            </cod:CodigoCNES>
+         </fil:FiltroPesquisaEstabelecimentoSaude>
+      </est:requestConsultarEstabelecimentoSaude>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://servicos.saude.gov.br/cnes/v1r0/estabelecimentosaudeservice/EstabelecimentoSaudeServicePortType/consultarEstabelecimentoSaudeRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="b19b8a54-f343-416a-a910-51287d586b44" isOneWay="false" action="" name="consultarPrecadastroCNES" bindingOperationName="consultarPrecadastroCNES" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="d77bad7f-9bda-4d2b-88f1-847d19fd3028" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://servicos.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:est="http://servicos.saude.gov.br/cnes/v1r0/estabelecimentosaudeservice" xmlns:fil="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/filtropesquisaprecadastrocnes" xmlns:cod="http://servicos.saude.gov.br/schema/cnes/v1r0/codigocnes">
+   <soap:Header/>
+   <soap:Body>
+      <est:requestConsultarPrecadastroCNES>
+         <fil:FiltroPesquisaPrecadastroCnes>
+            <!--Optional:-->
+            <cod:CodigoCNES>
+               <cod:codigo>?</cod:codigo>
+            </cod:CodigoCNES>
+            <!--Optional:-->
+            <fil:situacao>?</fil:situacao>
+         </fil:FiltroPesquisaPrecadastroCnes>
+      </est:requestConsultarPrecadastroCNES>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://servicos.saude.gov.br/cnes/v1r0/estabelecimentosaudeservice/EstabelecimentoSaudeServicePortType/consultarPrecadastroCNESRequest"/></con:call></con:operation><con:operation id="1341ca01-fd8a-43cc-8e41-1d22c4e1943d" isOneWay="false" action="" name="localizarEstabelecimentoSaude" bindingOperationName="localizarEstabelecimentoSaude" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="44e7dd96-5b2a-4f5b-9007-2d9da519e104" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://servicos.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:est="http://servicos.saude.gov.br/cnes/v1r0/estabelecimentosaudeservice" xmlns:fil="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/filtrolocalizacaoestabelecimentosaude" xmlns:loc="http://servicos.saude.gov.br/schema/cnes/v1r0/localizacao" xmlns:tip="http://servicos.saude.gov.br/schema/cnes/v1r0/tipounidade" xmlns:pag="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/paginacao">
+   <soap:Header/>
+   <soap:Body>
+      <est:requestLocalizarEstabelecimentoSaude>
+         <fil:FiltroLocalizacaoEstabelecimentoSaude>
+            <loc:Localizacao>
+               <loc:longitude>?</loc:longitude>
+               <loc:latitude>?</loc:latitude>
+               <!--Optional:-->
+               <loc:geoJson>?</loc:geoJson>
+            </loc:Localizacao>
+            <tip:tipoUnidade>
+               <tip:codigo>?</tip:codigo>
+               <tip:descricao>?</tip:descricao>
+            </tip:tipoUnidade>
+            <!--Optional:-->
+            <pag:Paginacao>
+               <pag:posicaoRegistroInicio>?</pag:posicaoRegistroInicio>
+               <pag:quantidadeRegistrosPorPagina>?</pag:quantidadeRegistrosPorPagina>
+               <!--Optional:-->
+               <pag:quantidadeRegistros>?</pag:quantidadeRegistros>
+            </pag:Paginacao>
+         </fil:FiltroLocalizacaoEstabelecimentoSaude>
+      </est:requestLocalizarEstabelecimentoSaude>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://servicos.saude.gov.br/cnes/v1r0/estabelecimentosaudeservice/EstabelecimentoSaudeServicePortType/localizarEstabelecimentoSaudeRequest"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="ec160909-8b10-4e95-8e06-24165d2de58d" wsaVersion="NONE" name="EstabelecimentoSaudeServiceSOAP11Binding" type="wsdl" bindingName="{http://servicos.saude.gov.br/cnes/v1r0/estabelecimentosaudeservice}EstabelecimentoSaudeServiceSOAP11Binding" soapVersion="1_1" anonymous="optional" definition="https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?wsdl"><con:part><con:url>https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="EstabelecimentoSaudeService" targetNamespace="http://servicos.saude.gov.br/cnes/v1r0/estabelecimentosaudeservice" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://servicos.saude.gov.br/cnes/v1r0/estabelecimentosaudeservice" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:filtropesquisa="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/filtropesquisaestabelecimentosaude" xmlns:filtropesquisaprecadastrocnes="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/filtropesquisaprecadastrocnes" xmlns:msfalha="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/msfalha" xmlns:dadosgerais="http://servicos.saude.gov.br/schema/cnes/v1r0/dadosgeraiscnes" xmlns:filtrolocalizacao="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/filtrolocalizacaoestabelecimentosaude" xmlns:resultadoslocalizacao="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/resultadoslocalizacaoestabelecimentosaude" xmlns:codigocnes="http://servicos.saude.gov.br/schema/cnes/v1r0/codigocnes" xmlns:precadastro="http://servicos.saude.gov.br/schema/cnes/v1r0/dadosprecadastrocnes">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/cnes/v1r0/estabelecimentosaudeservice">
+      <xs:import id="filtropesquisa" namespace="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/filtropesquisaestabelecimentosaude" schemaLocation="https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fmensageria%2Ffiltropesquisaestabelecimentosaude.v1r0.xsd"/>
+      <xs:import id="filtropesquisaprecadastrocnes" namespace="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/filtropesquisaprecadastrocnes" schemaLocation="https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fmensageria%2Ffiltropesquisaprecadastrocnes.v1r0.xsd"/>
+      <xs:import id="filtrolocalizacao" namespace="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/filtrolocalizacaoestabelecimentosaude" schemaLocation="https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fmensageria%2Ffiltrolocalizacaoestabelecimentosaude.v1r0.xsd"/>
+      <xs:import id="dadosgerais" namespace="http://servicos.saude.gov.br/schema/cnes/v1r0/dadosgeraiscnes" schemaLocation="https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fcnes%2Fdadosgeraisestabelecimento%2Fdadosgeraiscnes.v1r0.xsd"/>
+      <xs:import id="msfalha" namespace="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/msfalha" schemaLocation="https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fmensageria%2Ffalha%2Fmsfalha.v5r0.xsd"/>
+      <xs:import id="resultadoslocalizacao" namespace="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/resultadoslocalizacaoestabelecimentosaude" schemaLocation="https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fmensageria%2Fresultadoslocalizacaoestabelecimentosaude.v1r0.xsd"/>
+      <xs:import id="codigocnes" namespace="http://servicos.saude.gov.br/schema/cnes/v1r0/codigocnes" schemaLocation="https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fcnes%2Fcodigocnes.v1r0.xsd"/>
+      <xs:import id="precadastro" namespace="http://servicos.saude.gov.br/schema/cnes/v1r0/dadosprecadastrocnes" schemaLocation="https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fcnes%2Fprecadastro%2Fdadosprecadastrocnes.v1r0.xsd"/>
+      <xs:element name="requestConsultarEstabelecimentoSaude">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" ref="filtropesquisa:FiltroPesquisaEstabelecimentoSaude">
+              <xs:annotation>
+                <xs:documentation>Filtro de Pesquisa.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="responseConsultarEstabelecimentoSaude">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" ref="dadosgerais:DadosGeraisEstabelecimentoSaude"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="requestLocalizarEstabelecimentoSaude">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" ref="filtrolocalizacao:FiltroLocalizacaoEstabelecimentoSaude">
+              <xs:annotation>
+                <xs:documentation>Filtro de Localização.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="responseLocalizarEstabelecimentoSaude">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" ref="resultadoslocalizacao:ResultadosLocalizacaoEstabelecimentoSaude">
+              <xs:annotation>
+                <xs:documentation>Resultado localização de estabelecimentos.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="requestConsultarPrecadastroCNES">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" ref="filtropesquisaprecadastrocnes:FiltroPesquisaPrecadastroCnes">
+              <xs:annotation>
+                <xs:documentation>Filtro Pesquisa Precadastro CNES.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="responseConsultarPrecadastroCNES">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" ref="precadastro:DadosPreCadastroCNES">
+              <xs:annotation>
+                <xs:documentation>Resultado com os dados de precadastro do Estabelecimento de Saúde.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:import namespace="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/msfalha" schemaLocation="https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fmensageria%2Ffalha%2Fmsfalha.v5r0.xsd"></xsd:import>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="requestConsultarEstabelecimentoSaude">
+    <wsdl:part element="tns:requestConsultarEstabelecimentoSaude" name="requestConsultarEstabelecimentoSaude"/>
+  </wsdl:message>
+  <wsdl:message name="responseConsultarEstabelecimentoSaude">
+    <wsdl:part element="tns:responseConsultarEstabelecimentoSaude" name="responseConsultarEstabelecimentoSaude"/>
+  </wsdl:message>
+  <wsdl:message name="requestLocalizarEstabelecimentoSaude">
+    <wsdl:part name="requestLocalizarEstabelecimentoSaude" element="tns:requestLocalizarEstabelecimentoSaude"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="responseLocalizarEstabelecimentoSaude">
+    <wsdl:part name="responseLocalizarEstabelecimentoSaude" element="tns:responseLocalizarEstabelecimentoSaude"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="requestConsultarPrecadastroCNES">
+    <wsdl:part name="requestConsultarPrecadastroCNES" element="tns:requestConsultarPrecadastroCNES"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="responseConsultarPrecadastroCNES">
+    <wsdl:part name="responseConsultarPrecadastroCNES" element="tns:responseConsultarPrecadastroCNES"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="EstabelecimentoSaudeFault">
+    <wsdl:part name="fault" element="msfalha:MSFalha"/>
+  </wsdl:message>
+  <wsdl:portType name="EstabelecimentoSaudeServicePortType">
+    <wsdl:operation name="consultarEstabelecimentoSaude">
+      <wsdl:documentation>Consultar os dados básicos do Estabelecimento de Saude pelo código do CNES.</wsdl:documentation>
+      <wsdl:input name="requestConsultarEstabelecimentoSaude" message="tns:requestConsultarEstabelecimentoSaude"/>
+      <wsdl:output name="responseConsultarEstabelecimentoSaude" message="tns:responseConsultarEstabelecimentoSaude"/>
+      <wsdl:fault name="EstabelecimentoSaudeFault" message="tns:EstabelecimentoSaudeFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="localizarEstabelecimentoSaude">
+      <wsdl:documentation>Localiza os Estabelecimentos de Saude pelas coordenadas.</wsdl:documentation>
+      <wsdl:input name="requestLocalizarEstabelecimentoSaude" message="tns:requestLocalizarEstabelecimentoSaude"/>
+      <wsdl:output name="responseLocalizarEstabelecimentoSaude" message="tns:responseLocalizarEstabelecimentoSaude"/>
+      <wsdl:fault name="EstabelecimentoSaudeFault" message="tns:EstabelecimentoSaudeFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="consultarPrecadastroCNES">
+      <wsdl:documentation>Consultar os dados básicos do precadastro do Estabelecimento de Saude pelo código do CNES.</wsdl:documentation>
+      <wsdl:input name="requestConsultarPrecadastroCNES" message="tns:requestConsultarPrecadastroCNES"/>
+      <wsdl:output name="responseConsultarPrecadastroCNES" message="tns:responseConsultarPrecadastroCNES"/>
+      <wsdl:fault name="EstabelecimentoSaudeFault" message="tns:EstabelecimentoSaudeFault"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="EstabelecimentoSaudeServiceSOAP12Binding" type="tns:EstabelecimentoSaudeServicePortType">
+    <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="consultarEstabelecimentoSaude">
+      <wsdl:documentation>Consultar os dados básicos do Estabelecimento de Saude pelo código do CNES.</wsdl:documentation>
+      <soap12:operation soapAction=""/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="EstabelecimentoSaudeFault">
+        <soap12:fault name="EstabelecimentoSaudeFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="localizarEstabelecimentoSaude">
+      <wsdl:documentation>Consultar os estabelecimentos de saúde proximo a localização informada</wsdl:documentation>
+      <soap12:operation soapAction=""/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="EstabelecimentoSaudeFault">
+        <soap12:fault name="EstabelecimentoSaudeFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="consultarPrecadastroCNES">
+      <wsdl:documentation>Consultar os dados do precadastro do Estabelecimento de Saude pelo código do CNES.</wsdl:documentation>
+      <soap12:operation soapAction=""/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="EstabelecimentoSaudeFault">
+        <soap12:fault name="EstabelecimentoSaudeFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="EstabelecimentoSaudeServiceSOAP11Binding" type="tns:EstabelecimentoSaudeServicePortType">
+    <soap11:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="consultarEstabelecimentoSaude">
+      <wsdl:documentation>Consultar os dados básicos do Estabelecimento de Saude pelo código do CNES.</wsdl:documentation>
+      <soap11:operation soapAction=""/>
+      <wsdl:input>
+        <soap11:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="EstabelecimentoSaudeFault">
+        <soap11:fault name="EstabelecimentoSaudeFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="localizarEstabelecimentoSaude">
+      <wsdl:documentation>Consultar os estabelecimentos de saúde proximo a localização informada</wsdl:documentation>
+      <soap12:operation soapAction=""/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="EstabelecimentoSaudeFault">
+        <soap12:fault name="EstabelecimentoSaudeFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="consultarPrecadastroCNES">
+      <wsdl:documentation>Consultar os dados do precadastro do Estabelecimento de Saude pelo código do CNES.</wsdl:documentation>
+      <soap11:operation soapAction=""/>
+      <wsdl:input>
+        <soap11:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="EstabelecimentoSaudeFault">
+        <soap11:fault name="EstabelecimentoSaudeFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="EstabelecimentoSaudeService">
+    <wsdl:port binding="tns:EstabelecimentoSaudeServiceSOAP12Binding" name="EstabelecimentoSaudeServicePort">
+      <soap12:address location="https://servicos.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0"/>
+    </wsdl:port>
+    <wsdl:port binding="tns:EstabelecimentoSaudeServiceSOAP11Binding" name="EstabelecimentoSaudeServiceSOAP11Port">
+      <soap11:address location="https://servicos.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fmensageria%2Ffiltropesquisaestabelecimentosaude.v1r0.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/filtropesquisaestabelecimentosaude" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/filtropesquisaestabelecimentosaude" xmlns:cnes="http://servicos.saude.gov.br/schema/cnes/v1r0/codigocnes" xmlns:cnpj="http://servicos.saude.gov.br/schema/corporativo/pessoajuridica/v1r0/cnpj">
+  <xs:import id="cnes" namespace="http://servicos.saude.gov.br/schema/cnes/v1r0/codigocnes" schemaLocation="https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fcnes%2Fcodigocnes.v1r0.xsd"/>
+  <xs:import id="cnpj" namespace="http://servicos.saude.gov.br/schema/corporativo/pessoajuridica/v1r0/cnpj" schemaLocation="https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fcorporativo%2Fpessoajuridica%2Fcnpj.v1r0.xsd"/>
+  <xs:annotation>
+    <xs:documentation>Representa o objeto de filtro da pesquisa do Estabelcimento de Saúde.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="FiltroPesquisaEstabelecimentoSaude" type="FiltroPesquisaEstabelecimentoSaudeType"/>
+  <xs:complexType name="FiltroPesquisaEstabelecimentoSaudeType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" ref="cnes:CodigoCNES">
+        <xs:annotation>
+          <xs:documentation>Código do CNES.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" ref="cnpj:CNPJ">
+        <xs:annotation>
+          <xs:documentation>CNPJ do Estabelecimento de Saúde</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fcnes%2Fcodigocnes.v1r0.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/cnes/v1r0/codigocnes" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/cnes/v1r0/codigocnes">
+  <xs:annotation>
+    <xs:documentation>Este esquema representa a Código do Estabelecimento de Saúde no CNES.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="CodigoCNES" type="CodigoCNESType"/>
+  <xs:complexType name="CodigoCNESType">
+    <xs:sequence>
+      <xs:element name="codigo" minOccurs="1" maxOccurs="1">
+        <xs:simpleType>
+          <xs:annotation>
+            <xs:documentation>Código do Estabelecimento de Saúde.</xs:documentation>
+          </xs:annotation>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="7"/>
+            <xs:maxLength value="7"/>
+            <xs:pattern value="[0-9]*"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fcorporativo%2Fpessoajuridica%2Fcnpj.v1r0.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/corporativo/pessoajuridica/v1r0/cnpj" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/corporativo/pessoajuridica/v1r0/cnpj">
+  <xs:annotation>
+    <xs:documentation>Este esquema representa o documento Cadastro Nacional de Pessoas Júridica (CNPJ) da Receita Federal do Brasil.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="CNPJ" type="CNPJType"/>
+  <xs:complexType name="CNPJType">
+    <xs:sequence>
+      <xs:element name="numeroCNPJ" minOccurs="1" maxOccurs="1">
+        <xs:simpleType>
+          <xs:annotation>
+            <xs:documentation>Numero do CNPJ sem formatacao. Ex: 09999999999999</xs:documentation>
+          </xs:annotation>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="14"/>
+            <xs:maxLength value="14"/>
+            <xs:pattern value="[0-9]*"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fmensageria%2Ffiltropesquisaprecadastrocnes.v1r0.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/filtropesquisaprecadastrocnes" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/filtropesquisaprecadastrocnes" xmlns:cnes="http://servicos.saude.gov.br/schema/cnes/v1r0/codigocnes">
+  <xs:import id="cnes" namespace="http://servicos.saude.gov.br/schema/cnes/v1r0/codigocnes" schemaLocation="https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fcnes%2Fcodigocnes.v1r0.xsd"/>
+  <xs:annotation>
+    <xs:documentation>Representa o objeto de filtro da pesquisa do Pre cadastro do Estabelcimento de Saúde.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="FiltroPesquisaPrecadastroCnes" type="FiltroPesquisaPrecadastroCnesType"/>
+  <xs:complexType name="FiltroPesquisaPrecadastroCnesType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" ref="cnes:CodigoCNES">
+        <xs:annotation>
+          <xs:documentation>Código do CNES.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="situacao" minOccurs="0" maxOccurs="1" nillable="true">
+        <xs:simpleType>
+          <xs:annotation>
+            <xs:documentation>Situação: Ativo A, Desativado D, Excluido E.</xs:documentation>
+          </xs:annotation>
+          <xs:restriction base="xs:string">
+            <!--ATIVO-->
+            <xs:enumeration value="A"/>
+            <!--DESATIVADO-->
+            <xs:enumeration value="D"/>
+            <!--EXCLUIDO-->
+            <xs:enumeration value="E"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fmensageria%2Ffiltrolocalizacaoestabelecimentosaude.v1r0.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/filtrolocalizacaoestabelecimentosaude" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/filtrolocalizacaoestabelecimentosaude" xmlns:cnes="http://servicos.saude.gov.br/schema/cnes/v1r0/codigocnes" xmlns:tipounidade="http://servicos.saude.gov.br/schema/cnes/v1r0/tipounidade" xmlns:paginacao="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/paginacao" xmlns:localizacao="http://servicos.saude.gov.br/schema/cnes/v1r0/localizacao">
+  <xs:import id="cnes" namespace="http://servicos.saude.gov.br/schema/cnes/v1r0/codigocnes" schemaLocation="https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fcnes%2Fcodigocnes.v1r0.xsd"/>
+  <xs:import id="tipounidade" namespace="http://servicos.saude.gov.br/schema/cnes/v1r0/tipounidade" schemaLocation="https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fcnes%2Ftipounidade.v1r0.xsd"/>
+  <xs:import id="paginacao" namespace="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/paginacao" schemaLocation="https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fmensageria%2Fpaginacao.v1r0.xsd"/>
+  <xs:import id="localizacao" namespace="http://servicos.saude.gov.br/schema/cnes/v1r0/localizacao" schemaLocation="https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fcnes%2Flocalizacao.v1r0.xsd"/>
+  <xs:annotation>
+    <xs:documentation>Representa o objeto de filtro da localizacao do Estabelcimento de Saúde.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="FiltroLocalizacaoEstabelecimentoSaude" type="FiltroLocalizacaoEstabelecimentoSaudeType"/>
+  <xs:complexType name="FiltroLocalizacaoEstabelecimentoSaudeType">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" ref="localizacao:Localizacao">
+        <xs:annotation>
+          <xs:documentation>Localização do estabelecimento.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="1" maxOccurs="1" ref="tipounidade:tipoUnidade">
+        <xs:annotation>
+          <xs:documentation>Tipo de Unidade do Estabelecimento de Saúde.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" ref="paginacao:Paginacao">
+        <xs:annotation>
+          <xs:documentation>Paginação enviada para uma consulta.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fcnes%2Ftipounidade.v1r0.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/cnes/v1r0/tipounidade" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/cnes/v1r0/tipounidade">
+  <xs:annotation>
+    <xs:documentation>Este esquema representa o Tipo de Unidade do Estabelecimento de Saúde.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="tipoUnidade" type="TipoUnidadeType"/>
+  <xs:complexType name="TipoUnidadeType">
+    <xs:sequence>
+      <xs:element name="codigo" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Código do Tipo de Unidade do Estabelecimento de Saúde..</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="2"/>
+            <xs:maxLength value="2"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="descricao" minOccurs="1" maxOccurs="1" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Descrição do Tipo de Unidade do Estabelecimento de Saúde..</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fmensageria%2Fpaginacao.v1r0.xsd</con:url><con:content><![CDATA[<xsd:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/paginacao" xmlns="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/paginacao" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:annotation>
+    <xsd:documentation>Schema para representar a paginação retornada de uma consulta. 
+		Deve ser infomado a posição do registro inicial e final</xsd:documentation>
+  </xsd:annotation>
+  <xsd:element name="Paginacao" type="PaginacaoType">
+    <xsd:annotation>
+      <xsd:documentation>Referência ao Type do schema.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType name="PaginacaoType">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="posicaoRegistroInicio" type="numero">
+        <xsd:annotation>
+          <xsd:documentation>Posição de inicio do registro.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" maxOccurs="1" name="quantidadeRegistrosPorPagina" type="numero">
+        <xsd:annotation>
+          <xsd:documentation>Quantidade de registros por página.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="quantidadeRegistros" type="numero">
+        <xsd:annotation>
+          <xsd:documentation>Quantidade de registros total da consulta.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="numero">
+    <xsd:annotation>
+      <xsd:documentation>Número padrão utilizado pelos campos de paginação. Até 7 casas decimais.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:minLength value="1"/>
+      <xsd:maxLength value="7"/>
+      <xsd:pattern value="[0-9]*"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fcnes%2Flocalizacao.v1r0.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/cnes/v1r0/localizacao" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/cnes/v1r0/localizacao">
+  <xs:annotation>
+    <xs:documentation>Este esquema representa uma localizacao.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="Localizacao" type="localizacaoType"/>
+  <xs:complexType name="localizacaoType">
+    <xs:sequence>
+      <xs:element name="longitude" minOccurs="1" maxOccurs="1" type="xs:string"></xs:element>
+      <xs:element name="latitude" minOccurs="1" maxOccurs="1" type="xs:string"></xs:element>
+      <xs:element name="geoJson" minOccurs="0" maxOccurs="1" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fcnes%2Fdadosgeraisestabelecimento%2Fdadosgeraiscnes.v1r0.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/cnes/v1r0/dadosgeraiscnes" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/cnes/v1r0/dadosgeraiscnes" xmlns:nomejuridico="http://servicos.saude.gov.br/schema/corporativo/pessoajuridica/v1r0/nomejuridico" xmlns:cnpj="http://servicos.saude.gov.br/schema/corporativo/pessoajuridica/v1r0/cnpj" xmlns:endereco="http://servicos.saude.gov.br/schema/corporativo/endereco/v1r2/endereco" xmlns:esferaadm="http://servicos.saude.gov.br/schema/cnes/v1r0/esferaadministrativa" xmlns:tipounidade="http://servicos.saude.gov.br/schema/cnes/v1r0/tipounidade" xmlns:municipio="http://servicos.saude.gov.br/schema/corporativo/v1r2/municipio" xmlns:diretor="http://servicos.saude.gov.br/schema/cnes/v1r0/diretor" xmlns:counidade="http://servicos.saude.gov.br/schema/cnes/v1r0/codigounidade" xmlns:cocnes="http://servicos.saude.gov.br/schema/cnes/v1r0/codigocnes" xmlns:telefone="http://servicos.saude.gov.br/schema/corporativo/telefone/v1r2/telefone" xmlns:email="http://servicos.saude.gov.br/schema/corporativo/v1r2/email" xmlns:localizacao="http://servicos.saude.gov.br/schema/cnes/v1r0/localizacao">
+  <xs:annotation>
+    <xs:documentation>Este esquema representa as informações gerais do Estabelecimento de Saúde.</xs:documentation>
+  </xs:annotation>
+  <xs:import id="cocnes" namespace="http://servicos.saude.gov.br/schema/cnes/v1r0/codigocnes" schemaLocation="https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fcnes%2Fcodigocnes.v1r0.xsd"/>
+  <xs:import id="counidade" namespace="http://servicos.saude.gov.br/schema/cnes/v1r0/codigounidade" schemaLocation="https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fcnes%2Fcodigounidade.v1r0.xsd"/>
+  <xs:import id="nomejuridico" namespace="http://servicos.saude.gov.br/schema/corporativo/pessoajuridica/v1r0/nomejuridico" schemaLocation="https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fcorporativo%2Fpessoajuridica%2Fnomejuridico.v1r0.xsd"/>
+  <xs:import id="cnpj" namespace="http://servicos.saude.gov.br/schema/corporativo/pessoajuridica/v1r0/cnpj" schemaLocation="https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fcorporativo%2Fpessoajuridica%2Fcnpj.v1r0.xsd"/>
+  <xs:import id="endereco" namespace="http://servicos.saude.gov.br/schema/corporativo/endereco/v1r2/endereco" schemaLocation="https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fcorporativo%2Fendereco%2Fendereco.v1r2.xsd"/>
+  <xs:import id="esferaadm" namespace="http://servicos.saude.gov.br/schema/cnes/v1r0/esferaadministrativa" schemaLocation="https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fcnes%2Fesferaadministrativa.v1r0.xsd"/>
+  <xs:import id="tipounidade" namespace="http://servicos.saude.gov.br/schema/cnes/v1r0/tipounidade" schemaLocation="https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fcnes%2Ftipounidade.v1r0.xsd"/>
+  <xs:import id="municipio" namespace="http://servicos.saude.gov.br/schema/corporativo/v1r2/municipio" schemaLocation="https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fcorporativo%2Fmunicipio.v1r2.xsd"/>
+  <xs:import id="diretor" namespace="http://servicos.saude.gov.br/schema/cnes/v1r0/diretor" schemaLocation="https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fcnes%2Fdiretor.v1r0.xsd"/>
+  <xs:import id="telefone" namespace="http://servicos.saude.gov.br/schema/corporativo/telefone/v1r2/telefone" schemaLocation="https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fcorporativo%2Ftelefone%2Ftelefone.v1r2.xsd"/>
+  <xs:import id="email" namespace="http://servicos.saude.gov.br/schema/corporativo/v1r2/email" schemaLocation="https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fcorporativo%2Femail.v1r2.xsd"/>
+  <xs:import id="localizacao" namespace="http://servicos.saude.gov.br/schema/cnes/v1r0/localizacao" schemaLocation="https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fcnes%2Flocalizacao.v1r0.xsd"/>
+  <xs:element name="DadosGeraisEstabelecimentoSaude" type="DadosGeraisEstabelecimentoSaudeType"/>
+  <xs:complexType name="DadosGeraisEstabelecimentoSaudeType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" ref="cocnes:CodigoCNES"></xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" ref="counidade:CodigoUnidade"></xs:element>
+      <xs:element name="nomeFantasia" minOccurs="0" maxOccurs="1" type="nomejuridico:NomeJuridicoType"></xs:element>
+      <xs:element name="nomeEmpresarial" minOccurs="0" maxOccurs="1" type="nomejuridico:NomeJuridicoType"></xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" ref="cnpj:CNPJ"></xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" ref="endereco:Endereco"></xs:element>
+      <xs:element name="dataAtualizacao" minOccurs="0" maxOccurs="1" type="xs:date"></xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" ref="diretor:Diretor"></xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" ref="tipounidade:tipoUnidade"></xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" ref="esferaadm:esferaAdministrativa"></xs:element>
+      <xs:element name="MunicipioGestor" minOccurs="0" maxOccurs="1" type="municipio:MunicipioType"></xs:element>
+      <xs:element name="Telefone" minOccurs="0" maxOccurs="2" type="telefone:TelefoneType"></xs:element>
+      <xs:element name="Email" minOccurs="0" maxOccurs="1" type="email:EmailType"></xs:element>
+      <xs:element name="Localizacao" minOccurs="0" maxOccurs="1" type="localizacao:localizacaoType"></xs:element>
+      <xs:element name="perteceSistemaSUS" minOccurs="0" maxOccurs="1" type="xs:boolean"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fcnes%2Fcodigounidade.v1r0.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/cnes/v1r0/codigounidade" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/cnes/v1r0/codigounidade">
+  <xs:annotation>
+    <xs:documentation>Este esquema representa a Código da Unidade de Saúde no CNES.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="CodigoUnidade" type="CodigoUnidadeType"/>
+  <xs:complexType name="CodigoUnidadeType">
+    <xs:sequence>
+      <xs:element name="codigo" minOccurs="1" maxOccurs="1">
+        <xs:simpleType>
+          <xs:annotation>
+            <xs:documentation>Código da Unidade.</xs:documentation>
+          </xs:annotation>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="31"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fcorporativo%2Fpessoajuridica%2Fnomejuridico.v1r0.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/corporativo/pessoajuridica/v1r0/nomejuridico" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/corporativo/pessoajuridica/v1r0/nomejuridico">
+  <xs:annotation>
+    <xs:documentation>Este esquema representa o nome de uma pessoa jurídica.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="NomeJuridico" type="NomeJuridicoType"/>
+  <xs:complexType name="NomeJuridicoType">
+    <xs:sequence>
+      <xs:element name="Nome" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Nomes atribuidos da pessoa jurídica (Empresarial e Fantasia).</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="150"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fcorporativo%2Fendereco%2Fendereco.v1r2.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/corporativo/endereco/v1r2/endereco" xmlns="http://servicos.saude.gov.br/schema/corporativo/endereco/v1r2/endereco" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:municipio="http://servicos.saude.gov.br/schema/corporativo/v1r2/municipio" xmlns:pais="http://servicos.saude.gov.br/schema/corporativo/v1r2/pais" xmlns:tipoLogradouro="http://servicos.saude.gov.br/schema/corporativo/endereco/v1r1/tipologradouro" xmlns:bairro="http://servicos.saude.gov.br/schema/corporativo/endereco/v1r1/bairro" xmlns:cep="http://servicos.saude.gov.br/schema/corporativo/endereco/v1r1/cep">
+  <xs:import id="municipio" namespace="http://servicos.saude.gov.br/schema/corporativo/v1r2/municipio" schemaLocation="https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fcorporativo%2Fmunicipio.v1r2.xsd"/>
+  <xs:import id="pais" namespace="http://servicos.saude.gov.br/schema/corporativo/v1r2/pais" schemaLocation="https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fcorporativo%2Fpais.v1r2.xsd"/>
+  <xs:import id="tipoLogradouro" namespace="http://servicos.saude.gov.br/schema/corporativo/endereco/v1r1/tipologradouro" schemaLocation="https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fcorporativo%2Fendereco%2Ftipologradouro.v1r1.xsd"/>
+  <xs:import id="bairro" namespace="http://servicos.saude.gov.br/schema/corporativo/endereco/v1r1/bairro" schemaLocation="https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fcorporativo%2Fendereco%2Fbairro.v1r1.xsd"/>
+  <xs:import id="cep" namespace="http://servicos.saude.gov.br/schema/corporativo/endereco/v1r1/cep" schemaLocation="https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fcorporativo%2Fendereco%2Fcep.v1r1.xsd"/>
+  <xs:annotation>
+    <xs:documentation>Este esquema representa um endereco.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="Endereco" type="EnderecoType"/>
+  <xs:complexType name="EnderecoType">
+    <xs:sequence>
+      <xs:element name="identificador" minOccurs="0" maxOccurs="1" type="xs:nonNegativeInteger">
+        <xs:annotation>
+          <xs:documentation>Código de identificação.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TipoEndereco" minOccurs="0" maxOccurs="1" type="TipoEnderecoType">
+        <xs:annotation>
+          <xs:documentation>Tipo de Endereco (1 = comercial, 2 = residencial).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="TipoLogradouro" type="tipoLogradouro:TipoLogradouroType">
+        <xs:annotation>
+          <xs:documentation>Tipo de Logradouro. Conforme tabela de codigo de
+						Logradouro.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="nomeLogradouro" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Nome do logradouro. Ex: Dr. Joaquim Lucio</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="250"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="numero" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Numero do logradouro. Ex: 10</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="7"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="complemento" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Complemento do endereco. Ex: Entrada A, AP 1673</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="50"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="Bairro" type="bairro:BairroType">
+        <xs:annotation>
+          <xs:documentation>Bairro do endereco. Ex: Setor Jardim Botanico</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="CEP" type="cep:CEPType">
+        <xs:annotation>
+          <xs:documentation>CEP do endereco. Ex: 70000000 (sem formatacao)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="Municipio" type="municipio:MunicipioType">
+        <xs:annotation>
+          <xs:documentation>Municipio do endereco.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="Pais" type="pais:PaisType">
+        <xs:annotation>
+          <xs:documentation>Pais de endereço.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="municipioInternacional" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Nome do municipio onde reside o usuario, caso o
+						pais nao seja Brasil.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="70"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="TipoEnderecoType">
+    <xs:annotation>
+      <xs:documentation>Tipo de Endereco (1 = comercial, 2 = residencial).</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <!--COMERCIAL-->
+      <xs:enumeration value="1"/>
+      <!--RESIDENCIAL-->
+      <xs:enumeration value="2"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fcorporativo%2Fmunicipio.v1r2.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/corporativo/v1r2/municipio" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:uf="http://servicos.saude.gov.br/schema/corporativo/v1r1/uf" xmlns="http://servicos.saude.gov.br/schema/corporativo/v1r2/municipio">
+  <xs:annotation>
+    <xs:documentation>Este esquema contem informacoes a respeito dos
+			Municipios existentes no Brasil
+			(ativos e desativados).</xs:documentation>
+  </xs:annotation>
+  <xs:import id="uf" namespace="http://servicos.saude.gov.br/schema/corporativo/v1r1/uf" schemaLocation="https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fcorporativo%2Fuf.v1r1.xsd"/>
+  <xs:element name="Municipio" type="MunicipioType"/>
+  <xs:complexType name="MunicipioType">
+    <xs:sequence>
+      <xs:element name="codigoMunicipio" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Codigo IBGE do Municipio.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="6"/>
+            <xs:pattern value="[0-9]*"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="nomeMunicipio" minOccurs="0" maxOccurs="1" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Nome do Municipio.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="UF" type="uf:UFType">
+        <xs:annotation>
+          <xs:documentation>Unidade da Federacao.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fcorporativo%2Fuf.v1r1.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/corporativo/v1r1/uf" xmlns="http://servicos.saude.gov.br/schema/corporativo/v1r1/uf" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:pais="http://servicos.saude.gov.br/schema/corporativo/v1r2/pais">
+  <xs:annotation>
+    <xs:documentation>Este esquema contem informacoes referentes as Unidades Federativas.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="UF" type="UFType"/>
+  <xs:complexType name="UFType">
+    <xs:sequence>
+      <xs:element name="codigoUF" minOccurs="1" maxOccurs="1" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Codigo IBGE da Unidade da Federacao.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="siglaUF" minOccurs="0" maxOccurs="1" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Sigla da Unidade da Federacao.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="codigoRegiao" minOccurs="0" maxOccurs="1" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Contem informacoes referentes as 5 regioes do Brasil (tambem denominadas macrorregioes).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="nomeUF" minOccurs="0" maxOccurs="1" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Nome da Unidade da Federacao.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fcorporativo%2Fpais.v1r2.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/corporativo/v1r2/pais" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/corporativo/v1r2/pais">
+  <xs:annotation>
+    <xs:documentation>Este esquema contem informacoes sobre paises.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="Pais" type="PaisType"/>
+  <xs:complexType name="PaisType">
+    <xs:sequence>
+      <!--Codigo de identificacao do Pais (SIA e SIH).-->
+      <xs:element name="codigoPais" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Codigo de identificacao do Pais (SIA e SIH).</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]*"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Codigo antigo de identificacao do Pais.-->
+      <xs:element name="codigoPaisAntigo" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Codigo antigo de identificacao do Pais.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]*"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Nome do Pais.-->
+      <xs:element name="nomePais" minOccurs="0" maxOccurs="1" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Nome do Pais.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fcorporativo%2Fendereco%2Ftipologradouro.v1r1.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/corporativo/endereco/v1r1/tipologradouro" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/corporativo/endereco/v1r1/tipologradouro">
+  <xs:annotation>
+    <xs:documentation>Este esquema representa tipo de logradouro.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="TipoLogradouro" type="TipoLogradouroType"/>
+  <xs:complexType name="TipoLogradouroType">
+    <xs:sequence>
+      <xs:element name="codigoTipoLogradouro" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Código do tipo de logradouro.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3"/>
+            <xs:pattern value="[0-9]*"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="descricaoTipoLogradouro" minOccurs="0" maxOccurs="1" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Descrição do tipo de logradouro.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fcorporativo%2Fendereco%2Fbairro.v1r1.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/corporativo/endereco/v1r1/bairro" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/corporativo/endereco/v1r1/bairro">
+  <xs:annotation>
+    <xs:documentation>Este esquema representa bairro.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="Bairro" type="BairroType"/>
+  <xs:complexType name="BairroType">
+    <xs:sequence>
+      <xs:element name="codigoBairro" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Código do bairro.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="8"/>
+            <xs:pattern value="[0-9]*"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="descricaoBairro" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Descrição do bairro.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="72"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fcorporativo%2Fendereco%2Fcep.v1r1.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/corporativo/endereco/v1r1/cep" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/corporativo/endereco/v1r1/cep">
+  <xs:annotation>
+    <xs:documentation>Este esquema representa o CEP. Ex: 70000000 (sem formatacao)</xs:documentation>
+  </xs:annotation>
+  <xs:element name="CEP" type="CEPType"/>
+  <xs:complexType name="CEPType">
+    <xs:sequence>
+      <xs:element name="numeroCEP" minOccurs="1" maxOccurs="1">
+        <xs:simpleType>
+          <xs:annotation>
+            <xs:documentation>Este esquema representa o CEP. Ex: 70000000 (sem formatacao)</xs:documentation>
+          </xs:annotation>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="8"/>
+            <xs:maxLength value="8"/>
+            <xs:pattern value="[0-9]*"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fcnes%2Fesferaadministrativa.v1r0.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/cnes/v1r0/esferaadministrativa" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/cnes/v1r0/esferaadministrativa">
+  <xs:annotation>
+    <xs:documentation>Este esquema representa a Esfera Administrativa.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="esferaAdministrativa" type="EsferaAdministrativaType"/>
+  <xs:complexType name="EsferaAdministrativaType">
+    <xs:sequence>
+      <xs:element name="codigo" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Código da Esfera Administrativa.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2"/>
+            <xs:pattern value="[0-9]*"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="descricao" minOccurs="0" maxOccurs="1" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Descrição da Esfera Administrativa.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fcnes%2Fdiretor.v1r0.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/cnes/v1r0/diretor" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:cpf="http://servicos.saude.gov.br/schema/corporativo/documento/v1r2/cpf" xmlns:nome="http://servicos.saude.gov.br/schema/corporativo/pessoafisica/v1r2/nomecompleto" xmlns="http://servicos.saude.gov.br/schema/cnes/v1r0/diretor">
+  <xs:import id="cpf" namespace="http://servicos.saude.gov.br/schema/corporativo/documento/v1r2/cpf" schemaLocation="https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fcorporativo%2Fdocumento%2Fcpf.v1r2.xsd"/>
+  <xs:import id="nome" namespace="http://servicos.saude.gov.br/schema/corporativo/pessoafisica/v1r2/nomecompleto" schemaLocation="https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fcorporativo%2Fpessoafisica%2Fnomecompleto.v1r2.xsd"/>
+  <xs:annotation>
+    <xs:documentation>Este esquema representa o Diretor de Estabelecimento de Saúde no CNES.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="Diretor" type="DiretorType"/>
+  <xs:complexType name="DiretorType">
+    <xs:sequence>
+      <xs:element name="CPF" minOccurs="1" maxOccurs="1" type="cpf:CPFType"/>
+      <xs:element name="nome" minOccurs="1" maxOccurs="1" type="nome:NomeCompletoType"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fcorporativo%2Fdocumento%2Fcpf.v1r2.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/corporativo/documento/v1r2/cpf" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/corporativo/documento/v1r2/cpf">
+  <xs:annotation>
+    <xs:documentation>Este esquema representa o documento Cadastro Nacional de Pessoas Fisicas (CPF) da Receita Federal do Brasil.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="CPF" type="CPFType"/>
+  <xs:complexType name="CPFType">
+    <xs:sequence>
+      <xs:element name="numeroCPF" minOccurs="1" maxOccurs="1">
+        <xs:simpleType>
+          <xs:annotation>
+            <xs:documentation>Numero do CPF sem formatacao. Ex: 09999999999</xs:documentation>
+          </xs:annotation>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="11"/>
+            <xs:maxLength value="11"/>
+            <xs:pattern value="[0-9]*"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fcorporativo%2Fpessoafisica%2Fnomecompleto.v1r2.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/corporativo/pessoafisica/v1r2/nomecompleto" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/corporativo/pessoafisica/v1r2/nomecompleto">
+  <xs:annotation>
+    <xs:documentation>Este esquema representa o nome completo de uma pessoa fisica.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="NomeCompleto" type="NomeCompletoType"/>
+  <xs:complexType name="NomeCompletoType">
+    <xs:sequence>
+      <xs:element name="Nome" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Nomes atribuidos da pessoa fisica.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="70"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fcorporativo%2Ftelefone%2Ftelefone.v1r2.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/corporativo/telefone/v1r2/telefone" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/corporativo/telefone/v1r2/telefone" xmlns:tipotelefone="http://servicos.saude.gov.br/schema/corporativo/telefone/v1r1/tipotelefone">
+  <xs:annotation>
+    <xs:documentation>Este esquema representa numero de telefone.</xs:documentation>
+  </xs:annotation>
+  <xs:import id="tipotelefone" namespace="http://servicos.saude.gov.br/schema/corporativo/telefone/v1r1/tipotelefone" schemaLocation="https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fcorporativo%2Ftelefone%2Ftipotelefone.v1r1.xsd"/>
+  <xs:element name="Telefone" type="TelefoneType"/>
+  <xs:complexType name="TelefoneType">
+    <xs:sequence>
+      <xs:element name="identificador" minOccurs="0" maxOccurs="1" type="xs:nonNegativeInteger">
+        <xs:annotation>
+          <xs:documentation>Código de identificação.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="TipoTelefone" type="tipotelefone:TipoTelefoneType">
+        <xs:annotation>
+          <xs:documentation>Tipo de telefone.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DDI" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>DDI do telefone.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:nonNegativeInteger">
+            <xs:maxInclusive value="999"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="DDD" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>DDD do telefone.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:nonNegativeInteger">
+            <xs:maxInclusive value="99"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="numeroTelefone" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Numero do telefone.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:nonNegativeInteger">
+            <xs:maxInclusive value="999999999"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fcorporativo%2Ftelefone%2Ftipotelefone.v1r1.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/corporativo/telefone/v1r1/tipotelefone" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/corporativo/telefone/v1r1/tipotelefone">
+  <xs:annotation>
+    <xs:documentation>Este esquema representa tipo de telefone.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="TipoTelefone" type="TipoTelefoneType"/>
+  <xs:complexType name="TipoTelefoneType">
+    <xs:sequence>
+      <xs:element name="codigoTipoTelefone" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Código do tipo de telefone.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2"/>
+            <xs:pattern value="[0-9]*"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="descricaoTipoTelefone" minOccurs="0" maxOccurs="1" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Descrição do tipo de telefone.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fcorporativo%2Femail.v1r2.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/corporativo/v1r2/email" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/corporativo/v1r2/email">
+  <xs:annotation>
+    <xs:documentation>Este esquema representa endereco de email.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="Email" type="EmailType"/>
+  <xs:complexType name="EmailType">
+    <xs:sequence>
+      <xs:element name="identificador" minOccurs="0" maxOccurs="1" type="xs:nonNegativeInteger">
+        <xs:annotation>
+          <xs:documentation>Código de identificação.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="descricaoEmail" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Endereco de email.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="100"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="tipoEmail" minOccurs="1" maxOccurs="1" type="TipoEmailType">
+        <xs:annotation>
+          <xs:documentation>Tipos de email: P-Principal, A-Alternativo.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="validado" minOccurs="0" maxOccurs="1" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>Indica se o email ja foi validado</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="TipoEmailType">
+    <xs:annotation>
+      <xs:documentation>Tipos de email: P-Principal, A-Alternativo.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <!--PRINCIPAL-->
+      <xs:enumeration value="P"/>
+      <!--ALTERNATIVO-->
+      <xs:enumeration value="A"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fmensageria%2Ffalha%2Fmsfalha.v5r0.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/msfalha" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mensagem="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/mensagem" xmlns="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/msfalha">
+  <xs:import id="mensagem" namespace="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/mensagem" schemaLocation="https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fmensageria%2Ffalha%2Fmensagem.v5r0.xsd">
+    <xs:annotation>
+      <xs:documentation>O objeto corresponde as mensagens padronizadas de
+				retorno. Exemplo: Toda e
+				qualquer mensagem que retornara para
+				a acao
+				solicitada, este objeto servira como base para
+				apresentar o codigo da
+				mensagem e se necessario a descricao da mensagem.</xs:documentation>
+    </xs:annotation>
+  </xs:import>
+  <xs:annotation>
+    <xs:documentation>Objeto de tratamento de falhas que podem ocorrer nas
+			diversas chamadas aos
+			servicos do Ministerio da Saude.
+			Exemplo: Toda e
+			qualquer solicitacao pode ocorrer uma falha na
+			aplicacao, ou seja, o
+			seu retorno estara comprometido e sera
+			preenchido este objeto com a
+			informacao, codigo e descricao da falha.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="MSFalha">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" nillable="true" name="identificador" type="xs:string"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="Mensagem" type="mensagem:MensagemType"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fmensageria%2Ffalha%2Fmensagem.v5r0.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/mensagem" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/mensagem">
+  <xs:annotation>
+    <xs:documentation>O objeto corresponde as mensagens padronizadas de retorno. Exemplo: Toda e qualquer mensagem que retornara para a acao solicitada, este objeto servira como base para apresentar o codigo da mensagem e se necessario a descricao da mensagem.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="Mensagem" type="MensagemType"/>
+  <xs:complexType name="MensagemType">
+    <xs:sequence>
+      <xs:element name="codigo" minOccurs="0" maxOccurs="1" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Codigo da mensagem padronizada.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="descricao" minOccurs="0" maxOccurs="1" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Descricao da mensagem.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fmensageria%2Fresultadoslocalizacaoestabelecimentosaude.v1r0.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/resultadoslocalizacaoestabelecimentosaude" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/resultadoslocalizacaoestabelecimentosaude" xmlns:resultadolocalizacao="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/resultadolocalizacaoestabelecimentosaude" xmlns:paginacao="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/paginacao">
+  <xs:import id="paginacao" namespace="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/paginacao" schemaLocation="https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fmensageria%2Fpaginacao.v1r0.xsd"/>
+  <xs:import id="resultadolocalizacao" namespace="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/resultadolocalizacaoestabelecimentosaude" schemaLocation="https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fmensageria%2Fresultadolocalizacaoestabelecimentosaude.v1r0.xsd"/>
+  <xs:annotation>
+    <xs:documentation>Representa uma lista de resultado da localização de
+			um Estabelecimento de Saúde por coordenadas geográficas.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="ResultadosLocalizacaoEstabelecimentoSaude" type="ResultadosLocalizacaoEstabelecimentoSaudeType"/>
+  <xs:complexType name="ResultadosLocalizacaoEstabelecimentoSaudeType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" ref="resultadolocalizacao:ResultadoLocalizacaoEstabelecimentoSaude">
+        <xs:annotation>
+          <xs:documentation>Lista de Estabelecimentos de Saúde Localizados</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" ref="paginacao:Paginacao">
+        <xs:annotation>
+          <xs:documentation>Resposta da paginação</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fmensageria%2Fresultadolocalizacaoestabelecimentosaude.v1r0.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/resultadolocalizacaoestabelecimentosaude" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/resultadolocalizacaoestabelecimentosaude" xmlns:estab="http://servicos.saude.gov.br/schema/cnes/v1r0/dadosgeraiscnes" xmlns:localizacao="http://servicos.saude.gov.br/schema/cnes/v1r0/localizacao">
+  <xs:import id="estab" namespace="http://servicos.saude.gov.br/schema/cnes/v1r0/dadosgeraiscnes" schemaLocation="https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fcnes%2Fdadosgeraisestabelecimento%2Fdadosgeraiscnes.v1r0.xsd"/>
+  <xs:annotation>
+    <xs:documentation>Representa o esquema de resultado da localização de um Estabelecimento de Saúde, pelo código do CNES.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="ResultadoLocalizacaoEstabelecimentoSaude" type="ResultadoLocalizacaoEstabelecimentoSaudeType"/>
+  <xs:complexType name="ResultadoLocalizacaoEstabelecimentoSaudeType">
+    <xs:sequence>
+      <xs:element name="EstabelecimentoSaude" minOccurs="0" maxOccurs="1" type="estab:DadosGeraisEstabelecimentoSaudeType">
+        <xs:annotation>
+          <xs:documentation>Informações do Estebelecimento de Saúde.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fcnes%2Fprecadastro%2Fdadosprecadastrocnes.v1r0.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/cnes/v1r0/dadosprecadastrocnes" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/cnes/v1r0/dadosprecadastrocnes" xmlns:nomejuridico="http://servicos.saude.gov.br/schema/corporativo/pessoajuridica/v1r0/nomejuridico" xmlns:codigocnes="http://servicos.saude.gov.br/schema/cnes/v1r0/codigocnes" xmlns:cnpj="http://servicos.saude.gov.br/schema/corporativo/pessoajuridica/v1r0/cnpj" xmlns:cpf="http://servicos.saude.gov.br/schema/corporativo/documento/v1r2/cpf" xmlns:naturezajuridica="http://servicos.saude.gov.br/schema/corporativo/pessoajuridica/v1r0/naturezajuridica" xmlns:endereco="http://servicos.saude.gov.br/schema/corporativo/endereco/v1r2/endereco" xmlns:telefone="http://servicos.saude.gov.br/schema/corporativo/telefone/v1r2/telefone" xmlns:email="http://servicos.saude.gov.br/schema/corporativo/v1r2/email">
+  <xs:import id="nomejuridico" namespace="http://servicos.saude.gov.br/schema/corporativo/pessoajuridica/v1r0/nomejuridico" schemaLocation="https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fcorporativo%2Fpessoajuridica%2Fnomejuridico.v1r0.xsd"/>
+  <xs:import id="codigocnes" namespace="http://servicos.saude.gov.br/schema/cnes/v1r0/codigocnes" schemaLocation="https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fcnes%2Fcodigocnes.v1r0.xsd"/>
+  <xs:import id="cnpj" namespace="http://servicos.saude.gov.br/schema/corporativo/pessoajuridica/v1r0/cnpj" schemaLocation="https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fcorporativo%2Fpessoajuridica%2Fcnpj.v1r0.xsd"/>
+  <xs:import id="cpf" namespace="http://servicos.saude.gov.br/schema/corporativo/documento/v1r2/cpf" schemaLocation="https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fcorporativo%2Fdocumento%2Fcpf.v1r2.xsd"/>
+  <xs:import id="naturezajuridica" namespace="http://servicos.saude.gov.br/schema/corporativo/pessoajuridica/v1r0/naturezajuridica" schemaLocation="https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fcorporativo%2Fpessoajuridica%2Fnaturezajuridica.v1r0.xsd"/>
+  <xs:import id="endereco" namespace="http://servicos.saude.gov.br/schema/corporativo/endereco/v1r2/endereco" schemaLocation="https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fcorporativo%2Fendereco%2Fendereco.v1r2.xsd"/>
+  <xs:import id="telefone" namespace="http://servicos.saude.gov.br/schema/corporativo/telefone/v1r2/telefone" schemaLocation="https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fcorporativo%2Ftelefone%2Ftelefone.v1r2.xsd"/>
+  <xs:import id="email" namespace="http://servicos.saude.gov.br/schema/corporativo/v1r2/email" schemaLocation="https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fcorporativo%2Femail.v1r2.xsd"/>
+  <xs:annotation>
+    <xs:documentation>Representa o objeto a informação Pré-Cadastro de um Estabelecimento de Saúde.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="DadosPreCadastroCNES" type="DadosPreCadastroCNESType"/>
+  <xs:complexType name="DadosPreCadastroCNESType">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" ref="codigocnes:CodigoCNES">
+        <xs:annotation>
+          <xs:documentation>Código do Estabelecimento de Saúde.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" ref="cpf:CPF">
+        <xs:annotation>
+          <xs:documentation>CPF do Estabelecimento de Saúde.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" ref="cnpj:CNPJ">
+        <xs:annotation>
+          <xs:documentation>CNPJ do Estabelecimento de Saúde.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="NomeFantasia" minOccurs="0" maxOccurs="1" type="nomejuridico:NomeJuridicoType">
+        <xs:annotation>
+          <xs:documentation>Nome Fantasia do Estabelecimento de Saúde.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="NomeEmpresarial" minOccurs="0" maxOccurs="1" type="nomejuridico:NomeJuridicoType">
+        <xs:annotation>
+          <xs:documentation>Nome Empreserial do Estabelecimento de Saúde.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="NaturezaJuridica" minOccurs="0" maxOccurs="unbounded" type="naturezajuridica:NaturezaJuridicaType">
+        <xs:annotation>
+          <xs:documentation>Natureza Jurídica do Estabelecimento de Saúde.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CNPJMantenedora" minOccurs="0" maxOccurs="1" type="cnpj:CNPJType">
+        <xs:annotation>
+          <xs:documentation>CNPJ do Estabelecimento de Saúde.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="NaturezaJuridicaMantenedora" minOccurs="0" maxOccurs="unbounded" type="naturezajuridica:NaturezaJuridicaType">
+        <xs:annotation>
+          <xs:documentation>Natureza Jurídica da Mantenedora.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DataAtualizacao" minOccurs="0" maxOccurs="1" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>Data da ultima atualização do pré-cadastro do estabelecimento de saúde.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" ref="endereco:Endereco">
+        <xs:annotation>
+          <xs:documentation>Endereço do Estabelecimetno de Saúde.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Telefones" minOccurs="0" maxOccurs="2" type="telefone:TelefoneType">
+        <xs:annotation>
+          <xs:documentation>Telefone(s) do Estabelecimento de Saúde</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" ref="email:Email">
+        <xs:annotation>
+          <xs:documentation>Email(s) do Estabelecimento de Saúde</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fcorporativo%2Fpessoajuridica%2Fnaturezajuridica.v1r0.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/corporativo/pessoajuridica/v1r0/naturezajuridica" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/corporativo/pessoajuridica/v1r0/naturezajuridica" xmlns:tiponaturezajuridica="http://servicos.saude.gov.br/schema/corporativo/pessoajuridica/v1r0/tiponaturezajuridica">
+  <xs:annotation>
+    <xs:documentation>Este esquema representa a natureza juridica.</xs:documentation>
+  </xs:annotation>
+  <xs:import id="tiponaturezajuridica" namespace="http://servicos.saude.gov.br/schema/corporativo/pessoajuridica/v1r0/tiponaturezajuridica" schemaLocation="https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fcorporativo%2Fpessoajuridica%2Ftiponaturezajuridica.v1r0.xsd"/>
+  <xs:element name="NaturezaJuridica" type="NaturezaJuridicaType"/>
+  <xs:complexType name="NaturezaJuridicaType">
+    <xs:sequence>
+      <xs:element name="codigoNaturezaJuridica" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Código da Natureza Jurídica da Pessoa.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="4"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="descricaoNaturezaJuridica" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Descrição da Natureza Jurídica da Pessoa.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="80"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="codigoNaturezaJuridicaConcla" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Código da Natureza Jurídica CONCLA(Comissão Nacional de Classificação).</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="4"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="tipoNaturezaJuridica" minOccurs="1" maxOccurs="1" type="tiponaturezajuridica:TipoNaturezaJuridicaType">
+        <xs:annotation>
+          <xs:documentation>Determina o tipo da Natureza Juridica</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fcorporativo%2Fpessoajuridica%2Ftiponaturezajuridica.v1r0.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/corporativo/pessoajuridica/v1r0/tiponaturezajuridica" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/corporativo/pessoajuridica/v1r0/tiponaturezajuridica">
+  <xs:annotation>
+    <xs:documentation>Este esquema representa o tipo da natureza juridica.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="TipoNaturezaJuridica" type="TipoNaturezaJuridicaType"/>
+  <xs:complexType name="TipoNaturezaJuridicaType">
+    <xs:sequence>
+      <xs:element name="codigo" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Código da Natureza Jurídica CONCLA(Comissão Nacional de Classificação).</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:annotation>
+            <xs:documentation>Codigo do tipo da Natureza Juridica.</xs:documentation>
+          </xs:annotation>
+          <xs:restriction base="xs:string">
+            <!--ADMINISTRACAO PUBLICA-->
+            <xs:enumeration value="1">
+              <xs:annotation>
+                <xs:documentation>ADMINISTRACAO PUBLICA.</xs:documentation>
+              </xs:annotation>
+            </xs:enumeration>
+            <!--ENTIDADES EMPRESARIAIS-->
+            <xs:enumeration value="2">
+              <xs:annotation>
+                <xs:documentation>ENTIDADES EMPRESARIAIS.</xs:documentation>
+              </xs:annotation>
+            </xs:enumeration>
+            <!--ENTIDADES SEM FINS LUCRATIVOS-->
+            <xs:enumeration value="3">
+              <xs:annotation>
+                <xs:documentation>ENTIDADES SEM FINS LUCRATIVOS.</xs:documentation>
+              </xs:annotation>
+            </xs:enumeration>
+            <!--PESSOAS FISICAS-->
+            <xs:enumeration value="4">
+              <xs:annotation>
+                <xs:documentation>PESSOAS FISICAS.</xs:documentation>
+              </xs:annotation>
+            </xs:enumeration>
+            <!--INSTITUICOES EXTRATERRITORIAIS E OUTRAS INSTITUICOES EXTRATERRITORIAIS-->
+            <xs:enumeration value="5">
+              <xs:annotation>
+                <xs:documentation>INSTITUICOES EXTRATERRITORIAIS E OUTRAS INSTITUICOES EXTRATERRITORIAIS.</xs:documentation>
+              </xs:annotation>
+            </xs:enumeration>
+            <!--ENTIDADE DE NATUREZA JURIDICA INVALIDA-->
+            <xs:enumeration value="8">
+              <xs:annotation>
+                <xs:documentation>ENTIDADE DE NATUREZA JURIDICA INVALIDA.</xs:documentation>
+              </xs:annotation>
+            </xs:enumeration>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="descricao" minOccurs="1" maxOccurs="1" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Descrição do tipo da Natureza Juridica</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://servicos.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0</con:endpoint></con:endpoints><con:operation id="ac83f42e-4593-45d6-bbbd-e8e017b518ea" isOneWay="false" action="" name="consultarEstabelecimentoSaude" bindingOperationName="consultarEstabelecimentoSaude" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="18a77da8-4fb0-489e-89bc-3539303783a6" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://servicos.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:est="http://servicos.saude.gov.br/cnes/v1r0/estabelecimentosaudeservice" xmlns:fil="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/filtropesquisaestabelecimentosaude" xmlns:cod="http://servicos.saude.gov.br/schema/cnes/v1r0/codigocnes" xmlns:cnpj="http://servicos.saude.gov.br/schema/corporativo/pessoajuridica/v1r0/cnpj">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <est:requestConsultarEstabelecimentoSaude>
+         <fil:FiltroPesquisaEstabelecimentoSaude>
+            <!--Optional:-->
+            <cod:CodigoCNES>
+               <cod:codigo>?</cod:codigo>
+            </cod:CodigoCNES>
+            <!--Optional:-->
+            <cnpj:CNPJ>
+               <cnpj:numeroCNPJ>?</cnpj:numeroCNPJ>
+            </cnpj:CNPJ>
+         </fil:FiltroPesquisaEstabelecimentoSaude>
+      </est:requestConsultarEstabelecimentoSaude>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://servicos.saude.gov.br/cnes/v1r0/estabelecimentosaudeservice/EstabelecimentoSaudeServicePortType/consultarEstabelecimentoSaudeRequest"/></con:call></con:operation><con:operation id="81de440c-8236-4d3c-92e6-a34d3c36031c" isOneWay="false" action="" name="consultarPrecadastroCNES" bindingOperationName="consultarPrecadastroCNES" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="52e4b120-5944-462d-8f07-92ff420cded5" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://servicos.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:est="http://servicos.saude.gov.br/cnes/v1r0/estabelecimentosaudeservice" xmlns:fil="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/filtropesquisaprecadastrocnes" xmlns:cod="http://servicos.saude.gov.br/schema/cnes/v1r0/codigocnes">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <est:requestConsultarPrecadastroCNES>
+         <fil:FiltroPesquisaPrecadastroCnes>
+            <!--Optional:-->
+            <cod:CodigoCNES>
+               <cod:codigo>?</cod:codigo>
+            </cod:CodigoCNES>
+            <!--Optional:-->
+            <fil:situacao>?</fil:situacao>
+         </fil:FiltroPesquisaPrecadastroCnes>
+      </est:requestConsultarPrecadastroCNES>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://servicos.saude.gov.br/cnes/v1r0/estabelecimentosaudeservice/EstabelecimentoSaudeServicePortType/consultarPrecadastroCNESRequest"/></con:call></con:operation><con:operation id="d7c09e66-6b09-430a-9722-94cb92260c4c" isOneWay="false" action="" name="localizarEstabelecimentoSaude" bindingOperationName="localizarEstabelecimentoSaude" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="805167a3-6b7a-4cec-9e25-31e4f8529ed0" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://servicos.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:est="http://servicos.saude.gov.br/cnes/v1r0/estabelecimentosaudeservice" xmlns:fil="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/filtrolocalizacaoestabelecimentosaude" xmlns:loc="http://servicos.saude.gov.br/schema/cnes/v1r0/localizacao" xmlns:tip="http://servicos.saude.gov.br/schema/cnes/v1r0/tipounidade" xmlns:pag="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/paginacao">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <est:requestLocalizarEstabelecimentoSaude>
+         <fil:FiltroLocalizacaoEstabelecimentoSaude>
+            <loc:Localizacao>
+               <loc:longitude>?</loc:longitude>
+               <loc:latitude>?</loc:latitude>
+               <!--Optional:-->
+               <loc:geoJson>?</loc:geoJson>
+            </loc:Localizacao>
+            <tip:tipoUnidade>
+               <tip:codigo>?</tip:codigo>
+               <tip:descricao>?</tip:descricao>
+            </tip:tipoUnidade>
+            <!--Optional:-->
+            <pag:Paginacao>
+               <pag:posicaoRegistroInicio>?</pag:posicaoRegistroInicio>
+               <pag:quantidadeRegistrosPorPagina>?</pag:quantidadeRegistrosPorPagina>
+               <!--Optional:-->
+               <pag:quantidadeRegistros>?</pag:quantidadeRegistros>
+            </pag:Paginacao>
+         </fil:FiltroLocalizacaoEstabelecimentoSaude>
+      </est:requestLocalizarEstabelecimentoSaude>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://servicos.saude.gov.br/cnes/v1r0/estabelecimentosaudeservice/EstabelecimentoSaudeServicePortType/localizarEstabelecimentoSaudeRequest"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

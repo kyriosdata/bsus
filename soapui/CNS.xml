@@ -1,0 +1,2653 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="7f76554a-5d8c-4c90-8410-28a08f6518bc" activeEnvironment="Default" name="CNS" resourceRoot="${projectDir}" soapui-version="5.3.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="90a293c5-29ba-45f1-b145-35b899f49a69" wsaVersion="NONE" name="AuditoriaCadsusServiceSOAP12Binding" type="wsdl" bindingName="{http://servicos.saude.gov.br/cadsus/v5r0/auditoriacadsusservice}AuditoriaCadsusServiceSOAP12Binding" soapVersion="1_2" anonymous="optional" definition="https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0</con:endpoint></con:endpoints><con:operation id="ab22c145-0b0e-427e-9c56-f05c99cf4ce9" isOneWay="false" action="" name="obterCamposAlteradosPorTransacao" bindingOperationName="obterCamposAlteradosPorTransacao" type="Request-Response" outputName="responseObterCamposAlteradosPorTransacao" inputName="requestObterCamposAlteradosPorTransacao" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="bba9c4ca-ed15-4e53-b63a-97bdf16c393f" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:aud="http://servicos.saude.gov.br/cadsus/v5r0/auditoriacadsusservice" xmlns:cnes="http://servicos.saude.gov.br/wsdl/mensageria/v5r0/cnesusuario">
+   <soap:Header/>
+   <soap:Body>
+      <aud:requestObterCamposAlteradosPorTransacao>
+         <cnes:CNESUsuario>
+            <cnes:CNES>?</cnes:CNES>
+            <cnes:Usuario>?</cnes:Usuario>
+            <!--Optional:-->
+            <cnes:Senha>?</cnes:Senha>
+         </cnes:CNESUsuario>
+         <aud:identificadorTransacao>?</aud:identificadorTransacao>
+      </aud:requestObterCamposAlteradosPorTransacao>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://servicos.saude.gov.br/cadsus/v5r0/auditoriacadsusservice/AuditoriaCadsusServicePortType/requestObterCamposAlteradosPorTransacao"/></con:call></con:operation><con:operation id="35dd1814-aa1e-419a-8d25-3520e94fe940" isOneWay="false" action="" name="obterHistoricoImpressao" bindingOperationName="obterHistoricoImpressao" type="Request-Response" outputName="responseObterHistoricoImpressao" inputName="requestObterHistoricoImpressao" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="62d898ff-074e-457b-9c36-f149a5427b4a" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:aud="http://servicos.saude.gov.br/cadsus/v5r0/auditoriacadsusservice" xmlns:cnes="http://servicos.saude.gov.br/wsdl/mensageria/v5r0/cnesusuario" xmlns:cns="http://servicos.saude.gov.br/schema/cadsus/v5r0/cns">
+   <soap:Header/>
+   <soap:Body>
+      <aud:requestObterHistoricoImpressao>
+         <cnes:CNESUsuario>
+            <cnes:CNES>?</cnes:CNES>
+            <cnes:Usuario>?</cnes:Usuario>
+            <!--Optional:-->
+            <cnes:Senha>?</cnes:Senha>
+         </cnes:CNESUsuario>
+         <cns:CNS>
+            <cns:numeroCNS>?</cns:numeroCNS>
+            <!--Optional:-->
+            <cns:dataAtribuicao>?</cns:dataAtribuicao>
+            <!--Optional:-->
+            <cns:tipoCartao>?</cns:tipoCartao>
+            <!--Optional:-->
+            <cns:manual>?</cns:manual>
+            <!--Optional:-->
+            <cns:justificativaManual>?</cns:justificativaManual>
+         </cns:CNS>
+      </aud:requestObterHistoricoImpressao>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://servicos.saude.gov.br/cadsus/v5r0/auditoriacadsusservice/AuditoriaCadsusServicePortType/requestObterHistoricoImpressao"/></con:call></con:operation><con:operation id="b0c184ae-522a-4f8c-83db-e6a26f7de44d" isOneWay="false" action="" name="obterHistoricoTransacoesUsuarioSUS" bindingOperationName="obterHistoricoTransacoesUsuarioSUS" type="Request-Response" outputName="responseObterHistoricoTransacoesUsuarioSUS" inputName="requestObterHistoricoTransacoesUsuarioSUS" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="559015ae-a28f-44d6-96c1-0a2fc1a3441e" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:aud="http://servicos.saude.gov.br/cadsus/v5r0/auditoriacadsusservice" xmlns:cnes="http://servicos.saude.gov.br/wsdl/mensageria/v5r0/cnesusuario" xmlns:iden="http://servicos.saude.gov.br/schema/cadsus/v5r0/identificadorcorporativo">
+   <soap:Header/>
+   <soap:Body>
+      <aud:requestObterHistoricoTransacoesUsuarioSUS>
+         <cnes:CNESUsuario>
+            <cnes:CNES>?</cnes:CNES>
+            <cnes:Usuario>?</cnes:Usuario>
+            <!--Optional:-->
+            <cnes:Senha>?</cnes:Senha>
+         </cnes:CNESUsuario>
+         <iden:IdentificadorCorporativo>
+            <iden:numeroIdentificadorCorporativo>?</iden:numeroIdentificadorCorporativo>
+         </iden:IdentificadorCorporativo>
+      </aud:requestObterHistoricoTransacoesUsuarioSUS>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://servicos.saude.gov.br/cadsus/v5r0/auditoriacadsusservice/AuditoriaCadsusServicePortType/requestObterHistoricoTransacoesUsuarioSUS"/></con:call></con:operation><con:operation id="26665362-b530-4b99-9f26-a32826eb3593" isOneWay="false" action="" name="obterHistoricoUnificacaoUsuarioSUS" bindingOperationName="obterHistoricoUnificacaoUsuarioSUS" type="Request-Response" outputName="responseObterHistoricoUnificacaoUsuarioSUS" inputName="requestObterHistoricoUnificacaoUsuarioSUS" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="f055cfbf-b45a-43c6-b63e-0f9960397ae9" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:aud="http://servicos.saude.gov.br/cadsus/v5r0/auditoriacadsusservice" xmlns:cnes="http://servicos.saude.gov.br/wsdl/mensageria/v5r0/cnesusuario" xmlns:iden="http://servicos.saude.gov.br/schema/cadsus/v5r0/identificadorcorporativo">
+   <soap:Header/>
+   <soap:Body>
+      <aud:requestObterHistoricoUnificacaoUsuarioSUS>
+         <cnes:CNESUsuario>
+            <cnes:CNES>?</cnes:CNES>
+            <cnes:Usuario>?</cnes:Usuario>
+            <!--Optional:-->
+            <cnes:Senha>?</cnes:Senha>
+         </cnes:CNESUsuario>
+         <iden:IdentificadorCorporativo>
+            <iden:numeroIdentificadorCorporativo>?</iden:numeroIdentificadorCorporativo>
+         </iden:IdentificadorCorporativo>
+      </aud:requestObterHistoricoUnificacaoUsuarioSUS>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://servicos.saude.gov.br/cadsus/v5r0/auditoriacadsusservice/AuditoriaCadsusServicePortType/requestObterHistoricoUnificacaoUsuarioSUS"/></con:call></con:operation><con:operation id="1a764ef4-1aa2-4620-89b5-d2878c2d0116" isOneWay="false" action="" name="obterUltimaDataAlteracaoUsuarioSUS" bindingOperationName="obterUltimaDataAlteracaoUsuarioSUS" type="Request-Response" outputName="responseObterUltimaDataAlteracaoUsuarioSUS" inputName="requestObterUltimaDataAlteracaoUsuarioSUS" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="95f79d5d-584b-4f46-af23-fd5ee290aaed" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:aud="http://servicos.saude.gov.br/cadsus/v5r0/auditoriacadsusservice" xmlns:cnes="http://servicos.saude.gov.br/wsdl/mensageria/v5r0/cnesusuario" xmlns:cns="http://servicos.saude.gov.br/schema/cadsus/v5r0/cns">
+   <soap:Header/>
+   <soap:Body>
+      <aud:requestObterUltimaDataAlteracaoUsuarioSUS>
+         <cnes:CNESUsuario>
+            <cnes:CNES>?</cnes:CNES>
+            <cnes:Usuario>?</cnes:Usuario>
+            <!--Optional:-->
+            <cnes:Senha>?</cnes:Senha>
+         </cnes:CNESUsuario>
+         <cns:CNS>
+            <cns:numeroCNS>?</cns:numeroCNS>
+            <!--Optional:-->
+            <cns:dataAtribuicao>?</cns:dataAtribuicao>
+            <!--Optional:-->
+            <cns:tipoCartao>?</cns:tipoCartao>
+            <!--Optional:-->
+            <cns:manual>?</cns:manual>
+            <!--Optional:-->
+            <cns:justificativaManual>?</cns:justificativaManual>
+         </cns:CNS>
+      </aud:requestObterUltimaDataAlteracaoUsuarioSUS>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://servicos.saude.gov.br/cadsus/v5r0/auditoriacadsusservice/AuditoriaCadsusServicePortType/requestObterUltimaDataAlteracaoUsuarioSUS"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="ac54cdf5-4faa-4926-8e1e-1c1fdfb6ef51" wsaVersion="NONE" name="AuditoriaCadsusServiceSOAP11Binding" type="wsdl" bindingName="{http://servicos.saude.gov.br/cadsus/v5r0/auditoriacadsusservice}AuditoriaCadsusServiceSOAP11Binding" soapVersion="1_1" anonymous="optional" definition="https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?wsdl"><con:part><con:url>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="AuditoriaCadsusService" targetNamespace="http://servicos.saude.gov.br/cadsus/v5r0/auditoriacadsusservice" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:msfalha="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/msfalha" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://servicos.saude.gov.br/cadsus/v5r0/auditoriacadsusservice" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <!--Types-->
+  <wsdl:types>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:import namespace="http://servicos.saude.gov.br/cadsus/v5r0/auditoriacadsusservice" schemaLocation="https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A64b41525-717c-4857-bdf0-a9e01ee9f4f0"/>
+    </xsd:schema>
+  </wsdl:types>
+  <!--Messages-->
+  <wsdl:message name="requestObterHistoricoUnificacaoUsuarioSUS">
+    <wsdl:part element="tns:requestObterHistoricoUnificacaoUsuarioSUS" name="requestObterHistoricoUnificacaoUsuarioSUS"/>
+  </wsdl:message>
+  <wsdl:message name="responseObterHistoricoUnificacaoUsuarioSUS">
+    <wsdl:part element="tns:responseObterHistoricoUnificacaoUsuarioSUS" name="responseObterHistoricoUnificacaoUsuarioSUS"/>
+  </wsdl:message>
+  <wsdl:message name="requestObterUltimaDataAlteracaoUsuarioSUS">
+    <wsdl:part element="tns:requestObterUltimaDataAlteracaoUsuarioSUS" name="requestObterUltimaDataAlteracaoUsuarioSUS"/>
+  </wsdl:message>
+  <wsdl:message name="responseObterUltimaDataAlteracaoUsuarioSUS">
+    <wsdl:part element="tns:responseObterUltimaDataAlteracaoUsuarioSUS" name="responseObterUltimaDataAlteracaoUsuarioSUS"/>
+  </wsdl:message>
+  <wsdl:message name="requestObterCamposAlteradosPorTransacao">
+    <wsdl:part element="tns:requestObterCamposAlteradosPorTransacao" name="requestObterCamposAlteradosPorTransacao"/>
+  </wsdl:message>
+  <wsdl:message name="responseObterCamposAlteradosPorTransacao">
+    <wsdl:part element="tns:responseObterCamposAlteradosPorTransacao" name="responseObterCamposAlteradosPorTransacao"/>
+  </wsdl:message>
+  <wsdl:message name="requestObterHistoricoTransacoesUsuarioSUS">
+    <wsdl:part element="tns:requestObterHistoricoTransacoesUsuarioSUS" name="requestObterHistoricoTransacoesUsuarioSUS"/>
+  </wsdl:message>
+  <wsdl:message name="responseObterHistoricoTransacoesUsuarioSUS">
+    <wsdl:part element="tns:responseObterHistoricoTransacoesUsuarioSUS" name="responseObterHistoricoTransacoesUsuarioSUS"/>
+  </wsdl:message>
+  <wsdl:message name="requestObterHistoricoImpressao">
+    <wsdl:part element="tns:requestObterHistoricoImpressao" name="requestObterHistoricoImpressao"/>
+  </wsdl:message>
+  <wsdl:message name="responseObterHistoricoImpressao">
+    <wsdl:part element="tns:responseObterHistoricoImpressao" name="responseObterHistoricoImpressao"/>
+  </wsdl:message>
+  <wsdl:message name="AuditoriaCadsusFault">
+    <wsdl:part element="msfalha:MSFalha" name="fault"/>
+  </wsdl:message>
+  <!--Port Types-->
+  <wsdl:portType name="AuditoriaCadsusServicePortType">
+    <wsdl:operation name="obterHistoricoUnificacaoUsuarioSUS">
+      <wsdl:documentation>Apresentar o historico de unificacoes que o usuario ja sofreu. 
+			Retorna o numero da transacao e o usuario o qual foi vinculado.</wsdl:documentation>
+      <wsdl:input message="tns:requestObterHistoricoUnificacaoUsuarioSUS" name="requestObterHistoricoUnificacaoUsuarioSUS"/>
+      <wsdl:output message="tns:responseObterHistoricoUnificacaoUsuarioSUS" name="responseObterHistoricoUnificacaoUsuarioSUS"/>
+      <wsdl:fault message="tns:AuditoriaCadsusFault" name="AuditoriaCadsusFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="obterUltimaDataAlteracaoUsuarioSUS">
+      <wsdl:documentation>Apresentar data da ultima alteração do registro
+				do usuário do SUS.</wsdl:documentation>
+      <wsdl:input message="tns:requestObterUltimaDataAlteracaoUsuarioSUS" name="requestObterUltimaDataAlteracaoUsuarioSUS"/>
+      <wsdl:output message="tns:responseObterUltimaDataAlteracaoUsuarioSUS" name="responseObterUltimaDataAlteracaoUsuarioSUS"/>
+      <wsdl:fault message="tns:AuditoriaCadsusFault" name="AuditoriaCadsusFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="obterCamposAlteradosPorTransacao">
+      <wsdl:documentation>Apresentar data da ultima alteração do registro
+				do usuário do SUS.</wsdl:documentation>
+      <wsdl:input message="tns:requestObterCamposAlteradosPorTransacao" name="requestObterCamposAlteradosPorTransacao"/>
+      <wsdl:output message="tns:responseObterCamposAlteradosPorTransacao" name="responseObterCamposAlteradosPorTransacao"/>
+      <wsdl:fault message="tns:AuditoriaCadsusFault" name="AuditoriaCadsusFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="obterHistoricoTransacoesUsuarioSUS">
+      <wsdl:documentation>Apresentar o histórico de transações do registro.
+				São listadas todas as transações que já ocorreram com o registro
+				dentro da base desde a sua criação.</wsdl:documentation>
+      <wsdl:input message="tns:requestObterHistoricoTransacoesUsuarioSUS" name="requestObterHistoricoTransacoesUsuarioSUS"/>
+      <wsdl:output message="tns:responseObterHistoricoTransacoesUsuarioSUS" name="responseObterHistoricoTransacoesUsuarioSUS"/>
+      <wsdl:fault message="tns:AuditoriaCadsusFault" name="AuditoriaCadsusFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="obterHistoricoImpressao">
+      <wsdl:documentation>Obter histórico de impressões de um determinado usuário.</wsdl:documentation>
+      <wsdl:input message="tns:requestObterHistoricoImpressao" name="requestObterHistoricoImpressao"/>
+      <wsdl:output message="tns:responseObterHistoricoImpressao" name="responseObterHistoricoImpressao"/>
+      <wsdl:fault message="tns:AuditoriaCadsusFault" name="AuditoriaCadsusFault"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <!--Bindings-->
+  <wsdl:binding name="AuditoriaCadsusServiceSOAP12Binding" type="tns:AuditoriaCadsusServicePortType">
+    <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="obterHistoricoUnificacaoUsuarioSUS">
+      <wsdl:documentation>Apresentar o historico de unificacoes que o usuario ja sofreu. 
+			Retorna o numero da transacao e o usuario o qual foi vinculado.</wsdl:documentation>
+      <soap12:operation soapAction=""/>
+      <wsdl:input name="requestObterHistoricoUnificacaoUsuarioSUS">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="responseObterHistoricoUnificacaoUsuarioSUS">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="AuditoriaCadsusFault">
+        <soap12:fault name="AuditoriaCadsusFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="obterUltimaDataAlteracaoUsuarioSUS">
+      <wsdl:documentation>Apresentar data da ultima alteração do registro
+				do usuário do SUS.</wsdl:documentation>
+      <soap12:operation soapAction=""/>
+      <wsdl:input name="requestObterUltimaDataAlteracaoUsuarioSUS">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="responseObterUltimaDataAlteracaoUsuarioSUS">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="AuditoriaCadsusFault">
+        <soap12:fault name="AuditoriaCadsusFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="obterCamposAlteradosPorTransacao">
+      <wsdl:documentation>Apresentar o histórico de alteração do registro,
+				mostrando os valores atuais dos campos alterados e seus valores
+				antigos.</wsdl:documentation>
+      <soap12:operation soapAction=""/>
+      <wsdl:input name="requestObterCamposAlteradosPorTransacao">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="responseObterCamposAlteradosPorTransacao">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="AuditoriaCadsusFault">
+        <soap12:fault name="AuditoriaCadsusFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="obterHistoricoTransacoesUsuarioSUS">
+      <wsdl:documentation>Apresentar o histórico de transações do registro.
+				São listadas todas as transações que já ocorreram com o registro
+				dentro da base desde a sua criação.</wsdl:documentation>
+      <soap12:operation soapAction=""/>
+      <wsdl:input name="requestObterHistoricoTransacoesUsuarioSUS">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="responseObterHistoricoTransacoesUsuarioSUS">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="AuditoriaCadsusFault">
+        <soap12:fault name="AuditoriaCadsusFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="obterHistoricoImpressao">
+      <wsdl:documentation>Apresentar todas as impressões já realizadas pelo
+				usuário.</wsdl:documentation>
+      <soap12:operation soapAction=""/>
+      <wsdl:input name="requestObterHistoricoImpressao">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="responseObterHistoricoImpressao">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="AuditoriaCadsusFault">
+        <soap12:fault name="AuditoriaCadsusFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AuditoriaCadsusServiceSOAP11Binding" type="tns:AuditoriaCadsusServicePortType">
+    <soap11:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="obterHistoricoUnificacaoUsuarioSUS">
+      <wsdl:documentation>Apresentar o historico de unificacoes que o usuario ja sofreu. 
+			Retorna o numero da transacao e o usuario o qual foi vinculado.</wsdl:documentation>
+      <soap11:operation soapAction=""/>
+      <wsdl:input name="requestObterHistoricoUnificacaoUsuarioSUS">
+        <soap11:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="responseObterHistoricoUnificacaoUsuarioSUS">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="AuditoriaCadsusFault">
+        <soap11:fault name="AuditoriaCadsusFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="obterUltimaDataAlteracaoUsuarioSUS">
+      <wsdl:documentation>Apresentar data da ultima alteração do registro
+				do usuário do SUS.</wsdl:documentation>
+      <soap11:operation soapAction=""/>
+      <wsdl:input name="requestObterUltimaDataAlteracaoUsuarioSUS">
+        <soap11:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="responseObterUltimaDataAlteracaoUsuarioSUS">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="AuditoriaCadsusFault">
+        <soap11:fault name="AuditoriaCadsusFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="obterCamposAlteradosPorTransacao">
+      <wsdl:documentation>Apresentar o histórico de alteração do registro,
+				mostrando os valores atuais dos campos alterados e seus valores
+				antigos.</wsdl:documentation>
+      <soap11:operation soapAction=""/>
+      <wsdl:input name="requestObterCamposAlteradosPorTransacao">
+        <soap11:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="responseObterCamposAlteradosPorTransacao">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="AuditoriaCadsusFault">
+        <soap11:fault name="AuditoriaCadsusFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="obterHistoricoTransacoesUsuarioSUS">
+      <wsdl:documentation>Apresentar o histórico de transações do registro.
+				São listadas todas as transações que já ocorreram com o registro
+				dentro da base desde a sua criação.</wsdl:documentation>
+      <soap11:operation soapAction=""/>
+      <wsdl:input name="requestObterHistoricoTransacoesUsuarioSUS">
+        <soap11:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="responseObterHistoricoTransacoesUsuarioSUS">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="AuditoriaCadsusFault">
+        <soap11:fault name="AuditoriaCadsusFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="obterHistoricoImpressao">
+      <wsdl:documentation>Apresentar todas as impressões já realizadas pelo
+				usuário.</wsdl:documentation>
+      <soap11:operation soapAction=""/>
+      <wsdl:input name="requestObterHistoricoImpressao">
+        <soap11:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="responseObterHistoricoImpressao">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="AuditoriaCadsusFault">
+        <soap11:fault name="AuditoriaCadsusFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <!--Service-->
+  <wsdl:service name="AuditoriaCadsusService">
+    <wsdl:port binding="tns:AuditoriaCadsusServiceSOAP12Binding" name="AuditoriaCadsusServicePort">
+      <soap12:address location="https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0"/>
+    </wsdl:port>
+    <wsdl:port binding="tns:AuditoriaCadsusServiceSOAP11Binding" name="AuditoriaCadsusServiceSOAP11Port">
+      <soap11:address location="https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A64b41525-717c-4857-bdf0-a9e01ee9f4f0</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/cadsus/v5r0/auditoriacadsusservice" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:cnesusuario="http://servicos.saude.gov.br/wsdl/mensageria/v5r0/cnesusuario" xmlns:cns="http://servicos.saude.gov.br/schema/cadsus/v5r0/cns" xmlns:identificadorcorporativo="http://servicos.saude.gov.br/schema/cadsus/v5r0/identificadorcorporativo" xmlns:msfalha="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/msfalha" xmlns:resultadohistorico="http://servicos.saude.gov.br/wsdl/mensageria/v5r0/resultadohistoricoimpressao" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://servicos.saude.gov.br/cadsus/v5r0/auditoriacadsusservice" xmlns:transacaoauditoria="http://servicos.saude.gov.br/wsdl/cadsus/auditoria/v5r0/transacaoauditoria" xmlns:usuariosus="http://servicos.saude.gov.br/schema/cadsus/v5r0/usuariosus" xmlns:usuariosusauditoria="http://servicos.saude.gov.br/wsdl/mensageria/v5r0/usuariosusauditoria" xmlns:usuariosusvinculado="http://servicos.saude.gov.br/wsdl/cadsus/auditoria/v5r0/usuariosusvinculado" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <xs:import id="identificadorcorporativo" namespace="http://servicos.saude.gov.br/schema/cadsus/v5r0/identificadorcorporativo" schemaLocation="https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3Ab408b421-17c5-444f-abeb-44a53dd257cd"/>
+  <xs:import id="cnesusuario" namespace="http://servicos.saude.gov.br/wsdl/mensageria/v5r0/cnesusuario" schemaLocation="https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A37ef7a97-b3f6-49dc-8c05-c5cc5d0e640d"/>
+  <xs:import id="usuariosusauditoria" namespace="http://servicos.saude.gov.br/wsdl/mensageria/v5r0/usuariosusauditoria" schemaLocation="https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A29eb8db7-8e1e-40dd-b77b-9927b3376291"/>
+  <xs:import id="transacaoauditoria" namespace="http://servicos.saude.gov.br/wsdl/cadsus/auditoria/v5r0/transacaoauditoria" schemaLocation="https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3Ab12be942-f7de-4aa4-a5af-379412519008"/>
+  <xs:import id="resultadohistorico" namespace="http://servicos.saude.gov.br/wsdl/mensageria/v5r0/resultadohistoricoimpressao" schemaLocation="https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A0f8014e4-edbd-44a9-a42c-9222ffe2ee24"/>
+  <xs:import id="msfalha" namespace="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/msfalha" schemaLocation="https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A392d89c3-47cb-4f55-8809-3ab43a9e3128"/>
+  <xs:import id="cns" namespace="http://servicos.saude.gov.br/schema/cadsus/v5r0/cns" schemaLocation="https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A844da212-7976-4dc0-9add-a5d04b574797"/>
+  <xs:import id="usuariosus" namespace="http://servicos.saude.gov.br/schema/cadsus/v5r0/usuariosus" schemaLocation="https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A7432815d-35d7-423b-abc9-8224e57fd7f7"/>
+  <xs:import id="usuariosusvinculado" namespace="http://servicos.saude.gov.br/wsdl/cadsus/auditoria/v5r0/usuariosusvinculado" schemaLocation="https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A678cf0a6-bcee-4f81-97bc-3293d3430602"/>
+  <xs:element name="requestObterHistoricoUnificacaoUsuarioSUS">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="1" minOccurs="1" ref="cnesusuario:CNESUsuario"/>
+        <xs:element maxOccurs="1" minOccurs="1" ref="identificadorcorporativo:IdentificadorCorporativo"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="responseObterHistoricoUnificacaoUsuarioSUS">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" minOccurs="0" ref="usuariosusvinculado:UsuarioSUSVinculado"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="requestObterUltimaDataAlteracaoUsuarioSUS">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="1" minOccurs="1" ref="cnesusuario:CNESUsuario"/>
+        <xs:element maxOccurs="1" minOccurs="1" ref="cns:CNS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="responseObterUltimaDataAlteracaoUsuarioSUS">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="1" minOccurs="1" name="dataHoraUltimaModificacao" type="xs:dateTime"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="requestObterCamposAlteradosPorTransacao">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="1" minOccurs="1" ref="cnesusuario:CNESUsuario"/>
+        <xs:element maxOccurs="1" minOccurs="1" name="identificadorTransacao" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="responseObterCamposAlteradosPorTransacao">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="1" minOccurs="1" ref="usuariosusauditoria:UsuarioSUSAuditoria"/>
+        <xs:element maxOccurs="1" minOccurs="1" ref="cnesusuario:CNESUsuario"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="requestObterHistoricoTransacoesUsuarioSUS">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="1" minOccurs="1" ref="cnesusuario:CNESUsuario"/>
+        <xs:element maxOccurs="1" minOccurs="1" ref="identificadorcorporativo:IdentificadorCorporativo"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="responseObterHistoricoTransacoesUsuarioSUS">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" minOccurs="1" ref="transacaoauditoria:TransacaoAuditoria"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="requestObterHistoricoImpressao">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="1" minOccurs="1" ref="cnesusuario:CNESUsuario"/>
+        <xs:element maxOccurs="1" minOccurs="1" ref="cns:CNS"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="responseObterHistoricoImpressao">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="1" minOccurs="0" ref="resultadohistorico:ResultadoHistoricoImpressao"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3Ab408b421-17c5-444f-abeb-44a53dd257cd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/cadsus/v5r0/identificadorcorporativo" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/cadsus/v5r0/identificadorcorporativo">
+  <xs:annotation>
+    <xs:documentation>Este esquema representa o registro de identificadores corporativos, isto e, identificadores usados por sistemas municipais, regionais, estaduais e/ou de uma unidade de saude especifica, de um usuario do SUS.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="IdentificadorCorporativo" type="IdentificadorCorporativoType"/>
+  <xs:complexType name="IdentificadorCorporativoType">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="1" name="numeroIdentificadorCorporativo">
+        <xs:annotation>
+          <xs:documentation>Número do identificador corporativo do usuario do SUS.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="100"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ListaIdentificadoresCorporativos" type="ListaIdentificadoresCorporativosType"/>
+  <xs:complexType name="ListaIdentificadoresCorporativosType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="1" ref="IdentificadorCorporativo"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A37ef7a97-b3f6-49dc-8c05-c5cc5d0e640d</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/wsdl/mensageria/v5r0/cnesusuario" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/wsdl/mensageria/v5r0/cnesusuario">
+  <xs:element name="CNESUsuario" type="CNESUsuarioType"/>
+  <xs:complexType name="CNESUsuarioType">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="1" name="CNES">
+        <xs:annotation>
+          <xs:documentation>Numero do CNES utilizado pelo operador.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="1" name="Usuario">
+        <xs:annotation>
+          <xs:documentation>Identificacao utilizada pelo operador.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="Senha">
+        <xs:annotation>
+          <xs:documentation>Senha utilizada pelo operador.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A29eb8db7-8e1e-40dd-b77b-9927b3376291</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/wsdl/mensageria/v5r0/usuariosusauditoria" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/wsdl/mensageria/v5r0/usuariosusauditoria" xmlns:usuariosus="http://servicos.saude.gov.br/schema/cadsus/v5r0/usuariosus">
+  <xs:import id="usuariosus" namespace="http://servicos.saude.gov.br/schema/cadsus/v5r0/usuariosus" schemaLocation="https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A7432815d-35d7-423b-abc9-8224e57fd7f7"/>
+  <xs:annotation>
+    <xs:documentation>Representa a mensagem de retorno da auditoria.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="UsuarioSUSAuditoria" type="UsuarioSUSAuditoriaType"/>
+  <xs:complexType name="UsuarioSUSAuditoriaType">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="1" name="UsuarioSUSAtual" type="usuariosus:UsuarioSUSType">
+        <xs:annotation>
+          <xs:documentation>Usuario SUS Atual.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="UsuarioSUSAntigo" type="usuariosus:UsuarioSUSType">
+        <xs:annotation>
+          <xs:documentation>Usuario SUS Antigo.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A7432815d-35d7-423b-abc9-8224e57fd7f7</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/cadsus/v5r0/usuariosus" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/cadsus/v5r0/usuariosus" xmlns:certidoes="http://servicos.saude.gov.br/schema/corporativo/documento/certidao/v1r1/certidoes" xmlns:cns="http://servicos.saude.gov.br/schema/cadsus/v5r0/cns" xmlns:cpf="http://servicos.saude.gov.br/schema/corporativo/documento/v1r2/cpf" xmlns:dadosnacionalidade="http://servicos.saude.gov.br/schema/corporativo/pessoafisica/v1r1/dadosnacionalidade" xmlns:documentos="http://servicos.saude.gov.br/schema/corporativo/documento/v1r2/documentos" xmlns:emails="http://servicos.saude.gov.br/schema/corporativo/v5r0/emails" xmlns:endereco="http://servicos.saude.gov.br/schema/corporativo/endereco/v1r2/endereco" xmlns:etnia="http://servicos.saude.gov.br/schema/corporativo/pessoafisica/v1r2/etniaindigena" xmlns:foto="http://servicos.saude.gov.br/schema/corporativo/v1r1/fotografia" xmlns:identificadorcorporativo="http://servicos.saude.gov.br/schema/cadsus/v5r0/identificadorcorporativo" xmlns:identificadorlocal="http://servicos.saude.gov.br/schema/cadsus/v5r0/identificadorlocal" xmlns:municipio="http://servicos.saude.gov.br/schema/corporativo/v1r2/municipio" xmlns:nomecompleto="http://servicos.saude.gov.br/schema/corporativo/pessoafisica/v1r2/nomecompleto" xmlns:nomesocial="http://servicos.saude.gov.br/schema/corporativo/pessoafisica/v1r1/nomesocial" xmlns:precadastro="http://servicos.saude.gov.br/schema/cadsus/v1r1/dadosprecadastro" xmlns:qualidade="http://servicos.saude.gov.br/schema/cadsus/v5r0/grauqualidade" xmlns:racacor="http://servicos.saude.gov.br/schema/corporativo/pessoafisica/v1r2/racacor" xmlns:sexo="http://servicos.saude.gov.br/schema/corporativo/pessoafisica/v1r1/sexo" xmlns:telefone="http://servicos.saude.gov.br/schema/corporativo/telefone/v1r2/telefone" xmlns:tiposanguineo="http://servicos.saude.gov.br/schema/corporativo/pessoafisica/v1r1/tiposanguineo">
+  <xs:import id="cpf" namespace="http://servicos.saude.gov.br/schema/corporativo/documento/v1r2/cpf" schemaLocation="https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A93ab8586-c32d-4c9d-a94d-c4a9622df209"/>
+  <xs:import id="cns" namespace="http://servicos.saude.gov.br/schema/cadsus/v5r0/cns" schemaLocation="https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A844da212-7976-4dc0-9add-a5d04b574797"/>
+  <xs:import id="identificadorlocal" namespace="http://servicos.saude.gov.br/schema/cadsus/v5r0/identificadorlocal" schemaLocation="https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A0403b4b6-87ab-4def-aea4-369e5feb2671"/>
+  <xs:import id="identificadorcorporativo" namespace="http://servicos.saude.gov.br/schema/cadsus/v5r0/identificadorcorporativo" schemaLocation="https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3Ab408b421-17c5-444f-abeb-44a53dd257cd"/>
+  <xs:import id="nomecompleto" namespace="http://servicos.saude.gov.br/schema/corporativo/pessoafisica/v1r2/nomecompleto" schemaLocation="https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A47331d39-66f7-4ece-aa56-57de80459dfa"/>
+  <xs:import id="nomesocial" namespace="http://servicos.saude.gov.br/schema/corporativo/pessoafisica/v1r1/nomesocial" schemaLocation="https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A0a90d39b-8bf0-4752-9b59-7918ef29b590"/>
+  <xs:import id="documentos" namespace="http://servicos.saude.gov.br/schema/corporativo/documento/v1r2/documentos" schemaLocation="https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A831dfdba-288e-462f-be1a-a2f555ce8e29"/>
+  <xs:import id="certidoes" namespace="http://servicos.saude.gov.br/schema/corporativo/documento/certidao/v1r1/certidoes" schemaLocation="https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A8e37c0e1-0d73-429d-b546-fe4065a21792"/>
+  <xs:import id="endereco" namespace="http://servicos.saude.gov.br/schema/corporativo/endereco/v1r2/endereco" schemaLocation="https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A737621af-307d-4848-966c-6a8fdc1543de"/>
+  <xs:import id="racacor" namespace="http://servicos.saude.gov.br/schema/corporativo/pessoafisica/v1r2/racacor" schemaLocation="https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3Ab30b5427-5cd0-4d7d-abe3-2077258ffe53"/>
+  <xs:import id="etnia" namespace="http://servicos.saude.gov.br/schema/corporativo/pessoafisica/v1r2/etniaindigena" schemaLocation="https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3Abf58257b-bf08-4a34-8476-60849793328c"/>
+  <xs:import id="municipio" namespace="http://servicos.saude.gov.br/schema/corporativo/v1r2/municipio" schemaLocation="https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A08ee4383-f53e-4c61-8046-466c978515b5"/>
+  <xs:import id="telefone" namespace="http://servicos.saude.gov.br/schema/corporativo/telefone/v1r2/telefone" schemaLocation="https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A31ed9740-b4d4-41be-be3b-2f1f0dc0b00a"/>
+  <xs:import id="emails" namespace="http://servicos.saude.gov.br/schema/corporativo/v5r0/emails" schemaLocation="https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A3a0b3368-ed58-4d5d-b165-a2d17ee6a42b"/>
+  <xs:import id="sexo" namespace="http://servicos.saude.gov.br/schema/corporativo/pessoafisica/v1r1/sexo" schemaLocation="https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A029ad9cf-156e-408a-b4ae-7dbbf999d904"/>
+  <xs:import id="precadastro" namespace="http://servicos.saude.gov.br/schema/cadsus/v1r1/dadosprecadastro" schemaLocation="https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3Ab876be3e-54ad-429d-8478-5be9121be409"/>
+  <xs:import id="foto" namespace="http://servicos.saude.gov.br/schema/corporativo/v1r1/fotografia" schemaLocation="https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A934ef751-914a-435e-9bfb-3ba63a10aa93"/>
+  <xs:import id="tiposanguineo" namespace="http://servicos.saude.gov.br/schema/corporativo/pessoafisica/v1r1/tiposanguineo" schemaLocation="https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3Aae0decb5-2dd4-40df-a381-df6a8c71311f"/>
+  <xs:import id="dadosnacionalidade" namespace="http://servicos.saude.gov.br/schema/corporativo/pessoafisica/v1r1/dadosnacionalidade" schemaLocation="https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A01fe2b9a-0233-44cc-a308-8b8d4ee7ef50"/>
+  <xs:import id="qualidade" namespace="http://servicos.saude.gov.br/schema/cadsus/v5r0/grauqualidade" schemaLocation="https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A2db44f32-dcc3-4765-8f3a-d5b4257a7886"/>
+  <xs:annotation>
+    <xs:documentation>Este esquema representa o registro do Usuário SUS - ator central do sistema do
+			Cartao Nacional de Saude - no Cadastro Nacional de Usuários do SUS.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="UsuarioSUS" type="UsuarioSUSType"/>
+  <xs:complexType name="UsuarioSUSType">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="0" name="Cartoes">
+        <xs:annotation>
+          <xs:documentation>CNSs do Usuário do SUS.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="CNS" type="cns:CNSType"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="CPF" type="cpf:CPFType">
+        <xs:annotation>
+          <xs:documentation>CPF do Usuário.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="1" name="NomeCompleto" type="nomecompleto:NomeCompletoType">
+        <xs:annotation>
+          <xs:documentation>Nome completo do Usuário do SUS.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="NomeSocial" type="nomesocial:NomeSocialType">
+        <xs:annotation>
+          <xs:documentation>Nome social do Usuário do SUS.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="1" name="dataNascimento" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>Data de nascimento do Usuário do SUS.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="1" name="Mae" type="nomecompleto:NomeCompletoType">
+        <xs:annotation>
+          <xs:documentation>Nome da mae do Usuário do SUS.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="1" name="Pai" type="nomecompleto:NomeCompletoType">
+        <xs:annotation>
+          <xs:documentation>Nome do pai do Usuário do SUS.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="dataObito" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>Data de obito do Usuário do SUS.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="1" name="Sexo" type="sexo:SexoType">
+        <xs:annotation>
+          <xs:documentation>Sexo do Usuário do SUS.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="1" name="RacaCor" type="racacor:RacaCorType">
+        <xs:annotation>
+          <xs:documentation>Raca/Cor do Usuário do SUS.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="EtniaIndigena" type="etnia:EtniaIndigenaType">
+        <xs:annotation>
+          <xs:documentation>Raca/Cor do Usuário do SUS.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="TipoSanguineo" type="tiposanguineo:TipoSanguineoType">
+        <xs:annotation>
+          <xs:documentation>TipoSanguineo do Usuário do SUS.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="1" name="DadosNacionalidade" type="dadosnacionalidade:DadosNacionalidadeType">
+        <xs:annotation>
+          <xs:documentation>Dados relativos a nacionalidade do Usuário do SUS.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="MunicipioNascimento" type="municipio:MunicipioType">
+        <xs:annotation>
+          <xs:documentation>Municipio de nascimento do Usuário SUS (usado apenas para Usuários nascidos no Brasil).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="Documentos" type="documentos:DocumentosType">
+        <xs:annotation>
+          <xs:documentation>Documentos do Usuário do SUS.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="Certidoes" type="certidoes:CertidoesType">
+        <xs:annotation>
+          <xs:documentation>Certidoes do Usuário do SUS.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="Enderecos">
+        <xs:annotation>
+          <xs:documentation>Enderecos do Usuário do SUS.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="1" minOccurs="1" name="Endereco" type="endereco:EnderecoType"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="1" name="Telefones">
+        <xs:annotation>
+          <xs:documentation>Telefones do Usuário do SUS.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="1" name="Telefone" type="telefone:TelefoneType"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="Emails" type="emails:EmailsType">
+        <xs:annotation>
+          <xs:documentation>Emails do Usuário do SUS.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="Fotografias">
+        <xs:annotation>
+          <xs:documentation>Fotografias do Usuário do SUS.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="1" name="Fotografia" type="foto:FotografiaType"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="IdentificadorLocal" type="identificadorlocal:IdentificadorLocalType">
+        <xs:annotation>
+          <xs:documentation>Identificador local do Usuário do SUS.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="IdentificadorCorporativo" type="identificadorcorporativo:IdentificadorCorporativoType">
+        <xs:annotation>
+          <xs:documentation>Identificador corporativo do Usuário do SUS.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="GrauQualidade" type="qualidade:GrauQualidadeType">
+        <xs:annotation>
+          <xs:documentation>Representa Grau de qualidade de um cadastro de usuário do SUS.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="originalRFB" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>Identifica que os dados basicos de identificacao vieram da Receita Federal pela busca do CPF</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="nomade" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>Identifica se o Usuário do SUS é nômade.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="DadosPreCadastro" type="precadastro:DadosPreCadastroType">
+        <xs:annotation>
+          <xs:documentation>Dados do pré-cadastro.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="Situacao" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>Situação: Ativo / Inativo.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="motivoAlteracaoSituacao">
+        <xs:annotation>
+          <xs:documentation>Motivo da Alteração da Situação do Usuário do SUS.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="0"/>
+            <xs:maxLength value="200"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="Vip" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>Identifica se o Usuário do SUS é VIP.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="motivoAlteracaoVip">
+        <xs:annotation>
+          <xs:documentation>Motivo da Alteração de VIP do Usuário do SUS.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="0"/>
+            <xs:maxLength value="200"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="protecaoTestemunha">
+        <xs:annotation>
+          <xs:documentation>Flag de Protecao a Testemunha: Ativo / Inativo.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:boolean"></xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="descricaoProtecaoTestemunha">
+        <xs:annotation>
+          <xs:documentation>Descricao de Protecao a Testemunha.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="0"/>
+            <xs:maxLength value="200"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="motivoNaoHigienizado">
+        <xs:annotation>
+          <xs:documentation>Motivo para o registro não passar pelo serviço de Higienização.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="0"/>
+            <xs:maxLength value="200"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="vivo" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>Identifica se o Usuário está Vivo (Se vivo: true, se morto: false).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A93ab8586-c32d-4c9d-a94d-c4a9622df209</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/corporativo/documento/v1r2/cpf" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/corporativo/documento/v1r2/cpf">
+  <xs:annotation>
+    <xs:documentation>Este esquema representa o documento Cadastro Nacional de Pessoas Fisicas (CPF) da Receita Federal do Brasil.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="CPF" type="CPFType"/>
+  <xs:complexType name="CPFType">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="1" name="numeroCPF">
+        <xs:simpleType>
+          <xs:annotation>
+            <xs:documentation>Numero do CPF sem formatacao. Ex: 09999999999</xs:documentation>
+          </xs:annotation>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="11"/>
+            <xs:maxLength value="11"/>
+            <xs:pattern value="[0-9]*"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A844da212-7976-4dc0-9add-a5d04b574797</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/cadsus/v5r0/cns" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/cadsus/v5r0/cns">
+  <xs:annotation>
+    <xs:documentation>Este esquema representa o Cartao Nacional de Saude (CNS) do usuario do SUS.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="CNS" type="CNSType"/>
+  <xs:complexType name="CNSType">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="1" name="numeroCNS">
+        <xs:annotation>
+          <xs:documentation>Numero do CNS do usuario do SUS.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="15"/>
+            <xs:maxLength value="15"/>
+            <xs:pattern value="[0-9]*"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="dataAtribuicao" nillable="true" type="xs:dateTime">
+        <xs:annotation>
+          <xs:documentation>Data de atribuição do CNS ao usuario do SUS.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="tipoCartao" nillable="true" type="TipoCNSType">
+        <xs:annotation>
+          <xs:documentation>Tipo do CNS associada ao usuario do SUS. D: definitivo, P: provisorio.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="manual" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>Flag que identifica se o o cartao foi adicionado manualmente.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="justificativaManual" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Justificativa para a adicao do cartao manual.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ListaCNS" type="ListaCNSType"/>
+  <xs:complexType name="ListaCNSType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="1" ref="CNS"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="TipoCNSType">
+    <xs:annotation>
+      <xs:documentation>Tipo do CNS associada ao usuario do SUS. D: definitivo, P: provisorio.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <!--DEFINITIVO-->
+      <xs:enumeration value="D"/>
+      <!--PROVISÓRIO-->
+      <xs:enumeration value="P"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A0403b4b6-87ab-4def-aea4-369e5feb2671</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/cadsus/v5r0/identificadorlocal" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/cadsus/v5r0/identificadorlocal">
+  <xs:annotation>
+    <xs:documentation>Este esquema representa o registro de identificadores locais, isto e, identificadores usados por sistemas municipais, regionais, estaduais e/ou de uma unidade de saude especifica, de um usuario do SUS.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="IdentificadorLocal" type="IdentificadorLocalType"/>
+  <xs:complexType name="IdentificadorLocalType">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="1" name="numeroIdentificadorLocal">
+        <xs:annotation>
+          <xs:documentation>Numero do identificador local do usuario do SUS.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="100"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="1" name="identificadorSistema">
+        <xs:annotation>
+          <xs:documentation>Numero fornecido pelo MS que identifica qual sistema está se integrando.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="25"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A47331d39-66f7-4ece-aa56-57de80459dfa</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/corporativo/pessoafisica/v1r2/nomecompleto" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/corporativo/pessoafisica/v1r2/nomecompleto">
+  <xs:annotation>
+    <xs:documentation>Este esquema representa o nome completo de uma pessoa fisica.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="NomeCompleto" type="NomeCompletoType"/>
+  <xs:complexType name="NomeCompletoType">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="1" name="Nome">
+        <xs:annotation>
+          <xs:documentation>Nomes atribuidos da pessoa fisica.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="70"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A0a90d39b-8bf0-4752-9b59-7918ef29b590</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/corporativo/pessoafisica/v1r1/nomesocial" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/corporativo/pessoafisica/v1r1/nomesocial">
+  <xs:annotation>
+    <xs:documentation>Este esquema representa o nome social de uma pessoa fisica.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="NomeSocial" type="NomeSocialType"/>
+  <xs:simpleType name="NomeSocialType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="70"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A831dfdba-288e-462f-be1a-a2f555ce8e29</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/corporativo/documento/v1r2/documentos" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/corporativo/documento/v1r2/documentos" xmlns:cnh="http://servicos.saude.gov.br/schema/corporativo/documento/v1r1/cnh" xmlns:ctps="http://servicos.saude.gov.br/schema/corporativo/documento/v1r1/ctps" xmlns:dnv="http://servicos.saude.gov.br/schema/corporativo/documento/v1r1/dnv" xmlns:identidade="http://servicos.saude.gov.br/schema/corporativo/documento/v1r1/identidade" xmlns:nis="http://servicos.saude.gov.br/schema/corporativo/documento/v1r1/nis" xmlns:passaporte="http://servicos.saude.gov.br/schema/corporativo/documento/v1r1/passaporte" xmlns:ric="http://servicos.saude.gov.br/schema/corporativo/documento/v1r1/ric" xmlns:tituloeleitor="http://servicos.saude.gov.br/schema/corporativo/documento/v1r1/tituloeleitor">
+  <xs:import id="cnh" namespace="http://servicos.saude.gov.br/schema/corporativo/documento/v1r1/cnh" schemaLocation="https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A8f5ae4ce-b811-4855-88da-730414942b2b"/>
+  <xs:import id="ctps" namespace="http://servicos.saude.gov.br/schema/corporativo/documento/v1r1/ctps" schemaLocation="https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3Aa60f5e7a-5d4a-40bf-ac94-0b5905afeb44"/>
+  <xs:import id="identidade" namespace="http://servicos.saude.gov.br/schema/corporativo/documento/v1r1/identidade" schemaLocation="https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3Abc424f34-864c-4747-bb80-6163b1924b1b"/>
+  <xs:import id="nis" namespace="http://servicos.saude.gov.br/schema/corporativo/documento/v1r1/nis" schemaLocation="https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A8826d107-34bb-492f-b271-1787199a1596"/>
+  <xs:import id="passaporte" namespace="http://servicos.saude.gov.br/schema/corporativo/documento/v1r1/passaporte" schemaLocation="https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3Ae0f2234f-f6f7-4566-a7fa-732f786ca739"/>
+  <xs:import id="ric" namespace="http://servicos.saude.gov.br/schema/corporativo/documento/v1r1/ric" schemaLocation="https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A612c5fcf-da72-4e4f-800a-948911e76b27"/>
+  <xs:import id="tituloeleitor" namespace="http://servicos.saude.gov.br/schema/corporativo/documento/v1r1/tituloeleitor" schemaLocation="https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A36f24b1c-f1d0-468f-bec1-c361c87f26a4"/>
+  <xs:import id="dnv" namespace="http://servicos.saude.gov.br/schema/corporativo/documento/v1r1/dnv" schemaLocation="https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3Ac5ff42f4-1e8f-41f5-ab1b-6a03d93b2062"/>
+  <xs:annotation>
+    <xs:documentation>Este esquema representa o conjunto de documentos de
+			uma pessoa fisica.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="Documentos" type="DocumentosType"/>
+  <xs:complexType name="DocumentosType">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="0" name="Identidade" type="identidade:IdentidadeType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="CTPS" type="ctps:CTPSType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="CNH" type="cnh:CNHType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="TituloEleitor" type="tituloeleitor:TituloEleitorType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="NIS" type="nis:NISType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="Passaporte" type="passaporte:PassaporteType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="RIC" type="ric:RICType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="DNV" type="dnv:DNVType"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A8f5ae4ce-b811-4855-88da-730414942b2b</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/corporativo/documento/v1r1/cnh" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/corporativo/documento/v1r1/cnh">
+  <xs:annotation>
+    <xs:documentation>Este esquema representa o documento Carteira Nacional de Habilitacao.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="CNH" type="CNHType"/>
+  <xs:complexType name="CNHType">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="0" name="identificador" type="xs:nonNegativeInteger">
+        <xs:annotation>
+          <xs:documentation>Código de identificação.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="numeroCNH">
+        <xs:annotation>
+          <xs:documentation>Numero da Carteira Nacional de Habilitacao sem formatacao. Ex: 0999999999</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="2"/>
+            <xs:maxLength value="11"/>
+            <xs:pattern value="[1-9][0-9]*"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="dataEmissao" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>Data de emissao da Carteira Nacional de Habilitacao. A data de emissao encontra-se no verso da CNH.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="siglaUF" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Sigla da Unidade da Federacao que emitiu o documento</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3Aa60f5e7a-5d4a-40bf-ac94-0b5905afeb44</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/corporativo/documento/v1r1/ctps" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/corporativo/documento/v1r1/ctps">
+  <xs:annotation>
+    <xs:documentation>Este esquema representa o documento Carteira de Trabalho e Previdencia Social (CTPS).</xs:documentation>
+  </xs:annotation>
+  <xs:element name="CTPS" type="CTPSType"/>
+  <xs:complexType name="CTPSType">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="0" name="identificador" type="xs:nonNegativeInteger">
+        <xs:annotation>
+          <xs:documentation>Código de identificação.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="numeroCTPS">
+        <xs:annotation>
+          <xs:documentation>Numero da CTPS sem formatacao. Ex: 99999999999</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="2"/>
+            <xs:maxLength value="11"/>
+            <xs:pattern value="[0-9]*"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="serie">
+        <xs:annotation>
+          <xs:documentation>Numero de Serie da CTPS sem formatacao. Ex: 99999</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="5"/>
+            <xs:pattern value="[0-9]*"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="dataEmissao" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>Data de emissao da CTPS</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3Abc424f34-864c-4747-bb80-6163b1924b1b</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/corporativo/documento/v1r1/identidade" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/corporativo/documento/v1r1/identidade" xmlns:orgaoemissor="http://servicos.saude.gov.br/schema/corporativo/documento/v1r2/orgaoemissor">
+  <xs:import id="orgaoemissor" namespace="http://servicos.saude.gov.br/schema/corporativo/documento/v1r2/orgaoemissor" schemaLocation="https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3Ae3a075f3-1a42-4365-a99b-311b50309262">
+    <xs:annotation>
+      <xs:documentation>Importacao do metadado orgao emissor. Ex:
+				Secretaria de Seguranca Publica,
+				Conselho Regional de Quimica etc.</xs:documentation>
+    </xs:annotation>
+  </xs:import>
+  <xs:annotation>
+    <xs:documentation>Este esquema representa o documento de identidade.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="Identidade" type="IdentidadeType"/>
+  <xs:complexType name="IdentidadeType">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="0" name="identificador" type="xs:nonNegativeInteger">
+        <xs:annotation>
+          <xs:documentation>Código de identificação.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="1" name="numeroIdentidade">
+        <xs:annotation>
+          <xs:documentation>Numero do documento de identidade.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="15"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="dataExpedicao" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>Data de expedicao do documento de identidade.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="OrgaoEmissor" type="orgaoemissor:OrgaoEmissorType">
+        <xs:annotation>
+          <xs:documentation>Orgao emissor do documento de identidade.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="siglaUF" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Sigla da Unidade da Federacao que emitiu o documento de identidade</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3Ae3a075f3-1a42-4365-a99b-311b50309262</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/corporativo/documento/v1r2/orgaoemissor" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/corporativo/documento/v1r2/orgaoemissor">
+  <xs:annotation>
+    <xs:documentation>Este esquema representa o orgao emissor de um documento. Ex: Secretaria de Seguranca Publica, Conselho Regional de Quimica etc.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="OrgaoEmissor" type="OrgaoEmissorType"/>
+  <xs:complexType name="OrgaoEmissorType">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="1" name="codigoOrgaoEmissor">
+        <xs:annotation>
+          <xs:documentation>Codigo do orgao emissor de documento, conforme definido pelo Ministerio da Saude.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3"/>
+            <xs:pattern value="[0-9]*"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="nomeOrgaoEmissor" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Nome do orgao emissor de documento.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="siglaOrgaoEmissor" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Sigla do orgao emissor de documento.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A8826d107-34bb-492f-b271-1787199a1596</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/corporativo/documento/v1r1/nis" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/corporativo/documento/v1r1/nis">
+  <xs:annotation>
+    <xs:documentation>Este esquema representa o Numero de Identificacao Social (NIS), podendo conter ainda  o numero de identificacao do PIS (Programa de Integracao Nacional) ou do PASEP (Programa de Formacao do Patrimonio do Servidor Publico) ou do NIT (Numero de Identificacao do Trabalhador).</xs:documentation>
+  </xs:annotation>
+  <xs:element name="NIS" type="NISType"/>
+  <xs:complexType name="NISType">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="0" name="identificador" type="xs:nonNegativeInteger">
+        <xs:annotation>
+          <xs:documentation>Código de identificação.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="numeroDocumento">
+        <xs:annotation>
+          <xs:documentation>Numero NIS/PIS/PASEP/NIT.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="2"/>
+            <xs:maxLength value="15"/>
+            <xs:pattern value="[1-9][0-9]*"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3Ae0f2234f-f6f7-4566-a7fa-732f786ca739</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/corporativo/documento/v1r1/passaporte" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/corporativo/documento/v1r1/passaporte" xmlns:orgaoemissor="http://servicos.saude.gov.br/schema/corporativo/documento/v1r2/orgaoemissor" xmlns:pais="http://servicos.saude.gov.br/schema/corporativo/v1r2/pais">
+  <xs:import id="pais" namespace="http://servicos.saude.gov.br/schema/corporativo/v1r2/pais" schemaLocation="https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A46eca6f4-8c5a-4ebe-a51e-c222f5d71a31">
+    <xs:annotation>
+      <xs:documentation>Importacao do metadado corporativo Pais</xs:documentation>
+    </xs:annotation>
+  </xs:import>
+  <xs:annotation>
+    <xs:documentation>Este esquema representa o Passaporte.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="Passaporte" type="PassaporteType"/>
+  <xs:complexType name="PassaporteType">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="0" name="identificador" type="xs:nonNegativeInteger">
+        <xs:annotation>
+          <xs:documentation>Código de identificação.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="numeroPassaporte">
+        <xs:annotation>
+          <xs:documentation>Numero do passaporte.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="2"/>
+            <xs:maxLength value="15"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="Pais" type="pais:PaisType">
+        <xs:annotation>
+          <xs:documentation>Pais emissor do passaporte.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="dataValidade" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>Data de validade do passaporte.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="dataExpedicao" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>Data de expedicao do passaporte.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A46eca6f4-8c5a-4ebe-a51e-c222f5d71a31</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/corporativo/v1r2/pais" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/corporativo/v1r2/pais">
+  <xs:annotation>
+    <xs:documentation>Este esquema contem informacoes sobre paises.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="Pais" type="PaisType"/>
+  <xs:complexType name="PaisType">
+    <xs:sequence>
+      <!--Codigo de identificacao do Pais (SIA e SIH).-->
+      <xs:element maxOccurs="1" minOccurs="0" name="codigoPais">
+        <xs:annotation>
+          <xs:documentation>Codigo de identificacao do Pais (SIA e SIH).</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]*"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Codigo antigo de identificacao do Pais.-->
+      <xs:element maxOccurs="1" minOccurs="0" name="codigoPaisAntigo">
+        <xs:annotation>
+          <xs:documentation>Codigo antigo de identificacao do Pais.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]*"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Nome do Pais.-->
+      <xs:element maxOccurs="1" minOccurs="0" name="nomePais" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Nome do Pais.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A612c5fcf-da72-4e4f-800a-948911e76b27</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/corporativo/documento/v1r1/ric" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/corporativo/documento/v1r1/ric" xmlns:orgaoemissor="http://servicos.saude.gov.br/schema/corporativo/documento/v1r2/orgaoemissor">
+  <xs:import id="orgaoemissor" namespace="http://servicos.saude.gov.br/schema/corporativo/documento/v1r2/orgaoemissor" schemaLocation="https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3Ae3a075f3-1a42-4365-a99b-311b50309262">
+    <xs:annotation>
+      <xs:documentation>Importacao do metadado orgao emissor. Ex: Secretaria de Seguranca Publica,
+				Conselho Regional de Quimica etc.</xs:documentation>
+    </xs:annotation>
+  </xs:import>
+  <xs:annotation>
+    <xs:documentation>Este esquema representa o RIC (Registro de Identificacao Civil), definido nos
+			termos do DECRETO N.7.166, de
+			05/05/2010 e das LEIS N.12.058, de 13/10/2009 e N.9.454, de 7 de
+			Abril de 1997.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="RIC" type="RICType"/>
+  <xs:complexType name="RICType">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="0" name="identificador" type="xs:nonNegativeInteger">
+        <xs:annotation>
+          <xs:documentation>Código de identificação.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="numeroRIC">
+        <xs:annotation>
+          <xs:documentation>Numero do RIC.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="11"/>
+            <xs:maxLength value="11"/>
+            <xs:pattern value="[1-9][0-9]*"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="dataValidade" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>Data de validade do RIC.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="dataExpedicao" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>Data de expedicao do RIC (localizada no verso do cartao).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="OrgaoEmissor" type="orgaoemissor:OrgaoEmissorType">
+        <xs:annotation>
+          <xs:documentation>Orgao emissor do documento de identidade.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A36f24b1c-f1d0-468f-bec1-c361c87f26a4</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/corporativo/documento/v1r1/tituloeleitor" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/corporativo/documento/v1r1/tituloeleitor">
+  <xs:annotation>
+    <xs:documentation>Este esquema representa o documento Titulo de Eleitor.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="TituloEleitor" type="TituloEleitorType"/>
+  <xs:complexType name="TituloEleitorType">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="0" name="identificador" type="xs:nonNegativeInteger">
+        <xs:annotation>
+          <xs:documentation>Código de identificação.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="numeroTituloEleitor">
+        <xs:annotation>
+          <xs:documentation>Numero do Titulo de Eleitor</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="2"/>
+            <xs:maxLength value="11"/>
+            <xs:pattern value="[1-9][0-9]*"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="zona">
+        <xs:annotation>
+          <xs:documentation>Zona do titulo de eleitor</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="5"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="secao">
+        <xs:annotation>
+          <xs:documentation>Secao do titulo de eleitor</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="5"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3Ac5ff42f4-1e8f-41f5-ab1b-6a03d93b2062</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/corporativo/documento/v1r1/dnv" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/corporativo/documento/v1r1/dnv">
+  <xs:annotation>
+    <xs:documentation>Este esquema representa o Documeno do Nascido Vivo.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="DNV" type="DNVType"/>
+  <xs:complexType name="DNVType">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="0" name="identificador" type="xs:nonNegativeInteger">
+        <xs:annotation>
+          <xs:documentation>Código de identificação.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="1" name="numeroDNV">
+        <xs:annotation>
+          <xs:documentation>Número da DNV.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="15"/>
+            <xs:pattern value="[0-9]*"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A8e37c0e1-0d73-429d-b546-fe4065a21792</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/corporativo/documento/certidao/v1r1/certidoes" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/corporativo/documento/certidao/v1r1/certidoes" xmlns:certidao="http://servicos.saude.gov.br/schema/corporativo/documento/certidao/v1r2/certidao" xmlns:certidaoantiga="http://servicos.saude.gov.br/schema/corporativo/documento/certidao/v1r1/certidaoantiga">
+  <xs:import id="certidao" namespace="http://servicos.saude.gov.br/schema/corporativo/documento/certidao/v1r2/certidao" schemaLocation="https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A74fd2b2f-06f7-491f-8358-c26e11f77401"/>
+  <xs:import id="certidaoantiga" namespace="http://servicos.saude.gov.br/schema/corporativo/documento/certidao/v1r1/certidaoantiga" schemaLocation="https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3Af48eb4ca-f469-4eb2-b88b-c68facc2a7c4"/>
+  <xs:annotation>
+    <xs:documentation>Este esquema representa o conjunto de certidões de uma pessoa física.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="Certidoes" type="CertidoesType"/>
+  <xs:complexType name="CertidoesType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="Certidao" type="certidao:CertidaoType"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="CertidaoAntiga" type="certidaoantiga:CertidaoAntigaType"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A74fd2b2f-06f7-491f-8358-c26e11f77401</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/corporativo/documento/certidao/v1r2/certidao" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/corporativo/documento/certidao/v1r2/certidao" xmlns:tipocertidao="http://servicos.saude.gov.br/schema/corporativo/documento/certidao/v1r1/tipocertidao">
+  <xs:import id="tipocertidao" namespace="http://servicos.saude.gov.br/schema/corporativo/documento/certidao/v1r1/tipocertidao" schemaLocation="https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3Aa3571fa0-64aa-4c14-818c-e9438595c138"/>
+  <xs:annotation>
+    <xs:documentation>Este esquema representa um documento do tipo Certidao, emitida por um Servico de Registro Civil (Cartorio),
+			conforme o Modelo CNJ 2011.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="Certidao" type="CertidaoType"/>
+  <xs:complexType name="CertidaoType">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="0" name="identificador" type="xs:nonNegativeInteger">
+        <xs:annotation>
+          <xs:documentation>Código de identificação.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="1" name="TipoCertidao" type="tipocertidao:TipoCertidaoType">
+        <xs:annotation>
+          <xs:documentation>Tipo da certidao.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="numeroCartorio">
+        <xs:annotation>
+          <xs:documentation>Numero do Cartorio - BLOCO 1 do Modelo CNJ 2011 (6 digitos).</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="6"/>
+            <xs:maxLength value="6"/>
+            <xs:pattern value="[0-9]*"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="acervo">
+        <xs:annotation>
+          <xs:documentation>Numero do Acervo - BLOCO 2 do Modelo CNJ 2011 (2 digitos).</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="2"/>
+            <xs:maxLength value="2"/>
+            <xs:pattern value="[0-9]*"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="servicoRegistroCivil">
+        <xs:annotation>
+          <xs:documentation>Numero do Servico de Registro Civil - BLOCO 3 do Modelo CNJ 2011 (2 digitos).</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="2"/>
+            <xs:maxLength value="2"/>
+            <xs:pattern value="[0-9]*"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="ano">
+        <xs:annotation>
+          <xs:documentation>Ano do documento - BLOCO 4 do Modelo CNJ 2011 (4 digitos).</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="4"/>
+            <xs:maxLength value="4"/>
+            <xs:pattern value="[1-9][0-9]*"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="tipoLivro">
+        <xs:annotation>
+          <xs:documentation>Tipo da livro de registro - BLOCO 5 do Modelo CNJ 2011 (1 digito).</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="1"/>
+            <xs:pattern value="[0-9]*"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="livro">
+        <xs:annotation>
+          <xs:documentation>Numero do Livro em que a Certidao foi registrada - BLOCO 6 do Modelo CNJ 2011 (5 digitos).</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="5"/>
+            <xs:maxLength value="5"/>
+            <xs:pattern value="[0-9]*"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="folha">
+        <xs:annotation>
+          <xs:documentation>Numero da Folha em que a Certidao foi registrada - BLOCO 7 do Modelo CNJ 2011 (3 digitos).</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="3"/>
+            <xs:maxLength value="3"/>
+            <xs:pattern value="[0-9]*"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="termo">
+        <xs:annotation>
+          <xs:documentation>Numero do Termo - BLOCO 8 do Modelo CNJ 2011 (7 digitos).</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="7"/>
+            <xs:maxLength value="7"/>
+            <xs:pattern value="[0-9]*"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="digitoVerificador">
+        <xs:annotation>
+          <xs:documentation>Digito Verificador - BLOCO 9 do Modelo CNJ 2011 (1 digito).</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="2"/>
+            <xs:pattern value="[0-9]*"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="dataEmissao" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>Data de emissao da certidao.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3Aa3571fa0-64aa-4c14-818c-e9438595c138</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/corporativo/documento/certidao/v1r1/tipocertidao" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/corporativo/documento/certidao/v1r1/tipocertidao">
+  <xs:annotation>
+    <xs:documentation>Este esquema representa um tipo certidao.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="TipoCertidao" type="TipoCertidaoType"/>
+  <xs:simpleType name="TipoCertidaoType">
+    <xs:annotation>
+      <xs:documentation>Tipo da certidao - 91-NASCIMENTO, 92-CASAMENTO, 93-SEPARAÇÃO OU DIVÓRCIO, 95-ADMINISTRATIVA - ÍNDIO (RANI).</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <!--NASCIMENTO-->
+      <xs:enumeration value="91"/>
+      <!--CASAMENTO-->
+      <xs:enumeration value="92"/>
+      <!--SEPARACAO OU DIVORCIO-->
+      <xs:enumeration value="93"/>
+      <!--ADMINISTRATIVA - INDIO (RANI)-->
+      <xs:enumeration value="95"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3Af48eb4ca-f469-4eb2-b88b-c68facc2a7c4</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/corporativo/documento/certidao/v1r1/certidaoantiga" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/corporativo/documento/certidao/v1r1/certidaoantiga" xmlns:tipocertidao="http://servicos.saude.gov.br/schema/corporativo/documento/certidao/v1r1/tipocertidao">
+  <xs:import id="tipocertidao" namespace="http://servicos.saude.gov.br/schema/corporativo/documento/certidao/v1r1/tipocertidao" schemaLocation="https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3Aa3571fa0-64aa-4c14-818c-e9438595c138"/>
+  <xs:annotation>
+    <xs:documentation>Este esquema representa uma Certidao, emitida por um Servico de Registro Civil (Cartorio), no modelo antigo.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="CertidaoAntiga" type="CertidaoAntigaType"/>
+  <xs:complexType name="CertidaoAntigaType">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="0" name="identificador" type="xs:nonNegativeInteger">
+        <xs:annotation>
+          <xs:documentation>Código de identificação.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="1" name="TipoCertidao" type="tipocertidao:TipoCertidaoType">
+        <xs:annotation>
+          <xs:documentation>Tipo da certidao.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="nomeCartorio">
+        <xs:annotation>
+          <xs:documentation>Nome do Cartorio onde a Certidao foi registrada. Se este elemento estiver presente, o elemento
+						numeroCartorio devera estar ausente.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="20"/>
+            <xs:pattern value="[-0-9A-Z]*"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="livro">
+        <xs:annotation>
+          <xs:documentation>Numero do Livro em que a Certidao foi registrada.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="8"/>
+            <xs:pattern value="[-0-9A-Z]*"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="folha">
+        <xs:annotation>
+          <xs:documentation>Numero da Folha em que a Certidao foi registrada.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="4"/>
+            <xs:pattern value="[-0-9A-Z]*"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="termo">
+        <xs:annotation>
+          <xs:documentation>Numero do Termo.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="8"/>
+            <xs:pattern value="[-0-9A-Z]*"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="dataEmissao" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>Data de emissao da certida.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A737621af-307d-4848-966c-6a8fdc1543de</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/corporativo/endereco/v1r2/endereco" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/corporativo/endereco/v1r2/endereco" xmlns:bairro="http://servicos.saude.gov.br/schema/corporativo/endereco/v1r1/bairro" xmlns:cep="http://servicos.saude.gov.br/schema/corporativo/endereco/v1r1/cep" xmlns:municipio="http://servicos.saude.gov.br/schema/corporativo/v1r2/municipio" xmlns:pais="http://servicos.saude.gov.br/schema/corporativo/v1r2/pais" xmlns:tipoLogradouro="http://servicos.saude.gov.br/schema/corporativo/endereco/v1r1/tipologradouro">
+  <xs:import id="municipio" namespace="http://servicos.saude.gov.br/schema/corporativo/v1r2/municipio" schemaLocation="https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A08ee4383-f53e-4c61-8046-466c978515b5"/>
+  <xs:import id="pais" namespace="http://servicos.saude.gov.br/schema/corporativo/v1r2/pais" schemaLocation="https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A46eca6f4-8c5a-4ebe-a51e-c222f5d71a31"/>
+  <xs:import id="tipoLogradouro" namespace="http://servicos.saude.gov.br/schema/corporativo/endereco/v1r1/tipologradouro" schemaLocation="https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A9aee4dac-30c1-44cc-ab6b-13721b0da812"/>
+  <xs:import id="bairro" namespace="http://servicos.saude.gov.br/schema/corporativo/endereco/v1r1/bairro" schemaLocation="https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A5f16f8d1-af5b-4fbc-b2b6-6de75379ebd9"/>
+  <xs:import id="cep" namespace="http://servicos.saude.gov.br/schema/corporativo/endereco/v1r1/cep" schemaLocation="https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3Afaec204a-4387-4ef4-b869-c136ae8727ad"/>
+  <xs:annotation>
+    <xs:documentation>Este esquema representa um endereco.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="Endereco" type="EnderecoType"/>
+  <xs:complexType name="EnderecoType">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="0" name="identificador" type="xs:nonNegativeInteger">
+        <xs:annotation>
+          <xs:documentation>Código de identificação.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="TipoEndereco" type="TipoEnderecoType">
+        <xs:annotation>
+          <xs:documentation>Tipo de Endereco (1 = comercial, 2 = residencial).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="TipoLogradouro" type="tipoLogradouro:TipoLogradouroType">
+        <xs:annotation>
+          <xs:documentation>Tipo de Logradouro. Conforme tabela de codigo de
+						Logradouro.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="nomeLogradouro">
+        <xs:annotation>
+          <xs:documentation>Nome do logradouro. Ex: Dr. Joaquim Lucio</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="250"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="numero">
+        <xs:annotation>
+          <xs:documentation>Numero do logradouro. Ex: 10</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="7"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="complemento">
+        <xs:annotation>
+          <xs:documentation>Complemento do endereco. Ex: Entrada A, AP 1673</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="50"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="Bairro" type="bairro:BairroType">
+        <xs:annotation>
+          <xs:documentation>Bairro do endereco. Ex: Setor Jardim Botanico</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="CEP" type="cep:CEPType">
+        <xs:annotation>
+          <xs:documentation>CEP do endereco. Ex: 70000000 (sem formatacao)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="Municipio" type="municipio:MunicipioType">
+        <xs:annotation>
+          <xs:documentation>Municipio do endereco.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="Pais" type="pais:PaisType">
+        <xs:annotation>
+          <xs:documentation>Pais de endereço.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="municipioInternacional">
+        <xs:annotation>
+          <xs:documentation>Nome do municipio onde reside o usuario, caso o
+						pais nao seja Brasil.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="70"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="TipoEnderecoType">
+    <xs:annotation>
+      <xs:documentation>Tipo de Endereco (1 = comercial, 2 = residencial).</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <!--COMERCIAL-->
+      <xs:enumeration value="1"/>
+      <!--RESIDENCIAL-->
+      <xs:enumeration value="2"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A08ee4383-f53e-4c61-8046-466c978515b5</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/corporativo/v1r2/municipio" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/corporativo/v1r2/municipio" xmlns:uf="http://servicos.saude.gov.br/schema/corporativo/v1r1/uf">
+  <xs:annotation>
+    <xs:documentation>Este esquema contem informacoes a respeito dos
+			Municipios existentes no Brasil
+			(ativos e desativados).</xs:documentation>
+  </xs:annotation>
+  <xs:import id="uf" namespace="http://servicos.saude.gov.br/schema/corporativo/v1r1/uf" schemaLocation="https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3Ae7ebb952-23cd-482f-9734-286e3b950865"/>
+  <xs:element name="Municipio" type="MunicipioType"/>
+  <xs:complexType name="MunicipioType">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="0" name="codigoMunicipio">
+        <xs:annotation>
+          <xs:documentation>Codigo IBGE do Municipio.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="6"/>
+            <xs:pattern value="[0-9]*"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="nomeMunicipio" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Nome do Municipio.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="UF" type="uf:UFType">
+        <xs:annotation>
+          <xs:documentation>Unidade da Federacao.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3Ae7ebb952-23cd-482f-9734-286e3b950865</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/corporativo/v1r1/uf" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/corporativo/v1r1/uf" xmlns:pais="http://servicos.saude.gov.br/schema/corporativo/v1r2/pais">
+  <xs:annotation>
+    <xs:documentation>Este esquema contem informacoes referentes as Unidades Federativas.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="UF" type="UFType"/>
+  <xs:complexType name="UFType">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="1" name="codigoUF" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Codigo IBGE da Unidade da Federacao.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="siglaUF" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Sigla da Unidade da Federacao.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="codigoRegiao" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Contem informacoes referentes as 5 regioes do Brasil (tambem denominadas macrorregioes).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="nomeUF" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Nome da Unidade da Federacao.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A9aee4dac-30c1-44cc-ab6b-13721b0da812</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/corporativo/endereco/v1r1/tipologradouro" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/corporativo/endereco/v1r1/tipologradouro">
+  <xs:annotation>
+    <xs:documentation>Este esquema representa tipo de logradouro.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="TipoLogradouro" type="TipoLogradouroType"/>
+  <xs:complexType name="TipoLogradouroType">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="1" name="codigoTipoLogradouro">
+        <xs:annotation>
+          <xs:documentation>Código do tipo de logradouro.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3"/>
+            <xs:pattern value="[0-9]*"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="descricaoTipoLogradouro" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Descrição do tipo de logradouro.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A5f16f8d1-af5b-4fbc-b2b6-6de75379ebd9</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/corporativo/endereco/v1r1/bairro" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/corporativo/endereco/v1r1/bairro">
+  <xs:annotation>
+    <xs:documentation>Este esquema representa bairro.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="Bairro" type="BairroType"/>
+  <xs:complexType name="BairroType">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="0" name="codigoBairro">
+        <xs:annotation>
+          <xs:documentation>Código do bairro.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="8"/>
+            <xs:pattern value="[0-9]*"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="descricaoBairro">
+        <xs:annotation>
+          <xs:documentation>Descrição do bairro.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="72"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3Afaec204a-4387-4ef4-b869-c136ae8727ad</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/corporativo/endereco/v1r1/cep" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/corporativo/endereco/v1r1/cep">
+  <xs:annotation>
+    <xs:documentation>Este esquema representa o CEP. Ex: 70000000 (sem formatacao)</xs:documentation>
+  </xs:annotation>
+  <xs:element name="CEP" type="CEPType"/>
+  <xs:complexType name="CEPType">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="1" name="numeroCEP">
+        <xs:simpleType>
+          <xs:annotation>
+            <xs:documentation>Este esquema representa o CEP. Ex: 70000000 (sem formatacao)</xs:documentation>
+          </xs:annotation>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="8"/>
+            <xs:maxLength value="8"/>
+            <xs:pattern value="[0-9]*"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3Ab30b5427-5cd0-4d7d-abe3-2077258ffe53</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/corporativo/pessoafisica/v1r2/racacor" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/corporativo/pessoafisica/v1r2/racacor">
+  <xs:annotation>
+    <xs:documentation>Representação de Raça ou Cor. PORTARIA N° 719, DE 28 DE DEZEMBRO DE 2007.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="RacaCor" type="RacaCorType"/>
+  <xs:complexType name="RacaCorType">
+    <xs:sequence>
+      <!--Codigo da raca/cor.-->
+      <xs:element maxOccurs="1" minOccurs="1" name="codigoRacaCor">
+        <xs:annotation>
+          <xs:documentation>Codigo utilizado de acordo com a PORTARIA N° 719, DE 28 DE DEZEMBRO DE 2007: 01-Branca, 02-Preta, 03-Parda, 04-Amarela, 05-Indigena, 99-Sem Informacao e X-Invalido.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="4"/>
+            <xs:pattern value="[0-9]*"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <!--Descricao da raca cor. Ex: Negro.-->
+      <xs:element maxOccurs="1" minOccurs="0" name="descricaoRacaCor" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Descricao da raca cor. Ex: Negro.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3Abf58257b-bf08-4a34-8476-60849793328c</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/corporativo/pessoafisica/v1r2/etniaindigena" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/corporativo/pessoafisica/v1r2/etniaindigena">
+  <xs:annotation>
+    <xs:documentation>Esta tabela Contem os codigos e as respectivas descricoes da etnia dos povos indigenas para auxiliar no monitoramento do atendimento desta populacao no SUS. Atendento a PORTARIA Nº 508, DE 28 DE SETEMBRO DE 2010.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="EtniaIndigena" type="EtniaIndigenaType"/>
+  <xs:complexType name="EtniaIndigenaType">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="1" name="codigoEtniaIndigena">
+        <xs:annotation>
+          <xs:documentation>Código da etnia</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="4"/>
+            <xs:pattern value="[0-9]*"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="descricaoEtniaIndigena" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Descricao da etnia.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A31ed9740-b4d4-41be-be3b-2f1f0dc0b00a</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/corporativo/telefone/v1r2/telefone" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/corporativo/telefone/v1r2/telefone" xmlns:tipotelefone="http://servicos.saude.gov.br/schema/corporativo/telefone/v1r1/tipotelefone">
+  <xs:annotation>
+    <xs:documentation>Este esquema representa numero de telefone.</xs:documentation>
+  </xs:annotation>
+  <xs:import id="tipotelefone" namespace="http://servicos.saude.gov.br/schema/corporativo/telefone/v1r1/tipotelefone" schemaLocation="https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A30daae04-b8bd-4dd7-b305-6d071ad19ac7"/>
+  <xs:element name="Telefone" type="TelefoneType"/>
+  <xs:complexType name="TelefoneType">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="0" name="identificador" type="xs:nonNegativeInteger">
+        <xs:annotation>
+          <xs:documentation>Código de identificação.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="TipoTelefone" type="tipotelefone:TipoTelefoneType">
+        <xs:annotation>
+          <xs:documentation>Tipo de telefone.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="DDI">
+        <xs:annotation>
+          <xs:documentation>DDI do telefone.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:nonNegativeInteger">
+            <xs:maxInclusive value="999"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="DDD">
+        <xs:annotation>
+          <xs:documentation>DDD do telefone.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:nonNegativeInteger">
+            <xs:maxInclusive value="99"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="numeroTelefone">
+        <xs:annotation>
+          <xs:documentation>Numero do telefone.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:nonNegativeInteger">
+            <xs:maxInclusive value="999999999"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A30daae04-b8bd-4dd7-b305-6d071ad19ac7</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/corporativo/telefone/v1r1/tipotelefone" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/corporativo/telefone/v1r1/tipotelefone">
+  <xs:annotation>
+    <xs:documentation>Este esquema representa tipo de telefone.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="TipoTelefone" type="TipoTelefoneType"/>
+  <xs:complexType name="TipoTelefoneType">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="1" name="codigoTipoTelefone">
+        <xs:annotation>
+          <xs:documentation>Código do tipo de telefone.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2"/>
+            <xs:pattern value="[0-9]*"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="descricaoTipoTelefone" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Descrição do tipo de telefone.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A3a0b3368-ed58-4d5d-b165-a2d17ee6a42b</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/corporativo/v5r0/emails" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/corporativo/v5r0/emails" xmlns:email="http://servicos.saude.gov.br/schema/corporativo/v1r2/email">
+  <xs:import id="email" namespace="http://servicos.saude.gov.br/schema/corporativo/v1r2/email" schemaLocation="https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A7f01a6ed-efc5-4c2a-a4b9-953f8b5c739b"/>
+  <xs:annotation>
+    <xs:documentation>Este esquema representa uma lista de endereco de email.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="Emails" type="EmailsType"/>
+  <xs:complexType name="EmailsType">
+    <xs:sequence>
+      <xs:element maxOccurs="2" minOccurs="0" name="Email" type="email:EmailType"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A7f01a6ed-efc5-4c2a-a4b9-953f8b5c739b</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/corporativo/v1r2/email" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/corporativo/v1r2/email">
+  <xs:annotation>
+    <xs:documentation>Este esquema representa endereco de email.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="Email" type="EmailType"/>
+  <xs:complexType name="EmailType">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="0" name="identificador" type="xs:nonNegativeInteger">
+        <xs:annotation>
+          <xs:documentation>Código de identificação.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="1" name="descricaoEmail">
+        <xs:annotation>
+          <xs:documentation>Endereco de email.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="100"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="1" name="tipoEmail" type="TipoEmailType">
+        <xs:annotation>
+          <xs:documentation>Tipos de email: P-Principal, A-Alternativo.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="validado" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>Indica se o email ja foi validado</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="TipoEmailType">
+    <xs:annotation>
+      <xs:documentation>Tipos de email: P-Principal, A-Alternativo.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <!--PRINCIPAL-->
+      <xs:enumeration value="P"/>
+      <!--ALTERNATIVO-->
+      <xs:enumeration value="A"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A029ad9cf-156e-408a-b4ae-7dbbf999d904</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/corporativo/pessoafisica/v1r1/sexo" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/corporativo/pessoafisica/v1r1/sexo">
+  <xs:annotation>
+    <xs:documentation>Este esquema representa a entidade sexo.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="Sexo" type="SexoType"/>
+  <xs:complexType name="SexoType">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="1" name="codigoSexo" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Código do sexo. M - Masculino | F - Feminino</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="descricaoSexo" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Descrição do sexo. Masculino | Feminino</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3Ab876be3e-54ad-429d-8478-5be9121be409</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/cadsus/v1r1/dadosprecadastro" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/cadsus/v1r1/dadosprecadastro" xmlns:protocolo="http://servicos.saude.gov.br/schema/cadsus/v1r0/protocoloprecadastro">
+  <xs:import namespace="http://servicos.saude.gov.br/schema/cadsus/v1r0/protocoloprecadastro" schemaLocation="https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3Ac8f11a03-4ac8-44aa-9a08-2042c408e32c"/>
+  <xs:element name="DadosPreCadastro" type="DadosPreCadastroType"/>
+  <xs:complexType name="DadosPreCadastroType">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="0" name="ProtocoloPreCadastro" type="protocolo:ProtocoloPreCadastroType">
+        <xs:annotation>
+          <xs:documentation>Protocolo do pre-cadastro, caso o usuario tenha passado por este processo.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="homologado" type="HomologadoType">
+        <xs:annotation>
+          <xs:documentation>Identifica se o usuario do pre-cadastro ja foi homologado. S:Sim ou N:Nao</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="dataHomologacao" type="xs:dateTime">
+        <xs:annotation>
+          <xs:documentation>Data da homologacao do usuario pre-cadastro.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="solicitouAcessoPortal" type="SolicitouAcessoPortalType">
+        <xs:annotation>
+          <xs:documentation>Identifica se o usuario do pre-cadastro solicitou acesso ao portal.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="HomologadoType">
+    <xs:annotation>
+      <xs:documentation>Identifica se o usuario do pre-cadastro ja foi homologado. S:Sim ou N:Nao</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <!--SIM-->
+      <xs:enumeration value="S"/>
+      <!--NAO-->
+      <xs:enumeration value="N"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="SolicitouAcessoPortalType">
+    <xs:annotation>
+      <xs:documentation>Identifica se o usuario do pre-cadastro solicitou acesso ao portal. S:Sim ou N:Nao</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <!--SIM-->
+      <xs:enumeration value="S"/>
+      <!--NAO-->
+      <xs:enumeration value="N"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3Ac8f11a03-4ac8-44aa-9a08-2042c408e32c</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/cadsus/v1r0/protocoloprecadastro" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/cadsus/v1r0/protocoloprecadastro">
+  <xs:annotation>
+    <xs:documentation>Este esquema representa o Protocolo para o pré-cadastro do usuario do SUS.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="ProtocoloPreCadastro" type="ProtocoloPreCadastroType"/>
+  <xs:complexType name="ProtocoloPreCadastroType">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="1" name="numeroProtocolo">
+        <xs:annotation>
+          <xs:documentation>Número do Protocolo do pré-cadastro do usuario do SUS.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="13"/>
+            <xs:maxLength value="13"/>
+            <xs:pattern value="[0-9]*"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A934ef751-914a-435e-9bfb-3ba63a10aa93</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/corporativo/v1r1/fotografia" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/corporativo/v1r1/fotografia">
+  <xs:annotation>
+    <xs:documentation>Este esquema representa fotografia.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="Fotografia" type="FotografiaType"/>
+  <xs:complexType name="FotografiaType">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="0" name="identificador" type="xs:nonNegativeInteger">
+        <xs:annotation>
+          <xs:documentation>Código de identificação.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="1" name="dataCaptura" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>Data da captura da fotografia.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="identificadorImagem">
+        <xs:annotation>
+          <xs:documentation>Código de identificação da imagem que foi enviada pelo serviço de upload de imagens para fotografias do usuário do SUS.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:nonNegativeInteger">
+            <xs:maxInclusive value="999999999999999"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="bytesImagem" type="xs:base64Binary">
+        <xs:annotation>
+          <xs:documentation>A imagem da fotografia, em formato base64.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3Aae0decb5-2dd4-40df-a381-df6a8c71311f</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/corporativo/pessoafisica/v1r1/tiposanguineo" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/corporativo/pessoafisica/v1r1/tiposanguineo">
+  <xs:annotation>
+    <xs:documentation>Tipo sanguíneo</xs:documentation>
+  </xs:annotation>
+  <xs:element name="TipoSanguineo" type="TipoSanguineoType"/>
+  <xs:simpleType name="TipoSanguineoType">
+    <xs:annotation>
+      <xs:documentation>Tipo sanguíneo</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="3"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A01fe2b9a-0233-44cc-a308-8b8d4ee7ef50</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/corporativo/pessoafisica/v1r1/dadosnacionalidade" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/corporativo/pessoafisica/v1r1/dadosnacionalidade" xmlns:pais="http://servicos.saude.gov.br/schema/corporativo/v1r2/pais">
+  <xs:import id="pais" namespace="http://servicos.saude.gov.br/schema/corporativo/v1r2/pais" schemaLocation="https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A46eca6f4-8c5a-4ebe-a51e-c222f5d71a31"/>
+  <xs:annotation>
+    <xs:documentation>Este esquema representa os tipos possíveis de nacionalidade e dados relacionados.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="DadosNacionalidade" type="DadosNacionalidadeType"/>
+  <xs:complexType name="DadosNacionalidadeType">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="1" name="nacionalidade" type="NacionalidadeType">
+        <xs:annotation>
+          <xs:documentation>Define a nacionalidade do Cidadão. (B)rasileira, (E)strangeira, (P)ortuguês equiparada ou (N)aturalizada</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="1" name="PaisNascimento" type="pais:PaisType">
+        <xs:annotation>
+          <xs:documentation>Pais de nascimento do usuario do SUS.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="dataNaturalizacao" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>Data de naturalizacao do cidadao.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="numeroPortariaNaturalizacao">
+        <xs:annotation>
+          <xs:documentation>Numero da portaria de naturalizacao.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="50"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="dataChegadaBrasil" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>Data de entrada do cidadao no Brasil.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="NacionalidadeType">
+    <xs:annotation>
+      <xs:documentation>Define a nacionalidade do Cidadão. (B)rasileira, (E)strangeira, (P)ortuguês equiparada ou (N)aturalizada</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <!--BRASILEIRA-->
+      <xs:enumeration value="B"/>
+      <!--ESTRANGEIRA-->
+      <xs:enumeration value="E"/>
+      <!--PORTUGUES EQUIPARADA-->
+      <xs:enumeration value="P"/>
+      <!--NATURALIZADA-->
+      <xs:enumeration value="N"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A2db44f32-dcc3-4765-8f3a-d5b4257a7886</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/cadsus/v5r0/grauqualidade" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/cadsus/v5r0/grauqualidade">
+  <xs:annotation>
+    <xs:documentation>Este esquema representa Grau de qualidade de um cadastro de usuário do SUS.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="GrauQualidade" type="GrauQualidadeType"/>
+  <xs:complexType name="GrauQualidadeType">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="1" name="percentualQualidade">
+        <xs:annotation>
+          <xs:documentation>Percentual de qualidade do cadastro.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:integer">
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="100"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3Ab12be942-f7de-4aa4-a5af-379412519008</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/wsdl/cadsus/auditoria/v5r0/transacaoauditoria" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/wsdl/cadsus/auditoria/v5r0/transacaoauditoria" xmlns:cnesusuario="http://servicos.saude.gov.br/wsdl/mensageria/v5r0/cnesusuario" xmlns:tipotransacao="http://servicos.saude.gov.br/wsdl/cadsus/auditoria/v5r0/tipotransacao">
+  <xs:import id="cnesusuario" namespace="http://servicos.saude.gov.br/wsdl/mensageria/v5r0/cnesusuario" schemaLocation="https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A37ef7a97-b3f6-49dc-8c05-c5cc5d0e640d"/>
+  <xs:import id="tipotransacao" namespace="http://servicos.saude.gov.br/wsdl/cadsus/auditoria/v5r0/tipotransacao" schemaLocation="https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A6a947b1d-972a-4451-9390-f7d27b25071f"/>
+  <xs:annotation>
+    <xs:documentation>Representa a mensagem de retorno da transação da auditoria.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="TransacaoAuditoria" type="TransacaoAuditoriaType"/>
+  <xs:complexType name="TransacaoAuditoriaType">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="1" name="dataHoraTransacao" type="xs:dateTime">
+        <xs:annotation>
+          <xs:documentation>Data e hora da Transação.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="1" name="identificadorTransacao" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Código Identificador da Transação.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="1" ref="cnesusuario:CNESUsuario"/>
+      <xs:element maxOccurs="1" minOccurs="0" ref="tipotransacao:TipoTransacao"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A6a947b1d-972a-4451-9390-f7d27b25071f</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/wsdl/cadsus/auditoria/v5r0/tipotransacao" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/wsdl/cadsus/auditoria/v5r0/tipotransacao">
+  <xs:annotation>
+    <xs:documentation>Este esquema representa um tipo transação.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="TipoTransacao" type="TipoTransacaoType"/>
+  <xs:simpleType name="TipoTransacaoType">
+    <xs:annotation>
+      <xs:documentation>Tipo de Transação - ADICIONADO, ATIVO, DESATIVO,
+			 	UNIDO, DESUNIDO, ATUALIZADO.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <!--Add-->
+      <xs:enumeration value="ADICIONADO"/>
+      <!--euidActivate-->
+      <xs:enumeration value="ATIVO"/>
+      <!--euidDeactivate-->
+      <xs:enumeration value="DESATIVO"/>
+      <!--euidMerge-->
+      <xs:enumeration value="UNIDO"/>
+      <!--euidUnMerge-->
+      <xs:enumeration value="DESUNIDO"/>
+      <!--Update-->
+      <xs:enumeration value="ATUALIZADO"/>
+      <!--lidTransfer ou outro-->
+      <xs:enumeration value="MANUTENCAO"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A0f8014e4-edbd-44a9-a42c-9222ffe2ee24</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/wsdl/mensageria/v5r0/resultadohistoricoimpressao" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/wsdl/mensageria/v5r0/resultadohistoricoimpressao" xmlns:evento="http://servicos.saude.gov.br/schema/cadsus/evento/v5r0/evento">
+  <xs:import id="evento" namespace="http://servicos.saude.gov.br/schema/cadsus/evento/v5r0/evento" schemaLocation="https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3Af2dfa4e6-d226-4eb5-8277-4158106da730"/>
+  <xs:annotation>
+    <xs:documentation>Representa o objeto de resposta de consolidado de histórico de impressão.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="ResultadoHistoricoImpressao" type="ResultadoHistoricoImpressao">
+    <xs:annotation>
+      <xs:documentation>Representa o objeto de filtro da pesquisa do usuario SUS.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="ResultadoHistoricoImpressao">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="Evento" type="evento:EventoType">
+        <xs:annotation>
+          <xs:documentation>Lista de eventos.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3Af2dfa4e6-d226-4eb5-8277-4158106da730</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/cadsus/evento/v5r0/evento" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/cadsus/evento/v5r0/evento" xmlns:cnesusuario="http://servicos.saude.gov.br/wsdl/mensageria/v5r0/cnesusuario" xmlns:cns="http://servicos.saude.gov.br/schema/cadsus/v5r0/cns" xmlns:funcionalidade="http://servicos.saude.gov.br/schema/cadsus/evento/v1r1/funcionalidade" xmlns:operacao="http://servicos.saude.gov.br/schema/cadsus/evento/v5r0/operacao">
+  <xs:import namespace="http://servicos.saude.gov.br/schema/cadsus/evento/v1r1/funcionalidade" schemaLocation="https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A0c3929e7-e0fb-47de-9d0b-f04a33566f5e"/>
+  <xs:import namespace="http://servicos.saude.gov.br/schema/cadsus/evento/v5r0/operacao" schemaLocation="https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A4491e050-0b2c-4424-97d6-d1d3c0c73af1"/>
+  <xs:import namespace="http://servicos.saude.gov.br/wsdl/mensageria/v5r0/cnesusuario" schemaLocation="https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A37ef7a97-b3f6-49dc-8c05-c5cc5d0e640d"/>
+  <xs:import namespace="http://servicos.saude.gov.br/schema/cadsus/v5r0/cns" schemaLocation="https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A844da212-7976-4dc0-9add-a5d04b574797"/>
+  <xs:element name="Evento" type="EventoType"/>
+  <xs:complexType name="EventoType">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="1" name="CNESUsuario" type="cnesusuario:CNESUsuarioType">
+        <xs:annotation>
+          <xs:documentation>Dados do operador que deu origem ao evento.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="identificadorEvento" type="xs:nonNegativeInteger">
+        <xs:annotation>
+          <xs:documentation>Codigo de identificacao. Nao deve ser informado ao registrar o evento.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="1" name="Funcionalidade" type="funcionalidade:FuncionalidadeType">
+        <xs:annotation>
+          <xs:documentation>Funcionalidade do evento.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="Operacao" type="operacao:OperacaoType">
+        <xs:annotation>
+          <xs:documentation>Operacao do evento.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="CNS" type="cns:CNSType">
+        <xs:annotation>
+          <xs:documentation>CNS do usuario do SUS vinculado.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="dataEvento" type="xs:dateTime">
+        <xs:annotation>
+          <xs:documentation>Data do evento.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A0c3929e7-e0fb-47de-9d0b-f04a33566f5e</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/cadsus/evento/v1r1/funcionalidade" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/cadsus/evento/v1r1/funcionalidade">
+  <xs:element name="Funcionalidade" type="FuncionalidadeType"/>
+  <xs:complexType name="FuncionalidadeType">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="1" name="codigoFuncionalidade" type="xs:nonNegativeInteger">
+        <xs:annotation>
+          <xs:documentation>Código da funcionalidade.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="descricaoFuncionalidade">
+        <xs:annotation>
+          <xs:documentation>Descrição da funcionalidade.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="50"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A4491e050-0b2c-4424-97d6-d1d3c0c73af1</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/cadsus/evento/v5r0/operacao" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/cadsus/evento/v5r0/operacao">
+  <xs:element name="Operacao" type="OperacaoType"/>
+  <xs:complexType name="OperacaoType">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="1" name="codigoOperacao" type="xs:nonNegativeInteger">
+        <xs:annotation>
+          <xs:documentation>Código da operacao.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="descricaoOperacao">
+        <xs:annotation>
+          <xs:documentation>Descrição da operacao.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="50"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A392d89c3-47cb-4f55-8809-3ab43a9e3128</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/msfalha" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/msfalha" xmlns:mensagem="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/mensagem">
+  <xs:import id="mensagem" namespace="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/mensagem" schemaLocation="https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3Ae67c890e-9b18-4a72-b060-dd95a783b143">
+    <xs:annotation>
+      <xs:documentation>O objeto corresponde as mensagens padronizadas de
+				retorno. Exemplo: Toda e
+				qualquer mensagem que retornara para
+				a acao
+				solicitada, este objeto servira como base para
+				apresentar o codigo da
+				mensagem e se necessario a descricao da mensagem.</xs:documentation>
+    </xs:annotation>
+  </xs:import>
+  <xs:annotation>
+    <xs:documentation>Objeto de tratamento de falhas que podem ocorrer nas
+			diversas chamadas aos
+			servicos do Ministerio da Saude.
+			Exemplo: Toda e
+			qualquer solicitacao pode ocorrer uma falha na
+			aplicacao, ou seja, o
+			seu retorno estara comprometido e sera
+			preenchido este objeto com a
+			informacao, codigo e descricao da falha.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="MSFalha">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="1" minOccurs="0" name="identificador" nillable="true" type="xs:string"/>
+        <xs:element maxOccurs="unbounded" minOccurs="0" name="Mensagem" type="mensagem:MensagemType"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3Ae67c890e-9b18-4a72-b060-dd95a783b143</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/mensagem" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/mensagem">
+  <xs:annotation>
+    <xs:documentation>O objeto corresponde as mensagens padronizadas de retorno. Exemplo: Toda e qualquer mensagem que retornara para a acao solicitada, este objeto servira como base para apresentar o codigo da mensagem e se necessario a descricao da mensagem.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="Mensagem" type="MensagemType"/>
+  <xs:complexType name="MensagemType">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="0" name="codigo" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Codigo da mensagem padronizada.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" name="descricao" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Descricao da mensagem.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A678cf0a6-bcee-4f81-97bc-3293d3430602</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/wsdl/cadsus/auditoria/v5r0/usuariosusvinculado" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/wsdl/cadsus/auditoria/v5r0/usuariosusvinculado" xmlns:usuariosus="http://servicos.saude.gov.br/schema/cadsus/v5r0/usuariosus">
+  <xs:import id="usuariosus" namespace="http://servicos.saude.gov.br/schema/cadsus/v5r0/usuariosus" schemaLocation="https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0?WSDL&amp;type=XSD&amp;file=schema%3A7432815d-35d7-423b-abc9-8224e57fd7f7"/>
+  <xs:annotation>
+    <xs:documentation>Representa.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="UsuarioSUSVinculado" type="UsuarioSUSVinculadoType"/>
+  <xs:complexType name="UsuarioSUSVinculadoType">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="1" name="identificadorTransacao" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Código Identificador da Transação.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="1" ref="usuariosus:UsuarioSUS"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0</con:endpoint></con:endpoints><con:operation id="0565d075-c662-462c-bff0-29adfc5746ba" isOneWay="false" action="" name="obterCamposAlteradosPorTransacao" bindingOperationName="obterCamposAlteradosPorTransacao" type="Request-Response" outputName="responseObterCamposAlteradosPorTransacao" inputName="requestObterCamposAlteradosPorTransacao" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="317d513b-45eb-41a5-9461-9213b433829c" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:aud="http://servicos.saude.gov.br/cadsus/v5r0/auditoriacadsusservice" xmlns:cnes="http://servicos.saude.gov.br/wsdl/mensageria/v5r0/cnesusuario">
+<soap:Header xmlns:soap="http://www.w3.org/2003/05/soap-envelope">
+<wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-
+200401-wss-wssecurity-secext-1.0.xsd">
+ <wsse:UsernameToken wsu:Id="Id-0001334008436683-000000002c4a1908-1"
+xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wsswssecurity-utility-1.0.xsd">
+ <wsse:Username>CADSUS.CNS.PDQ.PUBLICO</wsse:Username>
+ <wsse:Password Type="http://docs.oasisopen.org/wss/2004/01/oasis-200401-wss-username-token-profile-
+1.0#PasswordText">kUXNmiiii#RDdlOELdoe00966</wsse:Password>
+ </wsse:UsernameToken>
+ </wsse:Security>
+ </soap:Header>
+   <soapenv:Body>
+      <aud:requestObterCamposAlteradosPorTransacao>
+         <cnes:CNESUsuario>
+            <cnes:CNES>?</cnes:CNES>
+            <cnes:Usuario>?</cnes:Usuario>
+         </cnes:CNESUsuario>
+         <aud:identificadorTransacao>?</aud:identificadorTransacao>
+      </aud:requestObterCamposAlteradosPorTransacao>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://servicos.saude.gov.br/cadsus/v5r0/auditoriacadsusservice/AuditoriaCadsusServicePortType/requestObterCamposAlteradosPorTransacao"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="0d0d3628-7d67-4551-8594-71c26970beb2" isOneWay="false" action="" name="obterHistoricoImpressao" bindingOperationName="obterHistoricoImpressao" type="Request-Response" outputName="responseObterHistoricoImpressao" inputName="requestObterHistoricoImpressao" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="42417b7f-8a4b-4cc1-857a-45a9640309a8" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:equ="http://servicos.saude.gov.br/cnes/v1r0/equipamentoservice" xmlns:cod="http://servicos.saude.gov.br/schema/cnes/v1r0/codigocnes">
+<soap:Header>
+      <wsse:Security soap:mustUnderstand="true" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+         <wsse:UsernameToken wsu:Id="UsernameToken-5FCA58BED9F27C406E14576381084652">
+            <wsse:Username>CNES.PUBLICO</wsse:Username>
+            <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">cnes#2015public</wsse:Password>
+         </wsse:UsernameToken>
+      </wsse:Security>
+</soap:Header>
+
+   <soap:Body>
+      <equ:requestConsultarEquipamentos>
+         <cod:CodigoCNES>
+            <cod:codigo>2530031</cod:codigo>
+         </cod:CodigoCNES>
+      </equ:requestConsultarEquipamentos>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://servicos.saude.gov.br/cadsus/v5r0/auditoriacadsusservice/AuditoriaCadsusServicePortType/requestObterHistoricoImpressao"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="b9815254-4ee9-40f0-9b8e-64ff742db1fe" isOneWay="false" action="" name="obterHistoricoTransacoesUsuarioSUS" bindingOperationName="obterHistoricoTransacoesUsuarioSUS" type="Request-Response" outputName="responseObterHistoricoTransacoesUsuarioSUS" inputName="requestObterHistoricoTransacoesUsuarioSUS" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="b21a9271-152b-4bf9-8cf7-ab01213cd2f2" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:aud="http://servicos.saude.gov.br/cadsus/v5r0/auditoriacadsusservice" xmlns:cnes="http://servicos.saude.gov.br/wsdl/mensageria/v5r0/cnesusuario" xmlns:iden="http://servicos.saude.gov.br/schema/cadsus/v5r0/identificadorcorporativo">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <aud:requestObterHistoricoTransacoesUsuarioSUS>
+         <cnes:CNESUsuario>
+            <cnes:CNES>?</cnes:CNES>
+            <cnes:Usuario>?</cnes:Usuario>
+            <!--Optional:-->
+            <cnes:Senha>?</cnes:Senha>
+         </cnes:CNESUsuario>
+         <iden:IdentificadorCorporativo>
+            <iden:numeroIdentificadorCorporativo>?</iden:numeroIdentificadorCorporativo>
+         </iden:IdentificadorCorporativo>
+      </aud:requestObterHistoricoTransacoesUsuarioSUS>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://servicos.saude.gov.br/cadsus/v5r0/auditoriacadsusservice/AuditoriaCadsusServicePortType/requestObterHistoricoTransacoesUsuarioSUS"/></con:call></con:operation><con:operation id="38bc7a0f-5103-44c5-9658-39c8e3cf2ff0" isOneWay="false" action="" name="obterHistoricoUnificacaoUsuarioSUS" bindingOperationName="obterHistoricoUnificacaoUsuarioSUS" type="Request-Response" outputName="responseObterHistoricoUnificacaoUsuarioSUS" inputName="requestObterHistoricoUnificacaoUsuarioSUS" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="478b7a6a-bf46-446b-9305-866657ac4250" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:aud="http://servicos.saude.gov.br/cadsus/v5r0/auditoriacadsusservice" xmlns:cnes="http://servicos.saude.gov.br/wsdl/mensageria/v5r0/cnesusuario" xmlns:iden="http://servicos.saude.gov.br/schema/cadsus/v5r0/identificadorcorporativo">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <aud:requestObterHistoricoUnificacaoUsuarioSUS>
+         <cnes:CNESUsuario>
+            <cnes:CNES>?</cnes:CNES>
+            <cnes:Usuario>?</cnes:Usuario>
+            <!--Optional:-->
+            <cnes:Senha>?</cnes:Senha>
+         </cnes:CNESUsuario>
+         <iden:IdentificadorCorporativo>
+            <iden:numeroIdentificadorCorporativo>?</iden:numeroIdentificadorCorporativo>
+         </iden:IdentificadorCorporativo>
+      </aud:requestObterHistoricoUnificacaoUsuarioSUS>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://servicos.saude.gov.br/cadsus/v5r0/auditoriacadsusservice/AuditoriaCadsusServicePortType/requestObterHistoricoUnificacaoUsuarioSUS"/></con:call></con:operation><con:operation id="f5a2306e-01d7-49ac-8bd2-7b00aeb02685" isOneWay="false" action="" name="obterUltimaDataAlteracaoUsuarioSUS" bindingOperationName="obterUltimaDataAlteracaoUsuarioSUS" type="Request-Response" outputName="responseObterUltimaDataAlteracaoUsuarioSUS" inputName="requestObterUltimaDataAlteracaoUsuarioSUS" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="0e23ae0b-2468-4780-9594-af9d16bd8e06" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:aud="http://servicos.saude.gov.br/cadsus/v5r0/auditoriacadsusservice" xmlns:cnes="http://servicos.saude.gov.br/wsdl/mensageria/v5r0/cnesusuario" xmlns:cns="http://servicos.saude.gov.br/schema/cadsus/v5r0/cns">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <aud:requestObterUltimaDataAlteracaoUsuarioSUS>
+         <cnes:CNESUsuario>
+            <cnes:CNES>?</cnes:CNES>
+            <cnes:Usuario>?</cnes:Usuario>
+            <!--Optional:-->
+            <cnes:Senha>?</cnes:Senha>
+         </cnes:CNESUsuario>
+         <cns:CNS>
+            <cns:numeroCNS>?</cns:numeroCNS>
+            <!--Optional:-->
+            <cns:dataAtribuicao>?</cns:dataAtribuicao>
+            <!--Optional:-->
+            <cns:tipoCartao>?</cns:tipoCartao>
+            <!--Optional:-->
+            <cns:manual>?</cns:manual>
+            <!--Optional:-->
+            <cns:justificativaManual>?</cns:justificativaManual>
+         </cns:CNS>
+      </aud:requestObterUltimaDataAlteracaoUsuarioSUS>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://servicos.saude.gov.br/cadsus/v5r0/auditoriacadsusservice/AuditoriaCadsusServicePortType/requestObterUltimaDataAlteracaoUsuarioSUS"/></con:call></con:operation></con:interface><con:testSuite id="95e2b1a0-8247-4026-a9e3-0628376dbc27" name="AuditoriaCadsusServiceSOAP12Binding TestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="bf3bbe7f-adc9-46c8-a8b9-f7aee0b459e8" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="obterCamposAlteradosPorTransacao TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="cd925800-a3a6-46fd-9b61-a22f20d46b67" name="obterCamposAlteradosPorTransacao"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>AuditoriaCadsusServiceSOAP12Binding</con:interface><con:operation>obterCamposAlteradosPorTransacao</con:operation><con:request name="obterCamposAlteradosPorTransacao" id="719d0291-fd4e-4f7d-b30b-4c8dc84bf42c"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:aud="http://servicos.saude.gov.br/cadsus/v5r0/auditoriacadsusservice" xmlns:cnes="http://servicos.saude.gov.br/wsdl/mensageria/v5r0/cnesusuario">
+   <soap:Header/>
+   <soap:Body>
+      <aud:requestObterCamposAlteradosPorTransacao>
+         <cnes:CNESUsuario>
+            <cnes:CNES>?</cnes:CNES>
+            <cnes:Usuario>?</cnes:Usuario>
+            <!--Optional:-->
+            <cnes:Senha>?</cnes:Senha>
+         </cnes:CNESUsuario>
+         <aud:identificadorTransacao>?</aud:identificadorTransacao>
+      </aud:requestObterCamposAlteradosPorTransacao>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://servicos.saude.gov.br/cadsus/v5r0/auditoriacadsusservice/AuditoriaCadsusServicePortType/requestObterCamposAlteradosPorTransacao"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="5993db54-132d-4c01-98c4-7b77c45d3358" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="obterHistoricoImpressao TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="781df289-7545-4516-b264-9786eeea7d06" name="obterHistoricoImpressao"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>AuditoriaCadsusServiceSOAP12Binding</con:interface><con:operation>obterHistoricoImpressao</con:operation><con:request name="obterHistoricoImpressao" id="e49d6ee1-dc4d-4a03-93a0-945c5e1c051d"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:aud="http://servicos.saude.gov.br/cadsus/v5r0/auditoriacadsusservice" xmlns:cnes="http://servicos.saude.gov.br/wsdl/mensageria/v5r0/cnesusuario" xmlns:cns="http://servicos.saude.gov.br/schema/cadsus/v5r0/cns">
+   <soap:Header/>
+   <soap:Body>
+      <aud:requestObterHistoricoImpressao>
+         <cnes:CNESUsuario>
+            <cnes:CNES>?</cnes:CNES>
+            <cnes:Usuario>?</cnes:Usuario>
+            <!--Optional:-->
+            <cnes:Senha>?</cnes:Senha>
+         </cnes:CNESUsuario>
+         <cns:CNS>
+            <cns:numeroCNS>?</cns:numeroCNS>
+            <!--Optional:-->
+            <cns:dataAtribuicao>?</cns:dataAtribuicao>
+            <!--Optional:-->
+            <cns:tipoCartao>?</cns:tipoCartao>
+            <!--Optional:-->
+            <cns:manual>?</cns:manual>
+            <!--Optional:-->
+            <cns:justificativaManual>?</cns:justificativaManual>
+         </cns:CNS>
+      </aud:requestObterHistoricoImpressao>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://servicos.saude.gov.br/cadsus/v5r0/auditoriacadsusservice/AuditoriaCadsusServicePortType/requestObterHistoricoImpressao"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="dd3fc523-3c0e-4d08-b330-d97616b48929" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="obterHistoricoTransacoesUsuarioSUS TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="856cf432-f4ac-41f7-86ce-63b4fe691a5f" name="obterHistoricoTransacoesUsuarioSUS"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>AuditoriaCadsusServiceSOAP12Binding</con:interface><con:operation>obterHistoricoTransacoesUsuarioSUS</con:operation><con:request name="obterHistoricoTransacoesUsuarioSUS" id="53d86a2f-4e45-40ad-861a-af977cc86878"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:aud="http://servicos.saude.gov.br/cadsus/v5r0/auditoriacadsusservice" xmlns:cnes="http://servicos.saude.gov.br/wsdl/mensageria/v5r0/cnesusuario" xmlns:iden="http://servicos.saude.gov.br/schema/cadsus/v5r0/identificadorcorporativo">
+   <soap:Header/>
+   <soap:Body>
+      <aud:requestObterHistoricoTransacoesUsuarioSUS>
+         <cnes:CNESUsuario>
+            <cnes:CNES>?</cnes:CNES>
+            <cnes:Usuario>?</cnes:Usuario>
+            <!--Optional:-->
+            <cnes:Senha>?</cnes:Senha>
+         </cnes:CNESUsuario>
+         <iden:IdentificadorCorporativo>
+            <iden:numeroIdentificadorCorporativo>?</iden:numeroIdentificadorCorporativo>
+         </iden:IdentificadorCorporativo>
+      </aud:requestObterHistoricoTransacoesUsuarioSUS>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://servicos.saude.gov.br/cadsus/v5r0/auditoriacadsusservice/AuditoriaCadsusServicePortType/requestObterHistoricoTransacoesUsuarioSUS"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="77461a16-15e8-4b65-ad63-745d92aa1d54" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="obterHistoricoUnificacaoUsuarioSUS TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="aac0582d-36a4-4e48-985c-f6042a8380d9" name="obterHistoricoUnificacaoUsuarioSUS"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>AuditoriaCadsusServiceSOAP12Binding</con:interface><con:operation>obterHistoricoUnificacaoUsuarioSUS</con:operation><con:request name="obterHistoricoUnificacaoUsuarioSUS" id="cee7d86a-f13b-4ec3-9cf9-81a54466a7b3"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:aud="http://servicos.saude.gov.br/cadsus/v5r0/auditoriacadsusservice" xmlns:cnes="http://servicos.saude.gov.br/wsdl/mensageria/v5r0/cnesusuario" xmlns:iden="http://servicos.saude.gov.br/schema/cadsus/v5r0/identificadorcorporativo">
+   <soap:Header/>
+   <soap:Body>
+      <aud:requestObterHistoricoUnificacaoUsuarioSUS>
+         <cnes:CNESUsuario>
+            <cnes:CNES>?</cnes:CNES>
+            <cnes:Usuario>?</cnes:Usuario>
+            <!--Optional:-->
+            <cnes:Senha>?</cnes:Senha>
+         </cnes:CNESUsuario>
+         <iden:IdentificadorCorporativo>
+            <iden:numeroIdentificadorCorporativo>?</iden:numeroIdentificadorCorporativo>
+         </iden:IdentificadorCorporativo>
+      </aud:requestObterHistoricoUnificacaoUsuarioSUS>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://servicos.saude.gov.br/cadsus/v5r0/auditoriacadsusservice/AuditoriaCadsusServicePortType/requestObterHistoricoUnificacaoUsuarioSUS"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="f07f4588-d805-4343-a989-b991d132f365" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="obterUltimaDataAlteracaoUsuarioSUS TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="8557c0d9-68c5-4963-b93e-f3da99dc6023" name="obterUltimaDataAlteracaoUsuarioSUS"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>AuditoriaCadsusServiceSOAP12Binding</con:interface><con:operation>obterUltimaDataAlteracaoUsuarioSUS</con:operation><con:request name="obterUltimaDataAlteracaoUsuarioSUS" id="a8464986-9f3f-49d9-abf9-964f3c138184"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:aud="http://servicos.saude.gov.br/cadsus/v5r0/auditoriacadsusservice" xmlns:cnes="http://servicos.saude.gov.br/wsdl/mensageria/v5r0/cnesusuario" xmlns:cns="http://servicos.saude.gov.br/schema/cadsus/v5r0/cns">
+   <soap:Header/>
+   <soap:Body>
+      <aud:requestObterUltimaDataAlteracaoUsuarioSUS>
+         <cnes:CNESUsuario>
+            <cnes:CNES>?</cnes:CNES>
+            <cnes:Usuario>?</cnes:Usuario>
+            <!--Optional:-->
+            <cnes:Senha>?</cnes:Senha>
+         </cnes:CNESUsuario>
+         <cns:CNS>
+            <cns:numeroCNS>?</cns:numeroCNS>
+            <!--Optional:-->
+            <cns:dataAtribuicao>?</cns:dataAtribuicao>
+            <!--Optional:-->
+            <cns:tipoCartao>?</cns:tipoCartao>
+            <!--Optional:-->
+            <cns:manual>?</cns:manual>
+            <!--Optional:-->
+            <cns:justificativaManual>?</cns:justificativaManual>
+         </cns:CNS>
+      </aud:requestObterUltimaDataAlteracaoUsuarioSUS>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://servicos.saude.gov.br/cadsus/v5r0/auditoriacadsusservice/AuditoriaCadsusServicePortType/requestObterUltimaDataAlteracaoUsuarioSUS"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:testSuite id="a5ab6a94-537f-4455-837e-14a121a84a40" name="AuditoriaCadsusServiceSOAP11Binding TestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="6c3a6a5a-5a40-44a1-8b11-06cbd822b430" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="obterCamposAlteradosPorTransacao TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="30b5cfd0-1bc3-4a20-8705-f09655d8370b" name="obterCamposAlteradosPorTransacao"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>AuditoriaCadsusServiceSOAP11Binding</con:interface><con:operation>obterCamposAlteradosPorTransacao</con:operation><con:request name="obterCamposAlteradosPorTransacao" id="9e16f963-39d2-4cd3-996f-4ed444cec845"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:aud="http://servicos.saude.gov.br/cadsus/v5r0/auditoriacadsusservice" xmlns:cnes="http://servicos.saude.gov.br/wsdl/mensageria/v5r0/cnesusuario">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <aud:requestObterCamposAlteradosPorTransacao>
+         <cnes:CNESUsuario>
+            <cnes:CNES>?</cnes:CNES>
+            <cnes:Usuario>?</cnes:Usuario>
+            <!--Optional:-->
+            <cnes:Senha>?</cnes:Senha>
+         </cnes:CNESUsuario>
+         <aud:identificadorTransacao>?</aud:identificadorTransacao>
+      </aud:requestObterCamposAlteradosPorTransacao>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://servicos.saude.gov.br/cadsus/v5r0/auditoriacadsusservice/AuditoriaCadsusServicePortType/requestObterCamposAlteradosPorTransacao"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="7b69b3c6-5d18-438c-a9ae-ad5b4b3a1216" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="obterHistoricoImpressao TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="c10b4423-f82a-4720-9afb-f159cf06b762" name="obterHistoricoImpressao"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>AuditoriaCadsusServiceSOAP11Binding</con:interface><con:operation>obterHistoricoImpressao</con:operation><con:request name="obterHistoricoImpressao" id="3b4d3435-615a-4e99-a0d3-6e30ea66866c"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:aud="http://servicos.saude.gov.br/cadsus/v5r0/auditoriacadsusservice" xmlns:cnes="http://servicos.saude.gov.br/wsdl/mensageria/v5r0/cnesusuario" xmlns:cns="http://servicos.saude.gov.br/schema/cadsus/v5r0/cns">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <aud:requestObterHistoricoImpressao>
+         <cnes:CNESUsuario>
+            <cnes:CNES>?</cnes:CNES>
+            <cnes:Usuario>?</cnes:Usuario>
+            <!--Optional:-->
+            <cnes:Senha>?</cnes:Senha>
+         </cnes:CNESUsuario>
+         <cns:CNS>
+            <cns:numeroCNS>?</cns:numeroCNS>
+            <!--Optional:-->
+            <cns:dataAtribuicao>?</cns:dataAtribuicao>
+            <!--Optional:-->
+            <cns:tipoCartao>?</cns:tipoCartao>
+            <!--Optional:-->
+            <cns:manual>?</cns:manual>
+            <!--Optional:-->
+            <cns:justificativaManual>?</cns:justificativaManual>
+         </cns:CNS>
+      </aud:requestObterHistoricoImpressao>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://servicos.saude.gov.br/cadsus/v5r0/auditoriacadsusservice/AuditoriaCadsusServicePortType/requestObterHistoricoImpressao"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="33a4bbbd-dc87-41d9-94bb-28f9ef4385c1" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="obterHistoricoTransacoesUsuarioSUS TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="1c3249ee-9b2a-4245-9ddd-132bdb8d0b18" name="obterHistoricoTransacoesUsuarioSUS"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>AuditoriaCadsusServiceSOAP11Binding</con:interface><con:operation>obterHistoricoTransacoesUsuarioSUS</con:operation><con:request name="obterHistoricoTransacoesUsuarioSUS" id="4b697fe2-1486-4dda-ae26-5e89f9dd35e5"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:aud="http://servicos.saude.gov.br/cadsus/v5r0/auditoriacadsusservice" xmlns:cnes="http://servicos.saude.gov.br/wsdl/mensageria/v5r0/cnesusuario" xmlns:iden="http://servicos.saude.gov.br/schema/cadsus/v5r0/identificadorcorporativo">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <aud:requestObterHistoricoTransacoesUsuarioSUS>
+         <cnes:CNESUsuario>
+            <cnes:CNES>?</cnes:CNES>
+            <cnes:Usuario>?</cnes:Usuario>
+            <!--Optional:-->
+            <cnes:Senha>?</cnes:Senha>
+         </cnes:CNESUsuario>
+         <iden:IdentificadorCorporativo>
+            <iden:numeroIdentificadorCorporativo>?</iden:numeroIdentificadorCorporativo>
+         </iden:IdentificadorCorporativo>
+      </aud:requestObterHistoricoTransacoesUsuarioSUS>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://servicos.saude.gov.br/cadsus/v5r0/auditoriacadsusservice/AuditoriaCadsusServicePortType/requestObterHistoricoTransacoesUsuarioSUS"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="3463b920-2283-42c1-8499-b73c7abf34f5" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="obterHistoricoUnificacaoUsuarioSUS TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="7e2b61af-42c1-4e74-9f39-71f2cfdde40e" name="obterHistoricoUnificacaoUsuarioSUS"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>AuditoriaCadsusServiceSOAP11Binding</con:interface><con:operation>obterHistoricoUnificacaoUsuarioSUS</con:operation><con:request name="obterHistoricoUnificacaoUsuarioSUS" id="2a0848bf-3593-4a8e-a197-09a7ecabee48"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:aud="http://servicos.saude.gov.br/cadsus/v5r0/auditoriacadsusservice" xmlns:cnes="http://servicos.saude.gov.br/wsdl/mensageria/v5r0/cnesusuario" xmlns:iden="http://servicos.saude.gov.br/schema/cadsus/v5r0/identificadorcorporativo">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <aud:requestObterHistoricoUnificacaoUsuarioSUS>
+         <cnes:CNESUsuario>
+            <cnes:CNES>?</cnes:CNES>
+            <cnes:Usuario>?</cnes:Usuario>
+            <!--Optional:-->
+            <cnes:Senha>?</cnes:Senha>
+         </cnes:CNESUsuario>
+         <iden:IdentificadorCorporativo>
+            <iden:numeroIdentificadorCorporativo>?</iden:numeroIdentificadorCorporativo>
+         </iden:IdentificadorCorporativo>
+      </aud:requestObterHistoricoUnificacaoUsuarioSUS>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://servicos.saude.gov.br/cadsus/v5r0/auditoriacadsusservice/AuditoriaCadsusServicePortType/requestObterHistoricoUnificacaoUsuarioSUS"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="615cdb0d-c4e8-4012-b2b3-a9478fb48f96" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="obterUltimaDataAlteracaoUsuarioSUS TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="0a005198-a8da-4ac6-86c7-f391ca875923" name="obterUltimaDataAlteracaoUsuarioSUS"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>AuditoriaCadsusServiceSOAP11Binding</con:interface><con:operation>obterUltimaDataAlteracaoUsuarioSUS</con:operation><con:request name="obterUltimaDataAlteracaoUsuarioSUS" id="399bcb15-cb2e-42fb-a816-5d06673c2117"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://servicoshm.saude.gov.br/cadsus/AuditoriaCadsusService/v5r0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:aud="http://servicos.saude.gov.br/cadsus/v5r0/auditoriacadsusservice" xmlns:cnes="http://servicos.saude.gov.br/wsdl/mensageria/v5r0/cnesusuario" xmlns:cns="http://servicos.saude.gov.br/schema/cadsus/v5r0/cns">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <aud:requestObterUltimaDataAlteracaoUsuarioSUS>
+         <cnes:CNESUsuario>
+            <cnes:CNES>?</cnes:CNES>
+            <cnes:Usuario>?</cnes:Usuario>
+            <!--Optional:-->
+            <cnes:Senha>?</cnes:Senha>
+         </cnes:CNESUsuario>
+         <cns:CNS>
+            <cns:numeroCNS>?</cns:numeroCNS>
+            <!--Optional:-->
+            <cns:dataAtribuicao>?</cns:dataAtribuicao>
+            <!--Optional:-->
+            <cns:tipoCartao>?</cns:tipoCartao>
+            <!--Optional:-->
+            <cns:manual>?</cns:manual>
+            <!--Optional:-->
+            <cns:justificativaManual>?</cns:justificativaManual>
+         </cns:CNS>
+      </aud:requestObterUltimaDataAlteracaoUsuarioSUS>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://servicos.saude.gov.br/cadsus/v5r0/auditoriacadsusservice/AuditoriaCadsusServicePortType/requestObterUltimaDataAlteracaoUsuarioSUS"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
