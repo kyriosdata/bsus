@@ -729,8 +729,15 @@
       </xs:element>
     </xs:sequence>
   </xs:complexType>
-</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://servicos.saude.gov.br/cnes/VinculacaoProfissionalService/v1</con:endpoint></con:endpoints><con:operation id="a7d09fe2-079a-4b8e-8731-a54e353698f0" isOneWay="false" action="" name="detalharVinculacaoProfissionalSaude" bindingOperationName="detalharVinculacaoProfissionalSaude" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="85299e89-1d7e-4627-857b-e0cf15b545b5" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://servicos.saude.gov.br/cnes/VinculacaoProfissionalService/v1</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:vin="http://servicos.saude.gov.br/cnes/v1r0/vinculacaoprofissionalservice" xmlns:fil="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/filtropesquisavinculacao" xmlns:cpf="http://servicos.saude.gov.br/schema/corporativo/documento/v1r2/cpf" xmlns:cns="http://servicos.saude.gov.br/schema/cadsus/v5r0/cns" xmlns:cod="http://servicos.saude.gov.br/schema/cnes/v1r0/codigocnes" xmlns:cnpj="http://servicos.saude.gov.br/schema/corporativo/pessoajuridica/v1r0/cnpj">
-   <soap:Header/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://servicos.saude.gov.br/cnes/VinculacaoProfissionalService/v1</con:endpoint></con:endpoints><con:operation id="a7d09fe2-079a-4b8e-8731-a54e353698f0" isOneWay="false" action="" name="detalharVinculacaoProfissionalSaude" bindingOperationName="detalharVinculacaoProfissionalSaude" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="85299e89-1d7e-4627-857b-e0cf15b545b5" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://servicos.saude.gov.br/cnes/VinculacaoProfissionalService/v1</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:vin="http://servicos.saude.gov.br/cnes/v1r0/vinculacaoprofissionalservice" xmlns:fil="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/filtropesquisavinculacao" xmlns:cpf="http://servicos.saude.gov.br/schema/corporativo/documento/v1r2/cpf" xmlns:cns="http://servicos.saude.gov.br/schema/cadsus/v5r0/cns" xmlns:cod="http://servicos.saude.gov.br/schema/cnes/v1r0/codigocnes" xmlns:cnpj="http://servicos.saude.gov.br/schema/corporativo/pessoajuridica/v1r0/cnpj">
+   <soap:Header>
+      <wsse:Security soap:mustUnderstand="true" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+         <wsse:UsernameToken wsu:Id="UsernameToken-5FCA58BED9F27C406E14576381084652">
+            <wsse:Username>CNES.PUBLICO</wsse:Username>
+            <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">cnes#2015public</wsse:Password>
+         </wsse:UsernameToken>
+      </wsse:Security>
+   </soap:Header>
    <soap:Body>
       <vin:RequestVinculacao>
          <!--Optional:-->
@@ -759,37 +766,243 @@
          </fil:FiltroPesquisaVinculacao>
       </vin:RequestVinculacao>
    </soap:Body>
-</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://servicos.saude.gov.br/cnes/v1r0/vinculacaoprofissionalservice/VinculacaoPortType/detalharVinculacaoProfissionalSaudeRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="c5359f64-00a7-46a1-b6a9-189f5a333509" isOneWay="false" action="" name="pesquisarVinculacaoProfissionalSaude" bindingOperationName="pesquisarVinculacaoProfissionalSaude" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="84295fe4-c57b-481d-898c-d6d198a169c4" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://servicos.saude.gov.br/cnes/VinculacaoProfissionalService/v1</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:vin="http://servicos.saude.gov.br/cnes/v1r0/vinculacaoprofissionalservice" xmlns:fil="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/filtropesquisavinculacaos" xmlns:cpf="http://servicos.saude.gov.br/schema/corporativo/documento/v1r2/cpf" xmlns:cns="http://servicos.saude.gov.br/schema/cadsus/v5r0/cns" xmlns:cod="http://servicos.saude.gov.br/schema/cnes/v1r0/codigocnes" xmlns:cnpj="http://servicos.saude.gov.br/schema/corporativo/pessoajuridica/v1r0/cnpj" xmlns:pag="http://servicos.saude.gov.br/wsdl/mensageria/v1/paginacao">
-   <soap:Header/>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://servicos.saude.gov.br/cnes/v1r0/vinculacaoprofissionalservice/VinculacaoPortType/detalharVinculacaoProfissionalSaudeRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="c5359f64-00a7-46a1-b6a9-189f5a333509" isOneWay="false" action="" name="pesquisarVinculacaoProfissionalSaude" bindingOperationName="pesquisarVinculacaoProfissionalSaude" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="84295fe4-c57b-481d-898c-d6d198a169c4" name="pesquisar-vinculacao"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://servicos.saude.gov.br/cnes/VinculacaoProfissionalService/v1r0</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:vin="http://servicos.saude.gov.br/cnes/v1r0/vinculacaoprofissionalservice" xmlns:fil="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/filtropesquisavinculacaos" xmlns:cpf="http://servicos.saude.gov.br/schema/corporativo/documento/v1r2/cpf" xmlns:cns="http://servicos.saude.gov.br/schema/cadsus/v5r0/cns" xmlns:cod="http://servicos.saude.gov.br/schema/cnes/v1r0/codigocnes" xmlns:cnpj="http://servicos.saude.gov.br/schema/corporativo/pessoajuridica/v1r0/cnpj" xmlns:pag="http://servicos.saude.gov.br/wsdl/mensageria/v1/paginacao">
+   <soap:Header>
+      <wsse:Security soap:mustUnderstand="true" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+         <wsse:UsernameToken wsu:Id="UsernameToken-5FCA58BED9F27C406E14576381084652">
+            <wsse:Username>CNES.PUBLICO</wsse:Username>
+            <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">cnes#2015public</wsse:Password>
+         </wsse:UsernameToken>
+      </wsse:Security>
+   </soap:Header>
    <soap:Body>
       <vin:RequestVinculacaos>
-         <!--Optional:-->
          <fil:FiltroPesquisaVinculacaos>
             <fil:IdentificacaoProfissional>
-               <!--You have a CHOICE of the next 2 items at this level-->
                <fil:cpf>
-                  <cpf:numeroCPF>?</cpf:numeroCPF>
+                  <cpf:numeroCPF>02034935322</cpf:numeroCPF>
                </fil:cpf>
-               <fil:cns>
-                  <cns:numeroCNS>?</cns:numeroCNS>
-               </fil:cns>
             </fil:IdentificacaoProfissional>
             <fil:IdentificacaoEstabelecimento>
-               <!--You have a CHOICE of the next 2 items at this level-->
                <fil:cnes>
-                  <cod:codigo>?</cod:codigo>
+                  <cod:codigo>2530031</cod:codigo>
                </fil:cnes>
-               <fil:cnpj>
-                  <cnpj:numeroCNPJ>?</cnpj:numeroCNPJ>
-               </fil:cnpj>
             </fil:IdentificacaoEstabelecimento>
          </fil:FiltroPesquisaVinculacaos>
          <Paginacao>
-            <pag:registroInicial>?</pag:registroInicial>
-            <pag:quantidadeRegistros>?</pag:quantidadeRegistros>
-            <!--Optional:-->
-            <pag:totalRegistros>?</pag:totalRegistros>
+            <pag:registroInicial>1</pag:registroInicial>
+            <pag:quantidadeRegistros>100</pag:quantidadeRegistros>
+            <pag:totalRegistros>100</pag:totalRegistros>
          </Paginacao>
       </vin:RequestVinculacaos>
    </soap:Body>
-</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://servicos.saude.gov.br/cnes/v1r0/vinculacaoprofissionalservice/VinculacaoPortType/pesquisarVinculacaoProfissionalSaudeRequest"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://servicos.saude.gov.br/cnes/v1r0/vinculacaoprofissionalservice/VinculacaoPortType/pesquisarVinculacaoProfissionalSaudeRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="b23e17e5-f20d-4371-9ee4-5eddf3660893" wsaVersion="NONE" name="LeitoServiceSOAP12Binding" type="wsdl" bindingName="{http://servicos.saude.gov.br/cnes/v1r0/leitoservice}LeitoServiceSOAP12Binding" soapVersion="1_2" anonymous="optional" definition="https://servicoshm.saude.gov.br/cnes/LeitoService/v1r0?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>https://servicoshm.saude.gov.br/cnes/LeitoService/v1r0</con:endpoint></con:endpoints><con:operation id="bd8b6489-3f07-424a-91b7-f1ea356fed32" isOneWay="false" action="" name="consultarLeitosCNES" bindingOperationName="consultarLeitosCNES" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="b2d67ddb-8ea8-4bdb-8159-6d57fe233b55" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://servicoshm.saude.gov.br/cnes/LeitoService/v1r0</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:leit="http://servicos.saude.gov.br/cnes/v1r0/leitoservice" xmlns:cod="http://servicos.saude.gov.br/schema/cnes/v1r0/codigocnes">
+   <soap:Header/>
+   <soap:Body>
+      <leit:requestConsultarLeitosCNES>
+         <cod:CodigoCNES>
+            <cod:codigo>?</cod:codigo>
+         </cod:CodigoCNES>
+      </leit:requestConsultarLeitosCNES>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://servicos.saude.gov.br/cnes/v1r0/leitoservice/LeitoServicePortType/consultarLeitosCNESRequest"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="11801fea-f26a-4bcd-a9cd-db11265fdb5c" wsaVersion="NONE" name="LeitoServiceSOAP11Binding" type="wsdl" bindingName="{http://servicos.saude.gov.br/cnes/v1r0/leitoservice}LeitoServiceSOAP11Binding" soapVersion="1_1" anonymous="optional" definition="https://servicoshm.saude.gov.br/cnes/LeitoService/v1r0?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://servicoshm.saude.gov.br/cnes/LeitoService/v1r0?wsdl"><con:part><con:url>https://servicoshm.saude.gov.br/cnes/LeitoService/v1r0?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="leito.v1r0" targetNamespace="http://servicos.saude.gov.br/cnes/v1r0/leitoservice" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://servicos.saude.gov.br/cnes/v1r0/leitoservice" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:leito="http://servicos.saude.gov.br/schema/cnes/v1r0/leito" xmlns:cnes="http://servicos.saude.gov.br/schema/cnes/v1r0/codigocnes" xmlns:msfalha="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/msfalha">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/cnes/v1r0/leitoservice">
+      <xs:import id="cnes" namespace="http://servicos.saude.gov.br/schema/cnes/v1r0/codigocnes" schemaLocation="https://servicoshm.saude.gov.br/cnes/LeitoService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fcnes%2Fcodigocnes.v1r0.xsd"/>
+      <xs:import id="msfalha" namespace="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/msfalha" schemaLocation="https://servicoshm.saude.gov.br/cnes/LeitoService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fmensageria%2Ffalha%2Fmsfalha.v5r0.xsd"/>
+      <xs:import id="leito" namespace="http://servicos.saude.gov.br/schema/cnes/v1r0/leito" schemaLocation="https://servicoshm.saude.gov.br/cnes/LeitoService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fcnes%2Fleitos%2Fleito.v1r0.xsd"/>
+      <xs:element name="requestConsultarLeitosCNES">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" ref="cnes:CodigoCNES">
+              <xs:annotation>
+                <xs:documentation>Código do CNES</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="responseConsultarLeitosCNES">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" ref="leito:leito"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="requestConsultarLeitosCNES">
+    <wsdl:part element="tns:requestConsultarLeitosCNES" name="requestConsultarLeitosCNES"/>
+  </wsdl:message>
+  <wsdl:message name="responseConsultarLeitosCNES">
+    <wsdl:part element="tns:responseConsultarLeitosCNES" name="responseConsultarLeitosCNES"/>
+  </wsdl:message>
+  <wsdl:message name="LeitoFault">
+    <wsdl:part name="fault" element="msfalha:MSFalha"/>
+  </wsdl:message>
+  <wsdl:portType name="LeitoServicePortType">
+    <wsdl:operation name="consultarLeitosCNES">
+      <wsdl:documentation>Consultar os leitos do
+				Estabelecimento de Saude pelo código do CNES.</wsdl:documentation>
+      <wsdl:input name="requestConsultarLeitosCNES" message="tns:requestConsultarLeitosCNES"/>
+      <wsdl:output name="responseConsultarProfissionaisSaude" message="tns:responseConsultarLeitosCNES"/>
+      <wsdl:fault name="LeitoFault" message="tns:LeitoFault"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="LeitoServiceSOAP12Binding" type="tns:LeitoServicePortType">
+    <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="consultarLeitosCNES">
+      <wsdl:documentation>Consultar os leitos do
+				Estabelecimento de Saude pelo código do CNES.</wsdl:documentation>
+      <soap12:operation soapAction=""/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="LeitoFault">
+        <soap12:fault name="LeitoFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="LeitoServiceSOAP11Binding" type="tns:LeitoServicePortType">
+    <soap11:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="consultarLeitosCNES">
+      <wsdl:documentation>Consultar os leitos do
+				Estabelecimento de Saude pelo código do CNES.</wsdl:documentation>
+      <soap11:operation soapAction=""/>
+      <wsdl:input>
+        <soap11:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="LeitoFault">
+        <soap11:fault name="LeitoFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LeitoService">
+    <wsdl:port binding="tns:LeitoServiceSOAP12Binding" name="LeitoServicePort">
+      <soap12:address location="https://servicoshm.saude.gov.br/cnes/LeitoService/v1r0"/>
+    </wsdl:port>
+    <wsdl:port binding="tns:LeitoServiceSOAP11Binding" name="LeitoServiceSOAP11Port">
+      <soap11:address location="https://servicoshm.saude.gov.br/cnes/LeitoService/v1r0"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cnes/LeitoService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fcnes%2Fcodigocnes.v1r0.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/cnes/v1r0/codigocnes" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/cnes/v1r0/codigocnes">
+  <xs:annotation>
+    <xs:documentation>Este esquema representa a Código do Estabelecimento de Saúde no CNES.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="CodigoCNES" type="CodigoCNESType"/>
+  <xs:complexType name="CodigoCNESType">
+    <xs:sequence>
+      <xs:element name="codigo" minOccurs="1" maxOccurs="1">
+        <xs:simpleType>
+          <xs:annotation>
+            <xs:documentation>Código do Estabelecimento de Saúde.</xs:documentation>
+          </xs:annotation>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="7"/>
+            <xs:maxLength value="7"/>
+            <xs:pattern value="[0-9]*"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cnes/LeitoService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fmensageria%2Ffalha%2Fmsfalha.v5r0.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/msfalha" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mensagem="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/mensagem" xmlns="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/msfalha">
+  <xs:import id="mensagem" namespace="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/mensagem" schemaLocation="https://servicoshm.saude.gov.br/cnes/LeitoService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fmensageria%2Ffalha%2Fmensagem.v5r0.xsd">
+    <xs:annotation>
+      <xs:documentation>O objeto corresponde as mensagens padronizadas de
+				retorno. Exemplo: Toda e
+				qualquer mensagem que retornara para
+				a acao
+				solicitada, este objeto servira como base para
+				apresentar o codigo da
+				mensagem e se necessario a descricao da mensagem.</xs:documentation>
+    </xs:annotation>
+  </xs:import>
+  <xs:annotation>
+    <xs:documentation>Objeto de tratamento de falhas que podem ocorrer nas
+			diversas chamadas aos
+			servicos do Ministerio da Saude.
+			Exemplo: Toda e
+			qualquer solicitacao pode ocorrer uma falha na
+			aplicacao, ou seja, o
+			seu retorno estara comprometido e sera
+			preenchido este objeto com a
+			informacao, codigo e descricao da falha.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="MSFalha">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" nillable="true" name="identificador" type="xs:string"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="Mensagem" type="mensagem:MensagemType"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cnes/LeitoService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fmensageria%2Ffalha%2Fmensagem.v5r0.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/mensagem" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/mensagem">
+  <xs:annotation>
+    <xs:documentation>O objeto corresponde as mensagens padronizadas de retorno. Exemplo: Toda e qualquer mensagem que retornara para a acao solicitada, este objeto servira como base para apresentar o codigo da mensagem e se necessario a descricao da mensagem.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="Mensagem" type="MensagemType"/>
+  <xs:complexType name="MensagemType">
+    <xs:sequence>
+      <xs:element name="codigo" minOccurs="0" maxOccurs="1" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Codigo da mensagem padronizada.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="descricao" minOccurs="0" maxOccurs="1" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Descricao da mensagem.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicoshm.saude.gov.br/cnes/LeitoService/v1r0?WSDL&amp;type=XSD&amp;file=file%3A%2FC%3A%2FUsers%2FAdministrador%2FDownloads%2FOAG_20160318_11-20%2FRESOURCES50%2Fxsd%2Fcnes%2Fleitos%2Fleito.v1r0.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/cnes/v1r0/leito" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/cnes/v1r0/leito">
+  <xs:annotation>
+    <xs:documentation>Este esquema representa o Leito do Estabelecimento de Saúde.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="leito" type="LeitoType"/>
+  <xs:complexType name="LeitoType">
+    <xs:sequence>
+      <xs:element name="codigo" minOccurs="1" maxOccurs="1" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Código do Leito do Estabelecimento de Saúde..</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="descricao" minOccurs="1" maxOccurs="1" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Descrição do Leito do Estabelecimento de Saúde..</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="dataAtualizacao" minOccurs="0" maxOccurs="1" type="xs:dateTime">
+        <xs:annotation>
+          <xs:documentation>Data de Atualização da informação..</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="quantidadeLeito" minOccurs="0" maxOccurs="1" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>Quantidade de Leitos no Estabelecimento de Saúde..</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="quantidadeLeitoSUS" minOccurs="0" maxOccurs="1" type="xs:integer">
+        <xs:annotation>
+          <xs:documentation>Quantidade de Leitos do SUS..</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://servicoshm.saude.gov.br/cnes/LeitoService/v1r0</con:endpoint></con:endpoints><con:operation id="0810d026-d6db-44d0-ac3b-20037046ba10" isOneWay="false" action="" name="consultarLeitosCNES" bindingOperationName="consultarLeitosCNES" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="2d6e7a81-58e0-41c4-bdd8-f4c931ab02be" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://servicoshm.saude.gov.br/cnes/LeitoService/v1r0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:leit="http://servicos.saude.gov.br/cnes/v1r0/leitoservice" xmlns:cod="http://servicos.saude.gov.br/schema/cnes/v1r0/codigocnes">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <leit:requestConsultarLeitosCNES>
+         <cod:CodigoCNES>
+            <cod:codigo>?</cod:codigo>
+         </cod:CodigoCNES>
+      </leit:requestConsultarLeitosCNES>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://servicos.saude.gov.br/cnes/v1r0/leitoservice/LeitoServicePortType/consultarLeitosCNESRequest"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
