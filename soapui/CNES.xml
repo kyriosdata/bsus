@@ -696,19 +696,22 @@
          </Paginacao>
       </vin:RequestVinculacaos>
    </soap:Body>
-</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://servicos.saude.gov.br/cnes/v1r0/vinculacaoprofissionalservice/VinculacaoPortType/pesquisarVinculacaoProfissionalSaudeRequest"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="eb5cb5f0-96fa-43cc-935d-89adabe7848f" wsaVersion="NONE" name="ProfissionalSaudeServiceSOAP12Binding" type="wsdl" bindingName="{http://servicos.saude.gov.br/cnes/v1r0/profissionalsaudeservice}ProfissionalSaudeServiceSOAP12Binding" soapVersion="1_2" anonymous="optional" definition="https://servicoshm.saude.gov.br/cnes/ProfissionalSaudeService/v1r0?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>https://servicos.saude.gov.br/cnes/ProfissionalSaudeService/v1r0</con:endpoint></con:endpoints><con:operation id="532e4c46-6227-4f0c-b7a5-394f21d107cc" isOneWay="false" action="" name="consultarProfissionaisSaude" bindingOperationName="consultarProfissionaisSaude" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="c6adf3f7-ab02-4230-bcff-4887b7593878" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://servicos.saude.gov.br/cnes/ProfissionalSaudeService/v1r0</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:prof="http://servicos.saude.gov.br/cnes/v1r0/profissionalsaudeservice" xmlns:fil="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/filtropesquisaestabelecimentosaude" xmlns:cod="http://servicos.saude.gov.br/schema/cnes/v1r0/codigocnes" xmlns:cnpj="http://servicos.saude.gov.br/schema/corporativo/pessoajuridica/v1r0/cnpj">
-   <soap:Header/>
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://servicos.saude.gov.br/cnes/v1r0/vinculacaoprofissionalservice/VinculacaoPortType/pesquisarVinculacaoProfissionalSaudeRequest"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="eb5cb5f0-96fa-43cc-935d-89adabe7848f" wsaVersion="NONE" name="ProfissionalSaudeServiceSOAP12Binding" type="wsdl" bindingName="{http://servicos.saude.gov.br/cnes/v1r0/profissionalsaudeservice}ProfissionalSaudeServiceSOAP12Binding" soapVersion="1_2" anonymous="optional" definition="https://servicoshm.saude.gov.br/cnes/ProfissionalSaudeService/v1r0?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>https://servicos.saude.gov.br/cnes/ProfissionalSaudeService/v1r0</con:endpoint></con:endpoints><con:operation id="532e4c46-6227-4f0c-b7a5-394f21d107cc" isOneWay="false" action="" name="consultarProfissionaisSaude" bindingOperationName="consultarProfissionaisSaude" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="c6adf3f7-ab02-4230-bcff-4887b7593878" name="consultar-profissionais"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://servicos.saude.gov.br/cnes/ProfissionalSaudeService/v1r0</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:prof="http://servicos.saude.gov.br/cnes/v1r0/profissionalsaudeservice" xmlns:fil="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/filtropesquisaestabelecimentosaude" xmlns:cod="http://servicos.saude.gov.br/schema/cnes/v1r0/codigocnes" xmlns:cnpj="http://servicos.saude.gov.br/schema/corporativo/pessoajuridica/v1r0/cnpj">
+<soap:Header>
+      <wsse:Security soap:mustUnderstand="true" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+         <wsse:UsernameToken wsu:Id="UsernameToken-5FCA58BED9F27C406E14576381084652">
+            <wsse:Username>CNES.PUBLICO</wsse:Username>
+            <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">cnes#2015public</wsse:Password>
+         </wsse:UsernameToken>
+      </wsse:Security>
+</soap:Header>
+
    <soap:Body>
       <prof:requestConsultarProfissionaisSaude>
          <fil:FiltroPesquisaEstabelecimentoSaude>
-            <!--Optional:-->
             <cod:CodigoCNES>
-               <cod:codigo>?</cod:codigo>
+               <cod:codigo>2530031</cod:codigo>
             </cod:CodigoCNES>
-            <!--Optional:-->
-            <cnpj:CNPJ>
-               <cnpj:numeroCNPJ>?</cnpj:numeroCNPJ>
-            </cnpj:CNPJ>
          </fil:FiltroPesquisaEstabelecimentoSaude>
       </prof:requestConsultarProfissionaisSaude>
    </soap:Body>
