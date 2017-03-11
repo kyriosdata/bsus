@@ -18,21 +18,27 @@
          </fil:FiltroPesquisaEstabelecimentoSaude>
       </est:requestConsultarEstabelecimentoSaude>
    </soap:Body>
-</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://servicos.saude.gov.br/cnes/v1r0/estabelecimentosaudeservice/EstabelecimentoSaudeServicePortType/consultarEstabelecimentoSaudeRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="b19b8a54-f343-416a-a910-51287d586b44" isOneWay="false" action="" name="consultarPrecadastroCNES" bindingOperationName="consultarPrecadastroCNES" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="d77bad7f-9bda-4d2b-88f1-847d19fd3028" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://servicos.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:est="http://servicos.saude.gov.br/cnes/v1r0/estabelecimentosaudeservice" xmlns:fil="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/filtropesquisaprecadastrocnes" xmlns:cod="http://servicos.saude.gov.br/schema/cnes/v1r0/codigocnes">
-   <soap:Header/>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://servicos.saude.gov.br/cnes/v1r0/estabelecimentosaudeservice/EstabelecimentoSaudeServicePortType/consultarEstabelecimentoSaudeRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="b19b8a54-f343-416a-a910-51287d586b44" isOneWay="false" action="" name="consultarPrecadastroCNES" bindingOperationName="consultarPrecadastroCNES" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="d77bad7f-9bda-4d2b-88f1-847d19fd3028" name="pre-cadastro"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://servicos.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:est="http://servicos.saude.gov.br/cnes/v1r0/estabelecimentosaudeservice" xmlns:fil="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/filtropesquisaprecadastrocnes" xmlns:cod="http://servicos.saude.gov.br/schema/cnes/v1r0/codigocnes">
+<soap:Header>
+      <wsse:Security soap:mustUnderstand="true" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+         <wsse:UsernameToken wsu:Id="UsernameToken-5FCA58BED9F27C406E14576381084652">
+            <wsse:Username>CNES.PUBLICO</wsse:Username>
+            <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">cnes#2015public</wsse:Password>
+         </wsse:UsernameToken>
+      </wsse:Security>
+</soap:Header>
+
    <soap:Body>
       <est:requestConsultarPrecadastroCNES>
          <fil:FiltroPesquisaPrecadastroCnes>
-            <!--Optional:-->
             <cod:CodigoCNES>
-               <cod:codigo>?</cod:codigo>
+               <cod:codigo>2530031</cod:codigo>
             </cod:CodigoCNES>
-            <!--Optional:-->
-            <fil:situacao>?</fil:situacao>
+            <fil:situacao>A</fil:situacao>
          </fil:FiltroPesquisaPrecadastroCnes>
       </est:requestConsultarPrecadastroCNES>
    </soap:Body>
-</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://servicos.saude.gov.br/cnes/v1r0/estabelecimentosaudeservice/EstabelecimentoSaudeServicePortType/consultarPrecadastroCNESRequest"/></con:call></con:operation><con:operation id="1341ca01-fd8a-43cc-8e41-1d22c4e1943d" isOneWay="false" action="" name="localizarEstabelecimentoSaude" bindingOperationName="localizarEstabelecimentoSaude" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="44e7dd96-5b2a-4f5b-9007-2d9da519e104" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://servicos.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:est="http://servicos.saude.gov.br/cnes/v1r0/estabelecimentosaudeservice" xmlns:fil="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/filtrolocalizacaoestabelecimentosaude" xmlns:loc="http://servicos.saude.gov.br/schema/cnes/v1r0/localizacao" xmlns:tip="http://servicos.saude.gov.br/schema/cnes/v1r0/tipounidade" xmlns:pag="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/paginacao">
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://servicos.saude.gov.br/cnes/v1r0/estabelecimentosaudeservice/EstabelecimentoSaudeServicePortType/consultarPrecadastroCNESRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="1341ca01-fd8a-43cc-8e41-1d22c4e1943d" isOneWay="false" action="" name="localizarEstabelecimentoSaude" bindingOperationName="localizarEstabelecimentoSaude" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="44e7dd96-5b2a-4f5b-9007-2d9da519e104" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://servicos.saude.gov.br/cnes/EstabelecimentoSaudeService/v1r0</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:est="http://servicos.saude.gov.br/cnes/v1r0/estabelecimentosaudeservice" xmlns:fil="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/filtrolocalizacaoestabelecimentosaude" xmlns:loc="http://servicos.saude.gov.br/schema/cnes/v1r0/localizacao" xmlns:tip="http://servicos.saude.gov.br/schema/cnes/v1r0/tipounidade" xmlns:pag="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/paginacao">
    <soap:Header/>
    <soap:Body>
       <est:requestLocalizarEstabelecimentoSaude>
