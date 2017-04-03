@@ -29,4 +29,5 @@ Acrescente a dependencia abaixo no arquivo pom.xml:
 </pre>
 
 ## Alguns valores para teste
+- CNES: Centro de Saúde Campus Samambaia (7381549)
 - CNES: Hispital das Clínicas da UFG (2338424)
