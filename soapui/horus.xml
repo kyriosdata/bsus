@@ -1,16 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<env:Envelope xmlns:env="http://www.w3.org/2003/05/soap-envelope">
-   <env:Header/>
-   <env:Body>
-      <env:Fault>
-         <env:Code>
-            <env:Value>env:Receiver</env:Value>
-            <env:Subcode>
-               <env:Value xmlns:fault="http://www.vordel.com/soapfaults">fault:MessageBlocked</env:Value>
-            </env:Subcode>
-         </env:Code>
-         <env:Reason/>
-         <env:Detail fault:type="faultDetails" xmlns:fault="http://www.vordel.com/soapfaults"/>
-      </env:Fault>
-   </env:Body>
-</env:Envelope>
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope">
+   <soap:Header xmlns:est="http://servicos.saude.gov.br/horus/v1r0/EstoqueService"/>
+   <soap:Body xmlns:est="http://servicos.saude.gov.br/horus/v1r0/EstoqueService">
+      <soap:Fault>
+         <soap:Code>
+            <env:Value xmlns:env="http://www.w3.org/2003/05/soap-envelope">env:Sender</env:Value>
+         </soap:Code>
+         <soap:Reason>
+            <soap:Text xml:lang="pt-BR">Uma ou mais regras negociais foram violadas, verifique a lista de erros.</soap:Text>
+         </soap:Reason>
+         <soap:Detail>
+            <msf:MSFalha xmlns:msf="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/msfalha">
+               <msf:Mensagem xmlns:men="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/mensagem">
+                  <men:codigo>OSB_SEM_AUTENTICACAO</men:codigo>
+                  <men:descricao>As credenciais informadas não são válidas</men:descricao>
+               </msf:Mensagem>
+            </msf:MSFalha>
+         </soap:Detail>
+      </soap:Fault>
+   </soap:Body>
+</soap:Envelope>
