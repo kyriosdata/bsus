@@ -1,16 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:niv="http://servicos.saude.gov.br/sigtap/v1/nivelagregacaoservice" xmlns:grup="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/grupo">
-   <soap:Header>
-      <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
-         <wsse:UsernameToken wsu:Id="Id-0001334008436683-000000002c4a1908-1" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
-            <wsse:Username>SIGTAP.PUBLICO</wsse:Username>
-            <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">sigtap#2015public</wsse:Password>
-         </wsse:UsernameToken>
-      </wsse:Security>
-   </soap:Header>
-   <soap:Body>
-      <niv:requestListarSubgrupos>
-         <grup:codigoGrupo>01</grup:codigoGrupo>
-      </niv:requestListarSubgrupos>
-   </soap:Body>
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope">
+   <S:Header xmlns:S="http://www.w3.org/2003/05/soap-envelope">
+      <work:WorkContext xmlns:work="http://oracle.com/weblogic/soap/workarea/">rO0ABXdUABl3ZWJsb2dpYy5hcHAuc2lndGFwLWVhci0xAAAA1gAAACN3ZWJsb2dpYy53b3JrYXJlYS5TdHJpbmdXb3JrQ29udGV4dAAKMS4wLjYuNjUwNAAA</work:WorkContext>
+   </S:Header>
+   <S:Body xmlns:S="http://www.w3.org/2003/05/soap-envelope">
+      <com:responsePesquisarCompatibilidades xmlns:com="http://servicos.saude.gov.br/sigtap/v1/compatibilidadeservice">
+         <res:ResultadosPesquisaCompatibilidades xmlns:res="http://servicos.saude.gov.br/wsdl/mensageria/v1r1/resultadospesquisacompatibilidades">
+            <ns9:Compatibilidade xmlns:ns29="http://servicos.saude.gov.br/schema/sigtap/procedimento/habilitacao/v1/incremento" xmlns:ns25="http://servicos.saude.gov.br/schema/sigtap/procedimento/servicoclassificacao/v1/servicoclassificacao" xmlns:ns26="http://servicos.saude.gov.br/schema/sigtap/procedimento/habilitacao/v1/habilitacao" xmlns:ns27="http://servicos.saude.gov.br/schema/sigtap/procedimento/habilitacao/v1/areahabilitacao" xmlns:ns28="http://servicos.saude.gov.br/schema/sigtap/procedimento/habilitacao/v1/grupohabilitacao" xmlns:ns21="http://servicos.saude.gov.br/schema/cbo/v1/cbo" xmlns:ns22="http://servicos.saude.gov.br/schema/cbo/v1/categoriacbo" xmlns:ns23="http://servicos.saude.gov.br/schema/sigtap/procedimento/tipoleito/v1/tipoleito" xmlns:ns24="http://servicos.saude.gov.br/schema/sigtap/procedimento/servicoclassificacao/v1/servico" xmlns:ns20="http://servicos.saude.gov.br/schema/sigtap/procedimento/cid/v1/cid" xmlns:ns16="http://servicos.saude.gov.br/schema/sigtap/procedimento/financiamento/v1/tipofinanciamento" xmlns:ns17="http://servicos.saude.gov.br/schema/sigtap/procedimento/financiamento/v1/rubrica" xmlns:ns14="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/formaorganizacao" xmlns:ns15="http://servicos.saude.gov.br/schema/sigtap/procedimento/v1/modalidadeatendimento" xmlns:ns36="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/msfalha" xmlns:ns18="http://servicos.saude.gov.br/schema/sigtap/v1/idadelimite" xmlns:ns37="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/mensagem" xmlns:ns19="http://servicos.saude.gov.br/schema/sigtap/procedimento/v1/atributocomplementar" xmlns:ns9="http://servicos.saude.gov.br/schema/sigtap/compatibilidade/v1r1/compatibilidade" xmlns:ns34="http://servicos.saude.gov.br/schema/sigtap/procedimento/renases/v1/renases" xmlns:ns35="http://servicos.saude.gov.br/schema/sigtap/procedimento/tuss/v1/tuss" xmlns:ns32="http://servicos.saude.gov.br/schema/sigtap/procedimento/origem/v1/origemsiasih" xmlns:ns33="http://servicos.saude.gov.br/schema/sigtap/procedimento/regracondicionada/v1/regracondicionada" xmlns:ns5="http://servicos.saude.gov.br/schema/sigtap/procedimento/v1/procedimento" xmlns:ns12="http://servicos.saude.gov.br/schema/sigtap/publicacao/v1/orgaoorigem" xmlns:ns30="http://servicos.saude.gov.br/schema/sigtap/procedimento/redeatencao/v1/componenteredeatencao" xmlns:ns6="http://servicos.saude.gov.br/wsdl/mensageria/v1/paginacao" xmlns:ns31="http://servicos.saude.gov.br/schema/sigtap/procedimento/redeatencao/v1/redeatencao" xmlns:ns13="http://servicos.saude.gov.br/wsdl/mensageria/v1r1/resultadospesquisacompatibilidades" xmlns:ns7="http://servicos.saude.gov.br/sigtap/v1/compatibilidadeservice" xmlns:ns10="http://servicos.saude.gov.br/schema/sigtap/publicacao/v1/documento" xmlns:ns8="http://servicos.saude.gov.br/schema/sigtap/procedimento/v1/instrumentoregistro" xmlns:ns11="http://servicos.saude.gov.br/schema/sigtap/publicacao/v1/tipodocumento" xmlns:ns2="http://servicos.saude.gov.br/schema/corporativo/v1/competencia" xmlns:ns4="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/subgrupo" xmlns:ns3="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/grupo">
+               <ns9:CompatibilidadePossivel>
+                  <com1:codigo xmlns:com1="http://servicos.saude.gov.br/schema/sigtap/compatibilidade/v1r1/compatibilidadepossivel">1</com1:codigo>
+                  <com1:InstrumentoRegistroPrincipal xmlns:com1="http://servicos.saude.gov.br/schema/sigtap/compatibilidade/v1r1/compatibilidadepossivel">
+                     <ns8:codigo>03</ns8:codigo>
+                     <ns8:nome>AIH (Proc. Principal)</ns8:nome>
+                  </com1:InstrumentoRegistroPrincipal>
+                  <com1:InstrumentoRegistroSecundario xmlns:com1="http://servicos.saude.gov.br/schema/sigtap/compatibilidade/v1r1/compatibilidadepossivel">
+                     <ns8:codigo>05</ns8:codigo>
+                     <ns8:nome>AIH (Proc. Secundário)</ns8:nome>
+                  </com1:InstrumentoRegistroSecundario>
+                  <com1:tipoCompatibilidade xmlns:com1="http://servicos.saude.gov.br/schema/sigtap/compatibilidade/v1r1/compatibilidadepossivel">COMPATIVEL</com1:tipoCompatibilidade>
+               </ns9:CompatibilidadePossivel>
+               <ns9:ProcedimentoPrincipal>
+                  <ns5:codigo>0505020106</ns5:codigo>
+                  <ns5:nome>TRANSPLANTE DE RIM (ORGAO DE DOADOR VIVO)</ns5:nome>
+               </ns9:ProcedimentoPrincipal>
+               <ns9:ProcedimentoSecundario>
+                  <ns5:codigo>0505020025</ns5:codigo>
+                  <ns5:nome>PARTICIPACAO DE EQUIPE NEFROLOGICA EM TRANSPLANTE RENAL DE DOADOR VIVO</ns5:nome>
+               </ns9:ProcedimentoSecundario>
+               <ns9:competenciaInicial>200801</ns9:competenciaInicial>
+               <ns9:competenciaFinal/>
+               <ns9:quantidadePermitida>1</ns9:quantidadePermitida>
+               <ns9:DocumentoPublicacao>
+                  <ns10:numeroDocumento>2848</ns10:numeroDocumento>
+                  <ns10:TipoDocumento>
+                     <ns11:codigo>2</ns11:codigo>
+                     <ns11:nome>PORTARIA</ns11:nome>
+                  </ns10:TipoDocumento>
+                  <ns10:OrgaoOrigem>
+                     <ns12:codigo>1</ns12:codigo>
+                     <ns12:nome>GM</ns12:nome>
+                  </ns10:OrgaoOrigem>
+                  <ns10:dataPublicacao>2007-11-07-02:00</ns10:dataPublicacao>
+               </ns9:DocumentoPublicacao>
+            </ns9:Compatibilidade>
+            <ns6:Paginacao xmlns:ns29="http://servicos.saude.gov.br/schema/sigtap/procedimento/habilitacao/v1/incremento" xmlns:ns25="http://servicos.saude.gov.br/schema/sigtap/procedimento/servicoclassificacao/v1/servicoclassificacao" xmlns:ns26="http://servicos.saude.gov.br/schema/sigtap/procedimento/habilitacao/v1/habilitacao" xmlns:ns27="http://servicos.saude.gov.br/schema/sigtap/procedimento/habilitacao/v1/areahabilitacao" xmlns:ns28="http://servicos.saude.gov.br/schema/sigtap/procedimento/habilitacao/v1/grupohabilitacao" xmlns:ns21="http://servicos.saude.gov.br/schema/cbo/v1/cbo" xmlns:ns22="http://servicos.saude.gov.br/schema/cbo/v1/categoriacbo" xmlns:ns23="http://servicos.saude.gov.br/schema/sigtap/procedimento/tipoleito/v1/tipoleito" xmlns:ns24="http://servicos.saude.gov.br/schema/sigtap/procedimento/servicoclassificacao/v1/servico" xmlns:ns20="http://servicos.saude.gov.br/schema/sigtap/procedimento/cid/v1/cid" xmlns:ns16="http://servicos.saude.gov.br/schema/sigtap/procedimento/financiamento/v1/tipofinanciamento" xmlns:ns17="http://servicos.saude.gov.br/schema/sigtap/procedimento/financiamento/v1/rubrica" xmlns:ns14="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/formaorganizacao" xmlns:ns15="http://servicos.saude.gov.br/schema/sigtap/procedimento/v1/modalidadeatendimento" xmlns:ns36="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/msfalha" xmlns:ns18="http://servicos.saude.gov.br/schema/sigtap/v1/idadelimite" xmlns:ns37="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/mensagem" xmlns:ns19="http://servicos.saude.gov.br/schema/sigtap/procedimento/v1/atributocomplementar" xmlns:ns9="http://servicos.saude.gov.br/schema/sigtap/compatibilidade/v1r1/compatibilidade" xmlns:ns34="http://servicos.saude.gov.br/schema/sigtap/procedimento/renases/v1/renases" xmlns:ns35="http://servicos.saude.gov.br/schema/sigtap/procedimento/tuss/v1/tuss" xmlns:ns32="http://servicos.saude.gov.br/schema/sigtap/procedimento/origem/v1/origemsiasih" xmlns:ns33="http://servicos.saude.gov.br/schema/sigtap/procedimento/regracondicionada/v1/regracondicionada" xmlns:ns5="http://servicos.saude.gov.br/schema/sigtap/procedimento/v1/procedimento" xmlns:ns12="http://servicos.saude.gov.br/schema/sigtap/publicacao/v1/orgaoorigem" xmlns:ns30="http://servicos.saude.gov.br/schema/sigtap/procedimento/redeatencao/v1/componenteredeatencao" xmlns:ns6="http://servicos.saude.gov.br/wsdl/mensageria/v1/paginacao" xmlns:ns31="http://servicos.saude.gov.br/schema/sigtap/procedimento/redeatencao/v1/redeatencao" xmlns:ns13="http://servicos.saude.gov.br/wsdl/mensageria/v1r1/resultadospesquisacompatibilidades" xmlns:ns7="http://servicos.saude.gov.br/sigtap/v1/compatibilidadeservice" xmlns:ns10="http://servicos.saude.gov.br/schema/sigtap/publicacao/v1/documento" xmlns:ns8="http://servicos.saude.gov.br/schema/sigtap/procedimento/v1/instrumentoregistro" xmlns:ns11="http://servicos.saude.gov.br/schema/sigtap/publicacao/v1/tipodocumento" xmlns:ns2="http://servicos.saude.gov.br/schema/corporativo/v1/competencia" xmlns:ns4="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/subgrupo" xmlns:ns3="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/grupo">
+               <ns6:registroInicial>1</ns6:registroInicial>
+               <ns6:quantidadeRegistros>2</ns6:quantidadeRegistros>
+               <ns6:totalRegistros>1</ns6:totalRegistros>
+            </ns6:Paginacao>
+         </res:ResultadosPesquisaCompatibilidades>
+      </com:responsePesquisarCompatibilidades>
+   </S:Body>
 </soap:Envelope>
