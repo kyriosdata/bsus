@@ -1,77 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<S:Envelope xmlns:S="http://www.w3.org/2003/05/soap-envelope">
-   <S:Header>
+<env:Envelope xmlns:env="http://www.w3.org/2003/05/soap-envelope">
+     <env:Header>
       <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
-         <wsse:UsernameToken wsu:Id="UsernameToken-2" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+         <wsse:UsernameToken wsu:Id="Id-0001334008436683-000000002c4a1908-1" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
             <wsse:Username/>
             <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText"/>
          </wsse:UsernameToken>
       </wsse:Security>
-   </S:Header>
-   <S:Body>
-      <PRPA_IN201301UV02 ITSVersion="XML_1.0" xmlns="urn:hl7-org:v3">
-         <id extension="6e88df42-70ac-4db6-a4ba-449c7fbf2a4e" root="2.16.840.1.113883.3.72.6.1"/>
-         <creationTime value="20141023181027"/>
-         <interactionId extension="PRPA_IN201301UV02" root="2.16.840.1.113883.1.6"/>
-         <processingCode code="T"/>
-         <processingModeCode/>
-         <acceptAckCode code="AL"/>
-         <receiver typeCode="RCV">
-            <device classCode="DEV" determinerCode="INSTANCE">
-               <id root="2.16.840.1.113883.3.72.6.5.100.85"/>
-               <asAgent classCode="AGNT">
-                  <representedOrganization classCode="ORG" determinerCode="INSTANCE">
-                     <id root="2.16.840.1.113883.3.72.6.1"/>
-                  </representedOrganization>
-               </asAgent>
-            </device>
-         </receiver>
-         <sender typeCode="SND">
-            <device classCode="DEV" determinerCode="INSTANCE">
-               <id root="2.16.840.1.113883.3.72.6.2"/>
-               <asAgent classCode="AGNT">
-                  <representedOrganization classCode="ORG" determinerCode="INSTANCE">
-                     <id root="2.16.840.1.113883.3.72.6.1"/>
-                  </representedOrganization>
-               </asAgent>
-            </device>
-         </sender>
-         <controlActProcess classCode="CACT" moodCode="EVN">
-            <code code="PRPA_TE201301UV02" codeSystem="2.16.840.1.113883.1.6"/>
-            <subject typeCode="SUBJ">
-               <registrationEvent classCode="REG" moodCode="EVN">
-                  <statusCode code="active" xsi:type="PRPA_MT201302UV02.Patient.statusCode" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-                  <subject1 typeCode="SBJ">
-                     <patient classCode="PAT">
-                        <typeId assigningAuthorityName="[systemCode]" extension="[localID]" root="[OID do systemCode]"/>
-                        <statusCode code="active" xsi:type="PRPA_MT201302UV02.Patient.statusCode" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-                        <confidentialityCode code="R" codeSystem="2.16.840.1.113883.5.25"/>
-                        <patientPerson classCode="PSN" determinerCode="INSTANCE">
-                           <name use="ALEKSANDRO NASCIMENTO CHAVES"/>
-                           <telecom use="WPN" value="+55-11-65522659"/>
-                           <telecom use="NET" value="foo@gmail.com"/>
-                           <administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1"/>
-                           <birthTime value="19800828"/>
-                           <addr use="H 739 HILARIO PIRES 362 AP 222 530010 DF 08420010 1"/>
-                           <maritalStatusCode code="2"/>
-                           <raceCode code="01"/>
-                           <personalRelationship classCode="PRS">
-                              <code code="NPRN" codeSystem="2.16.840.1.113883.1.11.19563" displayName="Nome do Pai"/>
-                              <relationshipHolder1 classCode="PSN" determinerCode="INSTANCE"/>
-                           </personalRelationship>
-                           <personalRelationship classCode="PRS"/>
-                           <birthPlace classCode="BIRTHPL"/>
-                        </patientPerson>
-                        <providerOrganization classCode="ORG" determinerCode="INSTANCE">
-                           <id root="2.16.840.1.113883.4.714"/>
-                           <contactParty classCode="CON"/>
-                        </providerOrganization>
-                     </patient>
-                  </subject1>
-                  <custodian xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-               </registrationEvent>
-            </subject>
-         </controlActProcess>
-      </PRPA_IN201301UV02>
-   </S:Body>
-</S:Envelope>
+   </env:Header>
+    <env:Body>
+        <PRPA_IN201309UV02 ITSVersion="XML_1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3">
+            <id root="2220c1c4-87ef-11dc-b865-3603d6866807"/>
+            <creationTime value="20070810140900"/>
+            <interactionId root="2.16.840.1.113883.1.6" extension="PRPA_IN201309UV02"/>
+            <processingCode code="P"/>
+            <processingModeCode code="T"/>
+            <acceptAckCode code="AL"/>
+            <receiver typeCode="RCV">
+                <device classCode="DEV" determinerCode="INSTANCE">
+                    <id root="1.2.840.114350.1.13.99999.4567"/>
+                    <telecom value="https://example.org/PIXQuery"/>
+                </device>
+            </receiver>
+            <sender typeCode="SND">
+                <device classCode="DEV" determinerCode="INSTANCE">
+                    <id root="1.2.840.114350.1.13.99997.2.7788"/>
+                </device>
+            </sender>
+            <controlActProcess classCode="CACT" moodCode="EVN">
+                <code code="PRPA_TE201309UV02" codeSystem="2.16.840.1.113883.1.6"/>
+                <authorOrPerformer typeCode="AUT">
+                    <assignedPerson classCode="ASSIGNED">
+                        <id root="1.2.840.114350.1.13.99997.2.7766" extension="USR5568"/>
+                    </assignedPerson>
+                </authorOrPerformer>
+                <queryByParameter>
+                    <queryId root="2.16.840.1.113883.3.4594" extension="1234567789"/>
+                    <statusCode code="new"/>
+                    <responsePriorityCode code="I"/>
+                    <parameterList>
+<!--                        <dataSource>-->
+<!--                            <value root="2.16.840.1.113883.3.72.5.9.2"/>-->
+<!--                            <semanticsText/>-->
+<!--                        </dataSource>-->
+                        <patientIdentifier>
+                            <value root="2.16.840.1.113883.4.714" extension="2633750405"/>
+                            <semanticsText/>
+                        </patientIdentifier>
+                    </parameterList>
+                </queryByParameter>
+            </controlActProcess>
+        </PRPA_IN201309UV02>
+    </env:Body>
+</env:Envelope>
