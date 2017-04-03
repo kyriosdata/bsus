@@ -1,42 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope">
-   <S:Header xmlns:S="http://www.w3.org/2003/05/soap-envelope">
-      <work:WorkContext xmlns:work="http://oracle.com/weblogic/soap/workarea/">rO0ABXdUABl3ZWJsb2dpYy5hcHAuc2lndGFwLWVhci0xAAAA1gAAACN3ZWJsb2dpYy53b3JrYXJlYS5TdHJpbmdXb3JrQ29udGV4dAAKMS4wLjYuNjUwNAAA</work:WorkContext>
-   </S:Header>
-   <S:Body xmlns:S="http://www.w3.org/2003/05/soap-envelope">
-      <niv:responseListarGrupos xmlns:niv="http://servicos.saude.gov.br/sigtap/v1/nivelagregacaoservice">
-         <grup:Grupo xmlns:grup="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/grupo">
-            <ns4:codigo xmlns:ns2="http://servicos.saude.gov.br/sigtap/v1/nivelagregacaoservice" xmlns:ns4="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/grupo" xmlns:ns3="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/formaorganizacao" xmlns:ns5="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/msfalha" xmlns:ns6="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/mensagem">01</ns4:codigo>
-            <ns4:nome xmlns:ns2="http://servicos.saude.gov.br/sigtap/v1/nivelagregacaoservice" xmlns:ns4="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/grupo" xmlns:ns3="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/formaorganizacao" xmlns:ns5="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/msfalha" xmlns:ns6="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/mensagem">Ações de promoção e prevenção em saúde</ns4:nome>
-         </grup:Grupo>
-         <grup:Grupo xmlns:grup="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/grupo">
-            <ns4:codigo xmlns:ns2="http://servicos.saude.gov.br/sigtap/v1/nivelagregacaoservice" xmlns:ns4="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/grupo" xmlns:ns3="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/formaorganizacao" xmlns:ns5="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/msfalha" xmlns:ns6="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/mensagem">08</ns4:codigo>
-            <ns4:nome xmlns:ns2="http://servicos.saude.gov.br/sigtap/v1/nivelagregacaoservice" xmlns:ns4="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/grupo" xmlns:ns3="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/formaorganizacao" xmlns:ns5="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/msfalha" xmlns:ns6="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/mensagem">Ações complementares da atenção à saúde</ns4:nome>
-         </grup:Grupo>
-         <grup:Grupo xmlns:grup="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/grupo">
-            <ns4:codigo xmlns:ns2="http://servicos.saude.gov.br/sigtap/v1/nivelagregacaoservice" xmlns:ns4="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/grupo" xmlns:ns3="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/formaorganizacao" xmlns:ns5="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/msfalha" xmlns:ns6="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/mensagem">03</ns4:codigo>
-            <ns4:nome xmlns:ns2="http://servicos.saude.gov.br/sigtap/v1/nivelagregacaoservice" xmlns:ns4="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/grupo" xmlns:ns3="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/formaorganizacao" xmlns:ns5="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/msfalha" xmlns:ns6="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/mensagem">Procedimentos clínicos</ns4:nome>
-         </grup:Grupo>
-         <grup:Grupo xmlns:grup="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/grupo">
-            <ns4:codigo xmlns:ns2="http://servicos.saude.gov.br/sigtap/v1/nivelagregacaoservice" xmlns:ns4="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/grupo" xmlns:ns3="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/formaorganizacao" xmlns:ns5="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/msfalha" xmlns:ns6="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/mensagem">02</ns4:codigo>
-            <ns4:nome xmlns:ns2="http://servicos.saude.gov.br/sigtap/v1/nivelagregacaoservice" xmlns:ns4="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/grupo" xmlns:ns3="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/formaorganizacao" xmlns:ns5="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/msfalha" xmlns:ns6="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/mensagem">Procedimentos com finalidade diagnóstica</ns4:nome>
-         </grup:Grupo>
-         <grup:Grupo xmlns:grup="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/grupo">
-            <ns4:codigo xmlns:ns2="http://servicos.saude.gov.br/sigtap/v1/nivelagregacaoservice" xmlns:ns4="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/grupo" xmlns:ns3="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/formaorganizacao" xmlns:ns5="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/msfalha" xmlns:ns6="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/mensagem">07</ns4:codigo>
-            <ns4:nome xmlns:ns2="http://servicos.saude.gov.br/sigtap/v1/nivelagregacaoservice" xmlns:ns4="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/grupo" xmlns:ns3="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/formaorganizacao" xmlns:ns5="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/msfalha" xmlns:ns6="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/mensagem">Órteses, próteses e materiais especiais</ns4:nome>
-         </grup:Grupo>
-         <grup:Grupo xmlns:grup="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/grupo">
-            <ns4:codigo xmlns:ns2="http://servicos.saude.gov.br/sigtap/v1/nivelagregacaoservice" xmlns:ns4="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/grupo" xmlns:ns3="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/formaorganizacao" xmlns:ns5="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/msfalha" xmlns:ns6="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/mensagem">04</ns4:codigo>
-            <ns4:nome xmlns:ns2="http://servicos.saude.gov.br/sigtap/v1/nivelagregacaoservice" xmlns:ns4="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/grupo" xmlns:ns3="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/formaorganizacao" xmlns:ns5="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/msfalha" xmlns:ns6="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/mensagem">Procedimentos cirúrgicos</ns4:nome>
-         </grup:Grupo>
-         <grup:Grupo xmlns:grup="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/grupo">
-            <ns4:codigo xmlns:ns2="http://servicos.saude.gov.br/sigtap/v1/nivelagregacaoservice" xmlns:ns4="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/grupo" xmlns:ns3="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/formaorganizacao" xmlns:ns5="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/msfalha" xmlns:ns6="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/mensagem">05</ns4:codigo>
-            <ns4:nome xmlns:ns2="http://servicos.saude.gov.br/sigtap/v1/nivelagregacaoservice" xmlns:ns4="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/grupo" xmlns:ns3="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/formaorganizacao" xmlns:ns5="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/msfalha" xmlns:ns6="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/mensagem">Transplantes de orgãos, tecidos e células</ns4:nome>
-         </grup:Grupo>
-         <grup:Grupo xmlns:grup="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/grupo">
-            <ns4:codigo xmlns:ns2="http://servicos.saude.gov.br/sigtap/v1/nivelagregacaoservice" xmlns:ns4="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/grupo" xmlns:ns3="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/formaorganizacao" xmlns:ns5="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/msfalha" xmlns:ns6="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/mensagem">06</ns4:codigo>
-            <ns4:nome xmlns:ns2="http://servicos.saude.gov.br/sigtap/v1/nivelagregacaoservice" xmlns:ns4="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/grupo" xmlns:ns3="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/formaorganizacao" xmlns:ns5="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/msfalha" xmlns:ns6="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/mensagem">Medicamentos</ns4:nome>
-         </grup:Grupo>
-      </niv:responseListarGrupos>
-   </S:Body>
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:niv="http://servicos.saude.gov.br/sigtap/v1/nivelagregacaoservice" xmlns:grup="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/grupo">
+   <soap:Header>
+      <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+         <wsse:UsernameToken wsu:Id="Id-0001334008436683-000000002c4a1908-1" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+            <wsse:Username>SIGTAP.PUBLICO</wsse:Username>
+            <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">sigtap#2015public</wsse:Password>
+         </wsse:UsernameToken>
+      </wsse:Security>
+   </soap:Header>
+   <soap:Body>
+      <niv:requestListarSubgrupos>
+         <grup:codigoGrupo>01</grup:codigoGrupo>
+      </niv:requestListarSubgrupos>
+   </soap:Body>
 </soap:Envelope>
