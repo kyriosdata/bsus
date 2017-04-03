@@ -1,5 +1,2159 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:niv="http://servicos.saude.gov.br/sigtap/v1/nivelagregacaoservice" xmlns:grup="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/grupo">
+<con:soapui-project id="231a7f85-e98b-4411-9bc4-02b2db4eada4" activeEnvironment="Default" name="SIGTAP" resourceRoot="" soapui-version="5.3.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="84ce59e0-62c9-4fea-b2be-ac008996882c" wsaVersion="NONE" name="ProcedimentoServiceSOAP12Binding" type="wsdl" bindingName="{http://servicos.saude.gov.br/sigtap/v1/procedimentoservice}ProcedimentoServiceSOAP12Binding" soapVersion="1_2" anonymous="optional" definition="https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?wsdl"><con:part><con:url>https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="ProcedimentoService" targetNamespace="http://servicos.saude.gov.br/sigtap/v1/procedimentoservice" xmlns:tns="http://servicos.saude.gov.br/sigtap/v1/procedimentoservice" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msfalha="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/msfalha">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/sigtap/v1/procedimentoservice" xmlns:comp="http://servicos.saude.gov.br/schema/corporativo/v1/competencia" xmlns:grupo="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/grupo" xmlns:subgrupo="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/subgrupo" xmlns:proced="http://servicos.saude.gov.br/schema/sigtap/procedimento/v1/procedimento" xmlns:pag="http://servicos.saude.gov.br/wsdl/mensageria/v1/paginacao" xmlns:det="http://servicos.saude.gov.br/wsdl/mensageria/sigtap/v1/detalheadicional" xmlns:respp="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/resultadospesquisaprocedimentos" xmlns:resdp="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/resultadosdetalhaprocedimentos">
+      <xs:import id="comp" namespace="http://servicos.saude.gov.br/schema/corporativo/v1/competencia" schemaLocation="https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fcorporativo%2Fcompetencia.v1.xsd"/>
+      <xs:import id="grupo" namespace="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/grupo" schemaLocation="https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fprocedimento%2Fnivelagregacao%2Fgrupo.v1.xsd"/>
+      <xs:import id="subgrupo" namespace="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/subgrupo" schemaLocation="https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fprocedimento%2Fnivelagregacao%2Fsubgrupo.v1.xsd"/>
+      <xs:import id="proced" namespace="http://servicos.saude.gov.br/schema/sigtap/procedimento/v1/procedimento" schemaLocation="https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fprocedimento%2Fprocedimento.v1.xsd"/>
+      <xs:import id="pag" namespace="http://servicos.saude.gov.br/wsdl/mensageria/v1/paginacao" schemaLocation="https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fmensageria%2Fpaginacao.v1.xsd"/>
+      <xs:import id="det" namespace="http://servicos.saude.gov.br/wsdl/mensageria/sigtap/v1/detalheadicional" schemaLocation="https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fprocedimento%2Fdetalheadicional.v1.xsd"/>
+      <xs:import id="msfalha" namespace="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/msfalha" schemaLocation="https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fmensageria%2Ffalha%2Fmsfalha.v5r0.xsd"/>
+      <xs:import id="respp" namespace="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/resultadospesquisaprocedimentos" schemaLocation="https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fmensageria%2Fresultadospesquisaprocedimentos.v1r0.xsd"/>
+      <xs:import id="resdp" namespace="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/resultadosdetalhaprocedimentos" schemaLocation="https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fmensageria%2Fresultadosdetalhaprocedimentos.v1r0.xsd"/>
+      <xs:element name="requestPesquisarProcedimentos">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" ref="grupo:codigoGrupo"/>
+            <xs:element minOccurs="0" maxOccurs="1" ref="subgrupo:codigoSubgrupo"/>
+            <xs:element minOccurs="0" maxOccurs="1" ref="comp:competencia"/>
+            <xs:element minOccurs="1" maxOccurs="1" ref="pag:Paginacao"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="responsePesquisarProcedimentos">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" ref="respp:ResultadosPesquisaProcedimentos">
+              <xs:annotation>
+                <xs:documentation>Resultado pesquisa do procedimentos.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="requestDetalharProcedimento">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" ref="proced:codigoProcedimento"/>
+            <xs:element minOccurs="0" maxOccurs="1" ref="comp:competencia"/>
+            <xs:element name="DetalhesAdicionais" minOccurs="1" maxOccurs="1">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" maxOccurs="unbounded" ref="det:DetalheAdicional"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="responseDetalharProcedimento">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" ref="resdp:ResultadosDetalhaProcedimentos">
+              <xs:annotation>
+                <xs:documentation>Resultado pesquisa de detalha do procedimentos.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="requestPesquisarProcedimentos">
+    <wsdl:part element="tns:requestPesquisarProcedimentos" name="requestPesquisarProcedimentos"/>
+  </wsdl:message>
+  <wsdl:message name="responsePesquisarProcedimentos">
+    <wsdl:part element="tns:responsePesquisarProcedimentos" name="responsePesquisarProcedimentos"/>
+  </wsdl:message>
+  <wsdl:message name="requestDetalharProcedimento">
+    <wsdl:part element="tns:requestDetalharProcedimento" name="requestDetalharProcedimento"/>
+  </wsdl:message>
+  <wsdl:message name="responseDetalharProcedimento">
+    <wsdl:part element="tns:responseDetalharProcedimento" name="responseDetalharProcedimento"/>
+  </wsdl:message>
+  <wsdl:message name="SIGTAPFault">
+    <wsdl:part name="fault" element="msfalha:MSFalha"/>
+  </wsdl:message>
+  <wsdl:portType name="ProcedimentoServicePortType">
+    <wsdl:operation name="pesquisarProcedimentos">
+      <wsdl:documentation>Listar os Procedimentos existentes na base do SIGTAP de acordo com os filtros informados.</wsdl:documentation>
+      <wsdl:input name="requestPesquisarProcedimentos" message="tns:requestPesquisarProcedimentos"/>
+      <wsdl:output name="responsePesquisarProcedimentos" message="tns:responsePesquisarProcedimentos"/>
+      <wsdl:fault name="SIGTAPFault" message="tns:SIGTAPFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="detalharProcedimento">
+      <wsdl:documentation>Detalhar um Procedimento existente na base do SIGTAP de acordo com os filtros informados.</wsdl:documentation>
+      <wsdl:input name="requestDetalharProcedimento" message="tns:requestDetalharProcedimento"/>
+      <wsdl:output name="responseDetalharProcedimento" message="tns:responseDetalharProcedimento"/>
+      <wsdl:fault name="SIGTAPFault" message="tns:SIGTAPFault"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ProcedimentoServiceSOAP12Binding" type="tns:ProcedimentoServicePortType">
+    <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="pesquisarProcedimentos">
+      <wsdl:documentation>Listar os Procedimentos existentes na base do SIGTAP de acordo com os filtros informados.</wsdl:documentation>
+      <soap12:operation soapAction=""/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SIGTAPFault">
+        <soap12:fault name="SIGTAPFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="detalharProcedimento">
+      <wsdl:documentation>Detalhar um Procedimento existente na base do SIGTAP de acordo com os filtros informados.</wsdl:documentation>
+      <soap12:operation soapAction=""/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SIGTAPFault">
+        <soap12:fault name="SIGTAPFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ProcedimentoServiceSOAP11Binding" type="tns:ProcedimentoServicePortType">
+    <soap11:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="pesquisarProcedimentos">
+      <wsdl:documentation>Listar os Procedimentos existentes na base do SIGTAP de acordo com os filtros informados.</wsdl:documentation>
+      <soap11:operation soapAction=""/>
+      <wsdl:input>
+        <soap11:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SIGTAPFault">
+        <soap11:fault name="SIGTAPFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="detalharProcedimento">
+      <wsdl:documentation>Detalhar um Procedimento existente na base do SIGTAP de acordo com os filtros informados.</wsdl:documentation>
+      <soap11:operation soapAction=""/>
+      <wsdl:input>
+        <soap11:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SIGTAPFault">
+        <soap11:fault name="SIGTAPFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ProcedimentoService">
+    <wsdl:port binding="tns:ProcedimentoServiceSOAP12Binding" name="ProcedimentoServicePort">
+      <soap12:address location="https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1"/>
+    </wsdl:port>
+    <wsdl:port binding="tns:ProcedimentoServiceSOAP11Binding" name="ProcedimentoServiceSOAP11Port">
+      <soap11:address location="https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fcorporativo%2Fcompetencia.v1.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/corporativo/v1/competencia" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/corporativo/v1/competencia">
+  <xs:annotation>
+    <xs:documentation>Este esquema representa uma Competência, composta de ano e mês, no formato AAAAMM.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="competencia" type="CompetenciaType"/>
+  <xs:simpleType name="CompetenciaType">
+    <xs:restriction base="xs:string">
+      <xs:length value="6"/>
+      <xs:pattern value="(19|20)[0-9]{2}(0[1-9]|1[0-2]){1}"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fprocedimento%2Fnivelagregacao%2Fgrupo.v1.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/grupo" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/grupo">
+  <xs:annotation>
+    <xs:documentation>Este esquema representa um Grupo, o primeiro nível de agregação da tabela de procedimentos. 
+            Em cada grupo estão agregados os procedimentos com características gerais semelhantes ou de acordo com a finalidade do atendimento a ser prestado aos usuários na rede do SUS.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="Grupo" type="GrupoType"/>
+  <xs:element name="codigoGrupo" type="CodigoGrupoType"/>
+  <xs:simpleType name="CodigoGrupoType">
+    <xs:restriction base="xs:string">
+      <xs:length value="2"/>
+      <xs:pattern value="[0-9]{2}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="GrupoType">
+    <xs:sequence>
+      <xs:element name="codigo" minOccurs="1" maxOccurs="1" nillable="true" type="CodigoGrupoType">
+        <xs:annotation>
+          <xs:documentation>Código identificador do Grupo.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="nome" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Nome descritivo do Grupo.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="100"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fprocedimento%2Fnivelagregacao%2Fsubgrupo.v1.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/subgrupo" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/subgrupo" xmlns:gp="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/grupo">
+  <xs:import id="gp" namespace="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/grupo" schemaLocation="https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fprocedimento%2Fnivelagregacao%2Fgrupo.v1.xsd"/>
+  <xs:annotation>
+    <xs:documentation>Este esquema representa um Subgrupo, o segundo nível de agregação da tabela de procedimentos. 
+            Neles estão agregados os procedimentos por tipo e/ou área de atuação.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="Subgrupo" type="SubgrupoType"/>
+  <xs:element name="codigoSubgrupo" type="CodigoSubgrupoType"/>
+  <xs:simpleType name="CodigoSubgrupoType">
+    <xs:restriction base="xs:string">
+      <xs:length value="2"/>
+      <xs:pattern value="[0-9]{2}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="SubgrupoType">
+    <xs:sequence>
+      <xs:element name="codigo" minOccurs="1" maxOccurs="1" nillable="true" type="CodigoSubgrupoType">
+        <xs:annotation>
+          <xs:documentation>Código identificador do Subgrupo.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="nome" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Nome descritivo do Subgrupo.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="100"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Grupo" minOccurs="0" maxOccurs="1" type="gp:GrupoType">
+        <xs:annotation>
+          <xs:documentation>Grupo ao qual esse Subgrupo está associado.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fprocedimento%2Fprocedimento.v1.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/sigtap/procedimento/v1/procedimento" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/sigtap/procedimento/v1/procedimento" xmlns:cp="http://servicos.saude.gov.br/schema/corporativo/v1/competencia" xmlns:fo="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/formaorganizacao" xmlns:do="http://servicos.saude.gov.br/schema/sigtap/publicacao/v1/documento" xmlns:fp="http://servicos.saude.gov.br/schema/sigtap/publicacao/v1/finalidadepublicacao" xmlns:ma="http://servicos.saude.gov.br/schema/sigtap/procedimento/v1/modalidadeatendimento" xmlns:co="http://servicos.saude.gov.br/schema/sigtap/procedimento/v1/complexidade" xmlns:tf="http://servicos.saude.gov.br/schema/sigtap/procedimento/financiamento/v1/tipofinanciamento" xmlns:ru="http://servicos.saude.gov.br/schema/sigtap/procedimento/financiamento/v1/rubrica" xmlns:ir="http://servicos.saude.gov.br/schema/sigtap/procedimento/v1/instrumentoregistro" xmlns:se="http://servicos.saude.gov.br/schema/sigtap/procedimento/v1/sexopermitido" xmlns:il="http://servicos.saude.gov.br/schema/sigtap/v1/idadelimite" xmlns:ac="http://servicos.saude.gov.br/schema/sigtap/procedimento/v1/atributocomplementar" xmlns:ci="http://servicos.saude.gov.br/schema/sigtap/procedimento/cid/v1/cid" xmlns:vc="http://servicos.saude.gov.br/schema/sigtap/procedimento/cid/v1/vinculocid" xmlns:cb="http://servicos.saude.gov.br/schema/cbo/v1/cbo" xmlns:cc="http://servicos.saude.gov.br/schema/cbo/v1/categoriacbo" xmlns:tl="http://servicos.saude.gov.br/schema/sigtap/procedimento/tipoleito/v1/tipoleito" xmlns:sc="http://servicos.saude.gov.br/schema/sigtap/procedimento/servicoclassificacao/v1/servicoclassificacao" xmlns:ha="http://servicos.saude.gov.br/schema/sigtap/procedimento/habilitacao/v1/habilitacao" xmlns:gh="http://servicos.saude.gov.br/schema/sigtap/procedimento/habilitacao/v1/grupohabilitacao" xmlns:in="http://servicos.saude.gov.br/schema/sigtap/procedimento/habilitacao/v1/incremento" xmlns:cr="http://servicos.saude.gov.br/schema/sigtap/procedimento/redeatencao/v1/componenteredeatencao" xmlns:or="http://servicos.saude.gov.br/schema/sigtap/procedimento/origem/v1/origemsiasih" xmlns:rc="http://servicos.saude.gov.br/schema/sigtap/procedimento/regracondicionada/v1/regracondicionada" xmlns:re="http://servicos.saude.gov.br/schema/sigtap/procedimento/renases/v1/renases" xmlns:tu="http://servicos.saude.gov.br/schema/sigtap/procedimento/tuss/v1/tuss">
+  <xs:include schemaLocation="https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fprocedimento%2Fbaseprocedimento.v1.xsd"/>
+  <xs:import id="fo" namespace="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/formaorganizacao" schemaLocation="https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fprocedimento%2Fnivelagregacao%2Fformaorganizacao.v1.xsd"/>
+  <xs:import id="cp" namespace="http://servicos.saude.gov.br/schema/corporativo/v1/competencia" schemaLocation="https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fcorporativo%2Fcompetencia.v1.xsd"/>
+  <xs:import id="do" namespace="http://servicos.saude.gov.br/schema/sigtap/publicacao/v1/documento" schemaLocation="https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fpublicacao%2Fdocumento.v1.xsd"/>
+  <xs:import id="fp" namespace="http://servicos.saude.gov.br/schema/sigtap/publicacao/v1/finalidadepublicacao" schemaLocation="https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fpublicacao%2Ffinalidadepublicacao.v1.xsd"/>
+  <xs:import id="ma" namespace="http://servicos.saude.gov.br/schema/sigtap/procedimento/v1/modalidadeatendimento" schemaLocation="https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fprocedimento%2Fmodalidadeatendimento.v1.xsd"/>
+  <xs:import id="co" namespace="http://servicos.saude.gov.br/schema/sigtap/procedimento/v1/complexidade" schemaLocation="https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fprocedimento%2Fcomplexidade.v1.xsd"/>
+  <xs:import id="tf" namespace="http://servicos.saude.gov.br/schema/sigtap/procedimento/financiamento/v1/tipofinanciamento" schemaLocation="https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fprocedimento%2Ffinanciamento%2Ftipofinanciamento.v1.xsd"/>
+  <xs:import id="ru" namespace="http://servicos.saude.gov.br/schema/sigtap/procedimento/financiamento/v1/rubrica" schemaLocation="https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fprocedimento%2Ffinanciamento%2Frubrica.v1.xsd"/>
+  <xs:import id="ir" namespace="http://servicos.saude.gov.br/schema/sigtap/procedimento/v1/instrumentoregistro" schemaLocation="https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fprocedimento%2Finstrumentoregistro.v1.xsd"/>
+  <xs:import id="se" namespace="http://servicos.saude.gov.br/schema/sigtap/procedimento/v1/sexopermitido" schemaLocation="https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fprocedimento%2Fsexopermitido.v1.xsd"/>
+  <xs:import id="il" namespace="http://servicos.saude.gov.br/schema/sigtap/v1/idadelimite" schemaLocation="https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fidadelimite.v1.xsd"/>
+  <xs:import id="ac" namespace="http://servicos.saude.gov.br/schema/sigtap/procedimento/v1/atributocomplementar" schemaLocation="https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fprocedimento%2Fatributocomplementar.v1.xsd"/>
+  <xs:import id="ci" namespace="http://servicos.saude.gov.br/schema/sigtap/procedimento/cid/v1/cid" schemaLocation="https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fprocedimento%2Fcid%2Fcid.v1.xsd"/>
+  <xs:import id="vc" namespace="http://servicos.saude.gov.br/schema/sigtap/procedimento/cid/v1/vinculocid" schemaLocation="https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fprocedimento%2Fcid%2Fvinculocid.v1.xsd"/>
+  <xs:import id="cb" namespace="http://servicos.saude.gov.br/schema/cbo/v1/cbo" schemaLocation="https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fcbo%2Fcbo.v1.xsd"/>
+  <xs:import id="cc" namespace="http://servicos.saude.gov.br/schema/cbo/v1/categoriacbo" schemaLocation="https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fcbo%2Fcategoriacbo.v1.xsd"/>
+  <xs:import id="tl" namespace="http://servicos.saude.gov.br/schema/sigtap/procedimento/tipoleito/v1/tipoleito" schemaLocation="https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fprocedimento%2Ftipoleito%2Ftipoleito.v1.xsd"/>
+  <xs:import id="sc" namespace="http://servicos.saude.gov.br/schema/sigtap/procedimento/servicoclassificacao/v1/servicoclassificacao" schemaLocation="https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fprocedimento%2Fservicoclassificacao%2Fservicoclassificacao.v1.xsd"/>
+  <xs:import id="ha" namespace="http://servicos.saude.gov.br/schema/sigtap/procedimento/habilitacao/v1/habilitacao" schemaLocation="https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fprocedimento%2Fhabilitacao%2Fhabilitacao.v1.xsd"/>
+  <xs:import id="gh" namespace="http://servicos.saude.gov.br/schema/sigtap/procedimento/habilitacao/v1/grupohabilitacao" schemaLocation="https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fprocedimento%2Fhabilitacao%2Fgrupohabilitacao.v1.xsd"/>
+  <xs:import id="in" namespace="http://servicos.saude.gov.br/schema/sigtap/procedimento/habilitacao/v1/incremento" schemaLocation="https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fprocedimento%2Fhabilitacao%2Fincremento.v1.xsd"/>
+  <xs:import id="cr" namespace="http://servicos.saude.gov.br/schema/sigtap/procedimento/redeatencao/v1/componenteredeatencao" schemaLocation="https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fprocedimento%2Fredeatencao%2Fcomponenteredeatencao.v1.xsd"/>
+  <xs:import id="or" namespace="http://servicos.saude.gov.br/schema/sigtap/procedimento/origem/v1/origemsiasih" schemaLocation="https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fprocedimento%2Forigem%2Forigemsiasih.v1.xsd"/>
+  <xs:import id="rc" namespace="http://servicos.saude.gov.br/schema/sigtap/procedimento/regracondicionada/v1/regracondicionada" schemaLocation="https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fprocedimento%2Fregracondicionada%2Fregracondicionada.v1.xsd"/>
+  <xs:import id="re" namespace="http://servicos.saude.gov.br/schema/sigtap/procedimento/renases/v1/renases" schemaLocation="https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fprocedimento%2Frenases%2Frenases.v1.xsd"/>
+  <xs:import id="tu" namespace="http://servicos.saude.gov.br/schema/sigtap/procedimento/tuss/v1/tuss" schemaLocation="https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fprocedimento%2Ftuss%2Ftuss.v1.xsd"/>
+  <xs:element name="Procedimento" type="ProcedimentoType"/>
+  <xs:complexType name="ProcedimentoType">
+    <xs:annotation>
+      <xs:documentation>Este tipo representa um Procedimento completo.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="BaseProcedimentoType">
+        <xs:sequence>
+          <xs:element name="FormaOrganizacao" minOccurs="0" maxOccurs="1" type="fo:FormaOrganizacaoType">
+            <xs:annotation>
+              <xs:documentation>Forma de Organização do Procedimento.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="competenciaInicial" minOccurs="0" maxOccurs="1" type="cp:CompetenciaType">
+            <xs:annotation>
+              <xs:documentation>Competência inicial do Procedimento.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="competenciaFinal" minOccurs="0" maxOccurs="1" type="cp:CompetenciaType">
+            <xs:annotation>
+              <xs:documentation>Competência final do Procedimento.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="finalidadePublicacao" minOccurs="0" maxOccurs="1" type="fp:FinalidadePublicacaoType">
+            <xs:annotation>
+              <xs:documentation>Efeito da Publicação do Documento sobre o Procedimento.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="DocumentoPublicacao" minOccurs="0" maxOccurs="1" type="do:DocumentoType">
+            <xs:annotation>
+              <xs:documentation>Documento de publicação do Procedimento.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ModalidadesAtendimento" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Modalidades de Atendimento vinculadas ao Procedimento.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ModalidadeAtendimento" minOccurs="0" maxOccurs="unbounded" type="ma:ModalidadeAtendimentoType"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="complexidade" minOccurs="0" maxOccurs="1" type="co:ComplexidadeType">
+            <xs:annotation>
+              <xs:documentation>Complexidade do Procedimento.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="TipoFinanciamento" minOccurs="0" maxOccurs="1" type="tf:TipoFinanciamentoType">
+            <xs:annotation>
+              <xs:documentation>Tipo de Financiamento do Procedimento.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Rubrica" minOccurs="0" maxOccurs="1" type="ru:RubricaType">
+            <xs:annotation>
+              <xs:documentation>Rubrica/Subtipo de Financiamento do Procedimento.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="InstrumentosRegistro" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Instrumentos de Registro vinculados ao Procedimento.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="InstrumentoRegistro" minOccurs="0" maxOccurs="unbounded" type="ir:InstrumentoRegistroType"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="mediaPermanencia" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Média de dias de internação prevista para o Procedimento.</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:integer">
+                <xs:minInclusive value="0"/>
+                <xs:maxInclusive value="9999"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="tempoPermanencia" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Quantidade máxima de dias permitido por Procedimento.</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:integer">
+                <xs:minInclusive value="0"/>
+                <xs:maxInclusive value="9999"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="quantidadeMaxima" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Limite máximo permitido por Procedimento para realização do tratamento/atendimento.</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:integer">
+                <xs:minInclusive value="0"/>
+                <xs:maxInclusive value="9999"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="sexoPermitido" minOccurs="0" maxOccurs="1" type="se:SexoPermitidoType">
+            <xs:annotation>
+              <xs:documentation>Sexo permitido para um paciente do Procedimento.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="idadeMinimaPermitida" minOccurs="0" maxOccurs="1" type="il:IdadeLimiteType">
+            <xs:annotation>
+              <xs:documentation>Idade mínima permitida para um paciente do Procedimento.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="idadeMaximaPermitida" minOccurs="0" maxOccurs="1" type="il:IdadeLimiteType">
+            <xs:annotation>
+              <xs:documentation>Idade máxima permitida para um paciente do Procedimento.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="pontos" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Pontuação definida para o componente “Serviços Profissionais” (SP) que compõe o valor de Procedimentos principais e especiais realizados na assistência hospitalar.</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:integer">
+                <xs:minInclusive value="0"/>
+                <xs:maxInclusive value="9999"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="valorSH" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Valor para o Serviço Hospitalar do Procedimento.</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:decimal">
+                <xs:minInclusive value="0"/>
+                <xs:maxInclusive value="99999999.99"/>
+                <xs:fractionDigits value="2"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="valorSA" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Valor para o Serviço Ambulatorial do Procedimento.</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:decimal">
+                <xs:minInclusive value="0"/>
+                <xs:maxInclusive value="99999999.99"/>
+                <xs:fractionDigits value="2"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="valorSP" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Valor para o Serviço Profissional do Procedimento.</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:decimal">
+                <xs:minInclusive value="0"/>
+                <xs:maxInclusive value="99999999.99"/>
+                <xs:fractionDigits value="2"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="AtributosComplementares" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Atributos Complementares do Procedimento.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="AtributoComplementar" minOccurs="0" maxOccurs="unbounded" type="ac:AtributoComplementarType"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <!--Atributos que podem ser preenchidos de acordo com a necessidade-->
+          <xs:element name="descricao" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Descrição completa do Procedimento.</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:minLength value="1"/>
+                <xs:maxLength value="4000"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="CIDsVinculados" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>CIDs relacionados ao Procedimento.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="CIDVinculado" minOccurs="0" maxOccurs="unbounded">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element name="CID" minOccurs="0" maxOccurs="1" type="ci:CIDType"/>
+                      <xs:element name="vinculo" minOccurs="0" maxOccurs="1" type="vc:VinculoCIDType"/>
+                    </xs:sequence>
+                  </xs:complexType>
+                </xs:element>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="CBOsVinculados" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>CBOs relacionados ao Procedimento.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="CBO" minOccurs="0" maxOccurs="unbounded" type="cb:CBOType"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="CategoriasCBOVinculadas" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Categorias CBO relacionadas ao Procedimento.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="CategoriaCBO" minOccurs="0" maxOccurs="unbounded" type="cc:CategoriaCBOType"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="TiposLeitoVinculados" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Tipos de Leito relacionados ao Procedimento.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="TipoLeito" minOccurs="0" maxOccurs="unbounded" type="tl:TipoLeitoType"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="ServicosClassificacoesVinculados" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Serviços/Classificações relacionados ao Procedimento.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ServicoClassificacao" minOccurs="0" maxOccurs="unbounded" type="sc:ServicoClassificacaoType"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="HabilitacoesVinculadas" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Habilitações relacionadas ao Procedimento.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Habilitacao" minOccurs="0" maxOccurs="unbounded" type="ha:HabilitacaoType"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="GruposHabilitacaoVinculados" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Grupos de Habilitação relacionados ao Procedimento.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="GrupoHabilitacao" minOccurs="0" maxOccurs="unbounded" type="gh:GrupoHabilitacaoType"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="IncrementosVinculados" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Incrementos de Habilitação relacionados ao Procedimento.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Incremento" minOccurs="0" maxOccurs="unbounded" type="in:IncrementoType"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="ComponentesRedesVinculados" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Componentes de Redes de Atenção relacionados ao Procedimento.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ComponenteRedeAtencao" minOccurs="0" maxOccurs="unbounded" type="cr:ComponenteRedeAtencaoType"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="OrigensSIGTAP" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Procedimentos SIGTAP que deram origem à este Procedimento.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="OrigemSIGTAP" minOccurs="0" maxOccurs="unbounded" type="BaseProcedimentoType"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="OrigensSIASIH" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Procedimentos SIA/SIH que deram origem à este Procedimento.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="OrigemSIASIH" minOccurs="0" maxOccurs="unbounded" type="or:OrigemSIASIHType"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="RegrasCondicionadasVinculadas" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Regras Condicionadas relacionados ao Procedimento.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="RegraCondicionada" minOccurs="0" maxOccurs="unbounded" type="rc:RegraCondicionadaType"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="RENASESVinculadas" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>RENASES relacionados ao Procedimento.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="RENASES" minOccurs="0" maxOccurs="unbounded" type="re:RENASESType"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="TUSSVinculadas" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>TUSS relacionados ao Procedimento.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="TUSS" minOccurs="0" maxOccurs="unbounded" type="tu:TUSSType"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fprocedimento%2Fnivelagregacao%2Fformaorganizacao.v1.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/formaorganizacao" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/formaorganizacao" xmlns:sgp="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/subgrupo">
+  <xs:import id="sgp" namespace="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/subgrupo" schemaLocation="https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fprocedimento%2Fnivelagregacao%2Fsubgrupo.v1.xsd"/>
+  <xs:annotation>
+    <xs:documentation>Este esquema representa uma Forma de Organização, o terceiro nível de agregação da tabela. 
+            Neste nível os procedimentos estão agregados por diferentes critérios: região anatômica, sistemas do corpo humano, especialidades, tipo de exame, tipo de cirurgia, entre outros.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="FormaOrganizacao" type="FormaOrganizacaoType"/>
+  <xs:simpleType name="CodigoFormaOrganizacaoType">
+    <xs:restriction base="xs:string">
+      <xs:length value="2"/>
+      <xs:pattern value="[0-9]{2}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="FormaOrganizacaoType">
+    <xs:sequence>
+      <xs:element name="codigo" minOccurs="1" maxOccurs="1" nillable="true" type="CodigoFormaOrganizacaoType">
+        <xs:annotation>
+          <xs:documentation>Código identificador da Forma de Organização.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="nome" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Nome descritivo da Forma de Organização.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="100"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Subgrupo" minOccurs="0" maxOccurs="1" type="sgp:SubgrupoType">
+        <xs:annotation>
+          <xs:documentation>Subgrupo ao qual essa Forma de Organização está associada.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fpublicacao%2Fdocumento.v1.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/sigtap/publicacao/v1/documento" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/sigtap/publicacao/v1/documento" xmlns:td="http://servicos.saude.gov.br/schema/sigtap/publicacao/v1/tipodocumento" xmlns:oo="http://servicos.saude.gov.br/schema/sigtap/publicacao/v1/orgaoorigem">
+  <xs:import id="td" namespace="http://servicos.saude.gov.br/schema/sigtap/publicacao/v1/tipodocumento" schemaLocation="https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fpublicacao%2Ftipodocumento.v1.xsd"/>
+  <xs:import id="oo" namespace="http://servicos.saude.gov.br/schema/sigtap/publicacao/v1/orgaoorigem" schemaLocation="https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fpublicacao%2Forgaoorigem.v1.xsd"/>
+  <xs:annotation>
+    <xs:documentation>Este esquema representa um Documento de Publicação. 
+            É em um Documento onde são definidos novos Procedimentos, ou alterados Procedimentos existentes.</xs:documentation>
+  </xs:annotation>
+  <xs:simpleType name="NumeroDocumentoType">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="10"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="DocumentoType">
+    <xs:sequence>
+      <xs:element name="numeroDocumento" minOccurs="1" maxOccurs="1" nillable="true" type="NumeroDocumentoType">
+        <xs:annotation>
+          <xs:documentation>Número do Documento.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TipoDocumento" minOccurs="1" maxOccurs="1" nillable="true" type="td:TipoDocumentoType">
+        <xs:annotation>
+          <xs:documentation>Tipo de Documento que caracteriza o Documento.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="OrgaoOrigem" minOccurs="1" maxOccurs="1" nillable="true" type="oo:OrgaoOrigemType">
+        <xs:annotation>
+          <xs:documentation>Órgão que emitiu o Documento.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="dataPublicacao" minOccurs="0" maxOccurs="1" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>Data da publicação do Documento.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fpublicacao%2Ftipodocumento.v1.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/sigtap/publicacao/v1/tipodocumento" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/sigtap/publicacao/v1/tipodocumento">
+  <xs:annotation>
+    <xs:documentation>Este esquema representa um Tipo de Documento, caracteriza um Documento de Publicação.</xs:documentation>
+  </xs:annotation>
+  <xs:simpleType name="CodigoTipoDocumentoType">
+    <xs:annotation>
+      <xs:documentation>Tipo que representa o código identificador do Tipo de Documento.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="6"/>
+      <xs:pattern value="[0-9]{1,6}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="TipoDocumentoType">
+    <xs:sequence>
+      <xs:element name="codigo" minOccurs="1" maxOccurs="1" nillable="true" type="CodigoTipoDocumentoType">
+        <xs:annotation>
+          <xs:documentation>Código identificador do Tipo de Documento.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="nome" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Nome descritivo do Tipo de Documento.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="50"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fpublicacao%2Forgaoorigem.v1.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/sigtap/publicacao/v1/orgaoorigem" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/sigtap/publicacao/v1/orgaoorigem">
+  <xs:annotation>
+    <xs:documentation>Este esquema representa um Órgão de Origem, característica de um Documento de Publicação, indica qual órgão emitiu o Documento.</xs:documentation>
+  </xs:annotation>
+  <xs:simpleType name="CodigoOrgaoOrigemType">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="6"/>
+      <xs:pattern value="[0-9]{1,6}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="OrgaoOrigemType">
+    <xs:sequence>
+      <xs:element name="codigo" minOccurs="1" maxOccurs="1" nillable="true" type="CodigoOrgaoOrigemType">
+        <xs:annotation>
+          <xs:documentation>Código identificador do Órgão de Origem.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="nome" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Nome descritivo do Órgão de Origem.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="50"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fpublicacao%2Ffinalidadepublicacao.v1.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/sigtap/publicacao/v1/finalidadepublicacao" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/sigtap/procedimento/v1/finalidadepublicacao">
+  <xs:annotation>
+    <xs:documentation>Este esquema limita os valores possíveis para a Finalidade da Publicação: Inclusão, Alteração ou Revogação.</xs:documentation>
+  </xs:annotation>
+  <xs:simpleType name="FinalidadePublicacaoType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="INCLUSAO"/>
+      <xs:enumeration value="ALTERACAO"/>
+      <xs:enumeration value="REVOGACAO"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fprocedimento%2Fmodalidadeatendimento.v1.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/sigtap/procedimento/v1/modalidadeatendimento" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/sigtap/procedimento/v1/modalidadeatendimento">
+  <xs:annotation>
+    <xs:documentation>Este esquema representa uma Modalidade de Atendimento.
+            Uma Modalidade de Atendimento identifica o regime de atendimento onde o Procedimento pode ser realizado.</xs:documentation>
+  </xs:annotation>
+  <xs:simpleType name="CodigoModalidadeAtendimentoType">
+    <xs:restriction base="xs:string">
+      <xs:length value="2"/>
+      <xs:pattern value="[0-9]{2}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ModalidadeAtendimentoType">
+    <xs:sequence>
+      <xs:element name="codigo" minOccurs="1" maxOccurs="1" nillable="true" type="CodigoModalidadeAtendimentoType">
+        <xs:annotation>
+          <xs:documentation>Código identificador da Modalidade de Atendimento.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="nome" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Nome descritivo da Modalidade de Atendimento.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="100"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fprocedimento%2Fcomplexidade.v1.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/sigtap/procedimento/v1/complexidade" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/sigtap/procedimento/v1/complexidade">
+  <xs:annotation>
+    <xs:documentation>Este esquema determina os valores possíveis para Complexidade: Atenção Básica, Média Complexidade, Alta Complexidade/Custo e Não se aplica.</xs:documentation>
+  </xs:annotation>
+  <xs:simpleType name="ComplexidadeType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ATENCAO_BASICA"/>
+      <xs:enumeration value="MEDIA_COMPLEXIDADE"/>
+      <xs:enumeration value="ALTA_COMPLEXIDADE_OU_CUSTO"/>
+      <xs:enumeration value="NAO_SE_APLICA"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fprocedimento%2Ffinanciamento%2Ftipofinanciamento.v1.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/sigtap/procedimento/financiamento/v1/tipofinanciamento" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/sigtap/procedimento/financiamento/v1/tipofinanciamento">
+  <xs:annotation>
+    <xs:documentation>Este esquema representa um Tipo de Financiamento. 
+            É o Tipo de Financiamento do Procedimento em coerência aos blocos de financiamento definidos no Pacto de Gestão de Saúde.</xs:documentation>
+  </xs:annotation>
+  <xs:simpleType name="CodigoTipoFinanciamentoType">
+    <xs:restriction base="xs:string">
+      <xs:length value="2"/>
+      <xs:pattern value="[0-9]{2}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="TipoFinanciamentoType">
+    <xs:sequence>
+      <xs:element name="codigo" minOccurs="1" maxOccurs="1" nillable="true" type="CodigoTipoFinanciamentoType">
+        <xs:annotation>
+          <xs:documentation>Código identificador do Tipo de Financiamento.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="nome" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Nome descritivo do Tipo de Financiamento.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="100"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fprocedimento%2Ffinanciamento%2Frubrica.v1.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/sigtap/procedimento/financiamento/v1/rubrica" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/sigtap/procedimento/financiamento/v1/rubrica" xmlns:tf="http://servicos.saude.gov.br/schema/sigtap/procedimento/financiamento/v1/tipofinanciamento">
+  <xs:import id="tf" namespace="http://servicos.saude.gov.br/schema/sigtap/procedimento/financiamento/v1/tipofinanciamento" schemaLocation="https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fprocedimento%2Ffinanciamento%2Ftipofinanciamento.v1.xsd"/>
+  <xs:annotation>
+    <xs:documentation>Este esquema representa uma Rubrica, também chamado de Subtipo de Financiamento.</xs:documentation>
+  </xs:annotation>
+  <xs:simpleType name="CodigoRubricaType">
+    <xs:restriction base="xs:string">
+      <xs:length value="4"/>
+      <xs:pattern value="[0-9]{4}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="RubricaType">
+    <xs:sequence>
+      <xs:element name="codigo" minOccurs="1" maxOccurs="1" nillable="true" type="CodigoRubricaType">
+        <xs:annotation>
+          <xs:documentation>Código identificador do Rubrica.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="nome" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Nome descritivo do Rubrica.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="100"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="TipoFinanciamento" minOccurs="0" maxOccurs="1" type="tf:TipoFinanciamentoType">
+        <xs:annotation>
+          <xs:documentation>Tipo de Financiamento ao qual essa Rubrica está associada.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fprocedimento%2Finstrumentoregistro.v1.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/sigtap/procedimento/v1/instrumentoregistro" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/sigtap/procedimento/v1/instrumentoregistro">
+  <xs:annotation>
+    <xs:documentation>Este esquema representa um Instrumento de Registro. 
+            Identifica os instrumentos de captação de dados dos atendimentos.</xs:documentation>
+  </xs:annotation>
+  <xs:simpleType name="CodigoInstrumentoRegistroType">
+    <xs:restriction base="xs:string">
+      <xs:length value="2"/>
+      <xs:pattern value="[0-9]{2}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="InstrumentoRegistroType">
+    <xs:sequence>
+      <xs:element name="codigo" minOccurs="1" maxOccurs="1" nillable="true" type="CodigoInstrumentoRegistroType">
+        <xs:annotation>
+          <xs:documentation>Código identificador do Instrumento de Registro.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="nome" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Nome descritivo do Instrumento de Registro.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="50"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fprocedimento%2Fsexopermitido.v1.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/sigtap/procedimento/v1/sexopermitido" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/sigtap/procedimento/v1/sexopermitido" xmlns:corp="http://servicos.saude.gov.br/schema/corporativo/pessoafisica/v2/sexo">
+  <xs:import id="corp" namespace="http://servicos.saude.gov.br/schema/corporativo/pessoafisica/v2/sexo" schemaLocation="https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fcorporativo%2Fpessoafisica%2Fsexo.v2.xsd"/>
+  <xs:annotation>
+    <xs:documentation>Este esquema limita os valores possíveis para Sexo, ou gênero, permitido para a realização de um procedimento: Masculino, Feminino ou Ambos.</xs:documentation>
+  </xs:annotation>
+  <xs:simpleType name="SexoPermitidoType">
+    <xs:union memberTypes="corp:SexoType _AmbosSexoPermitidoType"/>
+  </xs:simpleType>
+  <xs:simpleType name="_AmbosSexoPermitidoType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AMBOS"/>
+      <xs:enumeration value="NAO_SE_APLICA"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fcorporativo%2Fpessoafisica%2Fsexo.v2.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/corporativo/pessoafisica/v2/sexo" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/corporativo/pessoafisica/v2/sexo">
+  <xs:annotation>
+    <xs:documentation>Este esquema representa a entidade sexo.</xs:documentation>
+  </xs:annotation>
+  <xs:simpleType name="SexoType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="MASCULINO"/>
+      <xs:enumeration value="FEMININO"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fidadelimite.v1.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/sigtap/v1/idadelimite" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/sigtap/v1/idadelimite">
+  <xs:annotation>
+    <xs:documentation>Este esquema representa uma Idade Limite.</xs:documentation>
+  </xs:annotation>
+  <xs:complexType name="IdadeLimiteType">
+    <xs:sequence>
+      <xs:element name="quantidadeLimite" minOccurs="1" maxOccurs="1" nillable="false">
+        <xs:annotation>
+          <xs:documentation>O valor numérico do limite de idade.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:integer">
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="999"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="unidadeLimite" minOccurs="1" maxOccurs="1" nillable="false" type="UnidadeLimiteType">
+        <xs:annotation>
+          <xs:documentation>Unidade do valor do limite de idade: Meses ou Anos</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="UnidadeLimiteType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="MESES"/>
+      <xs:enumeration value="ANOS"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fprocedimento%2Fatributocomplementar.v1.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/sigtap/procedimento/v1/atributocomplementar" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/sigtap/procedimento/v1/atributocomplementar">
+  <xs:annotation>
+    <xs:documentation>Este esquema representa um Atributo Complementar.</xs:documentation>
+  </xs:annotation>
+  <xs:simpleType name="CodigoAtributoComplementarType">
+    <xs:restriction base="xs:string">
+      <xs:length value="3"/>
+      <xs:pattern value="[0-9]{3}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="AtributoComplementarType">
+    <xs:sequence>
+      <xs:element name="codigo" minOccurs="1" maxOccurs="1" nillable="true" type="CodigoAtributoComplementarType">
+        <xs:annotation>
+          <xs:documentation>Código identificador do Atributo Complementar.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="nome" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Nome descritivo do Atributo Complementar.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="100"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fprocedimento%2Fcid%2Fcid.v1.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/sigtap/procedimento/cid/v1/cid" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/sigtap/procedimento/cid/v1/cid" xmlns:se="http://servicos.saude.gov.br/schema/sigtap/procedimento/v1/sexopermitido">
+  <xs:import id="se" namespace="http://servicos.saude.gov.br/schema/sigtap/procedimento/v1/sexopermitido" schemaLocation="https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fprocedimento%2Fsexopermitido.v1.xsd"/>
+  <xs:annotation>
+    <xs:documentation>Este esquema representa um CID, Classificação Internacional De Doenças, que identifica a patologia/lesão que motivou especificamente o atendimento ambulatorial ou internação do paciente.
+            Esta representação é específica para uso do SIGTAP.</xs:documentation>
+  </xs:annotation>
+  <xs:simpleType name="CodigoCIDType">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="2"/>
+      <xs:maxLength value="4"/>
+      <xs:pattern value="[A-Z][0-9]{1,3}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="CIDType">
+    <xs:sequence>
+      <xs:element name="codigo" minOccurs="1" maxOccurs="1" nillable="true" type="CodigoCIDType">
+        <xs:annotation>
+          <xs:documentation>Código identificador do CID.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="nome" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Nome descritivo do CID.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="300"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="agravo" minOccurs="0" maxOccurs="1" type="AgravoType">
+        <xs:annotation>
+          <xs:documentation>Agravo do CID.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="sexoAplicavel" minOccurs="0" maxOccurs="1" type="se:SexoPermitidoType">
+        <xs:annotation>
+          <xs:documentation>Sexo aplicável ao CID.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="estadio" minOccurs="0" maxOccurs="1" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>Indica se o CID é estadio ou não.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="quantidadeCamposIrradiados" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>A quantidade de campos irradiados pelo CID..</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:integer">
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="9999"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="AgravoType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SEM_AGRAVO"/>
+      <xs:enumeration value="AGRAVO_NOTIFICACAO"/>
+      <xs:enumeration value="AGRAVO_BLOQUEIO"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fprocedimento%2Fcid%2Fvinculocid.v1.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/sigtap/procedimento/cid/v1/vinculocid" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/sigtap/procedimento/cid/v1/vinculocid">
+  <xs:annotation>
+    <xs:documentation>Este esquema limita os valores possíveis para o vínculo de um CID à um Procedimento: Primário e Secundário.</xs:documentation>
+  </xs:annotation>
+  <xs:simpleType name="VinculoCIDType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PRIMARIO"/>
+      <xs:enumeration value="SECUNDARIO"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fcbo%2Fcbo.v1.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/cbo/v1/cbo" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/cbo/v1/cbo">
+  <xs:annotation>
+    <xs:documentation>Este esquema representa um CBO.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="CBO" type="CBOType"/>
+  <xs:element name="codigoCBO" type="CodigoCBOType"/>
+  <xs:simpleType name="CodigoCBOType">
+    <xs:annotation>
+      <xs:documentation>Tipo que representa o código de um CBO.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:length value="6"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="CBOType">
+    <xs:sequence>
+      <xs:element name="codigo" minOccurs="1" maxOccurs="1" nillable="true" type="CodigoCBOType">
+        <xs:annotation>
+          <xs:documentation>Código identificador do CBO.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="nome" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Nome descritivo do CBO.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="150"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fcbo%2Fcategoriacbo.v1.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/cbo/v1/categoriacbo" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/cbo/v1/categoriacbo">
+  <xs:annotation>
+    <xs:documentation>Este esquema representa uma Categoria CBO.</xs:documentation>
+  </xs:annotation>
+  <xs:simpleType name="CodigoCategoriaCBOType">
+    <xs:annotation>
+      <xs:documentation>Tipo que representa o código de uma Categoria CBO.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:length value="4"/>
+      <xs:pattern value="[0-9]{4}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="CategoriaCBOType">
+    <xs:sequence>
+      <xs:element name="codigo" minOccurs="1" maxOccurs="1" nillable="true" type="CodigoCategoriaCBOType">
+        <xs:annotation>
+          <xs:documentation>Código identificador da Categoria CBO.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="nome" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Nome descritivo da Categoria CBO.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="200"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fprocedimento%2Ftipoleito%2Ftipoleito.v1.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/sigtap/procedimento/tipoleito/v1/tipoleito" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/sigtap/procedimento/tipoleito/v1/tipoleito">
+  <xs:annotation>
+    <xs:documentation>Este esquema representa um Tipo de Leito, indicado para a realização de um Procedimento.
+            Quando um Procedimento tem a exigência de um determinado Tipo de Leito, isso significa que somente poderá ser realizado num estabelecimento de saúde que disponha de tal leito cadastrado no SCNES.</xs:documentation>
+  </xs:annotation>
+  <xs:simpleType name="CodigoTipoLeitoType">
+    <xs:restriction base="xs:string">
+      <xs:length value="2"/>
+      <xs:pattern value="[0-9]{2}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="TipoLeitoType">
+    <xs:sequence>
+      <xs:element name="codigo" minOccurs="1" maxOccurs="1" nillable="true" type="CodigoTipoLeitoType">
+        <xs:annotation>
+          <xs:documentation>Código identificador do Tipo de Leito.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="nome" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Nome descritivo do Tipo de Leito.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="60"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fprocedimento%2Fservicoclassificacao%2Fservicoclassificacao.v1.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/sigtap/procedimento/servicoclassificacao/v1/servicoclassificacao" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/sigtap/procedimento/servicoclassificacao/v1/servicoclassificacao" xmlns:se="http://servicos.saude.gov.br/schema/sigtap/procedimento/servicoclassificacao/v1/servico">
+  <xs:import id="se" namespace="http://servicos.saude.gov.br/schema/sigtap/procedimento/servicoclassificacao/v1/servico" schemaLocation="https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fprocedimento%2Fservicoclassificacao%2Fservico.v1.xsd"/>
+  <xs:annotation>
+    <xs:documentation>Este esquema representa um Serviço/Classificação, que identifica os serviços especializados, que o estabelecimento de saúde precisa dispor para realização de um procedimento. 
+            Quando um procedimento tem a exigência de serviço/classificação, isto significa que somente poderá ser realizado num estabelecimento de saúde que disponha desse serviço/classificação cadastrado no SCNES.</xs:documentation>
+  </xs:annotation>
+  <xs:simpleType name="CodigoClassificacaoType">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="3"/>
+      <xs:pattern value="[0-9]{1,3}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ServicoClassificacaoType">
+    <xs:sequence>
+      <xs:element name="Servico" minOccurs="1" maxOccurs="1" nillable="true" type="se:ServicoType">
+        <xs:annotation>
+          <xs:documentation>Serviço ao qual esse Serviço/Classificação está associado.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="codigoClassificacao" minOccurs="1" maxOccurs="1" nillable="true" type="CodigoClassificacaoType">
+        <xs:annotation>
+          <xs:documentation>Código identificador da Classificação.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="nomeClassificacao" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Nome descritivo da Classificação.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="150"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fprocedimento%2Fservicoclassificacao%2Fservico.v1.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/sigtap/procedimento/servicoclassificacao/v1/servico" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/sigtap/procedimento/servicoclassificacao/v1/servico">
+  <xs:annotation>
+    <xs:documentation>Este esquema representa um Serviço, que o estabelecimento de saúde precisa dispor para a realização de um Procedimento.</xs:documentation>
+  </xs:annotation>
+  <xs:simpleType name="CodigoServicoType">
+    <xs:restriction base="xs:string">
+      <xs:length value="3"/>
+      <xs:pattern value="[0-9]{3}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ServicoType">
+    <xs:sequence>
+      <xs:element name="codigo" minOccurs="1" maxOccurs="1" nillable="true" type="CodigoServicoType">
+        <xs:annotation>
+          <xs:documentation>Código identificador do Serviço.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="nome" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Nome descritivo do Serviço.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="120"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fprocedimento%2Fhabilitacao%2Fhabilitacao.v1.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/sigtap/procedimento/habilitacao/v1/habilitacao" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/sigtap/procedimento/habilitacao/v1/habilitacao" xmlns:ah="http://servicos.saude.gov.br/schema/sigtap/procedimento/habilitacao/v1/areahabilitacao">
+  <xs:import id="ah" namespace="http://servicos.saude.gov.br/schema/sigtap/procedimento/habilitacao/v1/areahabilitacao" schemaLocation="https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fprocedimento%2Fhabilitacao%2Fareahabilitacao.v1.xsd"/>
+  <xs:annotation>
+    <xs:documentation>Este esquema representa uma Habilitação. Habilitações significam que o estabelecimento de saúde reúne condições técnicas operacionais para a prestação de determinado tipo de assistência. 
+            As habilitações são concedidas aos estabelecimentos de saúde através de portarias do MS ou em alguns casos, de forma descentralizada, através de portarias dos próprios gestores estaduais ou municipais responsáveis por sua gestão.</xs:documentation>
+  </xs:annotation>
+  <xs:simpleType name="CodigoHabilitacaoType">
+    <xs:restriction base="xs:string">
+      <xs:length value="2"/>
+      <xs:pattern value="[0-9]{2}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="HabilitacaoType">
+    <xs:sequence>
+      <xs:element name="codigo" minOccurs="1" maxOccurs="1" nillable="true" type="CodigoHabilitacaoType">
+        <xs:annotation>
+          <xs:documentation>Código identificador da Habilitação.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="nome" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Nome descritivo da Habilitação.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="150"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="AreaHabilitacao" minOccurs="0" maxOccurs="1" type="ah:AreaHabilitacaoType">
+        <xs:annotation>
+          <xs:documentation>Área de Habilitações ao qual essa Habilitação está associada.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fprocedimento%2Fhabilitacao%2Fareahabilitacao.v1.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/sigtap/procedimento/habilitacao/v1/areahabilitacao" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/sigtap/procedimento/habilitacao/v1/areahabilitacao">
+  <xs:annotation>
+    <xs:documentation>Este esquema representa uma Área de Habilitações.</xs:documentation>
+  </xs:annotation>
+  <xs:simpleType name="CodigoAreaHabilitacaoType">
+    <xs:restriction base="xs:string">
+      <xs:length value="2"/>
+      <xs:pattern value="[0-9]{2}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="AreaHabilitacaoType">
+    <xs:sequence>
+      <xs:element name="codigo" minOccurs="1" maxOccurs="1" nillable="true" type="CodigoAreaHabilitacaoType">
+        <xs:annotation>
+          <xs:documentation>Código identificador da Área de Habilitações.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="nome" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Nome da Área de Habilitações.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="150"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fprocedimento%2Fhabilitacao%2Fgrupohabilitacao.v1.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/sigtap/procedimento/habilitacao/v1/grupohabilitacao" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/sigtap/procedimento/habilitacao/v1/grupohabilitacao">
+  <xs:annotation>
+    <xs:documentation>Este esquema representa um Grupo de Habilitações.</xs:documentation>
+  </xs:annotation>
+  <xs:simpleType name="CodigoGrupoHabilitacaoType">
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="1"/>
+      <xs:maxInclusive value="9999"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="GrupoHabilitacaoType">
+    <xs:sequence>
+      <xs:element name="codigo" minOccurs="1" maxOccurs="1" nillable="true" type="CodigoGrupoHabilitacaoType">
+        <xs:annotation>
+          <xs:documentation>Código identificador do Grupo de Habilitações.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="nome" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Nome do Grupo de Habilitações.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="20"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="descricao" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Descrição do Grupo de Habilitações.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="250"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fprocedimento%2Fhabilitacao%2Fincremento.v1.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/sigtap/procedimento/habilitacao/v1/incremento" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/sigtap/procedimento/habilitacao/v1/incremento" xmlns:ha="http://servicos.saude.gov.br/schema/sigtap/procedimento/habilitacao/v1/habilitacao">
+  <xs:import id="ha" namespace="http://servicos.saude.gov.br/schema/sigtap/procedimento/habilitacao/v1/habilitacao" schemaLocation="https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fprocedimento%2Fhabilitacao%2Fhabilitacao.v1.xsd"/>
+  <xs:annotation>
+    <xs:documentation>Este esquema representa um Incremento.
+            É um percentual que é acrescido ao valor do Procedimento e está vinculado diretamente a uma habilitação do estabelecimento.</xs:documentation>
+  </xs:annotation>
+  <xs:complexType name="IncrementoType">
+    <xs:sequence>
+      <xs:element name="Habilitacao" minOccurs="1" maxOccurs="1" nillable="true" type="ha:HabilitacaoType">
+        <xs:annotation>
+          <xs:documentation>Habilitação ao qual esse Incremento está vinculado.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="valorPercentualSH" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Percentual de Incremento para o Serviço Hospitalar.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="99999.99"/>
+            <xs:fractionDigits value="2"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="valorPercentualSA" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Percentual de Incremento para o Serviço Ambulatorial.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="99999.99"/>
+            <xs:fractionDigits value="2"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="valorPercentualSP" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Percentual de Incremento para o Serviço Profissional.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="99999.99"/>
+            <xs:fractionDigits value="2"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fprocedimento%2Fredeatencao%2Fcomponenteredeatencao.v1.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/sigtap/procedimento/redeatencao/v1/componenteredeatencao" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/sigtap/procedimento/redeatencao/v1/componenteredeatencao" xmlns:ra="http://servicos.saude.gov.br/schema/sigtap/procedimento/redeatencao/v1/redeatencao">
+  <xs:import id="ra" namespace="http://servicos.saude.gov.br/schema/sigtap/procedimento/redeatencao/v1/redeatencao" schemaLocation="https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fprocedimento%2Fredeatencao%2Fredeatencao.v1.xsd"/>
+  <xs:annotation>
+    <xs:documentation>Este esquema representa um Componente de Rede de Atenção.</xs:documentation>
+  </xs:annotation>
+  <xs:simpleType name="CodigoComponenteRedeAtencaoType">
+    <xs:restriction base="xs:string">
+      <xs:length value="5"/>
+      <xs:pattern value="[0-9]{2}\.[0-9]{2}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ComponenteRedeAtencaoType">
+    <xs:sequence>
+      <xs:element name="codigo" minOccurs="1" maxOccurs="1" nillable="true" type="CodigoComponenteRedeAtencaoType">
+        <xs:annotation>
+          <xs:documentation>Código identificador do Componente de Rede de Atenção.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="nome" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Nome descritivo do Componente de Rede de Atenção.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="150"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="RedeAtencao" minOccurs="0" maxOccurs="1" type="ra:RedeAtencaoType">
+        <xs:annotation>
+          <xs:documentation>Rede de Atenção ao qual esse Componente de Rede de Atenção está associado.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fprocedimento%2Fredeatencao%2Fredeatencao.v1.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/sigtap/procedimento/redeatencao/v1/redeatencao" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/sigtap/procedimento/redeatencao/v1/redeatencao">
+  <xs:annotation>
+    <xs:documentation>Este esquema representa uma Rede de Atenção.</xs:documentation>
+  </xs:annotation>
+  <xs:simpleType name="CodigoRedeAtencaoType">
+    <xs:restriction base="xs:string">
+      <xs:length value="3"/>
+      <xs:pattern value="[0-9]{3}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="RedeAtencaoType">
+    <xs:sequence>
+      <xs:element name="codigo" minOccurs="1" maxOccurs="1" nillable="true" type="CodigoRedeAtencaoType">
+        <xs:annotation>
+          <xs:documentation>Código identificador da Rede de Atenção.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="nome" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Nome da Rede de Atenção.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="50"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fprocedimento%2Forigem%2Forigemsiasih.v1.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/sigtap/procedimento/origem/v1/origemsiasih" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/sigtap/procedimento/origem/v1/origemsiasih">
+  <xs:annotation>
+    <xs:documentation>Este esquema representa uma Origem SIA/SIH. 
+            Representa um Procedimento SIA/SIH que deu origem à outro Procedimento.</xs:documentation>
+  </xs:annotation>
+  <xs:simpleType name="CodigoProcedimentoSIASIH">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="10"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="OrigemSIASIHType">
+    <xs:sequence>
+      <xs:element name="codigoProcedimentoSIASIH" minOccurs="1" maxOccurs="1" nillable="true" type="CodigoProcedimentoSIASIH">
+        <xs:annotation>
+          <xs:documentation>Código identificador do Procedimento de Origem SIA/SIH.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="nomeProcedimentoSIASIH" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Nome descritivo do Procedimento de Origem SIA/SIH.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="100"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="tipoOrigemSIASIHType" minOccurs="0" maxOccurs="1" type="TipoOrigemSIASIHType">
+        <xs:annotation>
+          <xs:documentation>Tipo do Procedimento de Origem SIA/SIH.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="TipoOrigemSIASIHType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AMBULATORIAL"/>
+      <xs:enumeration value="HOSPITALAR"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fprocedimento%2Fregracondicionada%2Fregracondicionada.v1.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/sigtap/procedimento/regracondicionada/v1/regracondicionada" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/sigtap/procedimento/regracondicionada/v1/regracondicionada">
+  <xs:annotation>
+    <xs:documentation>Este esquema representa uma Regra Condicionada.</xs:documentation>
+  </xs:annotation>
+  <xs:simpleType name="CodigoRegraCondicionadaType">
+    <xs:restriction base="xs:string">
+      <xs:length value="4"/>
+      <xs:pattern value="[0-9]{4}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="RegraCondicionadaType">
+    <xs:sequence>
+      <xs:element name="codigo" minOccurs="1" maxOccurs="1" nillable="true" type="CodigoRegraCondicionadaType">
+        <xs:annotation>
+          <xs:documentation>Código identificador da Regra Condicionada.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="nome" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Nome da Regra Condicionada.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="150"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="descricao" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Texto descritivo da Regra Condicionada.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="500"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fprocedimento%2Frenases%2Frenases.v1.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/sigtap/procedimento/renases/v1/renases" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/sigtap/procedimento/renases/v1/renases">
+  <xs:annotation>
+    <xs:documentation>Este esquema representa um Procedimento RENASES.</xs:documentation>
+  </xs:annotation>
+  <xs:simpleType name="CodigoRENASESType">
+    <xs:restriction base="xs:string">
+      <xs:length value="3"/>
+      <xs:pattern value="[0-9]{3}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="RENASESType">
+    <xs:sequence>
+      <xs:element name="codigo" minOccurs="1" maxOccurs="1" nillable="true" type="CodigoRENASESType">
+        <xs:annotation>
+          <xs:documentation>Código identificador do RENASES.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="nome" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Nome do RENASES.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="150"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fprocedimento%2Ftuss%2Ftuss.v1.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/sigtap/procedimento/tuss/v1/tuss" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/sigtap/procedimento/tuss/v1/tuss">
+  <xs:annotation>
+    <xs:documentation>Este esquema representa um Procedimento TUSS.</xs:documentation>
+  </xs:annotation>
+  <xs:simpleType name="CodigoTUSSType">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="10"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="TUSSType">
+    <xs:sequence>
+      <xs:element name="codigo" minOccurs="1" maxOccurs="1" nillable="true" type="CodigoTUSSType">
+        <xs:annotation>
+          <xs:documentation>Código identificador do TUSS.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="nome" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Nome do TUSS.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="150"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fprocedimento%2Fbaseprocedimento.v1.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/sigtap/procedimento/v1/procedimento" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/sigtap/procedimento/v1/procedimento">
+  <xs:element name="BaseProcedimento" type="BaseProcedimentoType"/>
+  <xs:element name="codigoProcedimento" type="CodigoProcedimentoType"/>
+  <xs:simpleType name="CodigoProcedimentoType">
+    <xs:annotation>
+      <xs:documentation>Tipo que representa o código de um Procedimento no SIGTAP.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:length value="10"/>
+      <xs:pattern value="[0-9]{10}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="BaseProcedimentoType">
+    <xs:annotation>
+      <xs:documentation>Este tipo representa um Procedimento com somente o código e o nome, para representações sucintas.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="codigo" minOccurs="1" maxOccurs="1" nillable="true" type="CodigoProcedimentoType">
+        <xs:annotation>
+          <xs:documentation>Código identificador do Procedimento.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="nome" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Nome descritivo do Procedimento.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="250"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fmensageria%2Fpaginacao.v1.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/wsdl/mensageria/v1/paginacao" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/wsdl/mensageria/v1/paginacao">
+  <xs:annotation>
+    <xs:documentation>Estrutura destinada à paginação de resultados.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="Paginacao" type="PaginacaoType"/>
+  <xs:complexType name="PaginacaoType">
+    <xs:sequence>
+      <xs:element name="registroInicial" minOccurs="1" maxOccurs="1" nillable="false">
+        <xs:annotation>
+          <xs:documentation>O valor numérico identificador da registro inicial solicitado/atual.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:integer">
+            <xs:minInclusive value="1"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="quantidadeRegistros" minOccurs="1" maxOccurs="1" nillable="false">
+        <xs:annotation>
+          <xs:documentation>O valor numérico que determina a quantidade de registros presentes na página solicitada/atual.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:integer">
+            <xs:minInclusive value="1"/>
+            <xs:maxInclusive value="100"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="totalRegistros" minOccurs="0" maxOccurs="1" nillable="false">
+        <xs:annotation>
+          <xs:documentation>O valor numérico que determina a quantidade total de registros.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:integer">
+            <xs:minInclusive value="0"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fprocedimento%2Fdetalheadicional.v1.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/wsdl/mensageria/sigtap/v1/detalheadicional" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/wsdl/mensageria/sigtap/v1/detalheadicional" xmlns:pag="http://servicos.saude.gov.br/wsdl/mensageria/v1/paginacao">
+  <xs:import id="pag" namespace="http://servicos.saude.gov.br/wsdl/mensageria/v1/paginacao" schemaLocation="https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fmensageria%2Fpaginacao.v1.xsd"/>
+  <xs:annotation>
+    <xs:documentation>Estrutura destinada à representar um detalhe adicional à ser incluído no
+			detalhamento do procedimento.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="DetalheAdicional" type="DetalheAdicionalType"/>
+  <xs:complexType name="DetalheAdicionalType">
+    <xs:sequence>
+      <xs:element name="categoriaDetalheAdicional" minOccurs="1" maxOccurs="1" nillable="false" type="CategoriaDetalheAdicionalType">
+        <xs:annotation>
+          <xs:documentation>Categoria definidora do detalhe adicional.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Paginacao" minOccurs="0" maxOccurs="1" nillable="false" type="pag:PaginacaoType">
+        <xs:annotation>
+          <xs:documentation>Estrutura de paginação.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="CategoriaDetalheAdicionalType">
+    <xs:annotation>
+      <xs:documentation>Categorias para detalhe adicional de procedimento.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DESCRICAO"/>
+      <xs:enumeration value="CIDS"/>
+      <xs:enumeration value="CBOS"/>
+      <xs:enumeration value="CATEGORIAS_CBO"/>
+      <xs:enumeration value="TIPOS_LEITO"/>
+      <xs:enumeration value="SERVICOS_CLASSIFICACOES"/>
+      <xs:enumeration value="HABILITACOES"/>
+      <xs:enumeration value="GRUPOS_HABILITACAO"/>
+      <xs:enumeration value="INCREMENTOS"/>
+      <xs:enumeration value="COMPONENTES_REDE"/>
+      <xs:enumeration value="ORIGENS_SIGTAP"/>
+      <xs:enumeration value="ORIGENS_SIA_SIH"/>
+      <xs:enumeration value="REGRAS_CONDICIONADA"/>
+      <xs:enumeration value="RENASES"/>
+      <xs:enumeration value="TUSS"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fmensageria%2Ffalha%2Fmsfalha.v5r0.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/msfalha" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mensagem="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/mensagem" xmlns="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/msfalha">
+  <xs:import id="mensagem" namespace="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/mensagem" schemaLocation="https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fmensageria%2Ffalha%2Fmensagem.v5r0.xsd">
+    <xs:annotation>
+      <xs:documentation>O objeto corresponde as mensagens padronizadas de
+				retorno. Exemplo: Toda e
+				qualquer mensagem que retornara para
+				a acao
+				solicitada, este objeto servira como base para
+				apresentar o codigo da
+				mensagem e se necessario a descricao da mensagem.</xs:documentation>
+    </xs:annotation>
+  </xs:import>
+  <xs:annotation>
+    <xs:documentation>Objeto de tratamento de falhas que podem ocorrer nas
+			diversas chamadas aos
+			servicos do Ministerio da Saude.
+			Exemplo: Toda e
+			qualquer solicitacao pode ocorrer uma falha na
+			aplicacao, ou seja, o
+			seu retorno estara comprometido e sera
+			preenchido este objeto com a
+			informacao, codigo e descricao da falha.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="MSFalha">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" nillable="true" name="identificador" type="xs:string"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="Mensagem" type="mensagem:MensagemType"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fmensageria%2Ffalha%2Fmensagem.v5r0.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/mensagem" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/mensagem">
+  <xs:annotation>
+    <xs:documentation>O objeto corresponde as mensagens padronizadas de retorno. Exemplo: Toda e qualquer mensagem que retornara para a acao solicitada, este objeto servira como base para apresentar o codigo da mensagem e se necessario a descricao da mensagem.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="Mensagem" type="MensagemType"/>
+  <xs:complexType name="MensagemType">
+    <xs:sequence>
+      <xs:element name="codigo" minOccurs="0" maxOccurs="1" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Codigo da mensagem padronizada.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="descricao" minOccurs="0" maxOccurs="1" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Descricao da mensagem.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fmensageria%2Fresultadospesquisaprocedimentos.v1r0.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/resultadospesquisaprocedimentos" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/resultadospesquisaprocedimentos" xmlns:baseprocedimento="http://servicos.saude.gov.br/schema/sigtap/procedimento/v1/procedimento" xmlns:paginacao="http://servicos.saude.gov.br/wsdl/mensageria/v1/paginacao">
+  <xs:import id="paginacao" namespace="http://servicos.saude.gov.br/wsdl/mensageria/v1/paginacao" schemaLocation="https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fmensageria%2Fpaginacao.v1.xsd"/>
+  <xs:import id="baseprocedimento" namespace="http://servicos.saude.gov.br/schema/sigtap/procedimento/v1/procedimento" schemaLocation="https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fprocedimento%2Fprocedimento.v1.xsd"/>
+  <xs:annotation>
+    <xs:documentation>Representa uma lista de resultado de Procedimentos base.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="ResultadosPesquisaProcedimentos" type="ResultadosPesquisaProcedimentosType"/>
+  <xs:complexType name="ResultadosPesquisaProcedimentosType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" ref="baseprocedimento:BaseProcedimento">
+        <xs:annotation>
+          <xs:documentation>Lista de Procedimento base</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" ref="paginacao:Paginacao">
+        <xs:annotation>
+          <xs:documentation>Resposta da paginação</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fmensageria%2Fresultadosdetalhaprocedimentos.v1r0.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/resultadosdetalhaprocedimentos" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/resultadosdetalhaprocedimentos" xmlns:detalheadicional="http://servicos.saude.gov.br/wsdl/mensageria/sigtap/v1/detalheadicional" xmlns:procedimento="http://servicos.saude.gov.br/schema/sigtap/procedimento/v1/procedimento">
+  <xs:import id="procedimento" namespace="http://servicos.saude.gov.br/schema/sigtap/procedimento/v1/procedimento" schemaLocation="https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fprocedimento%2Fprocedimento.v1.xsd"/>
+  <xs:import id="detalheadicional" namespace="http://servicos.saude.gov.br/wsdl/mensageria/sigtap/v1/detalheadicional" schemaLocation="https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fprocedimento%2Fdetalheadicional.v1.xsd"/>
+  <xs:annotation>
+    <xs:documentation>Representa uma lista de resultado de
+			compativilidade.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="ResultadosDetalhaProcedimentos" type="ResultadosDetalhaProcedimentosType"/>
+  <xs:complexType name="ResultadosDetalhaProcedimentosType">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" ref="procedimento:Procedimento">
+        <xs:annotation>
+          <xs:documentation>Resposta da procedimento</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" ref="detalheadicional:DetalheAdicional">
+        <xs:annotation>
+          <xs:documentation>Lista de detalheadicional</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1</con:endpoint></con:endpoints><con:operation id="0cee09a3-f5ec-40a4-86f2-d5877ac160ba" isOneWay="false" action="" name="detalharProcedimento" bindingOperationName="detalharProcedimento" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="9760220d-67f0-4548-b553-87ecc2c7f0ea" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:proc="http://servicos.saude.gov.br/sigtap/v1/procedimentoservice" xmlns:proc1="http://servicos.saude.gov.br/schema/sigtap/procedimento/v1/procedimento" xmlns:com="http://servicos.saude.gov.br/schema/corporativo/v1/competencia" xmlns:det="http://servicos.saude.gov.br/wsdl/mensageria/sigtap/v1/detalheadicional" xmlns:pag="http://servicos.saude.gov.br/wsdl/mensageria/v1/paginacao">
+   <soap:Header>
+  <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+	 <wsse:UsernameToken wsu:Id="Id-0001334008436683-000000002c4a1908-1" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+		<wsse:Username>SIGTAP.PUBLICO</wsse:Username>
+		<wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">sigtap#2015public</wsse:Password>
+	 </wsse:UsernameToken>
+  </wsse:Security></soap:Header>
+   <soap:Body>
+      <proc:requestDetalharProcedimento>
+         <!--type: CodigoProcedimentoType-->
+         <proc1:codigoProcedimento>0203010027</proc1:codigoProcedimento>
+         <!--Optional:-->
+         
+         <proc:DetalhesAdicionais>
+            <!--Zero or more repetitions:-->
+            <det:DetalheAdicional>
+               <!--type: CategoriaDetalheAdicionalType - enumeration: [DESCRICAO,CIDS,CBOS,CATEGORIAS_CBO,TIPOS_LEITO,SERVICOS_CLASSIFICACOES,HABILITACOES,GRUPOS_HABILITACAO,INCREMENTOS,COMPONENTES_REDE,ORIGENS_SIGTAP,ORIGENS_SIA_SIH,REGRAS_CONDICIONADA,RENASES,TUSS]-->
+               <det:categoriaDetalheAdicional>DESCRICAO</det:categoriaDetalheAdicional>
+               <!--Optional:-->
+               <det:Paginacao>
+                  <!--anonymous type-->
+                  <pag:registroInicial>1</pag:registroInicial>
+                  <!--anonymous type-->
+                  <pag:quantidadeRegistros>20</pag:quantidadeRegistros>
+                  <!--Optional:-->
+                  <!--anonymous type-->
+                  <pag:totalRegistros>100</pag:totalRegistros>
+               </det:Paginacao>
+            </det:DetalheAdicional>
+         </proc:DetalhesAdicionais>
+      </proc:requestDetalharProcedimento>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://servicos.saude.gov.br/sigtap/v1/procedimentoservice/ProcedimentoServicePortType/detalharProcedimentoRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="103577fb-d02d-454d-a55f-8d4ea07a905f" isOneWay="false" action="" name="pesquisarProcedimentos" bindingOperationName="pesquisarProcedimentos" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="b3696f5c-bcde-46ec-8392-7e92b8886738" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:proc="http://servicos.saude.gov.br/sigtap/v1/procedimentoservice" xmlns:grup="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/grupo" xmlns:sub="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/subgrupo" xmlns:com="http://servicos.saude.gov.br/schema/corporativo/v1/competencia" xmlns:pag="http://servicos.saude.gov.br/wsdl/mensageria/v1/paginacao">
+<soap:Header>
+	<wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+		<wsse:UsernameToken wsu:Id="Id-0001334008436683-000000002c4a1908-1" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+		<wsse:Username>SIGTAP.PUBLICO</wsse:Username>
+		<wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">sigtap#2015public</wsse:Password>
+		</wsse:UsernameToken>
+	</wsse:Security>
+</soap:Header>
+   <soap:Body>
+      <proc:requestPesquisarProcedimentos>
+         <grup:codigoGrupo>05</grup:codigoGrupo>
+         <sub:codigoSubgrupo>04</sub:codigoSubgrupo>
+         <com:competencia>201501</com:competencia>
+         <pag:Paginacao>
+            <pag:registroInicial>01</pag:registroInicial>
+            <pag:quantidadeRegistros>20</pag:quantidadeRegistros>
+            <pag:totalRegistros>100</pag:totalRegistros>
+         </pag:Paginacao>
+      </proc:requestPesquisarProcedimentos>
+   </soap:Body>
+</soap:Envelope>
+]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://servicos.saude.gov.br/sigtap/v1/procedimentoservice/ProcedimentoServicePortType/pesquisarProcedimentosRequest"/><con:wsrmConfig version="1.2"/></con:call><con:call id="dfde6fa6-61c6-40ba-832f-353157d50e18" name="Request 2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://servicos.saude.gov.br/sigtap/ProcedimentoService/v1</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:proc="http://servicos.saude.gov.br/sigtap/v1/procedimentoservice" xmlns:grup="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/grupo" xmlns:sub="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/subgrupo" xmlns:com="http://servicos.saude.gov.br/schema/corporativo/v1/competencia" xmlns:pag="http://servicos.saude.gov.br/wsdl/mensageria/v1/paginacao">
+<soap:Header>
+	<wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+		<wsse:UsernameToken wsu:Id="Id-0001334008436683-000000002c4a1908-1" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+		<wsse:Username>SIGTAP.PUBLICO</wsse:Username>
+		<wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">sigtap#2015public</wsse:Password>
+		</wsse:UsernameToken>
+	</wsse:Security>
+</soap:Header>
+   <soap:Body>
+      <proc:requestPesquisarProcedimentos>
+	  
+         <grup:codigoGrupo>05</grup:codigoGrupo>
+        
+         <pag:Paginacao>
+            <pag:registroInicial>01</pag:registroInicial>
+            <pag:quantidadeRegistros>20</pag:quantidadeRegistros>            
+         </pag:Paginacao>
+      </proc:requestPesquisarProcedimentos>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://servicos.saude.gov.br/sigtap/v1/procedimentoservice/ProcedimentoServicePortType/pesquisarProcedimentosRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="12855a6e-abe4-42b9-94d6-87667bf4ae1d" wsaVersion="NONE" name="CompatibilidadePossivelServiceSOAP12Binding" type="wsdl" bindingName="{http://servicos.saude.gov.br/sigtap/v1/compatibilidadepossivelservice}CompatibilidadePossivelServiceSOAP12Binding" soapVersion="1_2" anonymous="optional" definition="https://servicos.saude.gov.br/sigtap/CompatibilidadePossivelService/v1?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://servicos.saude.gov.br/sigtap/CompatibilidadePossivelService/v1?wsdl"><con:part><con:url>https://servicos.saude.gov.br/sigtap/CompatibilidadePossivelService/v1?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="CompatibilidadePossivelService" targetNamespace="http://servicos.saude.gov.br/sigtap/v1/compatibilidadepossivelservice" xmlns:tns="http://servicos.saude.gov.br/sigtap/v1/compatibilidadepossivelservice" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msfalha="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/msfalha">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/sigtap/v1/compatibilidadepossivelservice" xmlns:comppos="http://servicos.saude.gov.br/schema/sigtap/compatibilidade/v1r1/compatibilidadepossivel">
+      <xs:import id="comppos" namespace="http://servicos.saude.gov.br/schema/sigtap/compatibilidade/v1r1/compatibilidadepossivel" schemaLocation="https://servicos.saude.gov.br/sigtap/CompatibilidadePossivelService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fcompatibilidade%2Fcompatibilidadepossivel.v1r1.xsd"/>
+      <xs:import id="msfalha" namespace="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/msfalha" schemaLocation="https://servicos.saude.gov.br/sigtap/CompatibilidadePossivelService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fmensageria%2Ffalha%2Fmsfalha.v5r0.xsd"/>
+      <xs:element name="requestListarCompatibilidadesPossiveis">
+        <xs:complexType>
+          <xs:sequence/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="responseListarCompatibilidadesPossiveis">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="unbounded" ref="comppos:CompatibilidadePossivel"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="requestListarCompatibilidadesPossiveis">
+    <wsdl:part element="tns:requestListarCompatibilidadesPossiveis" name="requestListarCompatibilidadesPossiveis"/>
+  </wsdl:message>
+  <wsdl:message name="responseListarCompatibilidadesPossiveis">
+    <wsdl:part element="tns:responseListarCompatibilidadesPossiveis" name="responseListarCompatibilidadesPossiveis"/>
+  </wsdl:message>
+  <wsdl:message name="SIGTAPFault">
+    <wsdl:part name="fault" element="msfalha:MSFalha"/>
+  </wsdl:message>
+  <wsdl:portType name="CompatibilidadePossivelServicePortType">
+    <wsdl:operation name="listarCompatibilidadesPossiveis">
+      <wsdl:documentation>Listar as Compatibilidades Possíveis existentes na base do SIGTAP.</wsdl:documentation>
+      <wsdl:input name="requestListarCompatibilidadesPossiveis" message="tns:requestListarCompatibilidadesPossiveis"/>
+      <wsdl:output name="responseListarCompatibilidadesPossiveis" message="tns:responseListarCompatibilidadesPossiveis"/>
+      <wsdl:fault name="SIGTAPFault" message="tns:SIGTAPFault"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CompatibilidadePossivelServiceSOAP12Binding" type="tns:CompatibilidadePossivelServicePortType">
+    <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="listarCompatibilidadesPossiveis">
+      <wsdl:documentation>Listar as Compatibilidades Possíveis existentes na base do SIGTAP.</wsdl:documentation>
+      <soap12:operation soapAction=""/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SIGTAPFault">
+        <soap12:fault name="SIGTAPFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CompatibilidadePossivelServiceSOAP11Binding" type="tns:CompatibilidadePossivelServicePortType">
+    <soap11:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="listarCompatibilidadesPossiveis">
+      <wsdl:documentation>Listar as Compatibilidades Possíveis existentes na base do SIGTAP.</wsdl:documentation>
+      <soap11:operation soapAction=""/>
+      <wsdl:input>
+        <soap11:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SIGTAPFault">
+        <soap11:fault name="SIGTAPFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CompatibilidadePossivelService">
+    <wsdl:port binding="tns:CompatibilidadePossivelServiceSOAP12Binding" name="CompatibilidadePossivelServicePort">
+      <soap12:address location="https://servicos.saude.gov.br/sigtap/CompatibilidadePossivelService/v1"/>
+    </wsdl:port>
+    <wsdl:port binding="tns:CompatibilidadePossivelServiceSOAP11Binding" name="CompatibilidadePossivelServiceSOAP11Port">
+      <soap11:address location="https://servicos.saude.gov.br/sigtap/CompatibilidadePossivelService/v1"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>https://servicos.saude.gov.br/sigtap/CompatibilidadePossivelService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fcompatibilidade%2Fcompatibilidadepossivel.v1r1.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/sigtap/compatibilidade/v1r1/compatibilidadepossivel" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/sigtap/compatibilidade/v1r1/compatibilidadepossivel" xmlns:ir="http://servicos.saude.gov.br/schema/sigtap/procedimento/v1/instrumentoregistro">
+  <xs:import id="ir" namespace="http://servicos.saude.gov.br/schema/sigtap/procedimento/v1/instrumentoregistro" schemaLocation="https://servicos.saude.gov.br/sigtap/CompatibilidadePossivelService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fprocedimento%2Finstrumentoregistro.v1.xsd"/>
+  <xs:annotation>
+    <xs:documentation>Este esquema representa uma Compatibilidade Possível. 
+            Uma Compatibilidade Possível indica uma possibilidade de compatibilidade ou exclusão entre dois procedimentos, de acordo com os Instrumentos de Registro dos Procedimentos primário e secundário.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="CompatibilidadePossivel" type="CompatibilidadePossivelType"/>
+  <xs:element name="codigoCompatibilidadePossivel" type="CodigoCompatibilidadePossivelType"/>
+  <xs:simpleType name="CodigoCompatibilidadePossivelType">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="3"/>
+      <xs:pattern value="[0-9]*"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="CompatibilidadePossivelType">
+    <xs:sequence>
+      <xs:element name="codigo" minOccurs="1" maxOccurs="1" nillable="true" type="CodigoCompatibilidadePossivelType">
+        <xs:annotation>
+          <xs:documentation>Código identificador da Compatibilidade Possível.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="InstrumentoRegistroPrincipal" minOccurs="0" maxOccurs="1" type="ir:InstrumentoRegistroType">
+        <xs:annotation>
+          <xs:documentation>Instrumento de Registro do Procedimento Principal da Compatibilidade Possível.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="InstrumentoRegistroSecundario" minOccurs="0" maxOccurs="1" type="ir:InstrumentoRegistroType">
+        <xs:annotation>
+          <xs:documentation>Instrumento de Registro do Procedimento Secundário da Compatibilidade Possível.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="tipoCompatibilidade" minOccurs="0" maxOccurs="1" type="TipoCompatibilidadeType">
+        <xs:annotation>
+          <xs:documentation>O Tipo de Compatibiliade entre os Procedimentos primário e secundário.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="TipoCompatibilidadeType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="COMPATIVEL"/>
+      <xs:enumeration value="INCOMPATIVEL_EXCLUDENTE"/>
+      <xs:enumeration value="CONCOMITANTE"/>
+      <xs:enumeration value="COMPATIVEL_SEQUENCIAL"/>
+      <xs:enumeration value="OBRIGATORIA"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicos.saude.gov.br/sigtap/CompatibilidadePossivelService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fsigtap%2Fprocedimento%2Finstrumentoregistro.v1.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/schema/sigtap/procedimento/v1/instrumentoregistro" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/schema/sigtap/procedimento/v1/instrumentoregistro">
+  <xs:annotation>
+    <xs:documentation>Este esquema representa um Instrumento de Registro. 
+            Identifica os instrumentos de captação de dados dos atendimentos.</xs:documentation>
+  </xs:annotation>
+  <xs:simpleType name="CodigoInstrumentoRegistroType">
+    <xs:restriction base="xs:string">
+      <xs:length value="2"/>
+      <xs:pattern value="[0-9]{2}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="InstrumentoRegistroType">
+    <xs:sequence>
+      <xs:element name="codigo" minOccurs="1" maxOccurs="1" nillable="true" type="CodigoInstrumentoRegistroType">
+        <xs:annotation>
+          <xs:documentation>Código identificador do Instrumento de Registro.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="nome" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Nome descritivo do Instrumento de Registro.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="50"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicos.saude.gov.br/sigtap/CompatibilidadePossivelService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fmensageria%2Ffalha%2Fmsfalha.v5r0.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/msfalha" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mensagem="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/mensagem" xmlns="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/msfalha">
+  <xs:import id="mensagem" namespace="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/mensagem" schemaLocation="https://servicos.saude.gov.br/sigtap/CompatibilidadePossivelService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fmensageria%2Ffalha%2Fmensagem.v5r0.xsd">
+    <xs:annotation>
+      <xs:documentation>O objeto corresponde as mensagens padronizadas de
+				retorno. Exemplo: Toda e
+				qualquer mensagem que retornara para
+				a acao
+				solicitada, este objeto servira como base para
+				apresentar o codigo da
+				mensagem e se necessario a descricao da mensagem.</xs:documentation>
+    </xs:annotation>
+  </xs:import>
+  <xs:annotation>
+    <xs:documentation>Objeto de tratamento de falhas que podem ocorrer nas
+			diversas chamadas aos
+			servicos do Ministerio da Saude.
+			Exemplo: Toda e
+			qualquer solicitacao pode ocorrer uma falha na
+			aplicacao, ou seja, o
+			seu retorno estara comprometido e sera
+			preenchido este objeto com a
+			informacao, codigo e descricao da falha.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="MSFalha">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" nillable="true" name="identificador" type="xs:string"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="Mensagem" type="mensagem:MensagemType"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://servicos.saude.gov.br/sigtap/CompatibilidadePossivelService/v1?WSDL&amp;type=XSD&amp;file=file%3A%2Fhome%2Facacio%2FDownloads%2FOAG_20151123_09-45%2FRESOURCES50%2Fxsd%2Fmensageria%2Ffalha%2Fmensagem.v5r0.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/mensagem" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/mensagem">
+  <xs:annotation>
+    <xs:documentation>O objeto corresponde as mensagens padronizadas de retorno. Exemplo: Toda e qualquer mensagem que retornara para a acao solicitada, este objeto servira como base para apresentar o codigo da mensagem e se necessario a descricao da mensagem.</xs:documentation>
+  </xs:annotation>
+  <xs:element name="Mensagem" type="MensagemType"/>
+  <xs:complexType name="MensagemType">
+    <xs:sequence>
+      <xs:element name="codigo" minOccurs="0" maxOccurs="1" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Codigo da mensagem padronizada.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="descricao" minOccurs="0" maxOccurs="1" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Descricao da mensagem.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://servicos.saude.gov.br/sigtap/CompatibilidadePossivelService/v1</con:endpoint></con:endpoints><con:operation id="0ff5731b-1160-4694-afe5-1a82265d527f" isOneWay="false" action="" name="listarCompatibilidadesPossiveis" bindingOperationName="listarCompatibilidadesPossiveis" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="35ba47a5-42c3-44b3-8bb6-749101ff3af6" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://servicos.saude.gov.br/sigtap/CompatibilidadePossivelService/v1</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:com="http://servicos.saude.gov.br/sigtap/v1/compatibilidadepossivelservice">
+   <soap:Header>
+	  <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+		 <wsse:UsernameToken wsu:Id="Id-0001334008436683-000000002c4a1908-1" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+			<wsse:Username>SIGTAP.PUBLICO</wsse:Username>
+			<wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">sigtap#2015public</wsse:Password>
+		 </wsse:UsernameToken>
+	  </wsse:Security>
+  </soap:Header>
+   <soap:Body>
+      <com:requestListarCompatibilidadesPossiveis/>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://servicos.saude.gov.br/sigtap/v1/compatibilidadepossivelservice/CompatibilidadePossivelServicePortType/listarCompatibilidadesPossiveisRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="a53adc78-d209-4810-a7ea-1daea5513cf6" wsaVersion="NONE" name="CompatibilidadeServiceSOAP12Binding" type="wsdl" bindingName="{http://servicos.saude.gov.br/sigtap/v1/compatibilidadeservice}CompatibilidadeServiceSOAP12Binding" soapVersion="1_2" anonymous="optional" definition="https://servicos.saude.gov.br/sigtap/CompatibilidadeService/v1?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>https://servicos.saude.gov.br/sigtap/CompatibilidadeService/v1</con:endpoint></con:endpoints><con:operation id="60682ec8-bb5d-4ba8-a7e2-8aa9edb20f23" isOneWay="false" action="" name="pesquisarCompatibilidades" bindingOperationName="pesquisarCompatibilidades" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="e9f42245-fde1-4f24-a70c-321c63bab33c" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://servicos.saude.gov.br/sigtap/CompatibilidadeService/v1</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:com="http://servicos.saude.gov.br/sigtap/v1/compatibilidadeservice" xmlns:com1="http://servicos.saude.gov.br/schema/sigtap/compatibilidade/v1r1/compatibilidadepossivel" xmlns:com2="http://servicos.saude.gov.br/schema/corporativo/v1/competencia" xmlns:grup="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/grupo" xmlns:sub="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/subgrupo" xmlns:proc="http://servicos.saude.gov.br/schema/sigtap/procedimento/v1/procedimento" xmlns:pag="http://servicos.saude.gov.br/wsdl/mensageria/v1/paginacao">
+   <soap:Header>
+      <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+         <wsse:UsernameToken wsu:Id="Id-0001334008436683-000000002c4a1908-1" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+            <wsse:Username>SIGTAP.PUBLICO</wsse:Username>
+            <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">sigtap#2015public</wsse:Password>
+         </wsse:UsernameToken>
+      </wsse:Security></soap:Header>
+   <soap:Body>
+      <com:requestPesquisarCompatibilidades>
+         <!--Optional:-->
+         <!--type: CodigoCompatibilidadePossivelType-->
+         <com1:codigoCompatibilidadePossivel>01</com1:codigoCompatibilidadePossivel>
+         <!--Optional:-->
+         <!--type: CompetenciaType-->
+         <com2:competencia>200801</com2:competencia>
+         <!--Optional:-->
+         <!--type: CodigoGrupoType-->
+         <grup:codigoGrupo>05</grup:codigoGrupo>
+         <!--Optional:-->
+         <!--type: CodigoSubgrupoType-->
+         <sub:codigoSubgrupo>05</sub:codigoSubgrupo>
+         <!--Optional:-->
+         <pag:Paginacao>
+            <!--anonymous type-->
+            <pag:registroInicial>1</pag:registroInicial>
+            <!--anonymous type-->
+            <pag:quantidadeRegistros>2</pag:quantidadeRegistros>
+            <!--Optional:-->
+            <!--anonymous type-->
+            <pag:totalRegistros>100</pag:totalRegistros>
+         </pag:Paginacao>
+      </com:requestPesquisarCompatibilidades>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://servicos.saude.gov.br/sigtap/v1/compatibilidadeservice/CompatibilidadeServicePortType/pesquisarCompatibilidadesRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="afeadb3e-c8f1-4696-8b1f-6df64a65d772" wsaVersion="NONE" name="NivelAgregacaoServiceSOAP12Binding" type="wsdl" bindingName="{http://servicos.saude.gov.br/sigtap/v1/nivelagregacaoservice}NivelAgregacaoServiceSOAP12Binding" soapVersion="1_2" anonymous="optional" definition="https://servicos.saude.gov.br/sigtap/NivelAgregacaoService/v1?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>https://servicos.saude.gov.br/sigtap/NivelAgregacaoService/v1</con:endpoint></con:endpoints><con:operation id="f5e9dffc-4d77-4a25-bbcd-fede818f392a" isOneWay="false" action="" name="listarFormaOrganizacao" bindingOperationName="listarFormaOrganizacao" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="b8a80f4c-c02f-4250-9c70-818979372df5" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://servicos.saude.gov.br/sigtap/NivelAgregacaoService/v1</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:niv="http://servicos.saude.gov.br/sigtap/v1/nivelagregacaoservice" xmlns:sub="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/subgrupo">
+  <soap:Header>
+      <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+         <wsse:UsernameToken wsu:Id="Id-0001334008436683-000000002c4a1908-1" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+            <wsse:Username>SIGTAP.PUBLICO</wsse:Username>
+            <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">sigtap#2015public</wsse:Password>
+         </wsse:UsernameToken>
+      </wsse:Security>
+   </soap:Header>
+   <soap:Body>
+      <niv:requestListarFormaOrganizacao>
+         <!--Optional:-->
+         <!--type: CodigoSubgrupoType-->
+         <sub:codigoSubgrupo>01</sub:codigoSubgrupo>
+      </niv:requestListarFormaOrganizacao>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://servicos.saude.gov.br/sigtap/v1/nivelagregacaoservice/NivelAgregacaoServicePortType/listarFormaOrganizacaoRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="446cc4b3-fd3d-4b04-93c2-f8c982d722ac" isOneWay="false" action="" name="listarGrupos" bindingOperationName="listarGrupos" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="b1fda398-9e5f-44a2-8131-4ca196b78364" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://servicos.saude.gov.br/sigtap/NivelAgregacaoService/v1</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:niv="http://servicos.saude.gov.br/sigtap/v1/nivelagregacaoservice">
+   <soap:Header>
+      <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+         <wsse:UsernameToken wsu:Id="Id-0001334008436683-000000002c4a1908-1" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+            <wsse:Username>SIGTAP.PUBLICO</wsse:Username>
+            <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">sigtap#2015public</wsse:Password>
+         </wsse:UsernameToken>
+      </wsse:Security>
+   </soap:Header>
+   <soap:Body>
+      <niv:requestListarGrupos/>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://servicos.saude.gov.br/sigtap/v1/nivelagregacaoservice/NivelAgregacaoServicePortType/listarGruposRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="0be0361e-0b60-4268-8521-f9c4583280fd" isOneWay="false" action="" name="listarSubgrupos" bindingOperationName="listarSubgrupos" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="f6a1acb0-52d4-47c8-9388-763238063915" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://servicos.saude.gov.br/sigtap/NivelAgregacaoService/v1</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:niv="http://servicos.saude.gov.br/sigtap/v1/nivelagregacaoservice" xmlns:grup="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/grupo">
    <soap:Header>
       <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
          <wsse:UsernameToken wsu:Id="Id-0001334008436683-000000002c4a1908-1" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
@@ -13,4 +2167,4 @@
          <grup:codigoGrupo>01</grup:codigoGrupo>
       </niv:requestListarSubgrupos>
    </soap:Body>
-</soap:Envelope>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://servicos.saude.gov.br/sigtap/v1/nivelagregacaoservice/NivelAgregacaoServicePortType/listarSubgruposRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
