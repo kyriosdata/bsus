@@ -28,6 +28,9 @@ Acrescente a dependencia abaixo no arquivo pom.xml:
 &lt;/dependency&gt;
 </pre>
 
+# Serviços oferecidos
+- CID10. Permite a localização de um determinado código dado uma descrição ou da descrição para um dado código.
+
 ## Alguns valores para teste
 - CNES: Centro de Saúde Campus Samambaia (7381549)
 - CNES: Hispital das Clínicas da UFG (2338424)
