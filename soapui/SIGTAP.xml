@@ -1,14 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:com="http://servicos.saude.gov.br/sigtap/v1/compatibilidadepossivelservice">
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:com="http://servicos.saude.gov.br/sigtap/v1/compatibilidadeservice" xmlns:com1="http://servicos.saude.gov.br/schema/sigtap/compatibilidade/v1r1/compatibilidadepossivel" xmlns:com2="http://servicos.saude.gov.br/schema/corporativo/v1/competencia" xmlns:grup="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/grupo" xmlns:sub="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/subgrupo" xmlns:proc="http://servicos.saude.gov.br/schema/sigtap/procedimento/v1/procedimento" xmlns:pag="http://servicos.saude.gov.br/wsdl/mensageria/v1/paginacao">
    <soap:Header>
-	  <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
-		 <wsse:UsernameToken wsu:Id="Id-0001334008436683-000000002c4a1908-1" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
-			<wsse:Username>SIGTAP.PUBLICO</wsse:Username>
-			<wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">sigtap#2015public</wsse:Password>
-		 </wsse:UsernameToken>
-	  </wsse:Security>
-  </soap:Header>
+      <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+         <wsse:UsernameToken wsu:Id="Id-0001334008436683-000000002c4a1908-1" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+            <wsse:Username>SIGTAP.PUBLICO</wsse:Username>
+            <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">sigtap#2015public</wsse:Password>
+         </wsse:UsernameToken>
+      </wsse:Security></soap:Header>
    <soap:Body>
-      <com:requestListarCompatibilidadesPossiveis/>
+      <com:requestPesquisarCompatibilidades>
+         <!--Optional:-->
+         <!--type: CodigoCompatibilidadePossivelType-->
+         <com1:codigoCompatibilidadePossivel>01</com1:codigoCompatibilidadePossivel>
+         <!--Optional:-->
+         <!--type: CompetenciaType-->
+         <com2:competencia>200801</com2:competencia>
+         <!--Optional:-->
+         <!--type: CodigoGrupoType-->
+         <grup:codigoGrupo>05</grup:codigoGrupo>
+         <!--Optional:-->
+         <!--type: CodigoSubgrupoType-->
+         <sub:codigoSubgrupo>05</sub:codigoSubgrupo>
+         <!--Optional:-->
+         <pag:Paginacao>
+            <!--anonymous type-->
+            <pag:registroInicial>1</pag:registroInicial>
+            <!--anonymous type-->
+            <pag:quantidadeRegistros>2</pag:quantidadeRegistros>
+            <!--Optional:-->
+            <!--anonymous type-->
+            <pag:totalRegistros>100</pag:totalRegistros>
+         </pag:Paginacao>
+      </com:requestPesquisarCompatibilidades>
    </soap:Body>
 </soap:Envelope>
