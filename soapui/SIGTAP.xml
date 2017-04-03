@@ -1,107 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope">
-   <S:Header xmlns:S="http://www.w3.org/2003/05/soap-envelope">
-      <work:WorkContext xmlns:work="http://oracle.com/weblogic/soap/workarea/">rO0ABXdUABl3ZWJsb2dpYy5hcHAuc2lndGFwLWVhci0xAAAA1gAAACN3ZWJsb2dpYy53b3JrYXJlYS5TdHJpbmdXb3JrQ29udGV4dAAKMS4wLjYuNjUwNAAA</work:WorkContext>
-   </S:Header>
-   <S:Body xmlns:S="http://www.w3.org/2003/05/soap-envelope">
-      <proc:responseDetalharProcedimento xmlns:proc="http://servicos.saude.gov.br/sigtap/v1/procedimentoservice">
-         <res:ResultadosDetalhaProcedimentos xmlns:res="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/resultadosdetalhaprocedimentos">
-            <ns6:Procedimento xmlns:ns29="http://servicos.saude.gov.br/schema/sigtap/procedimento/redeatencao/v1/redeatencao" xmlns:ns25="http://servicos.saude.gov.br/schema/sigtap/procedimento/habilitacao/v1/areahabilitacao" xmlns:ns26="http://servicos.saude.gov.br/schema/sigtap/procedimento/habilitacao/v1/grupohabilitacao" xmlns:ns27="http://servicos.saude.gov.br/schema/sigtap/procedimento/habilitacao/v1/incremento" xmlns:ns28="http://servicos.saude.gov.br/schema/sigtap/procedimento/redeatencao/v1/componenteredeatencao" xmlns:ns21="http://servicos.saude.gov.br/schema/sigtap/procedimento/tipoleito/v1/tipoleito" xmlns:ns22="http://servicos.saude.gov.br/schema/sigtap/procedimento/servicoclassificacao/v1/servico" xmlns:ns23="http://servicos.saude.gov.br/schema/sigtap/procedimento/servicoclassificacao/v1/servicoclassificacao" xmlns:ns24="http://servicos.saude.gov.br/schema/sigtap/procedimento/habilitacao/v1/habilitacao" xmlns:ns20="http://servicos.saude.gov.br/schema/cbo/v1/categoriacbo" xmlns:ns16="http://servicos.saude.gov.br/schema/sigtap/v1/idadelimite" xmlns:ns17="http://servicos.saude.gov.br/schema/sigtap/procedimento/v1/atributocomplementar" xmlns:ns14="http://servicos.saude.gov.br/schema/sigtap/procedimento/financiamento/v1/rubrica" xmlns:ns15="http://servicos.saude.gov.br/schema/sigtap/procedimento/v1/instrumentoregistro" xmlns:ns36="http://servicos.saude.gov.br/wsdl/mensageria/sigtap/v1/detalheadicional" xmlns:ns18="http://servicos.saude.gov.br/schema/sigtap/procedimento/cid/v1/cid" xmlns:ns37="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/resultadosdetalhaprocedimentos" xmlns:ns19="http://servicos.saude.gov.br/schema/cbo/v1/cbo" xmlns:ns9="http://servicos.saude.gov.br/schema/sigtap/publicacao/v1/documento" xmlns:ns34="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/msfalha" xmlns:ns35="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/mensagem" xmlns:ns32="http://servicos.saude.gov.br/schema/sigtap/procedimento/renases/v1/renases" xmlns:ns33="http://servicos.saude.gov.br/schema/sigtap/procedimento/tuss/v1/tuss" xmlns:ns5="http://servicos.saude.gov.br/sigtap/v1/procedimentoservice" xmlns:ns12="http://servicos.saude.gov.br/schema/sigtap/procedimento/v1/modalidadeatendimento" xmlns:ns30="http://servicos.saude.gov.br/schema/sigtap/procedimento/origem/v1/origemsiasih" xmlns:ns6="http://servicos.saude.gov.br/schema/sigtap/procedimento/v1/procedimento" xmlns:ns31="http://servicos.saude.gov.br/schema/sigtap/procedimento/regracondicionada/v1/regracondicionada" xmlns:ns13="http://servicos.saude.gov.br/schema/sigtap/procedimento/financiamento/v1/tipofinanciamento" xmlns:ns7="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/resultadospesquisaprocedimentos" xmlns:ns10="http://servicos.saude.gov.br/schema/sigtap/publicacao/v1/tipodocumento" xmlns:ns8="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/formaorganizacao" xmlns:ns11="http://servicos.saude.gov.br/schema/sigtap/publicacao/v1/orgaoorigem" xmlns:ns2="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/subgrupo" xmlns:ns4="http://servicos.saude.gov.br/wsdl/mensageria/v1/paginacao" xmlns:ns3="http://servicos.saude.gov.br/schema/corporativo/v1/competencia">
-               <ns6:codigo>0203010027</ns6:codigo>
-               <ns6:nome>EXAME CITOPATOLOGICO HORMONAL SERIADO (MINIMO 3 COLETAS)</ns6:nome>
-               <ns6:FormaOrganizacao>
-                  <ns8:codigo>01</ns8:codigo>
-                  <ns8:nome>Exames citopatológicos</ns8:nome>
-                  <ns8:Subgrupo>
-                     <ns2:codigo>03</ns2:codigo>
-                     <ns2:nome>Diagnóstico por anatomia patológica e citopatologia</ns2:nome>
-                     <ns2:Grupo>
-                        <grup:codigo xmlns:grup="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/grupo">02</grup:codigo>
-                        <grup:nome xmlns:grup="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/grupo">Procedimentos com finalidade diagnóstica</grup:nome>
-                     </ns2:Grupo>
-                  </ns8:Subgrupo>
-               </ns6:FormaOrganizacao>
-               <ns6:competenciaInicial>201402</ns6:competenciaInicial>
-               <ns6:finalidadePublicacao>ALTERACAO</ns6:finalidadePublicacao>
-               <ns6:DocumentoPublicacao>
-                  <ns9:numeroDocumento>02/2014</ns9:numeroDocumento>
-                  <ns9:TipoDocumento>
-                     <ns10:codigo>5</ns10:codigo>
-                     <ns10:nome>INFORME CGSI</ns10:nome>
-                  </ns9:TipoDocumento>
-                  <ns9:OrgaoOrigem>
-                     <ns11:codigo>4</ns11:codigo>
-                     <ns11:nome>CGSI</ns11:nome>
-                  </ns9:OrgaoOrigem>
-                  <ns9:dataPublicacao>2014-01-23-02:00</ns9:dataPublicacao>
-               </ns6:DocumentoPublicacao>
-               <ns6:ModalidadesAtendimento>
-                  <ns6:ModalidadeAtendimento>
-                     <ns12:codigo>01</ns12:codigo>
-                     <ns12:nome>Ambulatorial</ns12:nome>
-                  </ns6:ModalidadeAtendimento>
-                  <ns6:ModalidadeAtendimento>
-                     <ns12:codigo>02</ns12:codigo>
-                     <ns12:nome>Hospitalar</ns12:nome>
-                  </ns6:ModalidadeAtendimento>
-                  <ns6:ModalidadeAtendimento>
-                     <ns12:codigo>03</ns12:codigo>
-                     <ns12:nome>Hospital Dia</ns12:nome>
-                  </ns6:ModalidadeAtendimento>
-               </ns6:ModalidadesAtendimento>
-               <ns6:complexidade>MEDIA_COMPLEXIDADE</ns6:complexidade>
-               <ns6:TipoFinanciamento>
-                  <ns13:codigo>06</ns13:codigo>
-                  <ns13:nome>Média e Alta Complexidade (MAC)</ns13:nome>
-               </ns6:TipoFinanciamento>
-               <ns6:InstrumentosRegistro>
-                  <ns6:InstrumentoRegistro>
-                     <ns15:codigo>02</ns15:codigo>
-                     <ns15:nome>BPA (Individualizado)</ns15:nome>
-                  </ns6:InstrumentoRegistro>
-                  <ns6:InstrumentoRegistro>
-                     <ns15:codigo>04</ns15:codigo>
-                     <ns15:nome>AIH (Proc. Especial)</ns15:nome>
-                  </ns6:InstrumentoRegistro>
-               </ns6:InstrumentosRegistro>
-               <ns6:sexoPermitido>AMBOS</ns6:sexoPermitido>
-               <ns6:idadeMinimaPermitida>
-                  <ns16:quantidadeLimite>0</ns16:quantidadeLimite>
-                  <ns16:unidadeLimite>MESES</ns16:unidadeLimite>
-               </ns6:idadeMinimaPermitida>
-               <ns6:idadeMaximaPermitida>
-                  <ns16:quantidadeLimite>130</ns16:quantidadeLimite>
-                  <ns16:unidadeLimite>ANOS</ns16:unidadeLimite>
-               </ns6:idadeMaximaPermitida>
-               <ns6:valorSH>10.65</ns6:valorSH>
-               <ns6:valorSA>10.65</ns6:valorSA>
-               <ns6:valorSP>0</ns6:valorSP>
-               <ns6:AtributosComplementares>
-                  <ns6:AtributoComplementar>
-                     <ns17:codigo>005</ns17:codigo>
-                     <ns17:nome>Admite liberação de quantidade na AIH</ns17:nome>
-                  </ns6:AtributoComplementar>
-               </ns6:AtributosComplementares>
-               <ns6:descricao>Deve ser realizado sequencialmente durante os dias  7º, 14º, 21º e 28º dias do ciclo menstrual.</ns6:descricao>
-               <ns6:CIDsVinculados/>
-               <ns6:CBOsVinculados/>
-               <ns6:CategoriasCBOVinculadas/>
-               <ns6:TiposLeitoVinculados/>
-               <ns6:ServicosClassificacoesVinculados/>
-               <ns6:HabilitacoesVinculadas/>
-               <ns6:GruposHabilitacaoVinculados/>
-               <ns6:IncrementosVinculados/>
-               <ns6:ComponentesRedesVinculados/>
-               <ns6:OrigensSIGTAP/>
-               <ns6:OrigensSIASIH/>
-               <ns6:RegrasCondicionadasVinculadas/>
-               <ns6:RENASESVinculadas/>
-               <ns6:TUSSVinculadas/>
-            </ns6:Procedimento>
-            <ns36:DetalheAdicional xmlns:ns29="http://servicos.saude.gov.br/schema/sigtap/procedimento/redeatencao/v1/redeatencao" xmlns:ns25="http://servicos.saude.gov.br/schema/sigtap/procedimento/habilitacao/v1/areahabilitacao" xmlns:ns26="http://servicos.saude.gov.br/schema/sigtap/procedimento/habilitacao/v1/grupohabilitacao" xmlns:ns27="http://servicos.saude.gov.br/schema/sigtap/procedimento/habilitacao/v1/incremento" xmlns:ns28="http://servicos.saude.gov.br/schema/sigtap/procedimento/redeatencao/v1/componenteredeatencao" xmlns:ns21="http://servicos.saude.gov.br/schema/sigtap/procedimento/tipoleito/v1/tipoleito" xmlns:ns22="http://servicos.saude.gov.br/schema/sigtap/procedimento/servicoclassificacao/v1/servico" xmlns:ns23="http://servicos.saude.gov.br/schema/sigtap/procedimento/servicoclassificacao/v1/servicoclassificacao" xmlns:ns24="http://servicos.saude.gov.br/schema/sigtap/procedimento/habilitacao/v1/habilitacao" xmlns:ns20="http://servicos.saude.gov.br/schema/cbo/v1/categoriacbo" xmlns:ns16="http://servicos.saude.gov.br/schema/sigtap/v1/idadelimite" xmlns:ns17="http://servicos.saude.gov.br/schema/sigtap/procedimento/v1/atributocomplementar" xmlns:ns14="http://servicos.saude.gov.br/schema/sigtap/procedimento/financiamento/v1/rubrica" xmlns:ns15="http://servicos.saude.gov.br/schema/sigtap/procedimento/v1/instrumentoregistro" xmlns:ns36="http://servicos.saude.gov.br/wsdl/mensageria/sigtap/v1/detalheadicional" xmlns:ns18="http://servicos.saude.gov.br/schema/sigtap/procedimento/cid/v1/cid" xmlns:ns37="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/resultadosdetalhaprocedimentos" xmlns:ns19="http://servicos.saude.gov.br/schema/cbo/v1/cbo" xmlns:ns9="http://servicos.saude.gov.br/schema/sigtap/publicacao/v1/documento" xmlns:ns34="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/msfalha" xmlns:ns35="http://servicos.saude.gov.br/wsdl/mensageria/falha/v5r0/mensagem" xmlns:ns32="http://servicos.saude.gov.br/schema/sigtap/procedimento/renases/v1/renases" xmlns:ns33="http://servicos.saude.gov.br/schema/sigtap/procedimento/tuss/v1/tuss" xmlns:ns5="http://servicos.saude.gov.br/sigtap/v1/procedimentoservice" xmlns:ns12="http://servicos.saude.gov.br/schema/sigtap/procedimento/v1/modalidadeatendimento" xmlns:ns30="http://servicos.saude.gov.br/schema/sigtap/procedimento/origem/v1/origemsiasih" xmlns:ns6="http://servicos.saude.gov.br/schema/sigtap/procedimento/v1/procedimento" xmlns:ns31="http://servicos.saude.gov.br/schema/sigtap/procedimento/regracondicionada/v1/regracondicionada" xmlns:ns13="http://servicos.saude.gov.br/schema/sigtap/procedimento/financiamento/v1/tipofinanciamento" xmlns:ns7="http://servicos.saude.gov.br/wsdl/mensageria/v1r0/resultadospesquisaprocedimentos" xmlns:ns10="http://servicos.saude.gov.br/schema/sigtap/publicacao/v1/tipodocumento" xmlns:ns8="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/formaorganizacao" xmlns:ns11="http://servicos.saude.gov.br/schema/sigtap/publicacao/v1/orgaoorigem" xmlns:ns2="http://servicos.saude.gov.br/schema/sigtap/procedimento/nivelagregacao/v1/subgrupo" xmlns:ns4="http://servicos.saude.gov.br/wsdl/mensageria/v1/paginacao" xmlns:ns3="http://servicos.saude.gov.br/schema/corporativo/v1/competencia">
-               <ns36:categoriaDetalheAdicional>DESCRICAO</ns36:categoriaDetalheAdicional>
-            </ns36:DetalheAdicional>
-         </res:ResultadosDetalhaProcedimentos>
-      </proc:responseDetalharProcedimento>
-   </S:Body>
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:proc="http://servicos.saude.gov.br/sigtap/v1/procedimentoservice" xmlns:proc1="http://servicos.saude.gov.br/schema/sigtap/procedimento/v1/procedimento" xmlns:com="http://servicos.saude.gov.br/schema/corporativo/v1/competencia" xmlns:det="http://servicos.saude.gov.br/wsdl/mensageria/sigtap/v1/detalheadicional" xmlns:pag="http://servicos.saude.gov.br/wsdl/mensageria/v1/paginacao">
+   <soap:Header>
+  <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+	 <wsse:UsernameToken wsu:Id="Id-0001334008436683-000000002c4a1908-1" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+		<wsse:Username>SIGTAP.PUBLICO</wsse:Username>
+		<wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">sigtap#2015public</wsse:Password>
+	 </wsse:UsernameToken>
+  </wsse:Security></soap:Header>
+   <soap:Body>
+      <proc:requestDetalharProcedimento>
+         <!--type: CodigoProcedimentoType-->
+         <proc1:codigoProcedimento>0203010027</proc1:codigoProcedimento>
+         <!--Optional:-->
+         
+         <proc:DetalhesAdicionais>
+            <!--Zero or more repetitions:-->
+            <det:DetalheAdicional>
+               <!--type: CategoriaDetalheAdicionalType - enumeration: [DESCRICAO,CIDS,CBOS,CATEGORIAS_CBO,TIPOS_LEITO,SERVICOS_CLASSIFICACOES,HABILITACOES,GRUPOS_HABILITACAO,INCREMENTOS,COMPONENTES_REDE,ORIGENS_SIGTAP,ORIGENS_SIA_SIH,REGRAS_CONDICIONADA,RENASES,TUSS]-->
+               <det:categoriaDetalheAdicional>DESCRICAO</det:categoriaDetalheAdicional>
+               <!--Optional:-->
+               <det:Paginacao>
+                  <!--anonymous type-->
+                  <pag:registroInicial>1</pag:registroInicial>
+                  <!--anonymous type-->
+                  <pag:quantidadeRegistros>20</pag:quantidadeRegistros>
+                  <!--Optional:-->
+                  <!--anonymous type-->
+                  <pag:totalRegistros>100</pag:totalRegistros>
+               </det:Paginacao>
+            </det:DetalheAdicional>
+         </proc:DetalhesAdicionais>
+      </proc:requestDetalharProcedimento>
+   </soap:Body>
 </soap:Envelope>
