@@ -28,3 +28,5 @@ Acrescente a dependencia abaixo no arquivo pom.xml:
 &lt;/dependency&gt;
 </pre>
 
+## Alguns valores para teste
+- CNES: Hispital das Clínicas da UFG (2338424)
