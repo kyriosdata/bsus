@@ -32,6 +32,9 @@ Os elementos a serem implementados são identificados no diagrama abaixo.
 
 As unidades de implementação identificadas no diagrama acima são empacotados conforme abaixo. Observe que "Circuit Breaker" foi substituído por uma implementação específica ([Hystrix](https://github.com/Netflix/Hystrix)), que inclui/depende de vários outros elementos.
 
+![bsus-instalacao](https://cloud.githubusercontent.com/assets/1735792/24829016/6161c226-1c40-11e7-8ccd-983028a3079c.png)
+
+
 ***
 
 
