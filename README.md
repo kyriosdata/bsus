@@ -34,3 +34,7 @@ Acrescente a dependencia abaixo no arquivo pom.xml:
 ## Alguns valores para teste
 - CNES: Centro de Saúde Campus Samambaia (7381549)
 - CNES: Hispital das Clínicas da UFG (2338424)
+
+- Como armazenar as credenciais de acesso?
+- [Google](https://support.google.com/cloud/answer/6310037?hl=en)
+
