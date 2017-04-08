@@ -53,7 +53,8 @@ Em tempo de execução, temos pelos menos dois processos e várias instâncias, 
 ![bsus-componentes](https://cloud.githubusercontent.com/assets/1735792/24829180/88ab428c-1c43-11e7-80d6-aea68ea54b60.png)
 
 ### Configuração e segurança
-O uso de um arquivo de configuração não é uma estratégia recomendada atualmente. [Vault](https://www.vaultproject.io/) é uma ferramenta que trata do armazenamento de segredos. Informação adicional pode ser encontrada [aqui](https://spring.io/blog/2016/06/24/managing-secrets-with-vault). A configuração do endereço (URL) de acesso ao serviço pode ser tratada adequadamente por meio de [Consult](https://www.consul.io/).
+O uso de um arquivo de configuração não é uma estratégia recomendada atualmente. [Vault](https://www.vaultproject.io/) é uma ferramenta que trata do armazenamento de segredos. Informação adicional pode ser encontrada [aqui](https://spring.io/blog/2016/06/24/managing-secrets-with-vault). Consulte ainda [Google](https://support.google.com/cloud/answer/6310037?hl=en) e 
+[Stackoverflow](http://stackoverflow.com/questions/25964435/different-ways-to-store-a-password-variable-in-a-java-web-application/25969056#25969056) para informações adicionais. A configuração do endereço (URL) de acesso ao serviço pode ser tratada adequadamente por meio de [Consult](https://www.consul.io/).
 
 ***
 
@@ -76,8 +77,4 @@ Acrescente a dependencia abaixo no arquivo pom.xml:
 ## Alguns valores para teste
 - CNES: Centro de Saúde Campus Samambaia (7381549)
 - CNES: Hispital das Clínicas da UFG (2338424)
-
-- Como armazenar as credenciais de acesso?
-- [Google](https://support.google.com/cloud/answer/6310037?hl=en)
-- [Stackoverflow](http://stackoverflow.com/questions/25964435/different-ways-to-store-a-password-variable-in-a-java-web-application/25969056#25969056)
 
