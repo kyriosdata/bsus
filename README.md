@@ -26,14 +26,20 @@ O projeto (_software design_) de acesso aos serviços varia conforme as funciona
 
 ***
 ## Projeto
+
+### Módulos
+
 Os elementos a serem implementados são identificados no diagrama abaixo. Observe que para acesso a um serviço remoto é necessário a localização do serviço, bem como credencial de acesso, ambos registrados "fora" do código fonte, conforme ilustrado, em arquivo de configuração. 
 
 ![bsus-modulos](https://cloud.githubusercontent.com/assets/1735792/24828919/3af708b4-1c3e-11e7-9c2f-b99dec681e1a.png)
+
+### Instalação
 
 As unidades de implementação identificadas no diagrama acima são empacotados conforme abaixo. Observe que "Circuit Breaker" foi substituído por uma implementação específica ([Hystrix](https://github.com/Netflix/Hystrix)), que inclui/depende de vários outros elementos.
 
 ![bsus-instalacao](https://cloud.githubusercontent.com/assets/1735792/24829016/6161c226-1c40-11e7-8ccd-983028a3079c.png)
 
+### Componentes
 Conforme o diagrama acima, para fazer uso do BSUS é necessário acesso módulo *bsus-interface.jar* e também ao módulo *bsus-1.0.0.zip*. O primeiro é independente do segundo. O segundo inclui a implementação necessária da interface juntamente com todas as dependências (arquivos jar) empregados pela implementação. 
 
 Em tempo de execução, temos pelos menos dois processos e várias instâncias, conforme ilustrado abaixo. Um dos processos reúne todos os objetos ilustrados abaixo, exceto o "Barramento SUS", componente em execução em servidor remoto. 
@@ -41,7 +47,7 @@ Em tempo de execução, temos pelos menos dois processos e várias instâncias, 
 ![bsus-componentes](https://cloud.githubusercontent.com/assets/1735792/24829180/88ab428c-1c43-11e7-80d6-aea68ea54b60.png)
 
 ### Configuração e segurança
-O uso de um arquivo de configuração não é uma estratégia recomendada atualmente. Sugiro que consulte [Vault](https://www.vaultproject.io/) acerca de como armazenar segredos. Informação adicional pode ser encontrada [aqui](https://spring.io/blog/2016/06/24/managing-secrets-with-vault).
+O uso de um arquivo de configuração não é uma estratégia recomendada atualmente. [Vault](https://www.vaultproject.io/) é uma ferramenta que trata do armazenamento de segredos. Informação adicional pode ser encontrada [aqui](https://spring.io/blog/2016/06/24/managing-secrets-with-vault). A configuração do endereço (URL) de acesso ao serviço pode ser tratada adequadamente por meio de [Consult](https://www.consul.io/).
 
 ***
 
