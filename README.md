@@ -1,11 +1,6 @@
 # Barramento SUS (bsus)
 Façade para acesso ao Barramento SUS (bsus) 
 
-[<img src="https://api.travis-ci.org/kyriosdata/bsus.svg?branch=master">](https://travis-ci.org/kyriosdata/bsus)
-[![Dependency Status](https://www.versioneye.com/user/projects/5818f81589f0a91d55eb921c/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/5818f81589f0a91d55eb921c)
-[![Sonarqube](https://sonarqube.com/api/badges/gate?key=com.github.kyriosdata.bsus:bsus)](https://sonarqube.com/dashboard/index?id=com.github.kyriosdata.bsus%3Absus)
-[![Javadocs](http://javadoc.io/badge/com.github.kyriosdata.bsus/bsus.svg)](http://javadoc.io/doc/com.github.kyriosdata.bsus/bsus)
-
 <br />
 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
 <img alt="Creative Commons License" style="border-width:0"
@@ -21,7 +16,7 @@ O Ministério da Saúde (MS) é mantenedor de informações em saúde no Brasil.
 
 ![bsus-context](https://cloud.githubusercontent.com/assets/1735792/24827988/9b06f354-1c2a-11e7-98dc-38a80be4de77.png)
 
-O BSUS é uma proposta de biblioteca de software em Java para realizar a comunicação entre um SIS e o barramento SUS. O objetivo é _isolar um SIS do que é necessário para realizar a interação com o barramento SUS_ de tal forma que o SIS não tenha que lidar com detalhes do protocolo de comunicação, nem seja alterado quando houver mudança nesse protocolo, na localização e na autenticação para acesso ao barramento.
+O BSUS é uma proposta de biblioteca de software em Java para realizar a comunicação entre um SIS e o barramento SUS. O objetivo é _isolar um SIS do que é necessário para realizar a interação com o barramento SUS_ de tal forma que a biblioteca se ocupe de detalhes do protocolo de comunicação, de alteraçes nesse protocolo, da localização e da autenticação para acesso ao barramento.
 
 
 ## Como usar (via maven)?
