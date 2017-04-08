@@ -26,6 +26,7 @@ O projeto (_software design_) de acesso aos serviços varia conforme as funciona
 
 ***
 ## Projeto
+Os elementos a serem implementados são identificados no diagrama abaixo.
 
 ***
 
