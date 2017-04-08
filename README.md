@@ -26,7 +26,7 @@ O projeto (_software design_) de acesso aos serviços varia conforme as funciona
 
 ***
 ## Projeto
-Os elementos a serem implementados são identificados no diagrama abaixo. Observe que para acesso a um serviço remoto é necessário a localização do serviço, bem como credencial de acesso, ambos registrados "fora" do código fonte, conforme ilustrado, em arquivo de configuração.
+Os elementos a serem implementados são identificados no diagrama abaixo. Observe que para acesso a um serviço remoto é necessário a localização do serviço, bem como credencial de acesso, ambos registrados "fora" do código fonte, conforme ilustrado, em arquivo de configuração. De fato, essa não é uma estratégia recomendada atualmente. Sugiro que consulte [Vault](https://www.vaultproject.io/) acerca de como armazenar segredos.
 
 ![bsus-modulos](https://cloud.githubusercontent.com/assets/1735792/24828919/3af708b4-1c3e-11e7-9c2f-b99dec681e1a.png)
 
