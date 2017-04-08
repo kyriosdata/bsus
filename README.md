@@ -16,6 +16,14 @@ Façade para acesso ao Barramento SUS (bsus)
  <br />Fábio Nogueira de Lucena - Fábrica de Software - 
  Instituto de Informática (UFG).
 
+## Qual a função do BSUS?
+O Ministério da Saúde (MS) é manteneder de informações sobre a saúde no Brasil por meio do Datasus. Algumas dessas informações são enviadas/recebidas de um Sistema de Informação em Saúde (SIS) por meio do "barramento SUS" conforme ilustra a figura abaixo.
+
+![bsus-context](https://cloud.githubusercontent.com/assets/1735792/24827988/9b06f354-1c2a-11e7-98dc-38a80be4de77.png)
+
+O BSUS é uma proposta de biblioteca de software em Java para realizar a comunicação entre um SIS e o barramento SUS. 
+
+
 ## Como usar (via maven)?
 
 Acrescente a dependencia abaixo no arquivo pom.xml:
