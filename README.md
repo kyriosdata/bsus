@@ -28,7 +28,11 @@ O projeto (_software design_) de acesso aos serviços varia conforme as funciona
 ## Projeto
 Os elementos a serem implementados são identificados no diagrama abaixo.
 
-![bsus-modulos](https://cloud.githubusercontent.com/assets/1735792/24828868/3226e7b4-1c3d-11e7-9a6b-14e61de39871.png)
+![bsus-modulos](https://cloud.githubusercontent.com/assets/1735792/24828919/3af708b4-1c3e-11e7-9c2f-b99dec681e1a.png)
+
+As unidades de implementação identificadas no diagrama acima são empacotados conforme abaixo. Observe que "Circuit Breaker" foi substituído por uma implementação específica ([Hystrix](https://github.com/Netflix/Hystrix)), que inclui/depende de vários outros elementos.
+
+![bsus-instalacao](https://cloud.githubusercontent.com/assets/1735792/24829016/6161c226-1c40-11e7-8ccd-983028a3079c.png)
 
 
 ***
