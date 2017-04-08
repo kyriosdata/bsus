@@ -36,6 +36,10 @@ As unidades de implementação identificadas no diagrama acima são empacotados 
 
 Conforme o diagrama acima, para fazer uso do BSUS é necessário acesso módulo *bsus-interface.jar* e também ao módulo *bsus-1.0.0.zip*. O primeiro é independente do segundo. O segundo inclui a implementação necessária da interface juntamente com todas as dependências (arquivos jar) empregados pela implementação. 
 
+Em tempo de execução, temos pelos menos dois processos e várias instâncias, conforme ilustrado abaixo. Um dos processos reúne todos os objetos ilustrados abaixo, exceto o "Barramento SUS", componente em execução em servidor remoto. 
+
+![bsus-componentes](https://cloud.githubusercontent.com/assets/1735792/24829180/88ab428c-1c43-11e7-80d6-aea68ea54b60.png)
+
 
 ***
 
