@@ -27,6 +27,7 @@ O projeto (_software design_) de acesso aos serviços varia conforme as funciona
 ### Requisitos de qualidade
 - O BSUS deve ser acompanhado de testes de unidade (100%) de cobertura e de testes de integração. 
 - A interoperabilidade deve assegurar transparência de localização. 
+- O BSUS não deve comprometer a execução de outras operações do código cliente caso os serviços do barramento não estejam disponíveis.
 
 ***
 ## Projeto
