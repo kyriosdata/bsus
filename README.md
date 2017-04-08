@@ -22,6 +22,12 @@ No momento, os serviços oferecidos pelo barramento SUS e de interesse da biblio
 
 ![bsus-barramento](https://cloud.githubusercontent.com/assets/1735792/24828306/74c16714-1c30-11e7-8130-44c13928fbc9.png)
 
+O projeto (_software design_) de acesso aos serviços varia conforme as funcionalidades oferecidas por cada um deles. Abaixo, contudo, segue uma orientação.
+
+***
+## Projeto
+
+***
 
 
 ## Como usar (via maven)?
