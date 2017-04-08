@@ -21,7 +21,7 @@ O Ministério da Saúde (MS) é manteneder de informações sobre a saúde no Br
 
 ![bsus-context](https://cloud.githubusercontent.com/assets/1735792/24827988/9b06f354-1c2a-11e7-98dc-38a80be4de77.png)
 
-O BSUS é uma proposta de biblioteca de software em Java para realizar a comunicação entre um SIS e o barramento SUS. 
+O BSUS é uma proposta de biblioteca de software em Java para realizar a comunicação entre um SIS e o barramento SUS. O objetivo é isolar um SIS do que é necessário para realizar a interação com o barraamento SUS de tal forma que a mudança no protocolo de comunicação, localização e autenticação não impactem no SIS. 
 
 
 ## Como usar (via maven)?
