@@ -37,4 +37,5 @@ Acrescente a dependencia abaixo no arquivo pom.xml:
 
 - Como armazenar as credenciais de acesso?
 - [Google](https://support.google.com/cloud/answer/6310037?hl=en)
+- [Stackoverflow](http://stackoverflow.com/questions/25964435/different-ways-to-store-a-password-variable-in-a-java-web-application/25969056#25969056)
 
