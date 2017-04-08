@@ -24,7 +24,7 @@ No momento, os serviços oferecidos pelo barramento SUS e de interesse da biblio
 
 O projeto (_software design_) de acesso aos serviços varia conforme as funcionalidades oferecidas por cada um deles. Abaixo, contudo, segue uma orientação, logo após a identificação dos principais requisitos de qualidade. 
 
-### Requisitos de qualidade
+### Outros objetivos
 - O BSUS deve ser acompanhado de testes de unidade (100%) de cobertura e de testes de integração. 
 - A interoperabilidade deve assegurar transparência de localização. 
 - O BSUS não deve comprometer a execução de outras operações do código cliente caso os serviços do barramento não estejam disponíveis.
