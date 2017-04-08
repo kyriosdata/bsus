@@ -28,6 +28,9 @@ O projeto (_software design_) de acesso aos serviços varia conforme as funciona
 ## Projeto
 Os elementos a serem implementados são identificados no diagrama abaixo.
 
+![bsus-modulos](https://cloud.githubusercontent.com/assets/1735792/24828868/3226e7b4-1c3d-11e7-9a6b-14e61de39871.png)
+
+
 ***
 
 
