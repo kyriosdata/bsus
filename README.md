@@ -34,6 +34,8 @@ As unidades de implementação identificadas no diagrama acima são empacotados 
 
 ![bsus-instalacao](https://cloud.githubusercontent.com/assets/1735792/24829016/6161c226-1c40-11e7-8ccd-983028a3079c.png)
 
+Conforme o diagrama acima, para fazer uso do BSUS é necessário acesso módulo *bsus-interface.jar* e também ao módulo *bsus-1.0.0.zip*. O primeiro é independente do segundo. O segundo inclui a implementação necessária da interface juntamente com todas as dependências (arquivos jar) empregados pela implementação. 
+
 
 ***
 
