@@ -4,7 +4,7 @@
 // é o contúdo fornecido.
 
 function doSomeWork(contents) {
-    var id = document.getElementById('cid10-capitulos');
+    var id = document.getElementById('tabela');
     exibeTabela(id, JSON.parse(contents));
 }
 
