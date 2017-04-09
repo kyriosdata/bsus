@@ -1,6 +1,6 @@
 
+// Carrega arquivo
 function readSingleFile(e) {
-    console.log(e.target.files[0]);
     var file = e.target.files[0];
     if (!file) {
         return;
@@ -9,16 +9,15 @@ function readSingleFile(e) {
     var reader = new FileReader();
     reader.onload = function(e) {
         var contents = e.target.result;
-        displayContents(contents);
-        displayTable(contents);
 
         var id = document.getElementById('cid10-capitulos');
-        buildHtmlTable(id, JSON.parse(contents));
+        adicionaLinhasEmTabela(id, JSON.parse(contents));
     };
 
     reader.readAsText(file);
 }
 
+// Exibe conteúdo "bruto"
 function displayContents(contents) {
     var element = document.getElementById('file-content');
     element.innerHTML = contents;
@@ -35,7 +34,7 @@ function addValorCelula(cellValue, row$) {
     row$.append($('<td/>').html(cellValue));
 }
 
-function buildHtmlTable(selector, contents) {
+function adicionaLinhasEmTabela(selector, contents) {
     var columns = columnHeadersForCapitulos(selector);
 
     var numberOfEntries = contents.NUMCAP.length;
