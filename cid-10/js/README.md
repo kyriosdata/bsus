@@ -2,9 +2,9 @@
 
 Estão previstos os seguintes módulos para execução no navegador: 
 
-- Dados. Empacotamento dos dados, possivelmente JSON, para consumo da CID-10 no navegador, sem necessidade de acesso a um servidor remoto. Ou seja, toda a CID-10 é transferida para o cliente. 
+- Dados. Empacotamento dos dados para uso da CID-10 no navegador, sem necessidade de acesso a um servidor remoto. Ou seja, toda a CID-10 é transferida para o cliente. 
 - Consulta. Realização de busca na CID-10 por código ou por descrição. 
-- Navegação. Visualização da CID-10 como estrutura hierárquica (também auxilia no processo de consulta).
+- Navegação. Visualização da CID-10 como estrutura hierárquica (também auxilia no processo de consulta), o que significa que para um dado nodo pode-se navegar pela hierarquia seguindo seu nodo pai ou um dos nodos descendentes.
 
 ## Análise dos requisitos
 
