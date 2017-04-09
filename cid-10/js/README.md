@@ -17,10 +17,13 @@ A CID-10 inclui códigos e as descrições correspondentes para doenças organiz
 <pre>
 CID-10
 |
-- Capítulo 1
-- Capítulo 2
-...
-- Capítulo N
+-- Capítulo 
+   |
+   -- Grupo 1
+      |
+      -- Categoria
+         |
+         -- Sub-categoria
 </pre>
 
 ## Referências
