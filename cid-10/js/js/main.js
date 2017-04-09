@@ -5,18 +5,13 @@
 
 function doSomeWork(contents) {
     var id = document.getElementById('cid10-capitulos');
-    adicionaLinhasEmTabelaDeCapitulos(id, JSON.parse(contents));
+    exibeTabela(id, JSON.parse(contents));
 }
 
 // Exibe conteúdo "bruto"
 function displayContents(contents) {
     var element = document.getElementById('file-content');
     element.innerHTML = contents;
-}
-
-function displayTable(contents) {
-    var dj = JSON.parse(contents);
-    alert(dj.NUMCAP[0]);
 }
 
 // Acrescenta coluna (valor) em linha de tabela
@@ -26,11 +21,12 @@ function adicionaColunaEmLinha(cellValue, row$) {
 }
 
 // Adiciona linhas à tabela conforme o contúdo fornecido
-function adicionaLinhasEmTabelaDeCapitulos(tabela, objetoJson) {
+function exibeTabela(tabela, objetoJson) {
 
     cabecalho(tabela, objetoJson);
 
-    var numberOfEntries = objetoJson.NUMCAP.length;
+    var primeiraPropriedade = Object.keys(objetoJson)[0];
+    var numberOfEntries = objetoJson[primeiraPropriedade].length;
 
     for (var i = 0; i < numberOfEntries; i++) {
         var row$ = $('<tr/>');
