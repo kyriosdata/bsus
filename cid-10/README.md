@@ -5,4 +5,4 @@ As tecnologias desenvolvidas e pertinentes à CID-10 permitem a localização de
 A primeira é uma experimentação desejável, pois se os resultados mostrarem-se razoáveis, não há necessidade de tráfego em rede para a localização desejada. A segunda é uma alternativa quando o primeiro caso não for viável (um exemplo pode ser visto [aqui](http://www.icd10codesearch.com/)). 
 
 # Copyright
-O conteúdo da CID-10 empregada pelo presente projeto foi obtida [aqui](http://www.datasus.gov.br/cid10/V2008/cid10.htm). Os devidos créditos por esse trabalho são fornecidos [aqui](http://www.datasus.gov.br/cid10/V2008/cid10.htm).
+O conteúdo da CID-10 empregada pelo presente projeto foi obtida [aqui](http://www.datasus.gov.br/cid10/V2008/cid10.htm). Os devidos créditos (copyright) por esse trabalho são fornecidos [aqui](http://www.datasus.gov.br/cid10/V2008/copyright.htm).
