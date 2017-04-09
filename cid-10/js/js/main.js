@@ -28,7 +28,7 @@ function adicionaColunaEmLinha(cellValue, row$) {
 // Adiciona linhas na tabela de capítulos
 function adicionaLinhasEmTabelaDeCapitulos(selector, contents) {
 
-    cabecalhoParaCapitulos(selector);
+    cabecalho(selector, contents);
 
     var numberOfEntries = contents.NUMCAP.length;
 
@@ -44,14 +44,13 @@ function adicionaLinhasEmTabelaDeCapitulos(selector, contents) {
     }
 }
 
-// Cabeçalho para CAPITULOS
-function cabecalhoParaCapitulos(selector) {
+// Monta cabeçalho com propriedades do objeto
+function cabecalho(selector, objetoJson) {
     var headerTr$ = $('<tr/>');
 
-    headerTr$.append($('<th/>').html("NUMCAP"));
-    headerTr$.append($('<th/>').html("CATINIC"));
-    headerTr$.append($('<th/>').html("CATFIM"));
-    headerTr$.append($('<th/>').html("DESCRICAO"));
+    for (var key in objetoJson) {
+        headerTr$.append($('<th/>').html(key));
+    }
 
     $(selector).append(headerTr$);
 }
