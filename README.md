@@ -71,9 +71,6 @@ Acrescente a dependencia abaixo no arquivo pom.xml:
 &lt;/dependency&gt;
 </pre>
 
-# Serviços oferecidos
-- CID10. Permite a localização de um determinado código dado uma descrição ou da descrição para um dado código. Duas versões devem ser produzidas: (a) Javascript para uso de todos os dados no cliente (sem conexão com backend) e (b) versão Java para ser requisitada via cliente. A primeira é uma experimentação desejável, pois se os resultados mostrarem-se razoáveis, não há necessidade de tráfego em rede para a localização desejada. A segunda é uma alternativa quando o primeiro caso não for viável (um exemplo pode ser visto [aqui](http://www.icd10codesearch.com/)). Arquivos correspondentes à CID-10 podem ser obtidos [aqui](http://www.datasus.gov.br/cid10/V2008/cid10.htm).
-
 ## Alguns valores para teste
 - CNES: Centro de Saúde Campus Samambaia (7381549)
 - CNES: Hispital das Clínicas da UFG (2338424)
