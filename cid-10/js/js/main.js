@@ -25,26 +25,25 @@ function adicionaColunaEmLinha(cellValue, row$) {
     row$.append($('<td/>').html(cellValue));
 }
 
-// Adiciona linhas na tabela de capítulos
-function adicionaLinhasEmTabelaDeCapitulos(selector, contents) {
+// Adiciona linhas à tabela conforme o contúdo fornecido
+function adicionaLinhasEmTabelaDeCapitulos(tabela, objetoJson) {
 
-    cabecalho(selector, contents);
+    cabecalho(tabela, objetoJson);
 
-    var numberOfEntries = contents.NUMCAP.length;
+    var numberOfEntries = objetoJson.NUMCAP.length;
 
     for (var i = 0; i < numberOfEntries; i++) {
         var row$ = $('<tr/>');
 
-        adicionaColunaEmLinha(contents.NUMCAP[i], row$);
-        adicionaColunaEmLinha(contents.CATINIC[i], row$);
-        adicionaColunaEmLinha(contents.CATFIM[i], row$);
-        adicionaColunaEmLinha(contents.DESCRICAO[i], row$);
+        for (var key in objetoJson) {
+            adicionaColunaEmLinha(objetoJson[key][i], row$);
+        }
 
-        $(selector).append(row$);
+        $(tabela).append(row$);
     }
 }
 
-// Monta cabeçalho com propriedades do objeto
+// Monta cabeçalho com os nomes das propriedades do objeto
 function cabecalho(selector, objetoJson) {
     var headerTr$ = $('<tr/>');
 
