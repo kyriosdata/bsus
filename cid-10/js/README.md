@@ -28,3 +28,4 @@ CID-10
 
 ## Referências
 - Manual de Certificação da SBIS ([aqui](http://sbis.org.br/certificacao-sbis)).
+- Consulta e navegação podem fazer uso de [SlickGrid](http://mleibman.github.io/SlickGrid/examples/example5-collapsing.html) possivelmente.
