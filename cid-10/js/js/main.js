@@ -1,20 +1,11 @@
 
-// Carrega arquivo
-function readSingleFile(e) {
-    var file = e.target.files[0];
-    if (!file) {
-        return;
-    }
+// Realiza operação com o conteúdo fornecido
+// Nesse caso, supõe que conteúdo de capítulos
+// é o contúdo fornecido.
 
-    var reader = new FileReader();
-    reader.onload = function(e) {
-        var contents = e.target.result;
-
-        var id = document.getElementById('cid10-capitulos');
-        adicionaLinhasEmTabela(id, JSON.parse(contents));
-    };
-
-    reader.readAsText(file);
+function doSomeWork(contents) {
+    var id = document.getElementById('cid10-capitulos');
+    adicionaLinhasEmTabelaDeCapitulos(id, JSON.parse(contents));
 }
 
 // Exibe conteúdo "bruto"
@@ -28,31 +19,33 @@ function displayTable(contents) {
     alert(dj.NUMCAP[0]);
 }
 
-// Builds the HTML Table out of myList.
-function addValorCelula(cellValue, row$) {
+// Acrescenta coluna (valor) em linha de tabela
+function adicionaColunaEmLinha(cellValue, row$) {
     if (cellValue == null) cellValue = "";
     row$.append($('<td/>').html(cellValue));
 }
 
-function adicionaLinhasEmTabela(selector, contents) {
-    var columns = columnHeadersForCapitulos(selector);
+// Adiciona linhas na tabela de capítulos
+function adicionaLinhasEmTabelaDeCapitulos(selector, contents) {
+
+    cabecalhoParaCapitulos(selector);
 
     var numberOfEntries = contents.NUMCAP.length;
 
     for (var i = 0; i < numberOfEntries; i++) {
         var row$ = $('<tr/>');
 
-        addValorCelula(contents.NUMCAP[i], row$);
-        addValorCelula(contents.CATINIC[i], row$);
-        addValorCelula(contents.CATFIM[i], row$);
-        addValorCelula(contents.DESCRICAO[i], row$);
+        adicionaColunaEmLinha(contents.NUMCAP[i], row$);
+        adicionaColunaEmLinha(contents.CATINIC[i], row$);
+        adicionaColunaEmLinha(contents.CATFIM[i], row$);
+        adicionaColunaEmLinha(contents.DESCRICAO[i], row$);
 
         $(selector).append(row$);
     }
 }
 
-// Monta header da tabela para CAPITULOS
-function columnHeadersForCapitulos(selector) {
+// Cabeçalho para CAPITULOS
+function cabecalhoParaCapitulos(selector) {
     var headerTr$ = $('<tr/>');
 
     headerTr$.append($('<th/>').html("NUMCAP"));
@@ -62,6 +55,29 @@ function columnHeadersForCapitulos(selector) {
 
     $(selector).append(headerTr$);
 }
+
+// ---------------------------
+// Carrega o arquivo
+// ---------------------------
+function readSingleFile(e) {
+    var file = e.target.files[0];
+    if (!file) {
+        return;
+    }
+
+    var reader = new FileReader();
+
+    reader.onload = function(e) {
+        var contents = e.target.result;
+        doSomeWork(contents);
+    };
+
+    reader.readAsText(file);
+}
+
+// ----------------------------------
+// Registra evento com readSingleFile
+// ----------------------------------
 
 document.getElementById('file-input')
     .addEventListener('change', readSingleFile, false);
