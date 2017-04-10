@@ -22,13 +22,14 @@ No momento, os serviços oferecidos pelo barramento SUS (SOA-SUS) a serem contem
 
 ![bsus-barramento](https://cloud.githubusercontent.com/assets/1735792/24828306/74c16714-1c30-11e7-8130-44c13928fbc9.png)
 
-O projeto (_software design_) da biblioteca varia conforme as funcionalidades oferecidas por cada um desses serviços. Abaixo, contudo, segue uma orientação, logo após a identificação dos principais requisitos de qualidade. 
+O projeto (_software design_) da biblioteca varia conforme as funcionalidades oferecidas por cada um desses serviços. Abaixo, contudo, segue uma orientação, logo após a identificação dos objetivos de qualidade a serem satisfeitos pela biblioteca. 
 
-### Outros objetivos
-- O BSUS deve ser acompanhado de testes de unidade (100%) de cobertura e de testes de integração. 
-- A interoperabilidade deve assegurar transparência de localização. 
+### Objetivos de qualidade do BSUS
+- O BSUS deve ser acompanhado de testes de unidade com 100% de cobertura.
+- Testes de integração deverão demonstrar que o BSUS opera conforme a especificação estabelecida para interação com o barramento SUS.
+- Os serviços do barramento SUS deverão ser localizados de forma transparente (transparência de localização). 
 - O BSUS não deve comprometer a execução de outras operações do código cliente caso os serviços do barramento não estejam disponíveis.
-- O armazenamento de informação sigilosa como credencial de acesso deve fazer uso de estratégi "sólida".
+- O armazenamento de informação sigilosa como credencial de acesso deve fazer uso de estratégia "sólida".
 
 ***
 ## Projeto
