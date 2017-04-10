@@ -18,11 +18,11 @@ O Ministério da Saúde (MS) é mantenedor de informações em saúde no Brasil.
 
 O BSUS é uma proposta de biblioteca de software em Java para realizar a comunicação entre um SIS e o barramento SUS. O objetivo é _isolar o código de um SIS do código da biblioteca que realiza a interação com o barramento SUS_. Dessa forma, cabe à biblioteca os detalhes do protocolo de comunicação (inclui conversões entre formatos de dados), de alteraçes nesse protocolo, da localização e da autenticação para acesso ao barramento.
 
-No momento, os serviços oferecidos pelo barramento SUS e de interesse da biblioteca são identificados pela figura abaixo.
+No momento, os serviços oferecidos pelo barramento SUS (SOA-SUS) a serem contemplados pela biblioteca são identificados na figura abaixo, juntamente com o CID-10.
 
 ![bsus-barramento](https://cloud.githubusercontent.com/assets/1735792/24828306/74c16714-1c30-11e7-8130-44c13928fbc9.png)
 
-O projeto (_software design_) de acesso aos serviços varia conforme as funcionalidades oferecidas por cada um deles. Abaixo, contudo, segue uma orientação, logo após a identificação dos principais requisitos de qualidade. 
+O projeto (_software design_) da biblioteca varia conforme as funcionalidades oferecidas por cada um desses serviços. Abaixo, contudo, segue uma orientação, logo após a identificação dos principais requisitos de qualidade. 
 
 ### Outros objetivos
 - O BSUS deve ser acompanhado de testes de unidade (100%) de cobertura e de testes de integração. 
