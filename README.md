@@ -52,11 +52,14 @@ Em tempo de execução, temos pelos menos dois processos e várias instâncias, 
 
 ![bsus-componentes](https://cloud.githubusercontent.com/assets/1735792/24829180/88ab428c-1c43-11e7-80d6-aea68ea54b60.png)
 
-### Configuração e segurança
-Duas ferramentas são úteis nesse contexto: Vault (https://www.vaultproject.io/) e Consul (https://www.consul.io/). Vault é uma ferramenta que trata do armazenamento de segredos, tendo em vista que o uso de um arquivo de configuração não é uma estratégia recomendada atualmente. Consul é útil para assegurar a transparência de localização. 
+### Configuração, segurança, tolerância a falhas e latência
 
-Informação adicional pode ser encontrada [aqui](https://spring.io/blog/2016/06/24/managing-secrets-with-vault). Consulte ainda [Google](https://support.google.com/cloud/answer/6310037?hl=en) e 
-[Stackoverflow](http://stackoverflow.com/questions/25964435/different-ways-to-store-a-password-variable-in-a-java-web-application/25969056#25969056) para informações adicionais. 
+- Vault (https://www.vaultproject.io/). Vault é uma ferramenta que trata do armazenamento de segredos, tendo em vista que o uso de um arquivo de configuração não é uma estratégia recomendada atualmente. 
+- Consul (https://www.consul.io/). Consul é útil para assegurar a transparência de localização. 
+- Hystrix (https://github.com/Netflix/Hystrix) é uma implementação de "Circuit breaker" e, portanto, trata de tolerância a falhas e de latência, em particular, na presença de falhas. 
+
+Acerca do armazenamento de informações sigilosas (segredos), pode-se obter informação adicional [aqui](https://spring.io/blog/2016/06/24/managing-secrets-with-vault). Consulte ainda [Google](https://support.google.com/cloud/answer/6310037?hl=en) e 
+[Stackoverflow](http://stackoverflow.com/questions/25964435/different-ways-to-store-a-password-variable-in-a-java-web-application/25969056#25969056) para mais informações. 
 
 ***
 
