@@ -31,8 +31,7 @@ O projeto (_software design_) da biblioteca varia conforme as funcionalidades of
 - O BSUS não deve comprometer a execução de outras operações do código cliente caso os serviços do barramento não estejam disponíveis.
 - O armazenamento de informação sigilosa como credencial de acesso deve fazer uso de estratégia "sólida".
 
-***
-## Projeto
+## Projeto do software do BSUS
 
 ### Módulos
 
