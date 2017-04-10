@@ -61,22 +61,5 @@ Em tempo de execução, temos pelos menos dois processos e várias instâncias, 
 Acerca do armazenamento de informações sigilosas (segredos), pode-se obter informação adicional [aqui](https://spring.io/blog/2016/06/24/managing-secrets-with-vault). Consulte ainda [Google](https://support.google.com/cloud/answer/6310037?hl=en) e 
 [Stackoverflow](http://stackoverflow.com/questions/25964435/different-ways-to-store-a-password-variable-in-a-java-web-application/25969056#25969056) para mais informações. 
 
-***
 
-
-## Como usar (via maven)?
-
-Acrescente a dependencia abaixo no arquivo pom.xml:
-
-<pre>
-&lt;dependency&gt;
-  &lt;groupId&gt;com.github.kyriosdata.bsus&lt;/groupId&gt;
-  &lt;artifactId&gt;bsus&lt;/artifactId&gt;
-  &lt;version&gt;1.0.0&lt;/version&gt;
-&lt;/dependency&gt;
-</pre>
-
-## Alguns valores para teste
-- CNES: Centro de Saúde Campus Samambaia (7381549)
-- CNES: Hispital das Clínicas da UFG (2338424)
 
