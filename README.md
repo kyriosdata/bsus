@@ -43,7 +43,7 @@ Os elementos a serem implementados são identificados no diagrama abaixo. Observ
 
 As unidades de implementação identificadas no diagrama acima são empacotadas conforme abaixo: (a) um arquivo jar e (b) um arquivo zip. O primeiro reúne a interface de acesso ao barramento e a fábrica que cria instâncias dessa interface. O segundo reúne a implementação da interface Barramento, a interface Connection e a implementação dessa interface por meio de um arquivo jar e, adicionalmente, a ferramenta Hystrix, empregada pela implementação de Connection. Observe que "Circuit Breaker" foi substituído por uma implementação específica ([Hystrix](https://github.com/Netflix/Hystrix)), que inclui/depende de vários outros elementos.
 
-![bsus-instalacao](https://cloud.githubusercontent.com/assets/1735792/24926760/13688fc4-1ed3-11e7-8523-1c03db5eeb72.png)
+![bsus-instalacao](https://cloud.githubusercontent.com/assets/1735792/24926959/b4730b56-1ed3-11e7-9fc5-0590d99e5e2f.png)
 
 ### Componentes
 Conforme o diagrama acima, para fazer uso do BSUS é necessário acesso módulo *bsus-interface.jar* e também ao módulo *bsus-1.0.0.zip*. O primeiro é independente do segundo. O segundo inclui a implementação necessária da interface juntamente com todas as dependências (arquivos jar) empregados pela implementação. 
