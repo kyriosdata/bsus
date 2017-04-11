@@ -57,6 +57,7 @@ Em tempo de execução, temos pelos menos dois processos e várias instâncias, 
 - Vault (https://www.vaultproject.io/). Vault é uma ferramenta que trata do armazenamento de segredos, tendo em vista que o uso de um arquivo de configuração não é uma estratégia recomendada atualmente. 
 - Consul (https://www.consul.io/). Consul é útil para assegurar a transparência de localização. 
 - Hystrix (https://github.com/Netflix/Hystrix) é uma implementação de "Circuit breaker" e, portanto, trata de tolerância a falhas e de latência, em particular, na presença de falhas. 
+- Circuit breaker ([definição](https://martinfowler.com/bliki/CircuitBreaker.html)). Padrão de projeto útil a cenários onde há necessidade de requisição de serviços remotos. 
 
 Acerca do armazenamento de informações sigilosas (segredos), pode-se obter informação adicional [aqui](https://spring.io/blog/2016/06/24/managing-secrets-with-vault). Consulte ainda [Google](https://support.google.com/cloud/answer/6310037?hl=en) e 
 [Stackoverflow](http://stackoverflow.com/questions/25964435/different-ways-to-store-a-password-variable-in-a-java-web-application/25969056#25969056) para mais informações. 
