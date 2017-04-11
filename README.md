@@ -12,11 +12,11 @@ Façade para acesso ao Barramento SUS (bsus)
  Instituto de Informática (UFG).
 
 ## Qual o objetivo do BSUS?
-O Ministério da Saúde (MS) é mantenedor de informações em saúde no Brasil. Algumas dessas informações são enviadas ao MS ou recebidas do MS por um Sistema de Informação em Saúde (SIS). Essa interação ocorre por meio do "barramento SUS" conforme ilustra a figura abaixo.
+O Ministério da Saúde (MS) é mantenedor de informações em saúde no Brasil. Algumas dessas informações são enviadas ao MS ou recebidas do MS por um Sistema de Informação em Saúde (SIS). Essa interação entre um SIS e o "barramento SUS" é ilustrada na figura abaixo.
 
 ![bsus-context](https://cloud.githubusercontent.com/assets/1735792/24827988/9b06f354-1c2a-11e7-98dc-38a80be4de77.png)
 
-O BSUS é uma proposta de biblioteca de software em Java para realizar a comunicação entre um SIS e o barramento SUS. O objetivo é _isolar o código de um SIS do código da biblioteca que realiza a interação com o barramento SUS_. Dessa forma, cabe à biblioteca os detalhes do protocolo de comunicação (inclui conversões entre formatos de dados), de alteraçes nesse protocolo, da localização e da autenticação para acesso ao barramento.
+O BSUS é uma proposta de biblioteca de software em Java para realizar a comunicação entre um SIS e o "barramento SUS". O objetivo é _isolar o código de um SIS do código da biblioteca que realiza a interação com o barramento SUS_. Dessa forma, cabe à biblioteca os detalhes do protocolo de comunicação (inclui conversões entre formatos de dados), de alteraçes nesse protocolo, da localização e da autenticação para acesso ao barramento.
 
 No momento, os serviços oferecidos pelo barramento SUS (SOA-SUS) a serem contemplados pela biblioteca são identificados na figura abaixo, juntamente com o CID-10.
 
