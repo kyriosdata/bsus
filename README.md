@@ -52,7 +52,7 @@ Conforme o diagrama acima, para fazer uso do BSUS é necessário acesso módulo 
 
 Em tempo de execução, temos pelos menos dois processos e várias instâncias, conforme ilustrado abaixo. Um dos processos reúne todos os objetos ilustrados abaixo, exceto o "Barramento SUS", componente em execução em servidor remoto. 
 
-![bsus-componentes](https://cloud.githubusercontent.com/assets/1735792/24927471/88b36b30-1ed5-11e7-8c52-96338dab935b.png)
+![bsus-componentes](https://cloud.githubusercontent.com/assets/1735792/24931465/c3b91e74-1ee3-11e7-842c-344f73fffdd7.png)
 
 
 ### Configuração, segurança, tolerância a falhas e latência
