@@ -45,7 +45,7 @@ As unidades de implementação identificadas no diagrama acima são empacotadas 
 
 Observe que o arquivo bsus (jar) inclui a implementação da biblioteca (BSUS), a interface Connection e a implementação dessa interface, que faz uso do Hystrix. 
 
-![bsus-instalacao](https://cloud.githubusercontent.com/assets/1735792/24926959/b4730b56-1ed3-11e7-9fc5-0590d99e5e2f.png)
+![bsus-instalacao](https://cloud.githubusercontent.com/assets/1735792/24927204/98b464ea-1ed4-11e7-9ac2-8d7d2f18f638.png)
 
 ### Componentes
 Conforme o diagrama acima, para fazer uso do BSUS é necessário acesso módulo *bsus-interface.jar* e também ao módulo *bsus-1.0.0.zip*. O primeiro é independente do segundo. O segundo inclui a implementação necessária da interface juntamente com todas as dependências (arquivos jar) empregados pela implementação. 
