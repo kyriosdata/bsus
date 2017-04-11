@@ -22,7 +22,7 @@ No momento, os serviços oferecidos pelo barramento SUS (SOA-SUS) a serem contem
 
 ![bsus-barramento](https://cloud.githubusercontent.com/assets/1735792/24828306/74c16714-1c30-11e7-8130-44c13928fbc9.png)
 
-O projeto (_software design_) da biblioteca varia conforme as funcionalidades oferecidas por cada um desses serviços. Abaixo, contudo, segue uma orientação, logo após a identificação dos objetivos de qualidade a serem satisfeitos pela biblioteca. 
+O projeto (_software design_) da biblioteca varia conforme as funcionalidades oferecidas por cada um desses serviços. Isso não impede uma orientação geral para todos eles. Antes dessa orientação, contudo, são identificados objetivos de qualidade a serem satisfeitos pela biblioteca BSUS.
 
 ### Objetivos de qualidade do BSUS
 - O BSUS deve ser acompanhado de testes de unidade com 100% de cobertura.
