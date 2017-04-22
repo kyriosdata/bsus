@@ -69,6 +69,16 @@ function readSingleFile(e) {
     reader.readAsText(file);
 }
 
+
+// ----------------------------------
+// Exibe informação em div 'info'
+// ----------------------------------
+
+function showInfo(information) {
+    var info = document.getElementById('info');
+    $(info).append(information);
+}
+
 // ----------------------------------
 // Registra evento com readSingleFile
 // ----------------------------------
