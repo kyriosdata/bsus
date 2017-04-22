@@ -5,7 +5,9 @@
 
 function doSomeWork(contents) {
     var id = document.getElementById('tabela');
-    exibeTabela(id, JSON.parse(contents));
+    var objetoJson = JSON.parse(contents);
+
+    exibeTabela(id, objetoJson);
 }
 
 // Exibe conteúdo "bruto"
@@ -77,6 +79,7 @@ function readSingleFile(e) {
 function showInfo(information) {
     var info = document.getElementById('info');
     $(info).append(information);
+    $(info).append("<br/>");
 }
 
 // ----------------------------------
@@ -85,3 +88,4 @@ function showInfo(information) {
 
 document.getElementById('file-input')
     .addEventListener('change', readSingleFile, false);
+
