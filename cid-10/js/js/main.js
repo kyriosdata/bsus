@@ -8,6 +8,11 @@ function doSomeWork(contents) {
     var objetoJson = JSON.parse(contents);
 
     exibeTabela(id, objetoJson);
+
+    var primeiraPropriedade = Object.keys(objetoJson)[0];
+    var numberOfEntries = objetoJson[primeiraPropriedade].length;
+
+    showInfo("Total de entradas: " + numberOfEntries)
 }
 
 // Exibe conteúdo "bruto"
