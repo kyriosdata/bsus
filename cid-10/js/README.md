@@ -1,10 +1,17 @@
+# Estratégia de busca
+Seja T uma tabela contendo N entradas. Uma das colunas da tabela é 'DESCRICAO' (sequência de caracteres).
+
+- Montar dicionário contendo todas as palavras da CID-10. Para cada palavra há uma lista de ints, cada um deles um índice da tabela na qual a palavra em questão está presente na coluna 'DESCRICAO'. 
+- Eliminar: de, da, a, o, e, dos, ...
+- A busca, nesse caso, limita-se a percorrer todas as chaves do dicionário (operação contains). 
+
 # CID-10 (JavaScript)
 
 Estão previstos os seguintes módulos para execução no navegador: 
 
-- Dados. Empacotamento dos dados para uso da CID-10 no navegador, sem necessidade de acesso a um servidor remoto. Ou seja, toda a CID-10 é transferida para o cliente. 
-- Consulta. Realização de busca na CID-10 por código ou por descrição. Em campo específico para o código e outro para a descrição, pode-se restringir o conjunto de entradas da CID-10 ilustrados na tabela para aqueles que contêm os valores indicados nos campos. A tabela contendo os códigos da CID deve possuir k entradas, ou seja, em qualquer instante, no máximo, são exibidas k entradas, de i até i + k -1.
-- Navegação. Visualização da CID-10 como estrutura hierárquica (também auxilia no processo de consulta), o que significa que para um dado nodo pode-se navegar pela hierarquia seguindo seu nodo pai ou um dos nodos descendentes.
+- **Dados**. Empacotamento dos dados para uso da CID-10 no navegador, sem necessidade de acesso a um servidor remoto. Ou seja, todo o conteúdo da a CID-10 é transferida para o cliente. 
+- **Consulta**. Realização de busca na CID-10 por código ou por descrição. Em campo específico para o código e outro para a descrição, pode-se restringir o conjunto de entradas da CID-10 ilustrados na tabela para aqueles que contêm os valores indicados nos campos. A tabela contendo os códigos da CID deve possuir k entradas, ou seja, em qualquer instante, no máximo, são exibidas k entradas, de i até i + k -1.
+- **Navegação**. Visualização da CID-10 como estrutura hierárquica (também auxilia no processo de consulta), o que significa que para um dado nodo pode-se navegar pela hierarquia seguindo seu nodo pai ou um dos nodos descendentes.
 
 ## Análise dos requisitos
 
