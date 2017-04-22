@@ -27,29 +27,35 @@ public class Main {
     public static void main(String[] args) throws FileNotFoundException {
         String fileName = "cid-10-subcategorias-lower.json";
 
-        Main processador = new Main();
-        Capitulos cs = processador.obtemCapitulos(fileName);
+        Main objeto = new Main();
+        Subcategorias cs = objeto.obtemSubcategorias(fileName);
 
-        //processador.exibeCapitulos(cs);
-
-        processador.dicionario = processador.montaDicionario(cs.descricao);
+        objeto.dicionario = objeto.montaDicionario(cs.descricao);
 
         List<String> chaves = new ArrayList<>();
-        chaves.addAll(processador.dicionario.keySet());
+        chaves.addAll(objeto.dicionario.keySet());
         String[] tipo = {};
         String[] valores = chaves.toArray(tipo);
+        System.out.println("Total de chaves: " + valores.length);
+        System.out.println("Total de entradas: " + cs.descricao.length);
 
-        Set<Integer> answer = processador.busca(valores, processador.dicionario, "ido");
-
-        System.out.println("Search: ido");
-        for(int indice : answer) {
-            System.out.println(indice + " " + cs.descricao[indice]);
+        for (String valor : valores) {
+            System.out.println(valor);
         }
+
+        System.out.println();
+
+//        Set<Integer> answer = objeto.busca(valores, objeto.dicionario, "ido");
+
+//        System.out.println("Search: ido");
+//        for(int indice : answer) {
+//            System.out.println(indice + " " + cs.descricao[indice]);
+//        }
 
         long inicio = System.currentTimeMillis();
         long total = 0;
-        for (int i = 0; i < 1_000_000; i++) {
-            Set<Integer> resposta = processador.busca(valores, processador.dicionario, "ido");
+        for (int i = 0; i < 1_000; i++) {
+            Set<Integer> resposta = objeto.busca(valores, objeto.dicionario, "ido");
             total += resposta.size();
         }
 
@@ -58,7 +64,7 @@ public class Main {
         cs.prepare();
         inicio = System.currentTimeMillis();
         total = 0;
-        for (int i = 0; i < 1_000_000; i++) {
+        for (int i = 0; i < 1_000; i++) {
             Set<Integer> resposta = cs.busca("ido");
             total += resposta.size();
         }
@@ -71,6 +77,13 @@ public class Main {
         File file = getFileFromResourcesFolder(fileName);
 
         return gson.fromJson(new FileReader(file), Capitulos.class);
+    }
+
+
+    private Subcategorias obtemSubcategorias(String fileName) throws FileNotFoundException {
+        File file = getFileFromResourcesFolder(fileName);
+
+        return new Gson().fromJson(new FileReader(file), Subcategorias.class);
     }
 
     private File getFileFromResourcesFolder(String fileName) {
