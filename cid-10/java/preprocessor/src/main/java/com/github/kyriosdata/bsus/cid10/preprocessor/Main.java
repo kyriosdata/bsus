@@ -40,6 +40,15 @@ public class Main {
         for(int indice : answer) {
             System.out.println(indice + " " + cs.descricao[indice]);
         }
+
+        long inicio = System.currentTimeMillis();
+        long total = 0;
+        for (int i = 0; i < 1_000_000; i++) {
+            Set<Integer> resposta = processador.busca(processador.dicionario, "ido");
+            total += resposta.size();
+        }
+
+        System.out.println("Tempo: " + (System.currentTimeMillis() - inicio));
     }
 
     private Capitulos obtemCapitulos(String fileName) throws FileNotFoundException {
@@ -140,15 +149,15 @@ public class Main {
     }
 
     /**
-     * Busca:
-     * (a) procura como palavra inteira, se não achar vai para partes
+     * Recupera índices de doenças cujas descrições contém a palavra
+     * procurada.
      */
-    public Set<Integer> busca(Map<String, List<Integer>> mapa, String conteudo) {
+    public Set<Integer> busca(Map<String, List<Integer>> mapa, String procurado) {
         Set<Integer> indices = new HashSet<>();
         Set<String> keys = mapa.keySet();
 
         for (String chave : keys) {
-            if (chave.contains(conteudo)) {
+            if (chave.contains(procurado)) {
                indices.addAll(mapa.get(chave));
             }
         }
