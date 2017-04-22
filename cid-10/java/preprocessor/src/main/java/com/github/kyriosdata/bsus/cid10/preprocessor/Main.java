@@ -24,13 +24,16 @@ public class Main {
         String fileName = "CID-10-CAPITULOS.JSON";
 
         Gson gson = new Gson();
+        File file = getFileFromResourcesFolder(fileName);
 
-        //Get file from resources folder
-        ClassLoader classLoader = new Main().getClass().getClassLoader();
-        File file = new File(classLoader.getResource(fileName).getFile());
 
         Capitulos cs = gson.fromJson(new FileReader(file), Capitulos.class);
         System.out.println(cs.CATFIM.length);
 
+    }
+
+    private static File getFileFromResourcesFolder(String fileName) {
+        ClassLoader classLoader = new Main().getClass().getClassLoader();
+        return new File(classLoader.getResource(fileName).getFile());
     }
 }
