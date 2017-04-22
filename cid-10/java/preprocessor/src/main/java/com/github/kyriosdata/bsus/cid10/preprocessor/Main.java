@@ -25,7 +25,7 @@ public class Main {
     Map<String, List<Integer>> dicionario;
 
     public static void main(String[] args) throws FileNotFoundException {
-        String fileName = "cid-10-capitulos-lower.json";
+        String fileName = "cid-10-subcategorias-lower.json";
 
         Main processador = new Main();
         Capitulos cs = processador.obtemCapitulos(fileName);
@@ -34,7 +34,12 @@ public class Main {
 
         processador.dicionario = processador.montaDicionario(cs.descricao);
 
-        Set<Integer> answer = processador.busca(processador.dicionario, "ido");
+        List<String> chaves = new ArrayList<>();
+        chaves.addAll(processador.dicionario.keySet());
+        String[] tipo = {};
+        String[] valores = chaves.toArray(tipo);
+
+        Set<Integer> answer = processador.busca(valores, processador.dicionario, "ido");
 
         System.out.println("Search: ido");
         for(int indice : answer) {
@@ -44,7 +49,17 @@ public class Main {
         long inicio = System.currentTimeMillis();
         long total = 0;
         for (int i = 0; i < 1_000_000; i++) {
-            Set<Integer> resposta = processador.busca(processador.dicionario, "ido");
+            Set<Integer> resposta = processador.busca(valores, processador.dicionario, "ido");
+            total += resposta.size();
+        }
+
+        System.out.println("Tempo: " + (System.currentTimeMillis() - inicio));
+
+        cs.prepare();
+        inicio = System.currentTimeMillis();
+        total = 0;
+        for (int i = 0; i < 1_000_000; i++) {
+            Set<Integer> resposta = cs.busca("ido");
             total += resposta.size();
         }
 
@@ -152,13 +167,12 @@ public class Main {
      * Recupera índices de doenças cujas descrições contém a palavra
      * procurada.
      */
-    public Set<Integer> busca(Map<String, List<Integer>> mapa, String procurado) {
+    public Set<Integer> busca(String[] chaves, Map<String, List<Integer>> mapa, String procurado) {
         Set<Integer> indices = new HashSet<>();
-        Set<String> keys = mapa.keySet();
 
-        for (String chave : keys) {
-            if (chave.contains(procurado)) {
-               indices.addAll(mapa.get(chave));
+        for (int i = 0; i < chaves.length; i++) {
+            if (chaves[i].contains(procurado)) {
+               indices.addAll(mapa.get(chaves[i]));
             }
         }
 
