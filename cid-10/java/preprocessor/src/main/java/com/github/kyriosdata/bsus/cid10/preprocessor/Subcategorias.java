@@ -36,4 +36,8 @@ public class Subcategorias {
 
         return indices;
     }
+
+    public String toString() {
+        return "Total de entradas: " + size;
+    }
 }

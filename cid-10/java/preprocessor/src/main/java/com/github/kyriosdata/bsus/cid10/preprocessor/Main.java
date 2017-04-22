@@ -15,6 +15,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.*;
+import java.util.regex.Pattern;
 
 /**
  * Aplicativo que visa produzir versão mais compacta da CID-10 e
@@ -29,6 +30,8 @@ public class Main {
 
         Main objeto = new Main();
         Subcategorias cs = objeto.obtemSubcategorias(fileName);
+        cs.prepare();
+        System.out.println(cs.toString());
 
         objeto.dicionario = objeto.montaDicionario(cs.descricao);
 
@@ -37,13 +40,17 @@ public class Main {
         String[] tipo = {};
         String[] valores = chaves.toArray(tipo);
         System.out.println("Total de chaves: " + valores.length);
-        System.out.println("Total de entradas: " + cs.descricao.length);
+
+        Pattern p = Pattern.compile("\\(.*\\)");
+        //Matcher m = p.matcher("(\\W)");
+        // m.find()
 
         for (String valor : valores) {
-            System.out.println(valor);
+            if (valor.startsWith("(") && valor.endsWith(")")) {
+                System.out.println(valor);
+            }
         }
 
-        System.out.println();
 
 //        Set<Integer> answer = objeto.busca(valores, objeto.dicionario, "ido");
 
@@ -158,6 +165,15 @@ public class Main {
 
         if (palavra.isEmpty()) {
             return null;
+        }
+
+        // Plural (que inclui singular)
+        if (palavra.endsWith("(s)")) {
+            palavra = palavra.replace("(s)", "s");
+        }
+
+        if (palavra.endsWith("(es)")) {
+            palavra = palavra.replace("(es)", "es");
         }
 
         return trocaAcentos(palavra);
