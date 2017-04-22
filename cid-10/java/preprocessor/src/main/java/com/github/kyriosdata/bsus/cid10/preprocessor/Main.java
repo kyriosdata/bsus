@@ -21,19 +21,32 @@ import java.util.*;
  * pronta para agilizar a consulta.
  */
 public class Main {
+
+    Map<String, List<Integer>> dicionario;
+
     public static void main(String[] args) throws FileNotFoundException {
         String fileName = "cid-10-capitulos-lower.json";
 
         Main processador = new Main();
-        processador.preprocessa(fileName);
+        Capitulos cs = processador.obtemCapitulos(fileName);
+
+        //processador.exibeCapitulos(cs);
+
+        processador.dicionario = processador.montaDicionario(cs.descricao);
+
+        Set<Integer> answer = processador.busca(processador.dicionario, "ido");
+
+        System.out.println("Search: ido");
+        for(int indice : answer) {
+            System.out.println(indice + " " + cs.descricao[indice]);
+        }
     }
 
-    private void preprocessa(String fileName) throws FileNotFoundException {
+    private Capitulos obtemCapitulos(String fileName) throws FileNotFoundException {
         Gson gson = new Gson();
         File file = getFileFromResourcesFolder(fileName);
 
-        Capitulos cs = gson.fromJson(new FileReader(file), Capitulos.class);
-        exibeAnalise(cs);
+        return gson.fromJson(new FileReader(file), Capitulos.class);
     }
 
     private File getFileFromResourcesFolder(String fileName) {
@@ -41,14 +54,16 @@ public class Main {
         return new File(classLoader.getResource(fileName).getFile());
     }
 
-    public void exibeAnalise(Capitulos caps) {
+    public void exibeCapitulos(Capitulos caps) {
         System.out.println("Total entradas: " + caps.catfim.length);
 
-        Map<String,List<Integer>> mapa = montaDicionario(caps.descricao);
+        Map<String, List<Integer>> mapa = montaDicionario(caps.descricao);
+
+        dicionario = mapa;
 
         System.out.println("Total palavras: " + mapa.size());
 
-        for(String chave : mapa.keySet()) {
+        for (String chave : mapa.keySet()) {
             System.out.println(chave + " " + mapa.get(chave));
         }
     }
@@ -56,9 +71,9 @@ public class Main {
     public Map<String, List<Integer>> montaDicionario(String[] sentencas) {
         Map<String, List<Integer>> mapa = new TreeMap<>();
 
-        for(int i = 0; i < sentencas.length; i++) {
+        for (int i = 0; i < sentencas.length; i++) {
             String[] palavras = sentencas[i].split("(\\s+|,|\\[|\\])");
-            for(String palavra : palavras) {
+            for (String palavra : palavras) {
                 palavra = trataPalavra(palavra);
                 if (palavra == null) {
                     continue;
@@ -81,8 +96,8 @@ public class Main {
         return mapa;
     }
 
-    private List<String> paraRemover = Arrays.asList(new String[] {
-        "de", "da", "das", "do", "dos",
+    private List<String> paraRemover = Arrays.asList(new String[]{
+            "de", "da", "das", "do", "dos",
             "a", "as", "e", "o", "os",
             "na", "nas", "no", "nos",
             "para",
@@ -94,7 +109,7 @@ public class Main {
     /**
      * Operações realizadas:
      * (a) toLower (realizado via linha de comandos)
-     *     cat arquivo.json | tr "[A-Z]" "[a-z]"
+     * cat arquivo.json | tr "[A-Z]" "[a-z]"
      * (b) remover 'de', 'da', 'a', 'e', 'as', 'dos', '[', ']', '-', ',' e outros.
      * (c) eliminar acentos
      */
@@ -112,14 +127,12 @@ public class Main {
 
     }
 
-    public static String trocaAcentos(String texto)
-    {
+    public static String trocaAcentos(String texto) {
         String comAcentos = "äáâàãéêëèíîïìöóôòõüúûùç";
         String semAcentos = "aaaaaeeeeiiiiooooouuuuc";
         final int SIZE = comAcentos.length();
 
-        for (int i = 0; i < SIZE; i++)
-        {
+        for (int i = 0; i < SIZE; i++) {
             texto = texto.replace(comAcentos.charAt(i), semAcentos.charAt(i));
         }
 
@@ -130,7 +143,16 @@ public class Main {
      * Busca:
      * (a) procura como palavra inteira, se não achar vai para partes
      */
-    public void busca() {
+    public Set<Integer> busca(Map<String, List<Integer>> mapa, String conteudo) {
+        Set<Integer> indices = new HashSet<>();
+        Set<String> keys = mapa.keySet();
 
+        for (String chave : keys) {
+            if (chave.contains(conteudo)) {
+               indices.addAll(mapa.get(chave));
+            }
+        }
+
+        return indices;
     }
 }
