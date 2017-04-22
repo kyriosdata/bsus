@@ -94,3 +94,5 @@ function showInfo(information) {
 document.getElementById('file-input')
     .addEventListener('change', readSingleFile, false);
 
+readTextFile("file:///Users/kyriosdata/bsus/cid-10/js/cid10/CID-10-CAPITULOS.JSON");
+
