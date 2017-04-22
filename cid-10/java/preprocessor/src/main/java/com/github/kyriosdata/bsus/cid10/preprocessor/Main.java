@@ -56,4 +56,13 @@ public class Main {
 
         return mapa;
     }
+
+    /**
+     * Operações realizadas:
+     * (a) toLower
+     * (b) remover 'de', 'da', 'a', 'e', 'as', 'dos', '[', ']', '-' e outros.
+     */
+    public void prepara() {
+
+    }
 }
