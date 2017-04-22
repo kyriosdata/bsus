@@ -47,7 +47,12 @@ public class Main {
         Map<String,List<Integer>> mapa = montaDicionario(caps.descricao);
 
         System.out.println("Total palavras: " + mapa.size());
-        for(String chave : mapa.keySet()) {
+
+        List<String> keys = new ArrayList<>();
+        keys.addAll(mapa.keySet());
+        Collections.sort(keys);
+
+        for(String chave : keys) {
             System.out.println(chave + " " + mapa.get(chave));
         }
     }
@@ -56,7 +61,7 @@ public class Main {
         Map<String, List<Integer>> mapa = new HashMap<>();
 
         for(int i = 0; i < sentencas.length; i++) {
-            String[] palavras = sentencas[i].split("\\s+");
+            String[] palavras = sentencas[i].split("(\\s+|,|\\[|\\])");
             for(String palavra : palavras) {
                 palavra = trataPalavra(palavra);
                 if (palavra == null) {
@@ -103,8 +108,26 @@ public class Main {
             return null;
         }
 
-        return palavra;
+        if (palavra.isEmpty()) {
+            return null;
+        }
 
+        return trocaAcentos(palavra);
+
+    }
+
+    public static String trocaAcentos(String texto)
+    {
+        String comAcentos = "äáâàãéêëèíîïìöóôòõüúûùç";
+        String semAcentos = "aaaaaeeeeiiiiooooouuuuc";
+        final int SIZE = comAcentos.length();
+
+        for (int i = 0; i < SIZE; i++)
+        {
+            texto = texto.replace(comAcentos.charAt(i), semAcentos.charAt(i));
+        }
+
+        return texto;
     }
 
     /**
