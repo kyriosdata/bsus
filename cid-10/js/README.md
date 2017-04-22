@@ -1,3 +1,9 @@
+# Estratégia de busca
+Seja T uma tabela contendo N entradas. Uma das colunas da tabela é 'DESCRICAO' (sequência de caracteres).
+
+- Montar dicionário contendo todas as palavras da CID-10. Para cada palavra há uma lista de ints, cada um deles um índice da tabela na qual a palavra em questão está presente na coluna 'DESCRICAO'. 
+- Eliminar: de, da, a, o, e, dos, ...
+
 # CID-10 (JavaScript)
 
 Estão previstos os seguintes módulos para execução no navegador: 
