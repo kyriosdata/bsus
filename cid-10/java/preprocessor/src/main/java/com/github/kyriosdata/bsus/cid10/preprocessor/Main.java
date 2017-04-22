@@ -23,17 +23,24 @@ public class Main {
     public static void main(String[] args) throws FileNotFoundException {
         String fileName = "CID-10-CAPITULOS.JSON";
 
+        Main processador = new Main();
+        processador.preprocessa(fileName);
+    }
+
+    private void preprocessa(String fileName) throws FileNotFoundException {
         Gson gson = new Gson();
         File file = getFileFromResourcesFolder(fileName);
 
-
         Capitulos cs = gson.fromJson(new FileReader(file), Capitulos.class);
-        System.out.println(cs.CATFIM.length);
-
+        exibeAnalise(cs);
     }
 
-    private static File getFileFromResourcesFolder(String fileName) {
-        ClassLoader classLoader = new Main().getClass().getClassLoader();
+    private File getFileFromResourcesFolder(String fileName) {
+        ClassLoader classLoader = getClass().getClassLoader();
         return new File(classLoader.getResource(fileName).getFile());
+    }
+
+    public void exibeAnalise(Capitulos caps) {
+        System.out.println(caps.CATFIM.length);
     }
 }
