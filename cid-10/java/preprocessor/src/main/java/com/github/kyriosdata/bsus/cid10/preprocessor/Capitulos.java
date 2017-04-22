@@ -15,6 +15,6 @@ package com.github.kyriosdata.bsus.cid10.preprocessor;
 public class Capitulos {
     public int[] numcap;
     public String[] catinic;
-    public String[] CATFIM;
+    public String[] catfim;
     public String[] descricao;
 }

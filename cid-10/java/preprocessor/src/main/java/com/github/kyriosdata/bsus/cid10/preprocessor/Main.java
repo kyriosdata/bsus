@@ -14,9 +14,7 @@ import com.google.gson.Gson;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Aplicativo que visa produzir versão mais compacta da CID-10 e
@@ -24,7 +22,7 @@ import java.util.Map;
  */
 public class Main {
     public static void main(String[] args) throws FileNotFoundException {
-        String fileName = "CID-10-CAPITULOS.JSON";
+        String fileName = "cid-10-capitulos-lower.json";
 
         Main processador = new Main();
         processador.preprocessa(fileName);
@@ -44,25 +42,76 @@ public class Main {
     }
 
     public void exibeAnalise(Capitulos caps) {
-        System.out.println("Total entradas: " + caps.CATFIM.length);
+        System.out.println("Total entradas: " + caps.catfim.length);
+
+        Map<String,List<Integer>> mapa = montaDicionario(caps.descricao);
+
+        System.out.println("Total palavras: " + mapa.size());
+        for(String chave : mapa.keySet()) {
+            System.out.println(chave + " " + mapa.get(chave));
+        }
     }
 
     public Map<String, List<Integer>> montaDicionario(String[] sentencas) {
         Map<String, List<Integer>> mapa = new HashMap<>();
 
         for(int i = 0; i < sentencas.length; i++) {
-            String[] palavras = sentencas[i].split(" ");
+            String[] palavras = sentencas[i].split("\\s+");
+            for(String palavra : palavras) {
+                palavra = trataPalavra(palavra);
+                if (palavra == null) {
+                    continue;
+                }
+
+                List<Integer> indices = mapa.get(palavra);
+                if (indices == null) {
+                    indices = new ArrayList<>();
+                    mapa.put(palavra, indices);
+                }
+
+                if (indices.contains(i)) {
+                    continue;
+                }
+
+                indices.add(i);
+            }
         }
 
         return mapa;
     }
 
+    private List<String> paraRemover = Arrays.asList(new String[] {
+        "de", "da", "das", "do", "dos",
+            "a", "as", "e", "o", "os",
+            "na", "nas", "no", "nos",
+            "para",
+            "que", "com",
+            "em",
+            "-"
+    });
+
     /**
      * Operações realizadas:
-     * (a) toLower
-     * (b) remover 'de', 'da', 'a', 'e', 'as', 'dos', '[', ']', '-' e outros.
+     * (a) toLower (realizado via linha de comandos)
+     *     cat arquivo.json | tr "[A-Z]" "[a-z]"
+     * (b) remover 'de', 'da', 'a', 'e', 'as', 'dos', '[', ']', '-', ',' e outros.
+     * (c) eliminar acentos
      */
-    public void prepara() {
+    public String trataPalavra(String palavra) {
+
+        if (paraRemover.contains(palavra)) {
+            return null;
+        }
+
+        return palavra;
+
+    }
+
+    /**
+     * Busca:
+     * (a) procura como palavra inteira, se não achar vai para partes
+     */
+    public void busca() {
 
     }
 }
