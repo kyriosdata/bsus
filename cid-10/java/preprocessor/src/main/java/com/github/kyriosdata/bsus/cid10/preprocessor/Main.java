@@ -48,17 +48,13 @@ public class Main {
 
         System.out.println("Total palavras: " + mapa.size());
 
-        List<String> keys = new ArrayList<>();
-        keys.addAll(mapa.keySet());
-        Collections.sort(keys);
-
-        for(String chave : keys) {
+        for(String chave : mapa.keySet()) {
             System.out.println(chave + " " + mapa.get(chave));
         }
     }
 
     public Map<String, List<Integer>> montaDicionario(String[] sentencas) {
-        Map<String, List<Integer>> mapa = new HashMap<>();
+        Map<String, List<Integer>> mapa = new TreeMap<>();
 
         for(int i = 0; i < sentencas.length; i++) {
             String[] palavras = sentencas[i].split("(\\s+|,|\\[|\\])");
