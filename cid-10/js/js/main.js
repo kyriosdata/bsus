@@ -9,10 +9,17 @@ function doSomeWork(contents) {
 
     exibeTabela(id, objetoJson);
 
+    // TOTAL DE ENTRADAS
     var primeiraPropriedade = Object.keys(objetoJson)[0];
     var numberOfEntries = objetoJson[primeiraPropriedade].length;
 
-    showInfo("Total de entradas: " + numberOfEntries)
+    showInfo("Total de entradas: " + numberOfEntries);
+
+    // MONTANDO O DICIONARIO
+    for (var i = 0; i < numberOfEntries; i++) {
+        var palavras = objetoJson.DESCRICAO[i].split(" ");
+        showInfo("Entrada " + i + " " + palavras);
+    }
 }
 
 // Exibe conteúdo "bruto"
