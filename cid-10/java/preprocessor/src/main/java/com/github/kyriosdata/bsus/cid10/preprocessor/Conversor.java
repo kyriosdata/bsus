@@ -10,6 +10,8 @@
 package com.github.kyriosdata.bsus.cid10.preprocessor;
 
 import java.io.FileNotFoundException;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created by kyriosdata on 4/23/17.
@@ -30,13 +32,20 @@ public class Conversor {
         cs.removeSinais(); // ç por c, á por a, ...
         cs.removeAspas();
 
+        Map<String, List<Integer>> mapa = cs.montaDicionario();
+        System.out.println("Tamanho dicionario: " + mapa.size());
+
         int total = 0;
         for (String sentenca : cs.descricao) {
-            if (sentenca.contains("\"")) {
+            if (sentenca.contains("/")) {
                 System.out.println(sentenca);
                 total++;
             }
         }
+
+//        for (String chave : mapa.keySet()) {
+//            System.out.println(chave);
+//        }
 
         System.out.println(total);
     }

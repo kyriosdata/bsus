@@ -14,8 +14,7 @@ import com.google.gson.Gson;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Reúne subcategorias da CID-10.
@@ -145,5 +144,64 @@ public class Subcategorias {
                 descricao[i] = descricao[i].replace("\"", " ");
             }
         }
+    }
+
+    public Map<String, List<Integer>> montaDicionario() {
+        Map<String, List<Integer>> mapa = new TreeMap<>();
+
+        for (int i = 0; i < size; i++) {
+
+            String[] palavras = descricao[i].split("\\s+");
+            for (String palavra : palavras) {
+                palavra = trataPalavra(palavra);
+                if (palavra == null) {
+                    continue;
+                }
+
+                List<Integer> indices = mapa.get(palavra);
+                if (indices == null) {
+                    indices = new ArrayList<>();
+                    mapa.put(palavra, indices);
+                }
+
+                if (indices.contains(i)) {
+                    continue;
+                }
+
+                indices.add(i);
+            }
+        }
+
+        return mapa;
+    }
+
+    private List<String> paraRemover = Arrays.asList(new String[]{
+            "de", "da", "das", "do", "dos",
+            "a", "as", "e", "o", "os",
+            "na", "nas", "no", "nos",
+            "para",
+            "que", "com",
+            "em"
+    });
+
+    /**
+     * Operações realizadas:
+     * (a) toLower (realizado via linha de comandos)
+     * cat arquivo.json | tr "[A-Z]" "[a-z]"
+     * (b) remover 'de', 'da', 'a', 'e', 'as', 'dos', '[', ']', '-', ',' e outros.
+     * (c) eliminar acentos
+     */
+    public String trataPalavra(String palavra) {
+
+        if (paraRemover.contains(palavra)) {
+            return null;
+        }
+
+        if (palavra.isEmpty()) {
+            return null;
+        }
+
+        return palavra;
+
     }
 }
