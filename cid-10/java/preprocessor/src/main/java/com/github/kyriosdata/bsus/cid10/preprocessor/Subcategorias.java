@@ -9,6 +9,11 @@
 
 package com.github.kyriosdata.bsus.cid10.preprocessor;
 
+import com.google.gson.Gson;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -20,6 +25,12 @@ public class Subcategorias {
     public String[] descricao;
 
     private int size;
+
+    public static Subcategorias newInstance(String fileName) throws FileNotFoundException {
+        File file = FileFromResourcesFolder.get(fileName);
+
+        return new Gson().fromJson(new FileReader(file), Subcategorias.class);
+    }
 
     public void prepare() {
         size = descricao.length;

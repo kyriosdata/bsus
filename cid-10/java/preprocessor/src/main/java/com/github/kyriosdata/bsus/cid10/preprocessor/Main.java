@@ -30,7 +30,7 @@ public class Main {
         String fileName = "cid-10-subcategorias-lower.json";
 
         Main objeto = new Main();
-        Subcategorias cs = objeto.obtemSubcategorias(fileName);
+        Subcategorias cs = Subcategorias.newInstance(fileName);
         cs.prepare();
         System.out.println(cs.toString());
 
@@ -91,12 +91,6 @@ public class Main {
         return gson.fromJson(new FileReader(file), Capitulos.class);
     }
 
-
-    private Subcategorias obtemSubcategorias(String fileName) throws FileNotFoundException {
-        File file = FileFromResourcesFolder.get(fileName);
-
-        return new Gson().fromJson(new FileReader(file), Subcategorias.class);
-    }
 
     public void exibeCapitulos(Capitulos caps) {
         System.out.println("Total entradas: " + caps.catfim.length);
