@@ -124,4 +124,18 @@ public class Subcategorias {
             }
         }
     }
+
+    public void removeSinais() {
+        String acentos = "äáâàãéêëèíîïìöóôòõüúûùç";
+        String semAcentos = "aaaaaeeeeiiiiooooouuuuc";
+        final int SIZE = acentos.length();
+
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < SIZE; j++) {
+                char acento = acentos.charAt(j);
+                char semAcento = semAcentos.charAt(j);
+                descricao[i] = descricao[i].replace(acento, semAcento);
+            }
+        }
+    }
 }
