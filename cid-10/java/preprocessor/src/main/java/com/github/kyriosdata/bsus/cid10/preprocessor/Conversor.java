@@ -10,8 +10,10 @@
 package com.github.kyriosdata.bsus.cid10.preprocessor;
 
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 
 /**
  * Created by kyriosdata on 4/23/17.
@@ -35,18 +37,35 @@ public class Conversor {
         Map<String, List<Integer>> mapa = cs.montaDicionario();
         System.out.println("Tamanho dicionario: " + mapa.size());
 
-        int total = 0;
-        for (String sentenca : cs.descricao) {
-            if (sentenca.contains("/")) {
-                System.out.println(sentenca);
-                total++;
+        for (String chave : mapa.keySet()) {
+            List<Integer> idx = mapa.get(chave);
+//            for (int i : idx) {
+//                System.out.print(chave + " => " + cs.descricao[i] + " | ");
+//            }
+            //System.out.println(chave + " " + idx);
+        }
+
+        Map<String, ArrayList<Integer>> indice = new TreeMap<>();
+        char[] letras = "abcdefghijklmnopqrstuvwxyz".toCharArray();
+        for (char primeira : letras) {
+            for (char segunda : letras) {
+                indice.put("" + primeira + segunda, new ArrayList<Integer>());
             }
         }
 
-//        for (String chave : mapa.keySet()) {
-//            System.out.println(chave);
-//        }
+        System.out.println("Tamanho indice: " + indice.size());
 
-        System.out.println(total);
+        for (String entrada : indice.keySet()) {
+            for (String chave : mapa.keySet()) {
+                if (chave.contains(entrada)) {
+
+                    List<Integer> idx = mapa.get(chave);
+                    for (int i : idx) {
+                        System.out.print(chave + " => " + cs.descricao[i] + " | ");
+                    }
+                    System.out.println(chave + " " + idx);
+                }
+            }
+        }
     }
 }

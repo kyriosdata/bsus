@@ -180,7 +180,7 @@ public class Subcategorias {
             "a", "as", "e", "o", "os",
             "na", "nas", "no", "nos",
             "para",
-            "que", "com",
+            "que", "com", "ou",
             "em"
     });
 
