@@ -47,7 +47,11 @@ public class Main {
 
         for (String valor : valores) {
             if (valor.startsWith("(") && valor.endsWith(")")) {
-                System.out.println(valor);
+                List<Integer> idx = objeto.dicionario.get(valor);
+                for (int i : idx) {
+                    System.out.print(valor + " " + cs.descricao[i] + " | ");
+                }
+                System.out.println();
             }
         }
 
@@ -170,10 +174,15 @@ public class Main {
         // Plural (que inclui singular)
         if (palavra.endsWith("(s)")) {
             palavra = palavra.replace("(s)", "s");
-        }
-
-        if (palavra.endsWith("(es)")) {
+        } else if (palavra.endsWith("(es)")) {
             palavra = palavra.replace("(es)", "es");
+        } else if (palavra.equals("(\"bypass\")")) {
+            palavra = "bypass";
+        } else if (palavra.equals("(\"stress\")")) {
+            palavra = "stress";
+        } else if (palavra.startsWith("(") && palavra.endsWith(")")) {
+            palavra = palavra.replace("(", "");
+            palavra = palavra.replace(")", "");
         }
 
         return trocaAcentos(palavra);
