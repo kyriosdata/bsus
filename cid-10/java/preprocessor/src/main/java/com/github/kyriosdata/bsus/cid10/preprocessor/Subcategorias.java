@@ -78,4 +78,13 @@ public class Subcategorias {
 
         }
     }
+
+    public void pluralComEsse() {
+        for (int i = 0; i < size; i++) {
+            String sentenca = descricao[i];
+            if (sentenca.contains("(s)")) {
+                descricao[i] = descricao[i].replace("(s)", "s");
+            }
+        }
+    }
 }

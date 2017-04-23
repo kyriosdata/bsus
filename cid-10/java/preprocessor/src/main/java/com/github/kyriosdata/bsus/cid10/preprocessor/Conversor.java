@@ -10,8 +10,6 @@
 package com.github.kyriosdata.bsus.cid10.preprocessor;
 
 import java.io.FileNotFoundException;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 /**
  * Created by kyriosdata on 4/23/17.
@@ -25,16 +23,17 @@ public class Conversor {
 
         cs.trocaVirgulaPorEspaco();
         cs.removeColchetes();
+        cs.pluralComEsse();
 
         for (String sentenca : cs.descricao) {
-            if (sentenca.contains("[")) {
-                Pattern p = Pattern.compile("\\[.*\\]");
-                Matcher m = p.matcher(sentenca);
-                if (m.find()) {
-                    System.out.print(m.group() + " | ");
-                } else {
-                    System.out.print("@off@ ");
-                }
+            if (sentenca.contains("(s)")) {
+//                Pattern p = Pattern.compile("\\(.*\\)");
+//                Matcher m = p.matcher(sentenca);
+//                if (m.find()) {
+//                    System.out.print(m.group() + " | ");
+//                } else {
+//                    System.out.print("@off@ ");
+//                }
 
                 System.out.println(sentenca);
             }
