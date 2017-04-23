@@ -25,12 +25,13 @@ public class Conversor {
         cs.removeColchetes();
         cs.pluralSimples();
         cs.trocaTravessaoPorEspaco(); // " - " por " "
-        //cs.eliminaParenteses();
+        cs.trocaHifenPorEspaco();
+        cs.eliminaParenteses();
 
         int total = 0;
         for (String sentenca : cs.descricao) {
-            if (sentenca.contains(" - ")) {
-                System.out.println(sentenca);
+            if (sentenca.contains("(")) {
+                //System.out.println(sentenca);
                 total++;
             }
         }

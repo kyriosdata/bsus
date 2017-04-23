@@ -99,7 +99,7 @@ public class Subcategorias {
         for (int i = 0; i < size; i++) {
             String sentenca = descricao[i];
 
-            Pattern p = Pattern.compile("\\s+\\(.*\\)");
+            Pattern p = Pattern.compile("\\S\\(.*\\)");
             Matcher m = p.matcher(sentenca);
             if (m.find()) {
                 System.out.print(m.group() + " | ");
@@ -115,6 +115,14 @@ public class Subcategorias {
         for (int i = 0; i < size; i++) {
             if (descricao[i].contains(" - ")) {
                 descricao[i] = descricao[i].replace(" - ", " ");
+            }
+        }
+    }
+
+    public void trocaHifenPorEspaco() {
+        for (int i = 0; i < size; i++) {
+            if (descricao[i].contains("-")) {
+                descricao[i] = descricao[i].replace("-", " ");
             }
         }
     }
