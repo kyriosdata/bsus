@@ -29,7 +29,12 @@ public class Subcategorias {
     public static Subcategorias newInstance(String fileName) throws FileNotFoundException {
         File file = FileFromResourcesFolder.get(fileName);
 
-        return new Gson().fromJson(new FileReader(file), Subcategorias.class);
+        FileReader fileReader = new FileReader(file);
+        Gson gson = new Gson();
+        Subcategorias obj = gson.fromJson(fileReader, Subcategorias.class);
+        obj.prepare();
+
+        return obj;
     }
 
     public void prepare() {
@@ -50,5 +55,27 @@ public class Subcategorias {
 
     public String toString() {
         return "Total de entradas: " + size;
+    }
+
+    public void trocaVirgulaPorEspaco() {
+        for (int i = 0; i < size; i++) {
+            if (descricao[i].contains(",")) {
+                descricao[i] = descricao[i].replace(",", " ");
+            }
+        }
+    }
+
+    public void removeColchetes() {
+        for (int i = 0; i < size; i++) {
+            String sentenca = descricao[i];
+            if (sentenca.contains("[")) {
+                descricao[i] = descricao[i].replace("[", " ");
+            }
+
+            if (sentenca.contains("]")) {
+                descricao[i] = descricao[i].replace("]", " ");
+            }
+
+        }
     }
 }
