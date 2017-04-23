@@ -15,6 +15,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.*;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
@@ -45,15 +46,15 @@ public class Main {
         //Matcher m = p.matcher("(\\W)");
         // m.find()
 
-        for (String valor : valores) {
-            if (valor.startsWith("(") && valor.endsWith(")")) {
-                List<Integer> idx = objeto.dicionario.get(valor);
-                for (int i : idx) {
-                    System.out.print(valor + " " + cs.descricao[i] + " | ");
-                }
-                System.out.println();
-            }
-        }
+//        for (String valor : valores) {
+//            if (valor.contains("(")) {
+//                List<Integer> idx = objeto.dicionario.get(valor);
+//                for (int i : idx) {
+//                    System.out.print(valor + " => " + cs.descricao[i] + " | ");
+//                }
+//                System.out.println();
+//            }
+//        }
 
 
 //        Set<Integer> answer = objeto.busca(valores, objeto.dicionario, "ido");
@@ -85,21 +86,16 @@ public class Main {
 
     private Capitulos obtemCapitulos(String fileName) throws FileNotFoundException {
         Gson gson = new Gson();
-        File file = getFileFromResourcesFolder(fileName);
+        File file = FileFromResourcesFolder.get(fileName);
 
         return gson.fromJson(new FileReader(file), Capitulos.class);
     }
 
 
     private Subcategorias obtemSubcategorias(String fileName) throws FileNotFoundException {
-        File file = getFileFromResourcesFolder(fileName);
+        File file = FileFromResourcesFolder.get(fileName);
 
         return new Gson().fromJson(new FileReader(file), Subcategorias.class);
-    }
-
-    private File getFileFromResourcesFolder(String fileName) {
-        ClassLoader classLoader = getClass().getClassLoader();
-        return new File(classLoader.getResource(fileName).getFile());
     }
 
     public void exibeCapitulos(Capitulos caps) {
@@ -120,7 +116,14 @@ public class Main {
         Map<String, List<Integer>> mapa = new TreeMap<>();
 
         for (int i = 0; i < sentencas.length; i++) {
-            String[] palavras = sentencas[i].split("(\\s+|,|\\[|\\])");
+            String sentenca = sentencas[i];
+            Pattern p = Pattern.compile("\\(.*\\)");
+            Matcher m = p.matcher(sentenca);
+            if (m.find()) {
+                System.out.println(sentenca);
+            }
+
+            String[] palavras = sentenca.split("(\\s+|,|\\[|\\])");
             for (String palavra : palavras) {
                 palavra = trataPalavra(palavra);
                 if (palavra == null) {
