@@ -23,10 +23,10 @@ public class Conversor {
 
         cs.trocaVirgulaPorEspaco();
         cs.removeColchetes();
-        cs.pluralComEsse();
+        cs.pluralSimples();
 
         for (String sentenca : cs.descricao) {
-            if (sentenca.contains("(s)")) {
+            if (sentenca.contains("(es)")) {
 //                Pattern p = Pattern.compile("\\(.*\\)");
 //                Matcher m = p.matcher(sentenca);
 //                if (m.find()) {
