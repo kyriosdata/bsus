@@ -13,7 +13,7 @@ import java.io.FileNotFoundException;
 import java.util.*;
 
 /**
- * Created by kyriosdata on 4/23/17.
+ * Processa entrada visando otimizar a consulta (busca).
  */
 public class Conversor {
     public static void main(String[] args) throws FileNotFoundException {
@@ -31,13 +31,16 @@ public class Conversor {
         cs.removeSinais(); // ç por c, á por a, ...
         cs.removeAspas();
 
+        // Estratégia de busca para duas ou mais letras
+        // (a) Busca no índice LETRAS
+        // (b) Procurar pelo texto
+
         // Dicionário contendo todas as palavras e onde aparecem
         Map<String, Set<Integer>> mapa = cs.montaDicionario();
         System.out.println("Tamanho dicionario: " + mapa.size());
 
-
         // Montagem de índice para reduzir espaço de busca.
-        // Por uma letra e por duas letras (experimento)
+        // Por duas letras
         Map<String, Integer> indice = new TreeMap<>();
         char[] letras = "abcdefghijklmnopqrstuvwxyz".toCharArray();
         for (char primeira : letras) {
