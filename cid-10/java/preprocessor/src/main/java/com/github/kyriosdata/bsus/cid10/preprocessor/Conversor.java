@@ -24,19 +24,17 @@ public class Conversor {
         cs.trocaVirgulaPorEspaco();
         cs.removeColchetes();
         cs.pluralSimples();
+        cs.trocaTravessaoPorEspaco(); // " - " por " "
+        //cs.eliminaParenteses();
 
+        int total = 0;
         for (String sentenca : cs.descricao) {
-            if (sentenca.contains("(es)")) {
-//                Pattern p = Pattern.compile("\\(.*\\)");
-//                Matcher m = p.matcher(sentenca);
-//                if (m.find()) {
-//                    System.out.print(m.group() + " | ");
-//                } else {
-//                    System.out.print("@off@ ");
-//                }
-
+            if (sentenca.contains(" - ")) {
                 System.out.println(sentenca);
+                total++;
             }
         }
+
+        System.out.println(total);
     }
 }
