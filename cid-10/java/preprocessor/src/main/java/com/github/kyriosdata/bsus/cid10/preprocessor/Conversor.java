@@ -10,10 +10,7 @@
 package com.github.kyriosdata.bsus.cid10.preprocessor;
 
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.*;
 
 /**
  * Created by kyriosdata on 4/23/17.
@@ -34,22 +31,18 @@ public class Conversor {
         cs.removeSinais(); // ç por c, á por a, ...
         cs.removeAspas();
 
-        Map<String, List<Integer>> mapa = cs.montaDicionario();
+        // Dicionário contendo todas as palavras e onde aparecem
+        Map<String, Set<Integer>> mapa = cs.montaDicionario();
         System.out.println("Tamanho dicionario: " + mapa.size());
 
-        for (String chave : mapa.keySet()) {
-            List<Integer> idx = mapa.get(chave);
-//            for (int i : idx) {
-//                System.out.print(chave + " => " + cs.descricao[i] + " | ");
-//            }
-            //System.out.println(chave + " " + idx);
-        }
 
-        Map<String, ArrayList<Integer>> indice = new TreeMap<>();
+        // Montagem de índice para reduzir espaço de busca.
+        // Por uma letra e por duas letras (experimento)
+        Map<String, Integer> indice = new TreeMap<>();
         char[] letras = "abcdefghijklmnopqrstuvwxyz".toCharArray();
         for (char primeira : letras) {
             for (char segunda : letras) {
-                indice.put("" + primeira + segunda, new ArrayList<Integer>());
+                indice.put("" + primeira + segunda, 0);
             }
         }
 
@@ -58,14 +51,14 @@ public class Conversor {
         for (String entrada : indice.keySet()) {
             for (String chave : mapa.keySet()) {
                 if (chave.contains(entrada)) {
-
-                    List<Integer> idx = mapa.get(chave);
-                    for (int i : idx) {
-                        System.out.print(chave + " => " + cs.descricao[i] + " | ");
-                    }
-                    System.out.println(chave + " " + idx);
+                    int valor = indice.get(entrada);
+                    indice.put(entrada, new Integer(valor + 1));
                 }
             }
+        }
+
+        for (String chave : indice.keySet()) {
+            System.out.println(chave + " " + indice.get(chave));
         }
     }
 }

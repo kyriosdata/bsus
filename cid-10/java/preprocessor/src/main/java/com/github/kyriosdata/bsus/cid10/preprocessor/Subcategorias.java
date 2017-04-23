@@ -146,8 +146,8 @@ public class Subcategorias {
         }
     }
 
-    public Map<String, List<Integer>> montaDicionario() {
-        Map<String, List<Integer>> mapa = new TreeMap<>();
+    public Map<String, Set<Integer>> montaDicionario() {
+        Map<String, Set<Integer>> mapa = new TreeMap<>();
 
         for (int i = 0; i < size; i++) {
 
@@ -158,9 +158,9 @@ public class Subcategorias {
                     continue;
                 }
 
-                List<Integer> indices = mapa.get(palavra);
+                Set<Integer> indices = mapa.get(palavra);
                 if (indices == null) {
-                    indices = new ArrayList<>();
+                    indices = new HashSet<>();
                     mapa.put(palavra, indices);
                 }
 
