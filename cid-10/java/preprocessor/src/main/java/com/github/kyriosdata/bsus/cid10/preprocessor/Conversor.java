@@ -28,10 +28,11 @@ public class Conversor {
         cs.trocaHifenPorEspaco();
         cs.eliminaParenteses();
         cs.removeSinais(); // ç por c, á por a, ...
+        cs.removeAspas();
 
         int total = 0;
         for (String sentenca : cs.descricao) {
-            if (sentenca.contains("á")) {
+            if (sentenca.contains("\"")) {
                 System.out.println(sentenca);
                 total++;
             }

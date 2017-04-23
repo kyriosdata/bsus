@@ -138,4 +138,12 @@ public class Subcategorias {
             }
         }
     }
+
+    public void removeAspas() {
+        for (int i = 0; i < size; i++) {
+            if (descricao[i].contains("\"")) {
+                descricao[i] = descricao[i].replace("\"", " ");
+            }
+        }
+    }
 }
