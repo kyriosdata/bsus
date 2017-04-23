@@ -16,8 +16,6 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.HashSet;
 import java.util.Set;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 /**
  * Reúne subcategorias da CID-10.
@@ -99,12 +97,12 @@ public class Subcategorias {
         for (int i = 0; i < size; i++) {
             String sentenca = descricao[i];
 
-            Pattern p = Pattern.compile("\\S\\(.*\\)");
-            Matcher m = p.matcher(sentenca);
-            if (m.find()) {
-                System.out.print(m.group() + " | ");
-                System.out.println(sentenca);
-                total++;
+            if (sentenca.contains("(")) {
+                descricao[i] = descricao[i].replace("(", " ");
+            }
+
+            if (sentenca.contains(")")) {
+                descricao[i] = descricao[i].replace(")", " ");
             }
         }
 
