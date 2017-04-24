@@ -32,7 +32,8 @@ public class Conversor {
         cs.removeAspas();
 
         // Estratégia de busca para duas ou mais letras
-        // (a) Busca no índice LETRAS
+        // (a) Busca no índice LETRAS pelas duas primeiras letras
+        //     a.1 Chave = letra1 * letra2
         // (b) Procurar pelo texto
 
         // Dicionário contendo todas as palavras e onde aparecem
