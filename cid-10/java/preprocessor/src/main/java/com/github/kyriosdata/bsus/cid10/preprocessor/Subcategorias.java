@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2016
+ * Copyright (c) 2017
  *
  * Fábio Nogueira de Lucena
  * Fábrica de Software - Instituto de Informática (UFG)

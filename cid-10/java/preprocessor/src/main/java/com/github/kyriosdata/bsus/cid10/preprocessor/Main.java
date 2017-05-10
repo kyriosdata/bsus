@@ -19,8 +19,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Aplicativo que visa produzir versão mais compacta da CID-10 e
- * pronta para agilizar a consulta.
+ * Aplicativo que visa produzir versão da CID-10 mais compacta e
+ * e "mais rápida" para consulta.
  */
 public class Main {
 
@@ -30,11 +30,11 @@ public class Main {
         String fileName = "cid-10-subcategorias-lower.json";
 
         Main objeto = new Main();
-        Subcategorias cs = Subcategorias.newInstance(fileName);
-        cs.prepare();
-        System.out.println(cs.toString());
+        Subcategorias sc = Subcategorias.newInstance(fileName);
+        sc.prepare();
+        System.out.println(sc.toString());
 
-        objeto.dicionario = objeto.montaDicionario(cs.descricao);
+        objeto.dicionario = objeto.montaDicionario(sc.descricao);
 
         List<String> chaves = new ArrayList<>();
         chaves.addAll(objeto.dicionario.keySet());
@@ -73,11 +73,11 @@ public class Main {
 
         System.out.println("Tempo: " + (System.currentTimeMillis() - inicio));
 
-        cs.prepare();
+        sc.prepare();
         inicio = System.currentTimeMillis();
         total = 0;
         for (int i = 0; i < 1_000; i++) {
-            Set<Integer> resposta = cs.busca("ido");
+            Set<Integer> resposta = sc.busca("ido");
             total += resposta.size();
         }
 
@@ -106,18 +106,43 @@ public class Main {
         }
     }
 
+    /**
+     * Monta para o conjunto de sentenças fornecido, um dicionário cuja chave
+     * é uma palavra e o valor é a lista dos índices das sentenças nas quais
+     * a palavra está presente.
+     *
+     * <p>O dicionário retornado contém, seguramente, como chaves, as palavras
+     * contidas em todas as sentenças de tal forma que buscar por uma palavra
+     * ou por parte de uma palavra na sentença, é o mesmo que buscar por uma
+     * palavra ou por parte nas chaves do dicionário retornado.
+     *
+     * @param sentencas Sentenças nas quais palavras ou partes de palavras
+     *                  serão buscadas.
+     * @return Dicionário contendo as palavras existentes nas sentenças,
+     * após processamento. Para cada palavra (chave), os valores armazenados
+     * são os índices das sentenças nas quais a palavra ocorre.
+     */
     public Map<String, List<Integer>> montaDicionario(String[] sentencas) {
         Map<String, List<Integer>> mapa = new TreeMap<>();
 
         for (int i = 0; i < sentencas.length; i++) {
             String sentenca = sentencas[i];
-            Pattern p = Pattern.compile("\\(.*\\)");
+
+            // Apenas para teste temporário
+            final String entreParenteses = "\\(.*\\)";
+            Pattern p = Pattern.compile(entreParenteses);
             Matcher m = p.matcher(sentenca);
             if (m.find()) {
-                System.out.println(sentenca);
+                //System.out.println(sentenca);
             }
 
-            String[] palavras = sentenca.split("(\\s+|,|\\[|\\])");
+            // A quebra da sentença nos separadores abaixo pode separar
+            // palavras entre aspas, entre parênteses, ...
+            // Por exemplo, a sentença "muito importante" é dividida em
+            // '"muito' (com aspas no início) e 'importante"' (seguida de aspas).
+            // ' ', ',', '[', ']'
+            final String separadorDePalavra = "(\\s+|,|\\[|\\])";
+            String[] palavras = sentenca.split(separadorDePalavra);
             for (String palavra : palavras) {
                 palavra = trataPalavra(palavra);
                 if (palavra == null) {
@@ -153,18 +178,21 @@ public class Main {
 
     /**
      * Operações realizadas:
-     * (a) toLower (realizado via linha de comandos)
+     * (a) toLower (realizado via linha de comandos); aspas, colchetes e parênteses
+     * eliminados das palavras "stress", "bypass" e "screening".
+     * dágua substituído por água; 10a. substituído por 10
+     * febre de o'nyong-nyong => febre de nyong"
+     * removidos: m. e. h. b. c. st.
+     * (super)infecção => superinfecção
+     * (cardio-)pulmonar => cardiopulmonar
      * cat arquivo.json | tr "[A-Z]" "[a-z]"
      * (b) remover 'de', 'da', 'a', 'e', 'as', 'dos', '[', ']', '-', ',' e outros.
-     * (c) eliminar acentos
+     * (c) palavra + "(s)" substituída por: palavra + "s"
+     * (d) eliminar acentos
      */
     public String trataPalavra(String palavra) {
 
         if (paraRemover.contains(palavra)) {
-            return null;
-        }
-
-        if (palavra.isEmpty()) {
             return null;
         }
 
@@ -173,19 +201,50 @@ public class Main {
             palavra = palavra.replace("(s)", "s");
         } else if (palavra.endsWith("(es)")) {
             palavra = palavra.replace("(es)", "es");
-        } else if (palavra.equals("(\"bypass\")")) {
+        }
+
+        if (palavra.equals("\"bypass\"")) {
             palavra = "bypass";
-        } else if (palavra.equals("(\"stress\")")) {
+        } else if (palavra.equals("\"stress\"")) {
             palavra = "stress";
-        } else if (palavra.startsWith("(") && palavra.endsWith(")")) {
+        }
+
+        if (palavra.startsWith("(")) {
             palavra = palavra.replace("(", "");
+        }
+
+        if (palavra.endsWith(")")) {
             palavra = palavra.replace(")", "");
         }
 
-        return trocaAcentos(palavra);
+        palavra = trocaAcentos(palavra);
+        ascii(palavra);
 
+        if (palavra.isEmpty()) {
+            return null;
+        }
+
+        return palavra;
     }
 
+    public static boolean ascii(String texto) {
+        for (char c : texto.toCharArray()) {
+            if (c < 97 || c > 122) {
+                System.out.println(texto);
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    /**
+     * Elimina os acentos produzindo versão ASCII do texto fornecido.
+     *
+     * @param texto Texto original, possivelmente com acentos.
+     *
+     * @return Texto correspondente à entrada, mas com acentos eliminados.
+     */
     public static String trocaAcentos(String texto) {
         String comAcentos = "äáâàãéêëèíîïìöóôòõüúûùç";
         String semAcentos = "aaaaaeeeeiiiiooooouuuuc";
