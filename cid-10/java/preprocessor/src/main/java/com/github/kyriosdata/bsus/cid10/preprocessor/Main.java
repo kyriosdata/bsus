@@ -183,6 +183,18 @@ public class Main {
      * dágua substituído por água; 10a. substituído por 10
      * 37a. => 37
      * (osteo)artrose => osteoartrose
+     * não-venenosos => nãovenenosos
+     * auto-intoxicação => autointoxicação
+     * não-ionizante => nãoionizante
+     * não-opiáceos => nãoopiáceos
+     * anti-reumáticos => antireumáticos
+     * não-controlado => nãocontrolado
+     * não-de-trânsito => nãodetrânsito
+     * não-motorizado => nãomotorizado
+     * recém-nascido => recémnascido
+     * não-traumática => nãotraumática
+     * pre-existente => preexistente
+     * (teno)sinovites => tenosinovites
      * febre de o'nyong-nyong => febre de nyong"
      * removidos: m. e. h. b. c. st.
      * (super)infecção => superinfecção
@@ -192,6 +204,9 @@ public class Main {
      * (b) remover 'de', 'da', 'a', 'e', 'as', 'dos', '[', ']', '-', ',' e outros.
      * (c) palavra + "(s)" substituída por: palavra + "s"
      * (d) eliminar acentos
+     * hífen removido
+     * / removido
+     * + removido
      */
     public String trataPalavra(String palavra) {
 
@@ -222,6 +237,18 @@ public class Main {
             palavra = palavra.replace(")", "");
         }
 
+        if (palavra.contains("-")) {
+            palavra = palavra.replace("-", "");
+        }
+
+        if (palavra.contains("/")) {
+            palavra = palavra.replace("/", "");
+        }
+
+        if (palavra.contains("+")) {
+            palavra = palavra.replace("+", "");
+        }
+
         palavra = trocaAcentos(palavra);
         ascii(palavra);
 
@@ -234,7 +261,17 @@ public class Main {
 
     public static boolean ascii(String texto) {
         for (char c : texto.toCharArray()) {
-            if (c < 97 || c > 122) {
+            if (c > 122) {
+                System.out.println(texto);
+                return false;
+            }
+
+            if (c < 97 && c > 57) {
+                System.out.println(texto);
+                return false;
+            }
+
+            if (c < 48 && c != 37) {
                 System.out.println(texto);
                 return false;
             }
