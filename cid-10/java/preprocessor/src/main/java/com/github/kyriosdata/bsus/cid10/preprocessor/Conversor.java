@@ -64,5 +64,23 @@ public class Conversor {
         for (String chave : indice.keySet()) {
             System.out.println(chave + " " + indice.get(chave));
         }
+
+        System.out.println(hash('z', 'z'));
+    }
+
+    /**
+     * Valor único definido para quaisquer duas letras (a..z).
+     *
+     * @param primeira Primeira letra.
+     * @param segunda A segunda letra.
+     *
+     * @return Valor único para quaisquer duas letras de 'a' até 'z', de
+     * zero até 657, inclusive.
+     */
+    public static int hash(char primeira, char segunda) {
+        int vPrimeira = primeira - 97;
+        int vSegunda = segunda - 97;
+
+        return vPrimeira * 26 + vSegunda;
     }
 }
