@@ -181,10 +181,13 @@ public class Main {
      * (a) toLower (realizado via linha de comandos); aspas, colchetes e parênteses
      * eliminados das palavras "stress", "bypass" e "screening".
      * dágua substituído por água; 10a. substituído por 10
+     * 37a. => 37
+     * (osteo)artrose => osteoartrose
      * febre de o'nyong-nyong => febre de nyong"
      * removidos: m. e. h. b. c. st.
      * (super)infecção => superinfecção
      * (cardio-)pulmonar => cardiopulmonar
+     * tr|aumatismo => traumatismo
      * cat arquivo.json | tr "[A-Z]" "[a-z]"
      * (b) remover 'de', 'da', 'a', 'e', 'as', 'dos', '[', ']', '-', ',' e outros.
      * (c) palavra + "(s)" substituída por: palavra + "s"
@@ -203,10 +206,12 @@ public class Main {
             palavra = palavra.replace("(es)", "es");
         }
 
-        if (palavra.equals("\"bypass\"")) {
-            palavra = "bypass";
-        } else if (palavra.equals("\"stress\"")) {
-            palavra = "stress";
+        if (palavra.startsWith("\"")) {
+            palavra = palavra.substring(1);
+        }
+
+        if (palavra.endsWith("\"")) {
+            palavra = palavra.substring(0, palavra.length() - 1);
         }
 
         if (palavra.startsWith("(")) {
