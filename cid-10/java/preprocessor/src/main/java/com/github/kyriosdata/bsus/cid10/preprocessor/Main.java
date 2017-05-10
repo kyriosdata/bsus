@@ -36,6 +36,10 @@ public class Main {
 
         objeto.dicionario = objeto.montaDicionario(sc.descricao);
 
+        for (String key : objeto.dicionario.keySet()) {
+            System.out.println(key);
+        }
+
         List<String> chaves = new ArrayList<>();
         chaves.addAll(objeto.dicionario.keySet());
         String[] tipo = {};
