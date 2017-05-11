@@ -10,9 +10,7 @@
 package com.github.kyriosdata.bsus.cid10.preprocessor;
 
 import org.junit.Test;
-import org.junit.rules.Stopwatch;
 
-import java.nio.ByteBuffer;
 import java.util.*;
 
 import static junit.framework.TestCase.assertEquals;
@@ -24,66 +22,92 @@ public class SequenciaTest {
 
     @Test
     public void iguais() {
-        Sequencia s = new Sequencia(new byte[] { 1, 1 });
-        assertTrue(s.contem(0, new byte[]{ 1 }));
+        Sequencia s = new Sequencia(new byte[]{1, 1});
+        assertTrue(s.contem(0, new byte[]{1}));
     }
 
     @Test
     public void diferentes() {
-        Sequencia s = new Sequencia(new byte[] { 1, 1 });
-        assertFalse(s.contem(0, new byte[]{ 2 }));
+        Sequencia s = new Sequencia(new byte[]{1, 1});
+        assertFalse(s.contem(0, new byte[]{2}));
     }
 
     @Test
     public void procuradoMaiorQueSequencia() {
-        Sequencia s = new Sequencia(new byte[] { 1, 1 });
-        assertFalse(s.contem(0, new byte[]{ 1, 2 }));
+        Sequencia s = new Sequencia(new byte[]{1, 1});
+        assertFalse(s.contem(0, new byte[]{1, 2}));
     }
 
     @Test
     public void sequenciaMaiorQueProcurado() {
-        byte[] bytes = {4, 1, 2, 3, 4 };
+        byte[] bytes = {4, 1, 2, 3, 4};
         Sequencia s = new Sequencia(bytes);
-        assertTrue(s.contem(0, new byte[]{ 1 }));
-        assertTrue(s.contem(0, new byte[]{ 2 }));
-        assertTrue(s.contem(0, new byte[]{ 3 }));
-        assertTrue(s.contem(0, new byte[]{ 4 }));
-        assertTrue(s.contem(0, new byte[]{ 1, 2 }));
-        assertTrue(s.contem(0, new byte[]{ 2, 3 }));
-        assertTrue(s.contem(0, new byte[]{ 3, 4 }));
-        assertTrue(s.contem(0, new byte[]{ 1, 2, 3 }));
-        assertTrue(s.contem(0, new byte[]{ 2, 3, 4 }));
-        assertTrue(s.contem(0, new byte[]{ 1, 2, 3, 4 }));
+        assertTrue(s.contem(0, new byte[]{1}));
+        assertTrue(s.contem(0, new byte[]{2}));
+        assertTrue(s.contem(0, new byte[]{3}));
+        assertTrue(s.contem(0, new byte[]{4}));
+        assertTrue(s.contem(0, new byte[]{1, 2}));
+        assertTrue(s.contem(0, new byte[]{2, 3}));
+        assertTrue(s.contem(0, new byte[]{3, 4}));
+        assertTrue(s.contem(0, new byte[]{1, 2, 3}));
+        assertTrue(s.contem(0, new byte[]{2, 3, 4}));
+        assertTrue(s.contem(0, new byte[]{1, 2, 3, 4}));
 
-        assertFalse(s.contem(0, new byte[]{ 5 }));
-        assertFalse(s.contem(0, new byte[]{ 2, 1 }));
-        assertFalse(s.contem(0, new byte[]{ 4, 5 }));
-        assertFalse(s.contem(0, new byte[]{ 1, 2, 3, 4, 5 }));
+        assertFalse(s.contem(0, new byte[]{5}));
+        assertFalse(s.contem(0, new byte[]{2, 1}));
+        assertFalse(s.contem(0, new byte[]{4, 5}));
+        assertFalse(s.contem(0, new byte[]{1, 2, 3, 4, 5}));
     }
 
     @Test
     public void desempenhoComparadoContaisSimples() throws Exception {
         Map<String, Set<String>> dados = Conversor.montaIndice();
+        // System.out.println("Tamanho : " + dados.get("ic").size());
+
+        List<String> palavras = new ArrayList<>();
+        for (String palavra : dados.get("ic")) {
+            palavras.add(palavra);
+        }
+
+        Sequencia sequencia = new Sequencia(palavras);
+        System.out.println("Size bytes: " + sequencia.bytes.length);
+        System.out.println("Last word: " + palavras.get(palavras.size() - 1));
 
         long start = System.nanoTime();
-        for (int i = 0; i < 1_000_000; i++) {
-            if ("casa".contains("as") != true) {
-                throw new RuntimeException();
+        int totalContains = 0;
+        List<String> encontradas = new ArrayList<>();
+        for (int i = 0; i < 1; i++) {
+            totalContains = 0;
+            for (String palavra : palavras) {
+                if (palavra.contains("as")) {
+                    totalContains++;
+                    encontradas.add(palavra);
+                }
             }
         }
 
-        System.out.println(System.nanoTime() - start);
+        System.out.println("Contains: " + (System.nanoTime() - start) + " Encontrados: " + totalContains);
 
         start = System.nanoTime();
-        Sequencia s = new Sequencia(new byte[] { 4, 99, 97, 115, 97});
-        byte[] sub = { 97, 115 };
-        for (int i = 0; i < 1_000_000; i++) {
-            if (s.contem(0, sub) != true) {
-                throw new RuntimeException();
+        byte[] sub = {97, 115};
+        int totalSequencia = 0;
+        List<String> seqEncontradas = new ArrayList<>();
+        for (int i = 0; i < 1; i++) {
+            totalSequencia = 0;
+            int indice = 0;
+
+            while (indice != -1) {
+                if (sequencia.contem(indice, sub)) {
+                    totalSequencia++;
+                    //seqEncontradas.add(sequencia.getPalavra(indice));
+                }
+
+                indice = sequencia.proxima(indice);
             }
         }
 
-        System.out.println(System.nanoTime() - start);
+        System.out.println("Sequencia: " + (System.nanoTime() - start) + " Encontrados: " + totalSequencia);
+
     }
 
     @Test
@@ -92,33 +116,36 @@ public class SequenciaTest {
         palavra.add("casa");
         palavra.add("aaaa");
 
-        byte[] sequencia = montaSequencia(palavra);
+        byte[] sequencia = Sequencia.montaSequencia(palavra);
         final byte[] casa = {4, 99, 97, 115, 97, 1, 2, 3, 4, 4, 97, 97, 97, 97, 1, 2, 3, 4};
         assertArrayEquals(casa, sequencia);
     }
 
-    public byte[] montaSequencia(List<String> palavras) {
-        ByteBuffer bf = ByteBuffer.allocate(10_000);
+    @Test
+    public void montaCorretamentePalavras() {
+        List<String> palavras = Arrays.asList("casa", "sapo", "vitoria");
+        Sequencia s = new Sequencia(palavras);
 
-        for (String palavra : palavras) {
-            char[] caracteres = palavra.toCharArray();
+        assertEquals("casa", s.getPalavra(0));
+        assertEquals("sapo", s.getPalavra(9));
+        assertEquals("vitoria", s.getPalavra(18));
+    }
 
-            // Tamanho
-            bf.put((byte)caracteres.length);
+    @Test
+    public void montagemVariasPalavras() throws Exception {
+        Map<String, Set<String>> dados = Conversor.montaIndice();
 
-            // String (ASCII)
-            for (char caractere : caracteres) {
-                bf.put((byte) caractere);
-            }
-
-            // Valor para uso futuro
-            bf.put(new byte[] { 1, 2, 3, 4});
+        List<String> palavras = new ArrayList<>();
+        for (String palavra : dados.get("ic")) {
+            palavras.add(palavra);
         }
 
-        bf.flip();
-        byte[] payload = new byte[bf.limit()];
-        ByteBuffer wrap = ByteBuffer.wrap(payload);
-        wrap.put(bf);
-        return wrap.array();
+        //palavras.forEach(w->System.out.println(w));
+        Sequencia sequencia = new Sequencia(palavras);
+        int indice = 0;
+        for (int i = 0; i < palavras.size(); i++) {
+            assertEquals(palavras.get(i), sequencia.getPalavra(indice));
+            indice = sequencia.proxima(indice);
+        }
     }
 }

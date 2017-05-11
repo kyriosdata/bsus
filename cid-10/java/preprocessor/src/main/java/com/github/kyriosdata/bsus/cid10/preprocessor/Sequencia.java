@@ -9,6 +9,9 @@
 
 package com.github.kyriosdata.bsus.cid10.preprocessor;
 
+import java.nio.ByteBuffer;
+import java.util.List;
+
 /**
  * Representa um conjunto de sequências de bytes, cada uma
  * delas obtida de uma palavra (String) formada apenas por
@@ -36,10 +39,62 @@ public class Sequencia {
      * seguinte que, conforme mencionado, indica o tamanho
      * dessa palavra e assim por diante.
      */
-    private byte[] bytes;
+    public byte[] bytes;
 
     public Sequencia(byte[] sequencia) {
         bytes = sequencia;
+    }
+
+    public Sequencia(List<String> palavras) {
+        this(montaSequencia(palavras));
+    }
+
+    public static byte[] montaSequencia(List<String> palavras) {
+        ByteBuffer bf = ByteBuffer.allocate(100_000);
+
+        for (String palavra : palavras) {
+            char[] caracteres = palavra.toCharArray();
+
+            // Tamanho
+            bf.put((byte)caracteres.length);
+
+            // String (ASCII)
+            for (char caractere : caracteres) {
+                bf.put((byte) caractere);
+            }
+
+            // Valor para uso futuro
+            bf.put(new byte[] { 1, 2, 3, 4});
+        }
+
+        bf.flip();
+        byte[] payload = new byte[bf.limit()];
+        ByteBuffer wrap = ByteBuffer.wrap(payload);
+        wrap.put(bf);
+
+        return wrap.array();
+    }
+
+    public String getPalavra(int indice) {
+        int size = bytes[indice];
+
+        char[] palavra = new char[size];
+        for (int i = 0; i < size; i++) {
+            palavra[i] = (char)bytes[++indice];
+        }
+
+        return new String(palavra);
+    }
+
+    /**
+     * Retorna índice da palavra que sucede aquela de índice fornecido.
+     * @param indice Índice de uma palavra.
+     *
+     * @return Índice da palavra que sucede aquela cujo índice é fornecido.
+     */
+    public int proxima(int indice) {
+        int candidato = indice + bytes[indice] + 5;
+        return (candidato < bytes.length) ? candidato : -1;
     }
 
     /**
