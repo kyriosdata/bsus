@@ -41,7 +41,7 @@ public class Conversor {
         Subcategorias cs = Subcategorias.newInstance(fileName);
         System.out.println(cs.toString());
 
-        // Dicionário onde a chave indice os índices das
+        // Dicionário onde a chave search os índices das
         // sentenças que contém a chave (palavra).
         Map<String, Set<Integer>> dicionario = cs.montaDicionario();
         System.out.println("Tamanho dicionario: " + dicionario.size());
@@ -58,7 +58,7 @@ public class Conversor {
             }
         }
 
-        System.out.println("Tamanho indice: " + indice.size());
+        System.out.println("Tamanho search: " + indice.size());
 
         for (String entrada : indice.keySet()) {
             for (String palavra : dicionario.keySet()) {

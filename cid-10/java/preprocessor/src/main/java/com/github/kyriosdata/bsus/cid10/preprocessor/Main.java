@@ -64,8 +64,8 @@ public class Main {
 //        Set<Integer> answer = objeto.busca(valores, objeto.dicionario, "ido");
 
 //        System.out.println("Search: ido");
-//        for(int indice : answer) {
-//            System.out.println(indice + " " + cs.descricao[indice]);
+//        for(int search : answer) {
+//            System.out.println(search + " " + cs.descricao[search]);
 //        }
 
         long inicio = System.currentTimeMillis();

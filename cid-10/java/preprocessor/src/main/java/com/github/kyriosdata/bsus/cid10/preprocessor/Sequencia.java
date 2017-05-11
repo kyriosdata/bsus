@@ -75,6 +75,15 @@ public class Sequencia {
         return wrap.array();
     }
 
+    public static byte[] toByteArray(char[] ascii) {
+        byte[] asciiBytes = new byte[ascii.length];
+        for (int i = 0; i < ascii.length; i++) {
+            asciiBytes[i] = (byte) ascii[i];
+        }
+
+        return asciiBytes;
+    }
+
     public String getPalavra(int indice) {
         int size = bytes[indice];
 
@@ -125,6 +134,8 @@ public class Sequencia {
                 if (++pos == tamanhoSubSequencia) {
                     return true;
                 }
+            } else {
+                pos = 0;
             }
         }
 

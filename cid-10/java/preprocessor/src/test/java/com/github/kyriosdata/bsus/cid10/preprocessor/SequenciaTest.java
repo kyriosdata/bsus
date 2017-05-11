@@ -62,7 +62,6 @@ public class SequenciaTest {
     @Test
     public void desempenhoComparadoContaisSimples() throws Exception {
         Map<String, Set<String>> dados = Conversor.montaIndice();
-        // System.out.println("Tamanho : " + dados.get("ic").size());
 
         List<String> palavras = new ArrayList<>();
         for (String palavra : dados.get("ic")) {
@@ -70,36 +69,31 @@ public class SequenciaTest {
         }
 
         Sequencia sequencia = new Sequencia(palavras);
-        System.out.println("Size bytes: " + sequencia.bytes.length);
-        System.out.println("Last word: " + palavras.get(palavras.size() - 1));
+        byte[] sub = {97, 115};
 
         long start = System.nanoTime();
         int totalContains = 0;
-        List<String> encontradas = new ArrayList<>();
-        for (int i = 0; i < 1; i++) {
+        for (int i = 0; i < 10_000; i++) {
             totalContains = 0;
             for (String palavra : palavras) {
                 if (palavra.contains("as")) {
                     totalContains++;
-                    encontradas.add(palavra);
                 }
             }
         }
 
-        System.out.println("Contains: " + (System.nanoTime() - start) + " Encontrados: " + totalContains);
+        System.out.println("Contains : " + (System.nanoTime() - start) + " Encontrados: " + totalContains);
+        //encontradas.forEach(w -> System.out.println(w));
 
         start = System.nanoTime();
-        byte[] sub = {97, 115};
         int totalSequencia = 0;
-        List<String> seqEncontradas = new ArrayList<>();
-        for (int i = 0; i < 1; i++) {
+        for (int i = 0; i < 10_000; i++) {
             totalSequencia = 0;
             int indice = 0;
 
             while (indice != -1) {
                 if (sequencia.contem(indice, sub)) {
                     totalSequencia++;
-                    //seqEncontradas.add(sequencia.getPalavra(indice));
                 }
 
                 indice = sequencia.proxima(indice);
@@ -107,7 +101,6 @@ public class SequenciaTest {
         }
 
         System.out.println("Sequencia: " + (System.nanoTime() - start) + " Encontrados: " + totalSequencia);
-
     }
 
     @Test
@@ -140,7 +133,6 @@ public class SequenciaTest {
             palavras.add(palavra);
         }
 
-        //palavras.forEach(w->System.out.println(w));
         Sequencia sequencia = new Sequencia(palavras);
         int indice = 0;
         for (int i = 0; i < palavras.size(); i++) {
