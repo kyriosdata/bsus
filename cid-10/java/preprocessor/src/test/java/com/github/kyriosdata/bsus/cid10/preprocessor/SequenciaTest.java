@@ -77,19 +77,17 @@ public class SequenciaTest {
 
     @Test
     public void desempenhoStringContains() throws Exception {
-        long start = System.nanoTime();
-        int totalContains = 0;
-
-        for (int i = 0; i < ITERACOES; i++) {
-            totalContains = 0;
+        int total = 0;
+        boolean verdade = true;
+        while (verdade) {
             for (String palavra : palavras) {
                 if (palavra.contains("asa")) {
-                    totalContains++;
+                    total++;
                 }
             }
         }
 
-        System.out.println("Contains : " + (System.nanoTime() - start) + " Encontrados: " + totalContains);
+        System.out.println(total);
     }
 
     @Test
@@ -100,11 +98,7 @@ public class SequenciaTest {
         KMP kmp = new KMP(sequencia.bytes);
         kmp.definePadrao(sub);
 
-        long start = System.nanoTime();
-        int totalSequencia = 0;
-
-        for (int i = 0; i < ITERACOES; i++) {
-            totalSequencia = 0;
+        while (true) {
             int indice = 0;
 
             while (true) {
@@ -113,12 +107,9 @@ public class SequenciaTest {
                     break;
                 }
 
-                totalSequencia++;
                 indice = indice + sequencia.bytes[indice] + 1;
             }
         }
-
-        System.out.println("KMP      : " + (System.nanoTime() - start) + " Encontrados: " + totalSequencia);
     }
 
     @Test
@@ -126,10 +117,10 @@ public class SequenciaTest {
         Sequencia sequencia = new Sequencia(palavras);
         byte[] sub = {97, 115, 97};
 
-        long start = System.nanoTime();
         int totalSequencia = 0;
+        boolean verdade = true;
 
-        for (int i = 0; i < ITERACOES; i++) {
+        while (verdade) {
             totalSequencia = 0;
             int indice = 0;
 
@@ -142,7 +133,7 @@ public class SequenciaTest {
             }
         }
 
-        System.out.println("Sequencia: " + (System.nanoTime() - start) + " Encontrados: " + totalSequencia);
+        System.out.println(totalSequencia);
     }
 
     @Test
