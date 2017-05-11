@@ -36,27 +36,29 @@ public class Conversor {
         //     a.1 Chave = letra1 * letra2
         // (b) Procurar pelo texto
 
-        // Dicionário contendo todas as palavras e onde aparecem
-        Map<String, Set<Integer>> mapa = cs.montaDicionario();
-        System.out.println("Tamanho dicionario: " + mapa.size());
+        // Dicionário onde a chave indice os índices das
+        // sentenças que contém a chave (palavra).
+        Map<String, Set<Integer>> dicionario = cs.montaDicionario();
+        System.out.println("Tamanho dicionario: " + dicionario.size());
 
         // Montagem de índice para reduzir espaço de busca.
-        // Por duas letras
-        Map<String, Integer> indice = new TreeMap<>();
+        // Para quaisquer duas letras 'x' e 'y', nessa ordem,
+        // seguem as palavras do dicionário que contém estas letras
+        // nessa ordem.
+        Map<String, Set<String>> indice = new TreeMap<>();
         char[] letras = "abcdefghijklmnopqrstuvwxyz".toCharArray();
         for (char primeira : letras) {
             for (char segunda : letras) {
-                indice.put("" + primeira + segunda, 0);
+                indice.put("" + primeira + segunda, new HashSet<String>());
             }
         }
 
         System.out.println("Tamanho indice: " + indice.size());
 
         for (String entrada : indice.keySet()) {
-            for (String chave : mapa.keySet()) {
-                if (chave.contains(entrada)) {
-                    int valor = indice.get(entrada);
-                    indice.put(entrada, new Integer(valor + 1));
+            for (String palavra : dicionario.keySet()) {
+                if (palavra.contains(entrada)) {
+                    indice.get(entrada).add(palavra);
                 }
             }
         }
