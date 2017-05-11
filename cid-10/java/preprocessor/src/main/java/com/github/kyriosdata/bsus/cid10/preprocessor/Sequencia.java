@@ -46,7 +46,7 @@ public class Sequencia {
      * Verifica se uma sequência contém outra. Por exemplo,
      * a sequência 'as' está presente na sequência 'casa'.
      *
-     * @param posicao Posição inicial (primeiro byte) da
+     * @param indice Posição inicial (primeiro byte) da
      *                palavra na sequência.
      *
      * @param sub Subsequência a ser procurada na sequência.
@@ -54,15 +54,25 @@ public class Sequencia {
      * @return {@code true} se e somente se a sequência contém a
      * subsequência.
      */
-    public boolean contem(int posicao, byte[] sub) {
-        int pos = posicao + 1;
+    public boolean contem(int indice, byte[] sub) {
+        final int primeiro = indice + 1;
+        final int ultimo = indice + bytes[indice];
+        final int tamanhoSubSequencia = sub.length;
 
-        for (byte b : sub) {
-            if (b != bytes[pos++]) {
-                return false;
+        // Indica posição do byte da subsequência a ser comparado.
+        int pos = 0;
+
+        // Possivelmente percorre todos os bytes da palavra
+        for (int i = primeiro; i <= ultimo; i++) {
+            if (bytes[i] == sub[pos]) {
+                // Se todos os bytes da subsequência foram
+                // comparados, então subsequência foi encontrada
+                if (++pos == tamanhoSubSequencia) {
+                    return true;
+                }
             }
         }
 
-        return true;
+        return false;
     }
 }

@@ -33,4 +33,25 @@ public class SequenciaTest {
         Sequencia s = new Sequencia(new byte[] { 1, 1 });
         assertFalse(s.contem(0, new byte[]{ 1, 2 }));
     }
+
+    @Test
+    public void sequenciaMaiorQueProcurado() {
+        byte[] bytes = {4, 1, 2, 3, 4 };
+        Sequencia s = new Sequencia(bytes);
+        assertTrue(s.contem(0, new byte[]{ 1 }));
+        assertTrue(s.contem(0, new byte[]{ 2 }));
+        assertTrue(s.contem(0, new byte[]{ 3 }));
+        assertTrue(s.contem(0, new byte[]{ 4 }));
+        assertTrue(s.contem(0, new byte[]{ 1, 2 }));
+        assertTrue(s.contem(0, new byte[]{ 2, 3 }));
+        assertTrue(s.contem(0, new byte[]{ 3, 4 }));
+        assertTrue(s.contem(0, new byte[]{ 1, 2, 3 }));
+        assertTrue(s.contem(0, new byte[]{ 2, 3, 4 }));
+        assertTrue(s.contem(0, new byte[]{ 1, 2, 3, 4 }));
+
+        assertFalse(s.contem(0, new byte[]{ 5 }));
+        assertFalse(s.contem(0, new byte[]{ 2, 1 }));
+        assertFalse(s.contem(0, new byte[]{ 4, 5 }));
+        assertFalse(s.contem(0, new byte[]{ 1, 2, 3, 4, 5 }));
+    }
 }
