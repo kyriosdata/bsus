@@ -64,16 +64,21 @@ public class SequenciaTest {
         Map<String, Set<String>> dados = Conversor.montaIndice();
 
         List<String> palavras = new ArrayList<>();
-        for (String palavra : dados.get("ic")) {
-            palavras.add(palavra);
+        for (String chave : dados.keySet()) {
+            for (String palavra : dados.get(chave)) {
+                palavras.add(palavra);
+            }
         }
 
         Sequencia sequencia = new Sequencia(palavras);
         byte[] sub = {97, 115};
 
+        System.out.println("Total de palavras: " + palavras.size());
+        System.out.println("Tamanho em bytes: " + sequencia.bytes.length);
+
         long start = System.nanoTime();
         int totalContains = 0;
-        for (int i = 0; i < 10_000; i++) {
+        for (int i = 0; i < 10; i++) {
             totalContains = 0;
             for (String palavra : palavras) {
                 if (palavra.contains("as")) {
@@ -87,7 +92,7 @@ public class SequenciaTest {
 
         start = System.nanoTime();
         int totalSequencia = 0;
-        for (int i = 0; i < 10_000; i++) {
+        for (int i = 0; i < 10; i++) {
             totalSequencia = 0;
             int indice = 0;
 

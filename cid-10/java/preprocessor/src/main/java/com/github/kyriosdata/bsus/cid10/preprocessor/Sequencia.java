@@ -50,7 +50,7 @@ public class Sequencia {
     }
 
     public static byte[] montaSequencia(List<String> palavras) {
-        ByteBuffer bf = ByteBuffer.allocate(100_000);
+        ByteBuffer bf = ByteBuffer.allocate(1_000_000);
 
         for (String palavra : palavras) {
             char[] caracteres = palavra.toCharArray();
