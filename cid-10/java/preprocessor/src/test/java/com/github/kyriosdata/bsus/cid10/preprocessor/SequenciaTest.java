@@ -10,6 +10,10 @@
 package com.github.kyriosdata.bsus.cid10.preprocessor;
 
 import org.junit.Test;
+import org.junit.rules.Stopwatch;
+
+import java.util.Arrays;
+import java.util.List;
 
 import static junit.framework.TestCase.assertFalse;
 import static junit.framework.TestCase.assertTrue;
@@ -53,5 +57,28 @@ public class SequenciaTest {
         assertFalse(s.contem(0, new byte[]{ 2, 1 }));
         assertFalse(s.contem(0, new byte[]{ 4, 5 }));
         assertFalse(s.contem(0, new byte[]{ 1, 2, 3, 4, 5 }));
+    }
+
+    @Test
+    public void desempenhoComparadoContaisSimples() {
+        long start = System.nanoTime();
+        for (int i = 0; i < 1_000_000; i++) {
+            if ("casa".contains("as") != true) {
+                throw new RuntimeException();
+            }
+        }
+
+        System.out.println(System.nanoTime() - start);
+
+        start = System.nanoTime();
+        Sequencia s = new Sequencia(new byte[] { 4, 99, 97, 115, 97});
+        byte[] sub = { 97, 115 };
+        for (int i = 0; i < 1_000_000; i++) {
+            if (s.contem(0, sub) != true) {
+                throw new RuntimeException();
+            }
+        }
+
+        System.out.println(System.nanoTime() - start);
     }
 }
