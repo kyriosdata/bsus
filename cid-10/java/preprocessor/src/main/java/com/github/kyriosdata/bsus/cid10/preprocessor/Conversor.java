@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2016
+ * Copyright (c) 2017
  *
  * Fábio Nogueira de Lucena
  * Fábrica de Software - Instituto de Informática (UFG)
@@ -17,6 +17,16 @@ import java.util.*;
  */
 public class Conversor {
     public static void main(String[] args) throws FileNotFoundException {
+        Map<String, Set<String>> indice = montaIndice();
+
+//        for (String chave : indice.keySet()) {
+//            System.out.println(chave + " " + indice.get(chave));
+//        }
+
+        System.out.println(hash('z', 'z'));
+    }
+
+    private static Map<String, Set<String>> montaIndice() throws FileNotFoundException {
         String fileName = "cid-10-subcategorias-lower.json";
 
         Subcategorias cs = Subcategorias.newInstance(fileName);
@@ -31,10 +41,6 @@ public class Conversor {
         cs.removeSinais(); // ç por c, á por a, ...
         cs.removeAspas();
 
-        // Estratégia de busca para duas ou mais letras
-        // (a) Busca no índice LETRAS pelas duas primeiras letras
-        //     a.1 Chave = letra1 * letra2
-        // (b) Procurar pelo texto
 
         // Dicionário onde a chave indice os índices das
         // sentenças que contém a chave (palavra).
@@ -62,12 +68,7 @@ public class Conversor {
                 }
             }
         }
-
-        for (String chave : indice.keySet()) {
-            System.out.println(chave + " " + indice.get(chave));
-        }
-
-        System.out.println(hash('z', 'z'));
+        return indice;
     }
 
     /**
@@ -80,9 +81,24 @@ public class Conversor {
      * zero até 657, inclusive.
      */
     public static int hash(char primeira, char segunda) {
-        int vPrimeira = primeira - 97;
-        int vSegunda = segunda - 97;
+        // V0
+        // int vPrimeira = primeira - 97;
+        // int vSegunda = segunda - 97;
+        // return vPrimeira * 26 + vSegunda;
 
-        return vPrimeira * 26 + vSegunda;
+        // V1
+        // return 26 * (primeira - 97) + segunda - 97
+
+        // V2
+        // return 26 * primeira - 97 * 26 + segunda - 97
+
+        // V3
+        // return 26 * primeira + segunda - 97 * (26 + 1)
+
+        // V4
+        // return 26 * primeira + segunda - 97 * 27
+
+        // V5
+        return 26 * primeira + segunda - 2619;
     }
 }
