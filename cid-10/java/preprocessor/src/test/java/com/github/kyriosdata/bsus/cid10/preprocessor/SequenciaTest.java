@@ -12,11 +12,13 @@ package com.github.kyriosdata.bsus.cid10.preprocessor;
 import org.junit.Test;
 import org.junit.rules.Stopwatch;
 
-import java.util.Arrays;
-import java.util.List;
+import java.nio.ByteBuffer;
+import java.util.*;
 
+import static junit.framework.TestCase.assertEquals;
 import static junit.framework.TestCase.assertFalse;
 import static junit.framework.TestCase.assertTrue;
+import static org.junit.Assert.assertArrayEquals;
 
 public class SequenciaTest {
 
@@ -60,7 +62,9 @@ public class SequenciaTest {
     }
 
     @Test
-    public void desempenhoComparadoContaisSimples() {
+    public void desempenhoComparadoContaisSimples() throws Exception {
+        Map<String, Set<String>> dados = Conversor.montaIndice();
+
         long start = System.nanoTime();
         for (int i = 0; i < 1_000_000; i++) {
             if ("casa".contains("as") != true) {
@@ -80,5 +84,41 @@ public class SequenciaTest {
         }
 
         System.out.println(System.nanoTime() - start);
+    }
+
+    @Test
+    public void montaSequenciaTest() {
+        List<String> palavra = new ArrayList<>();
+        palavra.add("casa");
+        palavra.add("aaaa");
+
+        byte[] sequencia = montaSequencia(palavra);
+        final byte[] casa = {4, 99, 97, 115, 97, 1, 2, 3, 4, 4, 97, 97, 97, 97, 1, 2, 3, 4};
+        assertArrayEquals(casa, sequencia);
+    }
+
+    public byte[] montaSequencia(List<String> palavras) {
+        ByteBuffer bf = ByteBuffer.allocate(10_000);
+
+        for (String palavra : palavras) {
+            char[] caracteres = palavra.toCharArray();
+
+            // Tamanho
+            bf.put((byte)caracteres.length);
+
+            // String (ASCII)
+            for (char caractere : caracteres) {
+                bf.put((byte) caractere);
+            }
+
+            // Valor para uso futuro
+            bf.put(new byte[] { 1, 2, 3, 4});
+        }
+
+        bf.flip();
+        byte[] payload = new byte[bf.limit()];
+        ByteBuffer wrap = ByteBuffer.wrap(payload);
+        wrap.put(bf);
+        return wrap.array();
     }
 }

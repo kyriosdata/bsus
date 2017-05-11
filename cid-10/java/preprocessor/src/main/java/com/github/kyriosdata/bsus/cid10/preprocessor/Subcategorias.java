@@ -33,6 +33,15 @@ public class Subcategorias {
         Subcategorias obj = gson.fromJson(fileReader, Subcategorias.class);
         obj.prepare();
 
+        obj.trocaVirgulaPorEspaco();
+        obj.removeColchetes();
+        obj.pluralSimples();
+        obj.trocaTravessaoPorEspaco(); // " - " por " "
+        obj.trocaHifenPorEspaco();
+        obj.eliminaParenteses();
+        obj.removeSinais(); // ç por c, á por a, ...
+        obj.removeAspas();
+
         return obj;
     }
 

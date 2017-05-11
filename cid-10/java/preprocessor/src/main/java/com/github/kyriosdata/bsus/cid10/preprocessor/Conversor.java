@@ -16,31 +16,30 @@ import java.util.*;
  * Processa entrada visando otimizar a consulta (busca).
  */
 public class Conversor {
+
     public static void main(String[] args) throws FileNotFoundException {
+
         Map<String, Set<String>> indice = montaIndice();
-
-//        for (String chave : indice.keySet()) {
-//            System.out.println(chave + " " + indice.get(chave));
-//        }
-
         System.out.println(hash('z', 'z'));
+
+        int size = 0;
+        String nomeChaveMaior = "";
+        for(String chave : indice.keySet()) {
+            final Set<String> conjunto = indice.get(chave);
+            if (size < conjunto.size()) {
+                size = conjunto.size();
+                nomeChaveMaior = chave;
+            }
+        }
+
+        System.out.println("Chave: " + nomeChaveMaior + " Size: " + size);
     }
 
-    private static Map<String, Set<String>> montaIndice() throws FileNotFoundException {
+    public static Map<String, Set<String>> montaIndice() throws FileNotFoundException {
         String fileName = "cid-10-subcategorias-lower.json";
 
         Subcategorias cs = Subcategorias.newInstance(fileName);
         System.out.println(cs.toString());
-
-        cs.trocaVirgulaPorEspaco();
-        cs.removeColchetes();
-        cs.pluralSimples();
-        cs.trocaTravessaoPorEspaco(); // " - " por " "
-        cs.trocaHifenPorEspaco();
-        cs.eliminaParenteses();
-        cs.removeSinais(); // ç por c, á por a, ...
-        cs.removeAspas();
-
 
         // Dicionário onde a chave indice os índices das
         // sentenças que contém a chave (palavra).
