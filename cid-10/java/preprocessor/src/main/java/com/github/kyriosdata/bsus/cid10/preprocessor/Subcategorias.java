@@ -113,8 +113,6 @@ public class Subcategorias {
                 descricao[i] = descricao[i].replace(")", " ");
             }
         }
-
-        System.out.println("Padroes encontrados: " + total);
     }
 
     public void trocaTravessaoPorEspaco() {

@@ -12,19 +12,16 @@ package com.github.kyriosdata.bsus.cid10.preprocessor;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
-import java.io.ObjectOutputStream;
 import java.io.UnsupportedEncodingException;
 import java.util.*;
 
-import static junit.framework.TestCase.assertEquals;
-import static junit.framework.TestCase.assertFalse;
-import static junit.framework.TestCase.assertTrue;
+import static junit.framework.TestCase.*;
 import static org.junit.Assert.assertArrayEquals;
 
 public class SequenciaTest {
 
+    final int ITERACOES = 100;
     private static List<String> palavras;
 
     @Test
@@ -80,8 +77,6 @@ public class SequenciaTest {
 
     @Test
     public void desempenhoStringContains() throws Exception {
-        final int ITERACOES = 1;
-
         long start = System.nanoTime();
         int totalContains = 0;
 
@@ -99,8 +94,6 @@ public class SequenciaTest {
 
     @Test
     public void desempenhoKmp() throws Exception {
-        final int ITERACOES = 10;
-
         Sequencia sequencia = new Sequencia(palavras);
         byte[] sub = {97, 115, 97};
 
@@ -125,13 +118,11 @@ public class SequenciaTest {
             }
         }
 
-        System.out.println("KMP: " + (System.nanoTime() - start) + " Encontrados: " + totalSequencia);
+        System.out.println("KMP      : " + (System.nanoTime() - start) + " Encontrados: " + totalSequencia);
     }
 
     @Test
     public void desempenhoSequencia() throws Exception {
-        final int ITERACOES = 10;
-
         Sequencia sequencia = new Sequencia(palavras);
         byte[] sub = {97, 115, 97};
 
