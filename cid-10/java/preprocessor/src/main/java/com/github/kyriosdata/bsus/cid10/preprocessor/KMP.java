@@ -59,7 +59,7 @@ public class KMP {
                 return indice;    // found
             }
 
-            indice = n + 4;
+            indice = n;
             if (indice >= end) {
                 return -1;
             }

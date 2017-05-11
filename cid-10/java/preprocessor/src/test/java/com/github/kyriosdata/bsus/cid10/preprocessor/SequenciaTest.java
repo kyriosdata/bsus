@@ -11,6 +11,9 @@ package com.github.kyriosdata.bsus.cid10.preprocessor;
 
 import org.junit.Test;
 
+import java.io.ByteArrayOutputStream;
+import java.io.ObjectOutputStream;
+import java.io.UnsupportedEncodingException;
 import java.util.*;
 
 import static junit.framework.TestCase.assertEquals;
@@ -61,6 +64,7 @@ public class SequenciaTest {
 
     @Test
     public void desempenhoComparadoContaisSimples() throws Exception {
+        final int ITERACOES = 1_000;
         Map<String, Set<String>> dados = Conversor.montaIndice();
 
         List<String> palavras = new ArrayList<>();
@@ -71,17 +75,23 @@ public class SequenciaTest {
         }
 
         Sequencia sequencia = new Sequencia(palavras);
-        byte[] sub = {97, 115};
+        byte[] sub = {97, 115, 97};
+
+        int totalBytes = 0;
+        for (String palavra : palavras) {
+            totalBytes += palavra.length();
+        }
 
         System.out.println("Total de palavras: " + palavras.size());
-        System.out.println("Tamanho em bytes: " + sequencia.bytes.length);
+        System.out.println("Tamanho em bytes (sequencia): " + sequencia.bytes.length);
+        System.out.println("Tamanho em bytes (list): " + totalBytes);
 
         long start = System.nanoTime();
         int totalContains = 0;
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < ITERACOES; i++) {
             totalContains = 0;
             for (String palavra : palavras) {
-                if (palavra.contains("as")) {
+                if (palavra.contains("asa")) {
                     totalContains++;
                 }
             }
@@ -90,18 +100,33 @@ public class SequenciaTest {
         System.out.println("Contains : " + (System.nanoTime() - start) + " Encontrados: " + totalContains);
         //encontradas.forEach(w -> System.out.println(w));
 
+        KMP kmp = new KMP(sequencia.bytes);
+        kmp.definePadrao(sub);
+
         start = System.nanoTime();
         int totalSequencia = 0;
-        for (int i = 0; i < 10; i++) {
+
+        for (int i = 0; i < ITERACOES; i++) {
             totalSequencia = 0;
             int indice = 0;
 
-            while (indice != -1) {
-                if (sequencia.contem(indice, sub)) {
-                    totalSequencia++;
+//            while (indice != -1) {
+//                if (sequencia.contem(indice, sub)) {
+//                    totalSequencia++;
+//                }
+//
+//                indice = sequencia.proxima(indice);
+//            }
+
+
+            while (true) {
+                indice = kmp.search(indice);
+                if (indice == -1) {
+                    break;
                 }
 
-                indice = sequencia.proxima(indice);
+                totalSequencia++;
+                indice = indice + sequencia.bytes[indice] + 1;
             }
         }
 
@@ -115,7 +140,7 @@ public class SequenciaTest {
         palavra.add("aaaa");
 
         byte[] sequencia = Sequencia.montaSequencia(palavra);
-        final byte[] casa = {4, 99, 97, 115, 97, 1, 2, 3, 4, 4, 97, 97, 97, 97, 1, 2, 3, 4};
+        final byte[] casa = {4, 99, 97, 115, 97, 4, 97, 97, 97, 97};
         assertArrayEquals(casa, sequencia);
     }
 
@@ -125,8 +150,8 @@ public class SequenciaTest {
         Sequencia s = new Sequencia(palavras);
 
         assertEquals("casa", s.getPalavra(0));
-        assertEquals("sapo", s.getPalavra(9));
-        assertEquals("vitoria", s.getPalavra(18));
+        assertEquals("sapo", s.getPalavra(5));
+        assertEquals("vitoria", s.getPalavra(10));
     }
 
     @Test
@@ -134,8 +159,10 @@ public class SequenciaTest {
         Map<String, Set<String>> dados = Conversor.montaIndice();
 
         List<String> palavras = new ArrayList<>();
-        for (String palavra : dados.get("ic")) {
-            palavras.add(palavra);
+        for (String chave : dados.keySet()) {
+            for (String palavra : dados.get(chave)) {
+                palavras.add(palavra);
+            }
         }
 
         Sequencia sequencia = new Sequencia(palavras);
@@ -144,5 +171,18 @@ public class SequenciaTest {
             assertEquals(palavras.get(i), sequencia.getPalavra(indice));
             indice = sequencia.proxima(indice);
         }
+
+        int i = 0;
+        indice = 0;
+        while (indice != -1) {
+            assertEquals(palavras.get(i++), sequencia.getPalavra(indice));
+            indice = sequencia.proxima(indice);
+        }
+    }
+
+    @Test
+    public void tamanhoDeDados() throws UnsupportedEncodingException {
+        final byte[] bytes = new String("açaí").getBytes("UTF-8");
+        assertEquals(6, bytes.length);
     }
 }

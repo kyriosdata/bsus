@@ -52,8 +52,15 @@ public class Sequencia {
     public static byte[] montaSequencia(List<String> palavras) {
         ByteBuffer bf = ByteBuffer.allocate(1_000_000);
 
+        int totalPalavras = 0;
+        int totalBytes = 0;
+
         for (String palavra : palavras) {
+
             char[] caracteres = palavra.toCharArray();
+
+            totalPalavras++;
+            totalBytes += caracteres.length + 1;
 
             // Tamanho
             bf.put((byte)caracteres.length);
@@ -62,9 +69,6 @@ public class Sequencia {
             for (char caractere : caracteres) {
                 bf.put((byte) caractere);
             }
-
-            // Valor para uso futuro
-            bf.put(new byte[] { 1, 2, 3, 4});
         }
 
         bf.flip();
@@ -72,6 +76,8 @@ public class Sequencia {
         ByteBuffer wrap = ByteBuffer.wrap(payload);
         wrap.put(bf);
 
+        System.out.println("Montagem Palavras: " + totalPalavras + " Bytes: " + totalBytes);
+        System.out.println("Montagem ByteBuffer.limit " + bf.position());
         return wrap.array();
     }
 
@@ -102,7 +108,7 @@ public class Sequencia {
      * @return Índice da palavra que sucede aquela cujo índice é fornecido.
      */
     public int proxima(int indice) {
-        int candidato = indice + bytes[indice] + 5;
+        int candidato = indice + bytes[indice] + 1;
         return (candidato < bytes.length) ? candidato : -1;
     }
 
