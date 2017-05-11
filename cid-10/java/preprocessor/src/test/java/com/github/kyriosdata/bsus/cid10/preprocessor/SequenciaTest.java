@@ -80,8 +80,8 @@ public class SequenciaTest {
         int total = 0;
         boolean verdade = true;
         while (verdade) {
-            for (String palavra : palavras) {
-                if (palavra.contains("asa")) {
+            for (int i = 0; i < palavras.size(); i++) {
+                if (palavras.get(i).contains("asa")) {
                     total++;
                 }
             }
