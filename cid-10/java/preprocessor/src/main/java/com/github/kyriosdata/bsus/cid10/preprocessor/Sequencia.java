@@ -76,8 +76,6 @@ public class Sequencia {
         ByteBuffer wrap = ByteBuffer.wrap(payload);
         wrap.put(bf);
 
-        System.out.println("Montagem Palavras: " + totalPalavras + " Bytes: " + totalBytes);
-        System.out.println("Montagem ByteBuffer.limit " + bf.position());
         return wrap.array();
     }
 

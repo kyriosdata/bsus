@@ -39,12 +39,10 @@ public class Conversor {
         String fileName = "cid-10-subcategorias-lower.json";
 
         Subcategorias cs = Subcategorias.newInstance(fileName);
-        System.out.println(cs.toString());
 
         // Dicionário onde a chave search os índices das
         // sentenças que contém a chave (palavra).
         Map<String, Set<Integer>> dicionario = cs.montaDicionario();
-        System.out.println("Tamanho dicionario: " + dicionario.size());
 
         // Montagem de índice para reduzir espaço de busca.
         // Para quaisquer duas letras 'x' e 'y', nessa ordem,
@@ -57,8 +55,6 @@ public class Conversor {
                 indice.put("" + primeira + segunda, new HashSet<String>());
             }
         }
-
-        System.out.println("Tamanho search: " + indice.size());
 
         for (String entrada : indice.keySet()) {
             for (String palavra : dicionario.keySet()) {

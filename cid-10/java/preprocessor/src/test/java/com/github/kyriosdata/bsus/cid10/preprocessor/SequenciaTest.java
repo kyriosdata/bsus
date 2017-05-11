@@ -9,9 +9,11 @@
 
 package com.github.kyriosdata.bsus.cid10.preprocessor;
 
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.io.ByteArrayOutputStream;
+import java.io.FileNotFoundException;
 import java.io.ObjectOutputStream;
 import java.io.UnsupportedEncodingException;
 import java.util.*;
@@ -22,6 +24,8 @@ import static junit.framework.TestCase.assertTrue;
 import static org.junit.Assert.assertArrayEquals;
 
 public class SequenciaTest {
+
+    private static List<String> palavras;
 
     @Test
     public void iguais() {
@@ -62,32 +66,25 @@ public class SequenciaTest {
         assertFalse(s.contem(0, new byte[]{1, 2, 3, 4, 5}));
     }
 
-    @Test
-    public void desempenhoComparadoContaisSimples() throws Exception {
-        final int ITERACOES = 1_000;
+    @BeforeClass
+    public static void setUp() throws FileNotFoundException {
         Map<String, Set<String>> dados = Conversor.montaIndice();
 
-        List<String> palavras = new ArrayList<>();
+        palavras = new ArrayList<>();
         for (String chave : dados.keySet()) {
             for (String palavra : dados.get(chave)) {
                 palavras.add(palavra);
             }
         }
+    }
 
-        Sequencia sequencia = new Sequencia(palavras);
-        byte[] sub = {97, 115, 97};
-
-        int totalBytes = 0;
-        for (String palavra : palavras) {
-            totalBytes += palavra.length();
-        }
-
-        System.out.println("Total de palavras: " + palavras.size());
-        System.out.println("Tamanho em bytes (sequencia): " + sequencia.bytes.length);
-        System.out.println("Tamanho em bytes (list): " + totalBytes);
+    @Test
+    public void desempenhoStringContains() throws Exception {
+        final int ITERACOES = 1;
 
         long start = System.nanoTime();
         int totalContains = 0;
+
         for (int i = 0; i < ITERACOES; i++) {
             totalContains = 0;
             for (String palavra : palavras) {
@@ -98,26 +95,24 @@ public class SequenciaTest {
         }
 
         System.out.println("Contains : " + (System.nanoTime() - start) + " Encontrados: " + totalContains);
-        //encontradas.forEach(w -> System.out.println(w));
+    }
+
+    @Test
+    public void desempenhoKmp() throws Exception {
+        final int ITERACOES = 10;
+
+        Sequencia sequencia = new Sequencia(palavras);
+        byte[] sub = {97, 115, 97};
 
         KMP kmp = new KMP(sequencia.bytes);
         kmp.definePadrao(sub);
 
-        start = System.nanoTime();
+        long start = System.nanoTime();
         int totalSequencia = 0;
 
         for (int i = 0; i < ITERACOES; i++) {
             totalSequencia = 0;
             int indice = 0;
-
-//            while (indice != -1) {
-//                if (sequencia.contem(indice, sub)) {
-//                    totalSequencia++;
-//                }
-//
-//                indice = sequencia.proxima(indice);
-//            }
-
 
             while (true) {
                 indice = kmp.search(indice);
@@ -127,6 +122,32 @@ public class SequenciaTest {
 
                 totalSequencia++;
                 indice = indice + sequencia.bytes[indice] + 1;
+            }
+        }
+
+        System.out.println("KMP: " + (System.nanoTime() - start) + " Encontrados: " + totalSequencia);
+    }
+
+    @Test
+    public void desempenhoSequencia() throws Exception {
+        final int ITERACOES = 10;
+
+        Sequencia sequencia = new Sequencia(palavras);
+        byte[] sub = {97, 115, 97};
+
+        long start = System.nanoTime();
+        int totalSequencia = 0;
+
+        for (int i = 0; i < ITERACOES; i++) {
+            totalSequencia = 0;
+            int indice = 0;
+
+            while (indice != -1) {
+                if (sequencia.contem(indice, sub)) {
+                    totalSequencia++;
+                }
+
+                indice = sequencia.proxima(indice);
             }
         }
 
