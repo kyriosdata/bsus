@@ -10,7 +10,6 @@
 package com.github.kyriosdata.bsus.cid10.preprocessor;
 
 import java.io.UnsupportedEncodingException;
-import java.nio.ByteBuffer;
 import java.util.List;
 
 /**
@@ -44,7 +43,7 @@ public class Sequencia {
         this(montaSequencia(palavras));
     }
 
-    public static byte[] montaSequencia2(List<String> palavras) {
+    public static byte[] montaSequencia(List<String> palavras) {
 
         int totalBytes = tamanhoEmBytes(palavras);
         int totalPalavras = palavras.size();
@@ -95,33 +94,6 @@ public class Sequencia {
         }
 
         return totalBytes;
-    }
-
-    public static byte[] montaSequencia(List<String> palavras) {
-        ByteBuffer bf = ByteBuffer.allocate(1_000_000);
-
-        for (String palavra : palavras) {
-
-            char[] caracteres = palavra.toCharArray();
-
-            // Tamanho
-            bf.put((byte) caracteres.length);
-
-            // String (ASCII)
-            for (char caractere : caracteres) {
-                bf.put((byte) caractere);
-            }
-        }
-
-        bf.flip();
-
-        // Vetor apenas com a quantidade de bytes utilizada
-        byte[] payload = new byte[bf.limit()];
-
-        ByteBuffer wrap = ByteBuffer.wrap(payload);
-        wrap.put(bf);
-
-        return payload;
     }
 
     public static byte[] toByteArray(String ascii) {
