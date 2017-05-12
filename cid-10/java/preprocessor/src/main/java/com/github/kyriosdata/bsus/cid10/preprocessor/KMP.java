@@ -43,7 +43,6 @@ public class KMP {
      */
     public int search(int indice) {
 
-        // simulate operation of DFA on text
         int end = text.length;
         int m = pattern.length;
         int n = indice + text[indice] + 1;
@@ -56,38 +55,15 @@ public class KMP {
             }
 
             if (j == m) {
-                return indice;    // found
+                return indice;
             }
 
-            indice = n;
-            if (indice >= end) {
+            if (n >= end) {
                 return -1;
             }
 
+            indice = n;
             n = indice + text[indice] + 1;
         }
     }
-
-
-    /**
-     * Takes a pattern string and an input string as command-line arguments;
-     * searches for the pattern string in the text string; and prints
-     * the first occurrence of the pattern string in the text string.
-     *
-     * @param args the command-line arguments
-     */
-    public static void main(String[] args) {
-
-        byte[] padrao = Sequencia.toByteArray("ix");
-        List<String> palavras = Arrays.asList("texto", "icnorme");
-
-        KMP kmp = new KMP(Sequencia.montaSequencia(palavras));
-
-        kmp.definePadrao(padrao);
-
-        int indice = kmp.search(0);
-
-        System.out.println(indice);
-    }
-
 }
