@@ -31,40 +31,40 @@ public class SequenciaTest {
     @Test
     public void iguais() {
         Sequencia s = new Sequencia(new byte[]{1, 1});
-        assertTrue(s.contem(0, new byte[]{1}));
+        assertEquals(0, s.contem(0, new byte[]{1}));
     }
 
     @Test
     public void diferentes() {
         Sequencia s = new Sequencia(new byte[]{1, 1});
-        assertFalse(s.contem(0, new byte[]{2}));
+        assertEquals(-1, s.contem(0, new byte[]{2}));
     }
 
     @Test
     public void procuradoMaiorQueSequencia() {
         Sequencia s = new Sequencia(new byte[]{1, 1});
-        assertFalse(s.contem(0, new byte[]{1, 2}));
+        assertEquals(-1, s.contem(0, new byte[]{1, 2}));
     }
 
     @Test
     public void sequenciaMaiorQueProcurado() {
         byte[] bytes = {4, 1, 2, 3, 4};
         Sequencia s = new Sequencia(bytes);
-        assertTrue(s.contem(0, new byte[]{1}));
-        assertTrue(s.contem(0, new byte[]{2}));
-        assertTrue(s.contem(0, new byte[]{3}));
-        assertTrue(s.contem(0, new byte[]{4}));
-        assertTrue(s.contem(0, new byte[]{1, 2}));
-        assertTrue(s.contem(0, new byte[]{2, 3}));
-        assertTrue(s.contem(0, new byte[]{3, 4}));
-        assertTrue(s.contem(0, new byte[]{1, 2, 3}));
-        assertTrue(s.contem(0, new byte[]{2, 3, 4}));
-        assertTrue(s.contem(0, new byte[]{1, 2, 3, 4}));
+        assertEquals(0, s.contem(0, new byte[]{1}));
+        assertEquals(0, s.contem(0, new byte[]{2}));
+        assertEquals(0, s.contem(0, new byte[]{3}));
+        assertEquals(0, s.contem(0, new byte[]{4}));
+        assertEquals(0, s.contem(0, new byte[]{1, 2}));
+        assertEquals(0, s.contem(0, new byte[]{2, 3}));
+        assertEquals(0, s.contem(0, new byte[]{3, 4}));
+        assertEquals(0, s.contem(0, new byte[]{1, 2, 3}));
+        assertEquals(0, s.contem(0, new byte[]{2, 3, 4}));
+        assertEquals(0, s.contem(0, new byte[]{1, 2, 3, 4}));
 
-        assertFalse(s.contem(0, new byte[]{5}));
-        assertFalse(s.contem(0, new byte[]{2, 1}));
-        assertFalse(s.contem(0, new byte[]{4, 5}));
-        assertFalse(s.contem(0, new byte[]{1, 2, 3, 4, 5}));
+        assertEquals(-1, s.contem(0, new byte[]{5}));
+        assertEquals(-1, s.contem(0, new byte[]{2, 1}));
+        assertEquals(-1, s.contem(0, new byte[]{4, 5}));
+        assertEquals(-1, s.contem(0, new byte[]{1, 2, 3, 4, 5}));
     }
 
     @BeforeClass
@@ -130,10 +130,10 @@ public class SequenciaTest {
             int indice = 0;
 
             while (indice != -1) {
-                if (sequencia.contem(indice, searchBytes)) {
+                if (sequencia.contem(indice, searchBytes) != -1) {
                     totalSequencia++;
                 }
-
+                
                 indice = sequencia.proxima(indice);
             }
         }

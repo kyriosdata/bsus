@@ -132,31 +132,31 @@ public class Sequencia {
      *
      * @param indice Posição inicial (primeiro byte) da
      *               palavra na sequência.
-     * @param sub    Subsequência a ser procurada na sequência.
+     * @param padrao    Subsequência a ser procurada na sequência.
      * @return {@code true} se e somente se a sequência contém a
      * subsequência.
      */
-    public boolean contem(int indice, byte[] sub) {
+    public int contem(int indice, byte[] padrao) {
         final int primeiro = indice + 1;
-        final int ultimo = indice + bytes[indice];
-        final int tamanhoSubSequencia = sub.length;
+        final int proximo = primeiro + bytes[indice];
+        final int tamanhoSubSequencia = padrao.length;
 
         // Indica posição do byte da subsequência a ser comparado.
         int pos = 0;
 
         // Possivelmente percorre todos os bytes da palavra
-        for (int i = primeiro; i <= ultimo; i++) {
-            if (bytes[i] == sub[pos]) {
+        for (int i = primeiro; i < proximo; i++) {
+            if (bytes[i] == padrao[pos]) {
                 // Se todos os bytes da subsequência foram
                 // comparados, então subsequência foi encontrada
                 if (++pos == tamanhoSubSequencia) {
-                    return true;
+                    return indice;
                 }
             } else {
                 pos = 0;
             }
         }
 
-        return false;
+        return -1;
     }
 }
