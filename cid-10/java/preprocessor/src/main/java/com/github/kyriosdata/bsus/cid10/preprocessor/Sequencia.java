@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2016
+ * Copyright (c) 2017
  *
  * Fábio Nogueira de Lucena
  * Fábrica de Software - Instituto de Informática (UFG)
@@ -17,11 +17,10 @@ import java.util.List;
  * Representa um conjunto de sequências de bytes, cada uma
  * delas obtida de uma palavra (String) formada apenas por
  * caracters ASCII.
- *
+ * <p>
  * <p>O objetivo dessa classe é permitir uma busca eficiente
  * pelas palavras que contém uma determinada sequência de
  * bytes (ou sequência de caracteres).
- *
  */
 public class Sequencia {
 
@@ -31,7 +30,7 @@ public class Sequencia {
      * Por exemplo, a primeira palavra se inicia em bytes[0] e
      * o valor bytes[0] indica a quantidade de bytes da
      * primeira palavra.
-     *
+     * <p>
      * <p>Os bytes seguintes, na quantidade indicada pelo
      * primeiro byte, definem a palavra.
      */
@@ -45,6 +44,59 @@ public class Sequencia {
         this(montaSequencia(palavras));
     }
 
+    public static byte[] montaSequencia2(List<String> palavras) {
+
+        int totalBytes = tamanhoEmBytes(palavras);
+        int totalPalavras = palavras.size();
+
+        // Total de bytes mais 1 byte por palavra (tamanho)
+        int tamanhoVetor = totalPalavras + totalBytes;
+
+        byte[] vetor = new byte[tamanhoVetor];
+
+        int pos = 0;
+        for (String palavra : palavras) {
+
+            // Define o tamanho da palavra (primeiro byte)
+            vetor[pos] = (byte) palavra.length();
+
+            // Posição do primeiro byte correspondente ao
+            // primeiro caractere da palavra.
+            pos = pos + 1;
+
+            // Obtém bytes correspondentes à palavra
+            byte[] palavraAsStr = toByteArray(palavra);
+            int length = palavraAsStr.length;
+
+            // Efetua cópia para o destino
+            System.arraycopy(palavraAsStr, 0, vetor, pos, length);
+
+            // Atualiza posição para a próxima palavra
+            pos = pos + length;
+        }
+
+        return vetor;
+    }
+
+    /**
+     * Identifica tamanho em bytes necessário para armazenar
+     * os caracteres (ASCII) de todas as palavras da lista
+     * fornecida.
+     *
+     * @param palavras Lista de palavras.
+     *
+     * @return Total de bytes necessário para armazenar todas
+     * as palavras da lista.
+     */
+    public static int tamanhoEmBytes(List<String> palavras) {
+        int totalBytes = 0;
+        for (String palavra : palavras) {
+            totalBytes += palavra.length();
+        }
+
+        return totalBytes;
+    }
+
     public static byte[] montaSequencia(List<String> palavras) {
         ByteBuffer bf = ByteBuffer.allocate(1_000_000);
 
@@ -53,7 +105,7 @@ public class Sequencia {
             char[] caracteres = palavra.toCharArray();
 
             // Tamanho
-            bf.put((byte)caracteres.length);
+            bf.put((byte) caracteres.length);
 
             // String (ASCII)
             for (char caractere : caracteres) {
@@ -84,7 +136,6 @@ public class Sequencia {
      * Recupera a String armazenada na posição indicada.
      *
      * @param posicao Posição da String.
-     *
      * @return A String armazenada na posição indicada.
      */
     public String toString(int posicao) {
@@ -94,8 +145,8 @@ public class Sequencia {
 
     /**
      * Retorna índice da palavra que sucede aquela de índice fornecido.
-     * @param indice Índice de uma palavra.
      *
+     * @param indice Índice de uma palavra.
      * @return Índice da palavra que sucede aquela cujo índice é fornecido.
      */
     public int proxima(int indice) {
@@ -108,10 +159,8 @@ public class Sequencia {
      * a sequência 'as' está presente na sequência 'casa'.
      *
      * @param indice Posição inicial (primeiro byte) da
-     *                palavra na sequência.
-     *
-     * @param sub Subsequência a ser procurada na sequência.
-     *
+     *               palavra na sequência.
+     * @param sub    Subsequência a ser procurada na sequência.
      * @return {@code true} se e somente se a sequência contém a
      * subsequência.
      */
