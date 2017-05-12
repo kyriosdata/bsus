@@ -23,6 +23,10 @@ public class SequenciaTest {
 
     final int ITERACOES = 100;
     private static List<String> palavras;
+    private static Sequencia sequencia;
+    private static String searchStr = "asa";
+    private static byte[] searchBytes = Sequencia.toByteArray(searchStr.toCharArray());
+    private static int expected = 91;
 
     @Test
     public void iguais() {
@@ -73,32 +77,34 @@ public class SequenciaTest {
                 palavras.add(palavra);
             }
         }
+
+        sequencia = new Sequencia(palavras);
     }
 
     @Test
     public void desempenhoStringContains() throws Exception {
         int total = 0;
-        boolean verdade = true;
-        while (verdade) {
+        for (int c = 0; c < ITERACOES; c++) {
+            total = 0;
             for (int i = 0; i < palavras.size(); i++) {
-                if (palavras.get(i).contains("asa")) {
+                if (palavras.get(i).contains(searchStr)) {
                     total++;
                 }
             }
         }
 
-        System.out.println(total);
+        assertEquals(expected, total);
     }
 
     @Test
     public void desempenhoKmp() throws Exception {
-        Sequencia sequencia = new Sequencia(palavras);
-        byte[] sub = {97, 115, 97};
 
         KMP kmp = new KMP(sequencia.bytes);
-        kmp.definePadrao(sub);
+        kmp.definePadrao(searchBytes);
 
-        while (true) {
+        int total = 0;
+        for (int i = 0; i < ITERACOES; i++) {
+            total = 0;
             int indice = 0;
 
             while (true) {
@@ -107,25 +113,24 @@ public class SequenciaTest {
                     break;
                 }
 
+                total++;
                 indice = indice + sequencia.bytes[indice] + 1;
             }
         }
+
+        assertEquals(expected, total);
     }
 
     @Test
     public void desempenhoSequencia() throws Exception {
-        Sequencia sequencia = new Sequencia(palavras);
-        byte[] sub = {97, 115, 97};
-
         int totalSequencia = 0;
-        boolean verdade = true;
 
-        while (verdade) {
+        for (int i = 0; i < ITERACOES; i++) {
             totalSequencia = 0;
             int indice = 0;
 
             while (indice != -1) {
-                if (sequencia.contem(indice, sub)) {
+                if (sequencia.contem(indice, searchBytes)) {
                     totalSequencia++;
                 }
 
@@ -133,7 +138,7 @@ public class SequenciaTest {
             }
         }
 
-        System.out.println(totalSequencia);
+        assertEquals(expected, totalSequencia);
     }
 
     @Test
@@ -152,9 +157,9 @@ public class SequenciaTest {
         List<String> palavras = Arrays.asList("casa", "sapo", "vitoria");
         Sequencia s = new Sequencia(palavras);
 
-        assertEquals("casa", s.getPalavra(0));
-        assertEquals("sapo", s.getPalavra(5));
-        assertEquals("vitoria", s.getPalavra(10));
+        assertEquals("casa", s.toString(0));
+        assertEquals("sapo", s.toString(5));
+        assertEquals("vitoria", s.toString(10));
     }
 
     @Test
@@ -171,21 +176,23 @@ public class SequenciaTest {
         Sequencia sequencia = new Sequencia(palavras);
         int indice = 0;
         for (int i = 0; i < palavras.size(); i++) {
-            assertEquals(palavras.get(i), sequencia.getPalavra(indice));
+            assertEquals(palavras.get(i), sequencia.toString(indice));
             indice = sequencia.proxima(indice);
         }
 
         int i = 0;
         indice = 0;
         while (indice != -1) {
-            assertEquals(palavras.get(i++), sequencia.getPalavra(indice));
+            assertEquals(palavras.get(i++), sequencia.toString(indice));
             indice = sequencia.proxima(indice);
         }
     }
 
     @Test
     public void tamanhoDeDados() throws UnsupportedEncodingException {
-        final byte[] bytes = new String("açaí").getBytes("UTF-8");
-        assertEquals(6, bytes.length);
+        final byte[] bytes = new String("sala").getBytes("ASCII");
+        assertEquals(4, bytes.length);
+
+        assertEquals("sala", new String(bytes, 0, 4, "ASCII"));
     }
 }

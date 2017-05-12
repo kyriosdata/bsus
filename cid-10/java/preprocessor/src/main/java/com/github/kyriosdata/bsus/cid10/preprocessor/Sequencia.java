@@ -25,19 +25,14 @@ import java.util.List;
 public class Sequencia {
 
     /**
-     * Conteúdo da sequência. Cas palavra (String) é
+     * Conteúdo da sequência. Cada palavra (String) é
      * iniciada pelo byte que indica o tamanho da palavra.
-     * Por exemplo, a primeira palavra se inicia em bytes[0]e
+     * Por exemplo, a primeira palavra se inicia em bytes[0] e
      * o valor bytes[0] indica a quantidade de bytes da
      * primeira palavra.
      *
      * <p>Os bytes seguintes, na quantidade indicada pelo
-     * primeiro byte, definem a palavra. Imediatamente após
-     * o último byte da palavra seguem 4 bytes (valor inteiro).
-     * Esse valor é de uso externo. Imediatamente após o
-     * último desses 4 bytes, segue o primeiro byte da palavra
-     * seguinte que, conforme mencionado, indica o tamanho
-     * dessa palavra e assim por diante.
+     * primeiro byte, definem a palavra.
      */
     public byte[] bytes;
 
@@ -52,15 +47,9 @@ public class Sequencia {
     public static byte[] montaSequencia(List<String> palavras) {
         ByteBuffer bf = ByteBuffer.allocate(1_000_000);
 
-        int totalPalavras = 0;
-        int totalBytes = 0;
-
         for (String palavra : palavras) {
 
             char[] caracteres = palavra.toCharArray();
-
-            totalPalavras++;
-            totalBytes += caracteres.length + 1;
 
             // Tamanho
             bf.put((byte)caracteres.length);
@@ -72,11 +61,14 @@ public class Sequencia {
         }
 
         bf.flip();
+
+        // Vetor apenas com a quantidade de bytes utilizada
         byte[] payload = new byte[bf.limit()];
+
         ByteBuffer wrap = ByteBuffer.wrap(payload);
         wrap.put(bf);
 
-        return wrap.array();
+        return payload;
     }
 
     public static byte[] toByteArray(char[] ascii) {
@@ -88,15 +80,16 @@ public class Sequencia {
         return asciiBytes;
     }
 
-    public String getPalavra(int indice) {
-        int size = bytes[indice];
+    /**
+     * Recupera a String armazenada na posição indicada.
+     *
+     * @param posicao Posição da String.
+     *
+     * @return A String armazenada na posição indicada.
+     */
+    public String toString(int posicao) {
 
-        char[] palavra = new char[size];
-        for (int i = 0; i < size; i++) {
-            palavra[i] = (char)bytes[++indice];
-        }
-
-        return new String(palavra);
+        return new String(bytes, posicao + 1, (int) bytes[posicao]);
     }
 
     /**
