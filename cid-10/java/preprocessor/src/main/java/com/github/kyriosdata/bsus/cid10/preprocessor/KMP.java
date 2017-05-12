@@ -78,7 +78,7 @@ public class KMP {
      */
     public static void main(String[] args) {
 
-        byte[] padrao = Sequencia.toByteArray("ix".toCharArray());
+        byte[] padrao = Sequencia.toByteArray("ix");
         List<String> palavras = Arrays.asList("texto", "icnorme");
 
         KMP kmp = new KMP(Sequencia.montaSequencia(palavras));

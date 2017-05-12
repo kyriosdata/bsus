@@ -25,7 +25,7 @@ public class SequenciaTest {
     private static List<String> palavras;
     private static Sequencia sequencia;
     private static String searchStr = "asa";
-    private static byte[] searchBytes = Sequencia.toByteArray(searchStr.toCharArray());
+    private static byte[] searchBytes = Sequencia.toByteArray(searchStr);
     private static int expected = 91;
 
     @Test

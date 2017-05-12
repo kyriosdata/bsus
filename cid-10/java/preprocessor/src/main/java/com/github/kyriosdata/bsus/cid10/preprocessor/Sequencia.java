@@ -9,6 +9,7 @@
 
 package com.github.kyriosdata.bsus.cid10.preprocessor;
 
+import java.io.UnsupportedEncodingException;
 import java.nio.ByteBuffer;
 import java.util.List;
 
@@ -71,13 +72,12 @@ public class Sequencia {
         return payload;
     }
 
-    public static byte[] toByteArray(char[] ascii) {
-        byte[] asciiBytes = new byte[ascii.length];
-        for (int i = 0; i < ascii.length; i++) {
-            asciiBytes[i] = (byte) ascii[i];
+    public static byte[] toByteArray(String ascii) {
+        try {
+            return ascii.getBytes("ASCII");
+        } catch (UnsupportedEncodingException exp) {
+            return null;
         }
-
-        return asciiBytes;
     }
 
     /**
