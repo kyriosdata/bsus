@@ -21,7 +21,7 @@ import static org.junit.Assert.assertArrayEquals;
 
 public class SequenciaTest {
 
-    final int ITERACOES = 100;
+    final int ITERACOES = 1;
     private static List<String> palavras;
     private static Sequencia sequencia;
     private static String searchStr = "asa";
@@ -129,11 +129,13 @@ public class SequenciaTest {
             totalSequencia = 0;
             int indice = 0;
 
-            while (indice != -1) {
-                if (sequencia.contem(indice, searchBytes) != -1) {
-                    totalSequencia++;
+            while (true) {
+                indice = sequencia.contem(indice, searchBytes);
+                if (indice == -1) {
+                    break;
                 }
 
+                totalSequencia++;
                 indice = sequencia.proxima(indice);
             }
         }

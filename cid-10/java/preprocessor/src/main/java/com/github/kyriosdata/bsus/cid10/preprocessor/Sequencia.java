@@ -83,7 +83,6 @@ public class Sequencia {
      * fornecida.
      *
      * @param palavras Lista de palavras.
-     *
      * @return Total de bytes necessário para armazenar todas
      * as palavras da lista.
      */
@@ -132,7 +131,7 @@ public class Sequencia {
      *
      * @param indice Posição inicial (primeiro byte) da
      *               palavra na sequência.
-     * @param padrao    Subsequência a ser procurada na sequência.
+     * @param padrao Subsequência a ser procurada na sequência.
      * @return {@code true} se e somente se a sequência contém a
      * subsequência.
      */
@@ -159,12 +158,13 @@ public class Sequencia {
                 }
             }
 
-            if (proximaPalavra > bytes.length) {
+            if (proximaPalavra >= bytes.length) {
                 return -1;
             }
-            
+
             indice = proximaPalavra;
             proximaPalavra = proximaPalavra + bytes[proximaPalavra] + 1;
+            pos = 0;
         }
     }
 }
