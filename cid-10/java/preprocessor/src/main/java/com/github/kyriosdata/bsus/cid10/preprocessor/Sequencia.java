@@ -159,6 +159,10 @@ public class Sequencia {
                 }
             }
 
+            if (proximaPalavra > bytes.length) {
+                return -1;
+            }
+            
             indice = proximaPalavra;
             proximaPalavra = proximaPalavra + bytes[proximaPalavra] + 1;
         }
