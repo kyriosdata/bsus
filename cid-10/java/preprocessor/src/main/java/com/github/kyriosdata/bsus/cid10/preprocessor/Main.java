@@ -65,7 +65,7 @@ public class Main {
 
 //        System.out.println("Search: ido");
 //        for(int search : answer) {
-//            System.out.println(search + " " + cs.descricao[search]);
+//            System.out.println(encontre + " " + cs.descricao[encontre]);
 //        }
 
         long inicio = System.currentTimeMillis();

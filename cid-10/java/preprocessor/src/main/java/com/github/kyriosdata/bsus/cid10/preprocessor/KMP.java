@@ -21,27 +21,18 @@ public class KMP {
         for (int j = 0; j < pattern.length; j++)
             this.pattern[j] = pattern[j];
 
-        // build DFA from pattern
         int m = pattern.length;
         dfa = new int[R][m];
         dfa[pattern[0]][0] = 1;
         for (int x = 0, j = 1; j < m; j++) {
             for (int c = 0; c < R; c++)
-                dfa[c][j] = dfa[c][x];     // Copy mismatch cases.
-            dfa[pattern[j]][j] = j + 1;      // Set match case.
-            x = dfa[pattern[j]][x];        // Update restart state.
+                dfa[c][j] = dfa[c][x];
+            dfa[pattern[j]][j] = j + 1;
+            x = dfa[pattern[j]][x];
         }
     }
 
-    /**
-     * Returns the index of the first occurrrence of the pattern string
-     * in the text string.
-     *
-     * @param indice
-     * @return the index of the first occurrence of the pattern string
-     * in the text string; N if no such match
-     */
-    public int search(int indice) {
+    public int encontre(int indice) {
 
         int end = text.length;
         int m = pattern.length;

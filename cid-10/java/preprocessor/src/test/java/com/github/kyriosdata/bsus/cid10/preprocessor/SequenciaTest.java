@@ -97,6 +97,21 @@ public class SequenciaTest {
     }
 
     @Test
+    public void desempenhoIndexOf() throws Exception {
+        int total = 0;
+        for (int c = 0; c < ITERACOES; c++) {
+            total = 0;
+            for (int i = 0; i < palavras.size(); i++) {
+                if ((palavras.get(i).indexOf(searchStr) != -1)) {
+                    total++;
+                }
+            }
+        }
+
+        assertEquals(expected, total);
+    }
+
+    @Test
     public void desempenhoKmp() throws Exception {
 
         KMP kmp = new KMP(sequencia.bytes);
@@ -108,7 +123,7 @@ public class SequenciaTest {
             int indice = 0;
 
             while (true) {
-                indice = kmp.search(indice);
+                indice = kmp.encontre(indice);
                 if (indice == -1) {
                     break;
                 }
