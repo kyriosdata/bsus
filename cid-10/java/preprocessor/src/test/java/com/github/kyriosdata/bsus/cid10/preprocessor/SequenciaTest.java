@@ -31,40 +31,40 @@ public class SequenciaTest {
     @Test
     public void iguais() {
         Sequencia s = new Sequencia(new byte[]{1, 1});
-        assertEquals(0, s.contem(0, new byte[]{1}));
+        assertEquals(0, s.encontre(0, new byte[]{1}));
     }
 
     @Test
     public void diferentes() {
         Sequencia s = new Sequencia(new byte[]{1, 1});
-        assertEquals(-1, s.contem(0, new byte[]{2}));
+        assertEquals(-1, s.encontre(0, new byte[]{2}));
     }
 
     @Test
     public void procuradoMaiorQueSequencia() {
         Sequencia s = new Sequencia(new byte[]{1, 1});
-        assertEquals(-1, s.contem(0, new byte[]{1, 2}));
+        assertEquals(-1, s.encontre(0, new byte[]{1, 2}));
     }
 
     @Test
     public void sequenciaMaiorQueProcurado() {
         byte[] bytes = {4, 1, 2, 3, 4};
         Sequencia s = new Sequencia(bytes);
-        assertEquals(0, s.contem(0, new byte[]{1}));
-        assertEquals(0, s.contem(0, new byte[]{2}));
-        assertEquals(0, s.contem(0, new byte[]{3}));
-        assertEquals(0, s.contem(0, new byte[]{4}));
-        assertEquals(0, s.contem(0, new byte[]{1, 2}));
-        assertEquals(0, s.contem(0, new byte[]{2, 3}));
-        assertEquals(0, s.contem(0, new byte[]{3, 4}));
-        assertEquals(0, s.contem(0, new byte[]{1, 2, 3}));
-        assertEquals(0, s.contem(0, new byte[]{2, 3, 4}));
-        assertEquals(0, s.contem(0, new byte[]{1, 2, 3, 4}));
+        assertEquals(0, s.encontre(0, new byte[]{1}));
+        assertEquals(0, s.encontre(0, new byte[]{2}));
+        assertEquals(0, s.encontre(0, new byte[]{3}));
+        assertEquals(0, s.encontre(0, new byte[]{4}));
+        assertEquals(0, s.encontre(0, new byte[]{1, 2}));
+        assertEquals(0, s.encontre(0, new byte[]{2, 3}));
+        assertEquals(0, s.encontre(0, new byte[]{3, 4}));
+        assertEquals(0, s.encontre(0, new byte[]{1, 2, 3}));
+        assertEquals(0, s.encontre(0, new byte[]{2, 3, 4}));
+        assertEquals(0, s.encontre(0, new byte[]{1, 2, 3, 4}));
 
-        assertEquals(-1, s.contem(0, new byte[]{5}));
-        assertEquals(-1, s.contem(0, new byte[]{2, 1}));
-        assertEquals(-1, s.contem(0, new byte[]{4, 5}));
-        assertEquals(-1, s.contem(0, new byte[]{1, 2, 3, 4, 5}));
+        assertEquals(-1, s.encontre(0, new byte[]{5}));
+        assertEquals(-1, s.encontre(0, new byte[]{2, 1}));
+        assertEquals(-1, s.encontre(0, new byte[]{4, 5}));
+        assertEquals(-1, s.encontre(0, new byte[]{1, 2, 3, 4, 5}));
     }
 
     @BeforeClass
@@ -130,7 +130,7 @@ public class SequenciaTest {
             int indice = 0;
 
             while (true) {
-                indice = sequencia.contem(indice, searchBytes);
+                indice = sequencia.encontre(indice, searchBytes);
                 if (indice == -1) {
                     break;
                 }

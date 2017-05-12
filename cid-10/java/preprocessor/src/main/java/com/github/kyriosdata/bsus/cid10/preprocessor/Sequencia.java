@@ -130,12 +130,13 @@ public class Sequencia {
      * a sequência 'as' está presente na sequência 'casa'.
      *
      * @param indice Posição inicial (primeiro byte) da
-     *               palavra na sequência.
+     *               palavra a partir da qual o padrão será
+     *               procurado na sequência.
      * @param padrao Subsequência a ser procurada na sequência.
      * @return {@code true} se e somente se a sequência contém a
      * subsequência.
      */
-    public int contem(int indice, byte[] padrao) {
+    public int encontre(int indice, byte[] padrao) {
         final int tamanhoSubSequencia = padrao.length;
         int primeiroByte = indice;
         int proximaPalavra = primeiroByte + bytes[indice] + 1;
