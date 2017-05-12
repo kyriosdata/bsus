@@ -133,7 +133,7 @@ public class SequenciaTest {
                 if (sequencia.contem(indice, searchBytes) != -1) {
                     totalSequencia++;
                 }
-                
+
                 indice = sequencia.proxima(indice);
             }
         }

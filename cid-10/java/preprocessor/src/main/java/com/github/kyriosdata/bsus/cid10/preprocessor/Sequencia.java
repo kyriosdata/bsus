@@ -137,26 +137,30 @@ public class Sequencia {
      * subsequência.
      */
     public int contem(int indice, byte[] padrao) {
-        final int primeiro = indice + 1;
-        final int proximo = primeiro + bytes[indice];
         final int tamanhoSubSequencia = padrao.length;
+        int primeiroByte = indice;
+        int proximaPalavra = primeiroByte + bytes[indice] + 1;
 
         // Indica posição do byte da subsequência a ser comparado.
         int pos = 0;
 
-        // Possivelmente percorre todos os bytes da palavra
-        for (int i = primeiro; i < proximo; i++) {
-            if (bytes[i] == padrao[pos]) {
-                // Se todos os bytes da subsequência foram
-                // comparados, então subsequência foi encontrada
-                if (++pos == tamanhoSubSequencia) {
-                    return indice;
-                }
-            } else {
-                pos = 0;
-            }
-        }
+        while (true) {
 
-        return -1;
+            // Possivelmente percorre todos os bytes da palavra
+            for (int i = indice + 1; i < proximaPalavra; i++) {
+                if (bytes[i] == padrao[pos]) {
+                    // Se todos os bytes da subsequência foram
+                    // comparados, então subsequência foi encontrada
+                    if (++pos == tamanhoSubSequencia) {
+                        return indice;
+                    }
+                } else {
+                    pos = 0;
+                }
+            }
+
+            indice = proximaPalavra;
+            proximaPalavra = proximaPalavra + bytes[proximaPalavra] + 1;
+        }
     }
 }
