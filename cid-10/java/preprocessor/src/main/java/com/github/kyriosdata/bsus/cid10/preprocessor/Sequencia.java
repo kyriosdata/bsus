@@ -118,7 +118,7 @@ public class Sequencia {
     /**
      * Retorna índice da palavra que sucede aquela de índice fornecido.
      *
-     * @param indice Índice de uma palavra.
+     * @param indice Índice de uma palavra. Índice deve ser válido.
      * @return Índice da palavra que sucede aquela cujo índice é fornecido.
      */
     public int proxima(int indice) {
