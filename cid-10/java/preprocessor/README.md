@@ -26,7 +26,7 @@ formato JSON, conforme a tabela abaixo.
 | CID-10-GRUPOS.CSV        | CID-10-GRUPOS.JSON        |
 | CID-10-SUBCATEGORIAS.CSV | CID-10-SUBCATEGORIAS.JSON |
 | CID-O-CATEGORIAS.CSV     | CID-O-CATEGORIAS.JSON     |
-| CID-O-GRUPOS.CSV         | CID-O-JSON                |
+| CID-O-GRUPOS.CSV         | CID-O-GRUPOS.JSON                |
 
 
 
