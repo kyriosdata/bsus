@@ -51,7 +51,7 @@ public class Conversor {
 
         Subcategorias cs = Subcategorias.newInstance(fileName);
 
-        // Dicionário onde a chave search os índices das
+        // Dicionário onde a chave code os índices das
         // sentenças que contém a chave (palavra).
         Map<String, Set<Integer>> dicionario = cs.montaDicionario();
 
