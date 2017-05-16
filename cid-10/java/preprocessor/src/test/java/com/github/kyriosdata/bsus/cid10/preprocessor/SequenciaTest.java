@@ -21,7 +21,7 @@ import static org.junit.Assert.assertArrayEquals;
 
 public class SequenciaTest {
 
-    final int ITERACOES = 1;
+    final int ITERACOES = 10;
     private static List<String> palavras;
     private static Sequencia sequencia;
     private static String searchStr = "asa";

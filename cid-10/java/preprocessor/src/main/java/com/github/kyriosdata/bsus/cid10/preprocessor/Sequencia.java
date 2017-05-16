@@ -95,6 +95,14 @@ public class Sequencia {
         return totalBytes;
     }
 
+    /**
+     * Produz a sequência de bytes (ASCII) correspondente à
+     * sequência de caracteres fornecida.
+     *
+     * @param ascii A String (ASCII) cuja sequência de bytes é produzida.
+     *
+     * @return A sequência de bytes para a String conforme a codificação ASCII.
+     */
     public static byte[] toByteArray(String ascii) {
         try {
             return ascii.getBytes("ASCII");
