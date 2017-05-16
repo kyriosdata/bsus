@@ -11,6 +11,18 @@ package com.github.kyriosdata.bsus.cid10.preprocessor;
 
 /**
  * Operações para acesso aos códigos da CID-10.
+ *
+ * <p>Um objeto que implementa essa interface possui um
+ * ciclo de vida formado pela chamada ao método {@link #load()},
+ * que prepara o objeto para requisições e pelo método
+ * {@link #unload()}, que indica não mais interesse por
+ * requisições a serem dirigidas ao objeto. Dessa forma
+ * o objeto pode se "ocupar" e "liberar", respectivamente,
+ * recursos empregados durante as requisições.
+ *
+ * <p>As requisições ao objeto são oferecidas pelos
+ * métodos {@link #code(String[])}, {@link #description(String[])}
+ * e {@link #codeAndDescription(String, String[])}.
  */
 public interface Cid {
 
