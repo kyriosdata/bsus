@@ -20,19 +20,34 @@ public class Conversor {
     public static void main(String[] args) throws FileNotFoundException {
 
         Map<String, Set<String>> indice = montaIndice();
-        System.out.println(hash('z', 'z'));
 
+        String nomeChaveMaior = entradaMaisNumerosa(indice);
+
+        int totalEntradas = indice.get(nomeChaveMaior).size();
+        System.out.println("Chave: " + nomeChaveMaior + " Size: " + totalEntradas);
+    }
+
+    /**
+     * Identifica a chave (do dicionário) cuja entrada (valor) possui o maior número de
+     * palavras.
+     *
+     * @param dicionario Dicionário cuja entrada mais numerosa será localizada.
+     *
+     * @return A chave da entrada, presente no dicionário, cujo valor possui o maior
+     * número de palavras.
+     */
+    public static String entradaMaisNumerosa(Map<String, Set<String>> dicionario) {
         int size = 0;
         String nomeChaveMaior = "";
-        for(String chave : indice.keySet()) {
-            final Set<String> conjunto = indice.get(chave);
+        for(String chave : dicionario.keySet()) {
+            final Set<String> conjunto = dicionario.get(chave);
             if (size < conjunto.size()) {
                 size = conjunto.size();
                 nomeChaveMaior = chave;
             }
         }
 
-        System.out.println("Chave: " + nomeChaveMaior + " Size: " + size);
+        return nomeChaveMaior;
     }
 
     public static Map<String, Set<String>> montaIndice() throws FileNotFoundException {

@@ -68,7 +68,7 @@ public class SequenciaTest {
     }
 
     @BeforeClass
-    public static void setUp() throws FileNotFoundException {
+    public static void setUpClass() throws FileNotFoundException {
         Map<String, Set<String>> dados = Conversor.montaIndice();
 
         palavras = new ArrayList<>();
