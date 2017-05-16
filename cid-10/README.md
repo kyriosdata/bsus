@@ -1,6 +1,6 @@
 # CID-10
 
-A CID-10 (versão 2008) é contemplada em duas versões: (a) [Javascript](https://github.com/kyriosdata/bsus/tree/master/cid-10/js) para uso de todos os dados no cliente (sem conexão com backend) e (b) versão [Java](java) para ser requisitada via cliente. 
+A CID-10 (versão 2008) é contemplada em duas versões: (a) [Javascript](js) para uso de todos os dados no cliente (sem conexão com backend) e (b) versão [Java](java/preprocessor) para ser requisitada via cliente. 
 
 A primeira é uma experimentação desejável, pois se os resultados mostrarem-se razoáveis, não há necessidade de tráfego em rede para a localização desejada. A segunda é uma alternativa quando o primeiro caso não for viável.
 
