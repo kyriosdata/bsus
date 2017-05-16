@@ -69,7 +69,7 @@ public class SequenciaTest {
 
     @BeforeClass
     public static void setUpClass() throws FileNotFoundException {
-        Map<String, Set<String>> dados = Conversor.montaIndice();
+        Map<String, Set<String>> dados = Conversor.montaIndice("cid-10-subcategorias-lower.json");
 
         palavras = new ArrayList<>();
         for (String chave : dados.keySet()) {
@@ -181,7 +181,7 @@ public class SequenciaTest {
 
     @Test
     public void montagemVariasPalavras() throws Exception {
-        Map<String, Set<String>> dados = Conversor.montaIndice();
+        Map<String, Set<String>> dados = Conversor.montaIndice("cid-10-subcategorias-lower.json");
 
         List<String> palavras = new ArrayList<>();
         for (String chave : dados.keySet()) {

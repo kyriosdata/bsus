@@ -13,19 +13,9 @@ import java.io.FileNotFoundException;
 import java.util.*;
 
 /**
- * Processa entrada visando otimizar a consulta (busca).
+ * Processa "entrada" visando otimizar a consulta (busca).
  */
 public class Conversor {
-
-    public static void main(String[] args) throws FileNotFoundException {
-
-        Map<String, Set<String>> indice = montaIndice();
-
-        String nomeChaveMaior = entradaMaisNumerosa(indice);
-
-        int totalEntradas = indice.get(nomeChaveMaior).size();
-        System.out.println("Chave: " + nomeChaveMaior + " Size: " + totalEntradas);
-    }
 
     /**
      * Identifica a chave (do dicionário) cuja entrada (valor) possui o maior número de
@@ -50,8 +40,14 @@ public class Conversor {
         return nomeChaveMaior;
     }
 
-    public static Map<String, Set<String>> montaIndice() throws FileNotFoundException {
-        String fileName = "cid-10-subcategorias-lower.json";
+    /**
+     * Monta índice para acesso rápido a um subconjunto dos valores do arquivo indicado.
+     *
+     * @param fileName
+     * @return
+     * @throws FileNotFoundException
+     */
+    public static Map<String, Set<String>> montaIndice(String fileName) throws FileNotFoundException {
 
         Subcategorias cs = Subcategorias.newInstance(fileName);
 
