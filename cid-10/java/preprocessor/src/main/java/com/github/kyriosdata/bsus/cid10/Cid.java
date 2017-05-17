@@ -10,7 +10,7 @@
 package com.github.kyriosdata.bsus.cid10;
 
 /**
- * Operações para acesso aos códigos da CID-10.
+ * Operações para acesso às informações da CID-10.
  *
  * <p>Um objeto que implementa essa interface possui um
  * ciclo de vida formado pela chamada ao método {@link #load()},
@@ -23,6 +23,9 @@ package com.github.kyriosdata.bsus.cid10;
  * <p>As requisições ao objeto são oferecidas pelos
  * métodos {@link #code(String[])}, {@link #description(String[])}
  * e {@link #codeAndDescription(String, String[])}.
+ *
+ * <p>A implementação dessa interface indica a versão da CID-10 por
+ * meio do método {@link #version()}.
  */
 public interface Cid {
 
@@ -91,4 +94,10 @@ public interface Cid {
      * correspondente.
      */
     String[] codeAndDescription(String code, String[] textos);
+
+    /**
+     * Recupera a versão da CID-10 utilizada.
+     * @return A versão da CID-10 oferecida pelo objeto.
+     */
+    String version();
 }
