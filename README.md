@@ -29,7 +29,7 @@ O projeto (_software design_) da biblioteca varia conforme as funcionalidades of
 - Testes de integração deverão demonstrar que o BSUS opera conforme a especificação estabelecida para interação com o barramento SUS.
 - Os serviços do barramento SUS deverão ser localizados de forma transparente (transparência de localização). 
 - O BSUS não deve comprometer a execução de outras operações do código cliente caso os serviços do barramento não estejam disponíveis.
-- O armazenamento de informação sigilosa como credencial de acesso deve fazer uso de estratégia "sólida".
+- O armazenamento de informação sigilosa como credencial de acesso deve fazer uso de estratégia compatível com exigências de segurança esperadas de um SIS.
 
 ## Projeto do software do BSUS
 
