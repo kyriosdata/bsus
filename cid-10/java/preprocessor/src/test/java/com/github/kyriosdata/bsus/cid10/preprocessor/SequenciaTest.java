@@ -15,6 +15,8 @@ import org.junit.Test;
 import java.io.FileNotFoundException;
 import java.io.UnsupportedEncodingException;
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import static junit.framework.TestCase.*;
 import static org.junit.Assert.assertArrayEquals;

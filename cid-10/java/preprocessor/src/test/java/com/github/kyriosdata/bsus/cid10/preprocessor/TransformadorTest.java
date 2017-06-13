@@ -16,11 +16,11 @@ import java.io.FileNotFoundException;
 import static junit.framework.TestCase.assertEquals;
 import static org.junit.Assert.assertArrayEquals;
 
-public class CarregadorTest {
+public class TransformadorTest {
 
     @Test
     public void totalDeEntradas() throws FileNotFoundException {
-        Carregador sub = Carregador.newInstance("cid-10-subcategorias-lower.json");
-        assertEquals(12451, sub.subcat.length);
+        Transformador sub = Transformador.newInstance("cid10.json");
+        assertEquals(12451, sub.codigo.length);
     }
 }

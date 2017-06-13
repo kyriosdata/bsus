@@ -17,26 +17,28 @@ import java.util.*;
 public class Busca {
 
     private String[] sentencas;
+    private int size;
 
     public Busca(String[] sentencas) {
         this.sentencas = sentencas;
+        size = sentencas.length;
     }
 
-    public Set<String> encontre(String[] criterios) {
+    public List<Integer> encontre(String[] criterios) {
 
-        Set<String> encontradas = new HashSet<>();
+        List<Integer> encontradas = new ArrayList<>();
 
-        for (String sentenca : sentencas) {
+        for (int i = 0; i < size; i++) {
             boolean encontrou = true;
             for (String criterio : criterios) {
-                if (!sentenca.contains(criterio)) {
+                if (!sentencas[i].contains(criterio)) {
                     encontrou = false;
                     break;
                 }
             }
 
             if (encontrou) {
-                encontradas.add(sentenca);
+                encontradas.add(i);
             }
         }
 

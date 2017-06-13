@@ -24,18 +24,18 @@ import java.util.*;
  * parênteses forem removidos. Vários operações são executadas, além
  * dessa "aplicação de plural".
  */
-public class Carregador {
-    public String[] subcat;
+public class Transformador {
+    public String[] codigo;
     public String[] descricao;
 
     private int size;
 
-    public static Carregador newInstance(String fileName) throws FileNotFoundException {
+    public static Transformador newInstance(String fileName) throws FileNotFoundException {
         File file = FileFromResourcesFolder.get(fileName);
-
         FileReader fileReader = new FileReader(file);
         Gson gson = new Gson();
-        Carregador obj = gson.fromJson(fileReader, Carregador.class);
+
+        Transformador obj = gson.fromJson(fileReader, Transformador.class);
         obj.size = obj.descricao.length;
 
         // Realiza "transformações" na entrada. O objetivo é eliminar
@@ -48,6 +48,7 @@ public class Carregador {
         obj.eliminaParenteses();
         obj.removeSinais(); // ç por c, á por a, ...
         obj.removeAspas();
+        obj.doisOuMaisEspacosPorUm();
 
         return obj;
     }
@@ -156,6 +157,16 @@ public class Carregador {
             if (descricao[i].contains("\"")) {
                 descricao[i] = descricao[i].replace("\"", " ");
             }
+        }
+    }
+
+    public void doisOuMaisEspacosPorUm() {
+        for (int i = 0; i < size; i++) {
+            if (descricao[i].contains("\"")) {
+                descricao[i] = descricao[i].replace("\"", " ");
+            }
+
+            descricao[i] = descricao[i].replaceAll("[ ]{2,}", " ");
         }
     }
 }

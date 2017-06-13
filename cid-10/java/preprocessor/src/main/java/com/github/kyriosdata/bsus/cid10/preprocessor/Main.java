@@ -32,7 +32,7 @@ public class Main {
         Main objeto = new Main();
 
         // Obtém subcategorias já "pré-processadas".
-        Carregador sc = Carregador.newInstance(fileName);
+        Transformador sc = Transformador.newInstance(fileName);
         System.out.println(sc.toString());
 
         objeto.dicionario = objeto.montaDicionario(sc.descricao);

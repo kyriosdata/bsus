@@ -69,7 +69,7 @@ public class Agrupador {
         Files.write(Paths.get("./src/main/resources/cid10.json"), json.getBytes());
     }
 
-    private static <T> T getConteudo(String fileName, Class<T> classOfT) throws FileNotFoundException {
+    public static <T> T getConteudo(String fileName, Class<T> classOfT) throws FileNotFoundException {
         File capitulosJson = FileFromResourcesFolder.get(fileName);
         FileReader fileReader = new FileReader(capitulosJson);
 
