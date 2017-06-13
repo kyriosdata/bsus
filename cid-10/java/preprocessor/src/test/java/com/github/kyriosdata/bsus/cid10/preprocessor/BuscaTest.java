@@ -4,15 +4,20 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.io.FileNotFoundException;
+import java.util.Arrays;
 import java.util.List;
-import java.util.Set;
 
 import static org.junit.Assert.assertEquals;
 
 public class BuscaTest {
 
     private static Transformador sc;
+
+    // Dados "originais" sem transformações
     private static Cid c;
+
+    private static Sequencia codigos;
+    private static Sequencia descricoes;
 
     @BeforeClass
     public static void montagemIndice() throws FileNotFoundException {
@@ -20,6 +25,9 @@ public class BuscaTest {
         sc = Transformador.newInstance(fileName);
 
         c = Agrupador.getConteudo("cid10.json", Cid.class);
+
+        codigos = new Sequencia(Arrays.asList(sc.codigo));
+        descricoes = new Sequencia(Arrays.asList(sc.descricao));
     }
 
     @Test
@@ -35,6 +43,9 @@ public class BuscaTest {
         for (int encontrada : encontradas) {
             System.out.println(c.codigo.get(encontrada) + " " + c.descricao.get(encontrada));
         }
+
+
+        descricoes.procurePor(criterios);
 
         assertEquals(3, encontradas.size());
     }

@@ -10,6 +10,7 @@
 package com.github.kyriosdata.bsus.cid10.preprocessor;
 
 import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -175,5 +176,37 @@ public class Sequencia {
             proximaPalavra = proximaPalavra + bytes[proximaPalavra] + 1;
             pos = 0;
         }
+    }
+
+    public List<Integer> procurePor(String[] criterios) {
+        byte[][] procuradas = new byte[criterios.length][];
+        for (int i = 0; i < criterios.length; i++) {
+            procuradas[i] = criterios[i].getBytes();
+        }
+
+        List<Integer> encontradas = new ArrayList<>();
+
+        // while que percorre todas as entradas
+        int indice = 0;
+        while (indice != -1) {
+
+            // Itere por todas as palavras que devem estar presentes
+            boolean encontrada = true;
+            for (byte[] procurada : procuradas) {
+                int resultado = encontre(indice, procurada);
+                if (resultado == -1) {
+                    encontrada = false;
+                    break;
+                }
+            }
+
+            if (encontrada) {
+                encontradas.add(indice);
+            }
+
+            indice = proxima(indice);
+        }
+
+        return encontradas;
     }
 }

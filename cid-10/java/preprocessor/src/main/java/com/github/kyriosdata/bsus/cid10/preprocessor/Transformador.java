@@ -30,6 +30,11 @@ public class Transformador {
 
     private int size;
 
+    public static void main(String[] args) throws FileNotFoundException {
+        Transformador t = Transformador.newInstance("cid10.json");
+
+    }
+
     public static Transformador newInstance(String fileName) throws FileNotFoundException {
         File file = FileFromResourcesFolder.get(fileName);
         FileReader fileReader = new FileReader(file);
