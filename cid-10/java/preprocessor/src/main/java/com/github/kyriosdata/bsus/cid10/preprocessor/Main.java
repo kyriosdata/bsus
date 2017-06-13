@@ -33,7 +33,6 @@ public class Main {
 
         // Obtém subcategorias já "pré-processadas".
         Subcategorias sc = Subcategorias.newInstance(fileName);
-        // sc.prepare();
         System.out.println(sc.toString());
 
         objeto.dicionario = objeto.montaDicionario(sc.descricao);

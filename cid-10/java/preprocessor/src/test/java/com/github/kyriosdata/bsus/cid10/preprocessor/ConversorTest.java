@@ -12,7 +12,7 @@ public class ConversorTest {
 
     @Test
     public void montagemIndice() throws FileNotFoundException {
-        Map<String, Set<String>> dados = Conversor.montaIndice("cid-10-subcategorias-lower.json");
-        assertEquals(26 * 26, dados.size());
+        Map<String, Set<String>> idxWords = Conversor.montaIndice("cid-10-subcategorias-lower.json");
+        assertEquals(26 * 26, idxWords.size());
     }
 }
