@@ -9,15 +9,10 @@
 
 package com.github.kyriosdata.bsus.cid10.preprocessor;
 
-import java.util.HashSet;
-import java.util.Set;
-
 /**
  * Objeto auxiliar que representa CAPÍTULOS da CID-10.
  */
-public class Capitulos {
-    public int[] NUMCAP;
-    public String[] CATINIC;
-    public String[] CATFIM;
+public class CategoriasO {
+    public String[] CAT;
     public String[] DESCRICAO;
 }

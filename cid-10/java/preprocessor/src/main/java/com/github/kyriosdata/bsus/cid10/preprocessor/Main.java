@@ -32,7 +32,7 @@ public class Main {
         Main objeto = new Main();
 
         // Obtém subcategorias já "pré-processadas".
-        Subcategorias sc = Subcategorias.newInstance(fileName);
+        Carregador sc = Carregador.newInstance(fileName);
         System.out.println(sc.toString());
 
         objeto.dicionario = objeto.montaDicionario(sc.descricao);
@@ -94,21 +94,6 @@ public class Main {
         File file = FileFromResourcesFolder.get(fileName);
 
         return gson.fromJson(new FileReader(file), Capitulos.class);
-    }
-
-
-    public void exibeCapitulos(Capitulos caps) {
-        System.out.println("Total entradas: " + caps.catfim.length);
-
-        Map<String, List<Integer>> mapa = montaDicionario(caps.descricao);
-
-        dicionario = mapa;
-
-        System.out.println("Total palavras: " + mapa.size());
-
-        for (String chave : mapa.keySet()) {
-            System.out.println(chave + " " + mapa.get(chave));
-        }
     }
 
     /**
