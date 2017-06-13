@@ -35,7 +35,7 @@ O projeto (_software design_) da biblioteca varia conforme as funcionalidades of
 
 ### Módulos
 
-Os elementos a serem implementados são identificados no diagrama abaixo. Observe que para acesso a um serviço remoto é necessário a localização do serviço, bem como credencial de acesso, ambos registrados "fora" do código fonte, conforme ilustrado, em arquivo de configuração. 
+Os elementos a serem implementados são identificados no diagrama abaixo. Observe que para acesso a um serviço remoto é necessário a localização do serviço, bem como credencial de acesso, ambos registrados "fora" do código fonte, conforme ilustrado. 
 
 ![bsus-modulos](https://cloud.githubusercontent.com/assets/1735792/24927295/f55eae9e-1ed4-11e7-94e2-ed5c04235aa0.png)
 
