@@ -23,8 +23,8 @@ public class BuscaTest {
     public void buscaPorPalavraInexistente() {
         Busca idx = new Busca(sc.descricao);
 
-        final String[] criterios = {"ic", "ab", "fabio"};
+        final String[] criterios = {"ic", "costelas" };
         Set<String> encontradas = idx.encontre(criterios);
-        assertEquals(1004, encontradas.size());
+        assertEquals(2, encontradas.size());
     }
 }
