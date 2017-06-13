@@ -9,7 +9,6 @@
 
 package com.github.kyriosdata.bsus.cid10.preprocessor;
 
-import java.io.FileNotFoundException;
 import java.util.*;
 
 /**
@@ -51,16 +50,13 @@ public class Conversor {
      * Monta índice formado pela combinação de duas letras (a..z) para
      * todas as palavras de um dado conjunto.
      *
-     * @param fileName
      * @return
-     * @throws FileNotFoundException
+     * @param descricao
      */
-    public static Map<String, Set<String>> montaIndice(String fileName) throws FileNotFoundException {
-
-        Subcategorias cs = Subcategorias.newInstance(fileName);
+    public static Map<String, Set<String>> montaIndice(String[] descricao) {
 
         // Índice das descrições por palavra.
-        Map<String, Set<Integer>> dicionario = montaDicionario(cs.descricao);
+        Map<String, Set<Integer>> dicionario = montaDicionario(descricao);
 
         // Montagem de índice para reduzir espaço de busca.
         // Para quaisquer duas letras 'x' e 'y', nessa ordem,
