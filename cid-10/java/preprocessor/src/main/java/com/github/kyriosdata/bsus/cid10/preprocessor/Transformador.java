@@ -40,6 +40,7 @@ public class Transformador {
 
         // Realiza "transformações" na entrada. O objetivo é eliminar
         // elementos que não serão empregados na consulta.
+        obj.tolower();
         obj.trocaVirgulaPorEspaco();
         obj.removeColchetes();
         obj.pluralSimples();
@@ -67,6 +68,13 @@ public class Transformador {
 
     public String toString() {
         return "Total de entradas: " + size;
+    }
+
+    public void tolower() {
+        for (int i = 0; i < size; i++) {
+            codigo[i] = codigo[i].toLowerCase();
+            descricao[i] = descricao[i].toLowerCase();
+        }
     }
 
     public void trocaVirgulaPorEspaco() {
