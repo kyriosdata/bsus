@@ -69,7 +69,7 @@ public class SequenciaTest {
 
     @BeforeClass
     public static void setUpClass() throws FileNotFoundException {
-        Map<String, Set<String>> dados = Indice.montaIndice(Subcategorias.newInstance("cid-10-subcategorias-lower.json").descricao);
+        Map<String, Set<String>> dados = Indice.montaIndice(Indice.montaDicionario(Subcategorias.newInstance("cid-10-subcategorias-lower.json").descricao));
 
         palavras = new ArrayList<>();
         for (String chave : dados.keySet()) {
@@ -181,7 +181,7 @@ public class SequenciaTest {
 
     @Test
     public void montagemVariasPalavras() throws Exception {
-        Map<String, Set<String>> dados = Indice.montaIndice(Subcategorias.newInstance("cid-10-subcategorias-lower.json").descricao);
+        Map<String, Set<String>> dados = Indice.montaIndice(Indice.montaDicionario(Subcategorias.newInstance("cid-10-subcategorias-lower.json").descricao));
 
         List<String> palavras = new ArrayList<>();
         for (String chave : dados.keySet()) {

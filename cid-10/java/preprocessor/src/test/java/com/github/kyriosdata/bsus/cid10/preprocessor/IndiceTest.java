@@ -15,10 +15,10 @@ public class IndiceTest {
         final String fileName = "cid-10-subcategorias-lower.json";
         final Subcategorias sc = Subcategorias.newInstance(fileName);
 
-        Map<String, Set<String>> twoLetters = Indice.montaIndice(sc.descricao);
+        Map<String, Set<String>> twoLetters = Indice.montaIndice(Indice.montaDicionario(sc.descricao));
         assertEquals(26 * 26, twoLetters.size());
 
-        Set<String> resposta = busca(new String[] { "zy", "ic", "ab", "ic" }, twoLetters);
+        Set<String> resposta = busca(new String[] { "ic", "ab", "ic" }, twoLetters);
         assertEquals(82, resposta.size());
     }
 
