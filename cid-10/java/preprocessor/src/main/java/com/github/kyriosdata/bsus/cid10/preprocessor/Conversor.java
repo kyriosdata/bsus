@@ -78,13 +78,15 @@ public class Conversor {
     }
 
     /**
-     * Valor único definido para quaisquer duas letras (a..z).
+     * Valor único definido para quaisquer duas letras (a..z). Os valores
+     * ASCII correspondentes são 97 até 122, inclusive. Observe que o valor
+     * gerado só se aplica, portanto, a letras minúsculas (sem acentuação).
      *
      * @param primeira Primeira letra.
      * @param segunda A segunda letra.
      *
      * @return Valor único para quaisquer duas letras de 'a' até 'z', de
-     * zero até 657, inclusive.
+     * zero até 675 (26*26=676), inclusive.
      */
     public static int hash(char primeira, char segunda) {
         // V0

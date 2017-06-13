@@ -19,8 +19,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Aplicativo que visa produzir versão da CID-10 mais compacta e
- * e "mais rápida" para consulta.
+ * Aplicativo que visa produzir estrutura de dados compacta e
+ * e eficiente para consulta aos códigos da CID-10.
  */
 public class Main {
 
@@ -30,8 +30,10 @@ public class Main {
         String fileName = "cid-10-subcategorias-lower.json";
 
         Main objeto = new Main();
+
+        // Obtém subcategorias já "pré-processadas".
         Subcategorias sc = Subcategorias.newInstance(fileName);
-        sc.prepare();
+        // sc.prepare();
         System.out.println(sc.toString());
 
         objeto.dicionario = objeto.montaDicionario(sc.descricao);
@@ -77,7 +79,7 @@ public class Main {
 
         System.out.println("Tempo: " + (System.currentTimeMillis() - inicio));
 
-        sc.prepare();
+        //sc.prepare();
         inicio = System.currentTimeMillis();
         total = 0;
         for (int i = 0; i < 1_000; i++) {

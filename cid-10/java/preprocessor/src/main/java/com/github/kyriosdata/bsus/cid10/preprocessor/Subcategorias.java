@@ -17,7 +17,12 @@ import java.io.FileReader;
 import java.util.*;
 
 /**
- * Reúne subcategorias da CID-10.
+ * Reúne subcategorias da CID-10 em um objeto obtido a partir de arquivo
+ * JSON. A descrição de cada entrada é "transformada" com o propósito de
+ * facilitar a consulta. Por exemplo, "costela(s)" faz parte de uma
+ * descrição que só poderá ser encontrada pela busca "costelas" se os
+ * parênteses forem removidos. Vários operações são executadas, além
+ * dessa "aplicação de plural".
  */
 public class Subcategorias {
     public String[] subcat;
@@ -31,8 +36,10 @@ public class Subcategorias {
         FileReader fileReader = new FileReader(file);
         Gson gson = new Gson();
         Subcategorias obj = gson.fromJson(fileReader, Subcategorias.class);
-        obj.prepare();
+        obj.size = obj.descricao.length;
 
+        // Realiza "transformações" na entrada. O objetivo é eliminar
+        // elementos que não serão empregados na consulta.
         obj.trocaVirgulaPorEspaco();
         obj.removeColchetes();
         obj.pluralSimples();
@@ -43,10 +50,6 @@ public class Subcategorias {
         obj.removeAspas();
 
         return obj;
-    }
-
-    public void prepare() {
-        size = descricao.length;
     }
 
     public Set<Integer> busca(String procurado) {
@@ -131,6 +134,9 @@ public class Subcategorias {
         }
     }
 
+    /**
+     * Assume palavras apenas com letras minúsculas.
+     */
     public void removeSinais() {
         String acentos = "äáâàãéêëèíîïìöóôòõüúûùç";
         String semAcentos = "aaaaaeeeeiiiiooooouuuuc";
