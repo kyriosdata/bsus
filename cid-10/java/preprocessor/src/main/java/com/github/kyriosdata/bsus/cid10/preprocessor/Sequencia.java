@@ -17,7 +17,7 @@ import java.util.List;
  * delas obtida de uma palavra (String) formada apenas por
  * caracters ASCII.
  * <p>
- * <p>O objetivo dessa classe é permitir uma busca eficiente
+ * <p>O objetivo dessa classe é permitir uma encontre eficiente
  * pelas palavras que contém uma determinada sequência de
  * bytes (ou sequência de caracteres).
  */

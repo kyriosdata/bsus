@@ -20,7 +20,7 @@ import java.util.*;
  * Reúne subcategorias da CID-10 em um objeto obtido a partir de arquivo
  * JSON. A descrição de cada entrada é "transformada" com o propósito de
  * facilitar a consulta. Por exemplo, "costela(s)" faz parte de uma
- * descrição que só poderá ser encontrada pela busca "costelas" se os
+ * descrição que só poderá ser encontrada pela encontre "costelas" se os
  * parênteses forem removidos. Vários operações são executadas, além
  * dessa "aplicação de plural".
  */
@@ -158,5 +158,4 @@ public class Subcategorias {
             }
         }
     }
-
 }

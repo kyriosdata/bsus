@@ -62,7 +62,7 @@ public class Main {
 //        }
 
 
-//        Set<Integer> answer = objeto.busca(valores, objeto.dicionario, "ido");
+//        Set<Integer> answer = objeto.encontre(valores, objeto.dicionario, "ido");
 
 //        System.out.println("Search: ido");
 //        for(int code : answer) {

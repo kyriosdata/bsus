@@ -1,8 +1,5 @@
 package com.github.kyriosdata.bsus.cid10.preprocessor;
 
-import java.util.Arrays;
-import java.util.List;
-
 public class KMP {
     // Texto sobre o qual serão feitas "muitas" buscas
     private byte[] text;
