@@ -120,7 +120,7 @@ public class Sequencia {
      */
     public String toString(int posicao) {
 
-        return new String(bytes, posicao + 1, (int) bytes[posicao]);
+        return new String(bytes, posicao + 1, tamanho(posicao));
     }
 
     /**
@@ -130,7 +130,7 @@ public class Sequencia {
      * @return Índice da palavra que sucede aquela cujo índice é fornecido.
      */
     public int proxima(int indice) {
-        int candidato = indice + bytes[indice] + 1;
+        int candidato = indice + tamanho(indice) + 1;
         return (candidato < bytes.length) ? candidato : -1;
     }
 
@@ -148,7 +148,7 @@ public class Sequencia {
     public int encontre(int indice, byte[] padrao) {
         final int tamanhoSubSequencia = padrao.length;
         int primeiroByte = indice;
-        int proximaPalavra = primeiroByte + bytes[indice] + 1;
+        int proximaPalavra = primeiroByte + tamanho(indice) + 1;
 
         // Indica posição do byte da subsequência a ser comparado.
         int pos = 0;
@@ -173,9 +173,13 @@ public class Sequencia {
             }
 
             indice = proximaPalavra;
-            proximaPalavra = proximaPalavra + bytes[proximaPalavra] + 1;
+            proximaPalavra = proximaPalavra + tamanho(proximaPalavra) + 1;
             pos = 0;
         }
+    }
+
+    public int tamanho(int indice) {
+        return bytes[indice] & 0xFF;
     }
 
     public List<Integer> procurePor(String[] criterios) {
