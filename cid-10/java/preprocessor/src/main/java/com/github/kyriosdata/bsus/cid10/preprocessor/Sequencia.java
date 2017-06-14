@@ -68,7 +68,11 @@ public class Sequencia {
             int length = palavraAsStr.length;
 
             // Define o getTamanho da palavra (primeiro byte)
-            setTamanho(pos, length);
+            try {
+                setTamanho(pos, length);
+            } catch(Exception exp) {
+                System.out.println(palavra);
+            }
 
             // Posição do primeiro byte correspondente ao
             // primeiro caractere da palavra.
@@ -260,7 +264,7 @@ public class Sequencia {
      */
     public void setTamanho(int indice, int valor) {
         if (valor > 255) {
-            throw new IllegalArgumentException("tamanho maior que permitido");
+            throw new IllegalArgumentException("indice " + indice + " " + valor);
         }
 
         bytes[indice] = (byte) valor;

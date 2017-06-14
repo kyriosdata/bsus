@@ -4,6 +4,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -21,12 +22,14 @@ public class BuscaTest {
     private static List<String> codigosList;
     private static List<String> descricoesList;
 
+    private static Sequencia cid;
+
     @BeforeClass
     public static void montagemIndice() throws FileNotFoundException {
         final String fileName = "cid10.json";
         sc = Transformador.newInstance(fileName);
 
-        c = Agrupador.getConteudo("cid10.json", Cid.class);
+        c = FileFromResourcesFolder.getConteudo("cid10.json", Cid.class);
 
         codigosList = Arrays.asList(sc.codigo);
         descricoesList = Arrays.asList(sc.descricao);
@@ -34,7 +37,12 @@ public class BuscaTest {
         codigos = new Sequencia(codigosList);
         descricoes = new Sequencia(descricoesList);
 
+        List<String> sentencas = new ArrayList<>();
+        for (int i = 0; i < sc.codigo.length; i++) {
+            sentencas.add(sc.codigo[i] + " " + sc.descricao[i]);
+        }
 
+        cid = new Sequencia(sentencas);
     }
 
     @Test
