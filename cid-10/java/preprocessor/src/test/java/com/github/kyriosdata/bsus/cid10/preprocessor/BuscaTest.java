@@ -46,6 +46,7 @@ public class BuscaTest {
 
 
         descricoes.procurePor(criterios);
+        System.out.println(sc.codigo.length);
 
         assertEquals(3, encontradas.size());
     }

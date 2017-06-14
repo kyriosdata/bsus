@@ -186,26 +186,32 @@ public class Sequencia {
 
         List<Integer> encontradas = new ArrayList<>();
 
+        int total = 0;
+
         // while que percorre todas as entradas
         int indice = 0;
         while (indice != -1) {
 
-            // Itere por todas as palavras que devem estar presentes
-            boolean encontrada = true;
-            for (byte[] procurada : procuradas) {
-                int resultado = encontre(indice, procurada);
-                if (resultado == -1) {
-                    encontrada = false;
-                    break;
-                }
-            }
+            total++;
 
-            if (encontrada) {
-                encontradas.add(indice);
-            }
+//            // Itere por todas as palavras que devem estar presentes
+//            boolean encontrada = true;
+//            for (byte[] procurada : procuradas) {
+//                int resultado = encontre(indice, procurada);
+//                if (resultado == -1) {
+//                    encontrada = false;
+//                    break;
+//                }
+//            }
+//
+//            if (encontrada) {
+//                encontradas.add(indice);
+//            }
 
             indice = proxima(indice);
         }
+
+        System.out.println(total);
 
         return encontradas;
     }

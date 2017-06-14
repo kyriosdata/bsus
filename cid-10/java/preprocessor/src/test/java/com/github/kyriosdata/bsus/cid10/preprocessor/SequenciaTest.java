@@ -10,6 +10,7 @@
 package com.github.kyriosdata.bsus.cid10.preprocessor;
 
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.io.FileNotFoundException;
@@ -84,6 +85,7 @@ public class SequenciaTest {
     }
 
     @Test
+    @Ignore
     public void desempenhoStringContains() throws Exception {
         int total = 0;
         for (int c = 0; c < ITERACOES; c++) {
@@ -99,6 +101,7 @@ public class SequenciaTest {
     }
 
     @Test
+    @Ignore
     public void desempenhoIndexOf() throws Exception {
         int total = 0;
         for (int c = 0; c < ITERACOES; c++) {
@@ -114,6 +117,7 @@ public class SequenciaTest {
     }
 
     @Test
+    @Ignore
     public void desempenhoKmp() throws Exception {
 
         KMP kmp = new KMP(sequencia.bytes);
@@ -139,6 +143,7 @@ public class SequenciaTest {
     }
 
     @Test
+    @Ignore
     public void desempenhoSequencia() throws Exception {
         int totalSequencia = 0;
 
@@ -183,26 +188,12 @@ public class SequenciaTest {
 
     @Test
     public void montagemVariasPalavras() throws Exception {
-        Map<String, Set<String>> dados = new HashMap<>();
-
-        List<String> palavras = new ArrayList<>();
-        for (String chave : dados.keySet()) {
-            for (String palavra : dados.get(chave)) {
-                palavras.add(palavra);
-            }
-        }
+        List<String> palavras = Arrays.asList(new String[]{"a", "b", "c"});
 
         Sequencia sequencia = new Sequencia(palavras);
         int indice = 0;
         for (int i = 0; i < palavras.size(); i++) {
             assertEquals(palavras.get(i), sequencia.toString(indice));
-            indice = sequencia.proxima(indice);
-        }
-
-        int i = 0;
-        indice = 0;
-        while (indice != -1) {
-            assertEquals(palavras.get(i++), sequencia.toString(indice));
             indice = sequencia.proxima(indice);
         }
     }
