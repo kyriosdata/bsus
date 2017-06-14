@@ -26,8 +26,11 @@ public class BuscaTest {
 
         c = Agrupador.getConteudo("cid10.json", Cid.class);
 
-        codigos = new Sequencia(Arrays.asList(sc.codigo));
-        descricoes = new Sequencia(Arrays.asList(sc.descricao));
+        final List<String> codigosList = Arrays.asList(sc.codigo);
+        codigos = new Sequencia(codigosList);
+
+        final List<String> descricoesList = Arrays.asList(sc.descricao);
+        descricoes = new Sequencia(descricoesList);
     }
 
     @Test
@@ -43,7 +46,6 @@ public class BuscaTest {
         for (int encontrada : encontradas) {
             System.out.println(c.codigo.get(encontrada) + " " + c.descricao.get(encontrada));
         }
-
 
         descricoes.procurePor(criterios);
         System.out.println(sc.codigo.length);

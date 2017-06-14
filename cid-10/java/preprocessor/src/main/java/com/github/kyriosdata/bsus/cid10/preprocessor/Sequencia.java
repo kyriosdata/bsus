@@ -57,16 +57,16 @@ public class Sequencia {
         int pos = 0;
         for (String palavra : palavras) {
 
+            // Obtém bytes correspondentes à palavra
+            byte[] palavraAsStr = toByteArray(palavra);
+            int length = palavraAsStr.length;
+
             // Define o tamanho da palavra (primeiro byte)
-            vetor[pos] = (byte) palavra.length();
+            vetor[pos] = (byte) length;
 
             // Posição do primeiro byte correspondente ao
             // primeiro caractere da palavra.
             pos = pos + 1;
-
-            // Obtém bytes correspondentes à palavra
-            byte[] palavraAsStr = toByteArray(palavra);
-            int length = palavraAsStr.length;
 
             // Efetua cópia para o destino
             System.arraycopy(palavraAsStr, 0, vetor, pos, length);
@@ -208,6 +208,7 @@ public class Sequencia {
 //                encontradas.add(indice);
 //            }
 
+            System.out.println(indice + " " + toString(indice));
             indice = proxima(indice);
         }
 
