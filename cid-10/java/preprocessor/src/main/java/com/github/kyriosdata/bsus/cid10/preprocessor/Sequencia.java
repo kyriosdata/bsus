@@ -36,24 +36,30 @@ public class Sequencia {
      */
     public byte[] bytes;
 
+    /**
+     * Cria uma instância que encapsula o vetor de bytes fornecido.
+     *
+     * @param sequencia Vetor de bytes correspondente a uma sequência.
+     */
     public Sequencia(byte[] sequencia) {
         bytes = sequencia;
     }
 
+    /**
+     * Cria uma instância a partir da lista de palavras fornecidas.
+     *
+     * @param palavras Lista de palavras correspondentes à sequência a ser
+     *                 construída. Uma palavra é uma sequência de caracteres
+     *                 ASCII com tamanho interior a 256 caracteres (bytes).
+     */
     public Sequencia(List<String> palavras) {
-        this(montaSequencia(palavras));
+
+        this(new byte[getTamanhoVetor(palavras)]);
+
+        preencheValores(palavras, bytes);
     }
 
-    public static byte[] montaSequencia(List<String> palavras) {
-
-        int totalBytes = tamanhoEmBytes(palavras);
-        int totalPalavras = palavras.size();
-
-        // Total de bytes mais 1 byte por palavra (getTamanho)
-        int tamanhoVetor = totalPalavras + totalBytes;
-
-        byte[] vetor = new byte[tamanhoVetor];
-
+    private void preencheValores(List<String> palavras, byte[] vetor) {
         int pos = 0;
         for (String palavra : palavras) {
 
@@ -62,7 +68,7 @@ public class Sequencia {
             int length = palavraAsStr.length;
 
             // Define o getTamanho da palavra (primeiro byte)
-            vetor[pos] = (byte) length;
+            setTamanho(pos, length);
 
             // Posição do primeiro byte correspondente ao
             // primeiro caractere da palavra.
@@ -74,8 +80,14 @@ public class Sequencia {
             // Atualiza posição para a próxima palavra
             pos = pos + length;
         }
+    }
 
-        return vetor;
+    private static int getTamanhoVetor(List<String> palavras) {
+        int totalBytes = tamanhoEmBytes(palavras);
+        int totalPalavras = palavras.size();
+
+        // Total de bytes mais 1 byte por palavra (getTamanho)
+        return totalPalavras + totalBytes;
     }
 
     /**
@@ -110,6 +122,16 @@ public class Sequencia {
         } catch (UnsupportedEncodingException exp) {
             return null;
         }
+    }
+
+    /**
+     * Recupera o vetor de bytes empregado pela instância.
+     *
+     * @return Vetor de bytes sobre o qual está serializada uma lista de
+     * sequências de caracteres (palavras).
+     */
+    public byte[] toByteArray() {
+        return bytes;
     }
 
     /**

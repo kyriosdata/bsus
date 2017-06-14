@@ -166,17 +166,6 @@ public class SequenciaTest {
     }
 
     @Test
-    public void montaSequenciaTest() {
-        List<String> palavra = new ArrayList<>();
-        palavra.add("casa");
-        palavra.add("aaaa");
-
-        byte[] sequencia = Sequencia.montaSequencia(palavra);
-        final byte[] casa = {4, 99, 97, 115, 97, 4, 97, 97, 97, 97};
-        assertArrayEquals(casa, sequencia);
-    }
-
-    @Test
     public void montaCorretamentePalavras() {
         List<String> palavras = Arrays.asList("casa", "sapo", "vitoria");
         Sequencia s = new Sequencia(palavras);
