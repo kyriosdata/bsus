@@ -152,13 +152,13 @@ public class Transformador {
      * Assume palavras apenas com letras minúsculas.
      */
     public void removeSinais() {
-        String acentos = "äáâàãéêëèíîïìöóôòõüúûùç";
-        String semAcentos = "aaaaaeeeeiiiiooooouuuuc";
-        final int SIZE = acentos.length();
+        String comAcentos = "äáâàãéêëèíîïìöóôòõüúûùçª";
+        String semAcentos = "aaaaaeeeeiiiiooooouuuuca";
+        final int SIZE = comAcentos.length();
 
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < SIZE; j++) {
-                char acento = acentos.charAt(j);
+                char acento = comAcentos.charAt(j);
                 char semAcento = semAcentos.charAt(j);
                 descricao[i] = descricao[i].replace(acento, semAcento);
             }

@@ -113,7 +113,6 @@ public class Sequencia {
      * sequência de caracteres fornecida.
      *
      * @param ascii A String (ASCII) cuja sequência de bytes é produzida.
-     *
      * @return A sequência de bytes para a String conforme a codificação ASCII.
      */
     public static byte[] toByteArray(String ascii) {
@@ -201,12 +200,48 @@ public class Sequencia {
     }
 
     /**
+     * Verifica se a palavra (sequência) na posição indicada contém a
+     * sequência de bytes indicada.
+     *
+     * @param posicao Posição da sequência na qual a busca será feita.
+     *
+     * @param padrao Sequência de bytes que possivelmente faz parte da
+     *               sequência na qual a busca será feita.
+     *
+     * @return {@code true} se e somente se o padrão fornecido encontra-se,
+     * está contido na sequência indicada pela posição fornecida.
+     */
+    public boolean contem(int posicao, byte[] padrao) {
+        final int tamanhoPadrao = padrao.length;
+        int p = 0;
+        int proxima = posicao + getTamanho(posicao) + 1;
+
+        // Padrão maior que a sequência na qual a busca será feita?
+        if (getTamanho(posicao) < tamanhoPadrao) {
+            return false;
+        }
+
+        for (int i = posicao + 1; i < proxima; i++) {
+            if (bytes[i] == padrao[p]) {
+                // Se todos os bytes da subsequência foram
+                // comparados, então subsequência foi encontrada
+                if (++p == tamanhoPadrao) {
+                    return true;
+                }
+            } else {
+                p = 0;
+            }
+        }
+
+        return false;
+    }
+
+    /**
      * Recupera o tamanho da sequência de caracteres armazenada
      * na posição indicada.
      *
      * @param posicao Posição da sequência de caracteres cujo tamanho
-     *               é requisitado.
-     *
+     *                é requisitado.
      * @return Tamanho da sequência de caracteres, em bytes, armazenada na
      * posição indicada.
      */
@@ -220,9 +255,8 @@ public class Sequencia {
      *
      * @param indice Posição da sequência de caracteres cujo tamanho deve
      *               ser registrado.
-     *
-     * @param valor Quantidade de caracteres da sequência a ser armazenada,
-     *              em bytes.
+     * @param valor  Quantidade de caracteres da sequência a ser armazenada,
+     *               em bytes.
      */
     public void setTamanho(int indice, int valor) {
         if (valor > 255) {
@@ -238,6 +272,10 @@ public class Sequencia {
             procuradas[i] = criterios[i].getBytes();
         }
 
+        return procurePor(procuradas);
+    }
+
+    private List<Integer> procurePor(byte[][] procuradas) {
         List<Integer> encontradas = new ArrayList<>();
 
         int total = 0;
@@ -248,25 +286,22 @@ public class Sequencia {
 
             total++;
 
-//            // Itere por todas as palavras que devem estar presentes
-//            boolean encontrada = true;
-//            for (byte[] procurada : procuradas) {
-//                int resultado = encontre(indice, procurada);
-//                if (resultado == -1) {
-//                    encontrada = false;
-//                    break;
-//                }
-//            }
-//
-//            if (encontrada) {
-//                encontradas.add(indice);
-//            }
+            // Procure por todas as entradas que contém os critérios
+            // Inicialmente assume-se que todas estão presentes
+            boolean presente = true;
+            for (byte[] procurada : procuradas) {
+                if (!contem(indice, procurada)) {
+                    presente = false;
+                    break;
+                }
+            }
 
-            System.out.println(indice + " " + toString(indice));
+            if (presente) {
+                encontradas.add(indice);
+            }
+
             indice = proxima(indice);
         }
-
-        System.out.println(total);
 
         return encontradas;
     }

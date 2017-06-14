@@ -18,6 +18,8 @@ public class BuscaTest {
 
     private static Sequencia codigos;
     private static Sequencia descricoes;
+    private static List<String> codigosList;
+    private static List<String> descricoesList;
 
     @BeforeClass
     public static void montagemIndice() throws FileNotFoundException {
@@ -26,11 +28,24 @@ public class BuscaTest {
 
         c = Agrupador.getConteudo("cid10.json", Cid.class);
 
-        final List<String> codigosList = Arrays.asList(sc.codigo);
+        codigosList = Arrays.asList(sc.codigo);
         codigos = new Sequencia(codigosList);
 
-        final List<String> descricoesList = Arrays.asList(sc.descricao);
+        descricoesList = Arrays.asList(sc.descricao);
         descricoes = new Sequencia(descricoesList);
+    }
+
+    @Test
+    public void montagemCorreta() {
+        int idxCode = 0;
+        int idxDesc = 0;
+        for (int i = 0; i < sc.codigo.length; i++) {
+            assertEquals(codigosList.get(i), sc.codigo[i]);
+            assertEquals(sc.codigo[i], codigos.toString(idxCode));
+            assertEquals(sc.descricao[i], descricoes.toString(idxDesc));
+            idxCode = codigos.proxima(idxCode);
+            idxDesc = descricoes.proxima(idxDesc);
+        }
     }
 
     @Test
@@ -47,9 +62,9 @@ public class BuscaTest {
             System.out.println(c.codigo.get(encontrada) + " " + c.descricao.get(encontrada));
         }
 
-        descricoes.procurePor(criterios);
+        List<Integer> identificadas = descricoes.procurePor(criterios);
         System.out.println(sc.codigo.length);
 
-        assertEquals(3, encontradas.size());
+        assertEquals(identificadas.size(), encontradas.size());
     }
 }
