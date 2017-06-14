@@ -188,7 +188,10 @@ public class SequenciaTest {
 
     @Test
     public void montagemVariasPalavras() throws Exception {
-        List<String> palavras = Arrays.asList(new String[]{"a", "b", "c"});
+        List<String> palavras = new ArrayList<>(10000);
+        for (int i = 0; i < 10_000; i++) {
+            palavras.add(UUID.randomUUID().toString());
+        }
 
         Sequencia sequencia = new Sequencia(palavras);
         int indice = 0;
@@ -196,6 +199,8 @@ public class SequenciaTest {
             assertEquals(palavras.get(i), sequencia.toString(indice));
             indice = sequencia.proxima(indice);
         }
+
+        assertEquals(10_000, palavras.size());
     }
 
     @Test
