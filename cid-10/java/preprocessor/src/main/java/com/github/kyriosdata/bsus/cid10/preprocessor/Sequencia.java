@@ -26,7 +26,7 @@ public class Sequencia {
 
     /**
      * Conteúdo da sequência. Cada palavra (String) é
-     * iniciada pelo byte que indica o tamanho da palavra.
+     * iniciada pelo byte que indica o getTamanho da palavra.
      * Por exemplo, a primeira palavra se inicia em bytes[0] e
      * o valor bytes[0] indica a quantidade de bytes da
      * primeira palavra.
@@ -49,7 +49,7 @@ public class Sequencia {
         int totalBytes = tamanhoEmBytes(palavras);
         int totalPalavras = palavras.size();
 
-        // Total de bytes mais 1 byte por palavra (tamanho)
+        // Total de bytes mais 1 byte por palavra (getTamanho)
         int tamanhoVetor = totalPalavras + totalBytes;
 
         byte[] vetor = new byte[tamanhoVetor];
@@ -61,7 +61,7 @@ public class Sequencia {
             byte[] palavraAsStr = toByteArray(palavra);
             int length = palavraAsStr.length;
 
-            // Define o tamanho da palavra (primeiro byte)
+            // Define o getTamanho da palavra (primeiro byte)
             vetor[pos] = (byte) length;
 
             // Posição do primeiro byte correspondente ao
@@ -79,7 +79,7 @@ public class Sequencia {
     }
 
     /**
-     * Identifica tamanho em bytes necessário para armazenar
+     * Identifica getTamanho em bytes necessário para armazenar
      * os caracteres (ASCII) de todas as palavras da lista
      * fornecida.
      *
@@ -120,7 +120,7 @@ public class Sequencia {
      */
     public String toString(int posicao) {
 
-        return new String(bytes, posicao + 1, tamanho(posicao));
+        return new String(bytes, posicao + 1, getTamanho(posicao));
     }
 
     /**
@@ -130,7 +130,7 @@ public class Sequencia {
      * @return Índice da palavra que sucede aquela cujo índice é fornecido.
      */
     public int proxima(int indice) {
-        int candidato = indice + tamanho(indice) + 1;
+        int candidato = indice + getTamanho(indice) + 1;
         return (candidato < bytes.length) ? candidato : -1;
     }
 
@@ -148,7 +148,7 @@ public class Sequencia {
     public int encontre(int indice, byte[] padrao) {
         final int tamanhoSubSequencia = padrao.length;
         int primeiroByte = indice;
-        int proximaPalavra = primeiroByte + tamanho(indice) + 1;
+        int proximaPalavra = primeiroByte + getTamanho(indice) + 1;
 
         // Indica posição do byte da subsequência a ser comparado.
         int pos = 0;
@@ -173,13 +173,41 @@ public class Sequencia {
             }
 
             indice = proximaPalavra;
-            proximaPalavra = proximaPalavra + tamanho(proximaPalavra) + 1;
+            proximaPalavra = proximaPalavra + getTamanho(proximaPalavra) + 1;
             pos = 0;
         }
     }
 
-    public int tamanho(int indice) {
-        return bytes[indice] & 0xFF;
+    /**
+     * Recupera o tamanho da sequência de caracteres armazenada
+     * na posição indicada.
+     *
+     * @param posicao Posição da sequência de caracteres cujo tamanho
+     *               é requisitado.
+     *
+     * @return Tamanho da sequência de caracteres, em bytes, armazenada na
+     * posição indicada.
+     */
+    public int getTamanho(int posicao) {
+        return bytes[posicao] & 0xFF;
+    }
+
+    /**
+     * Registra o tamanho da sequência de caracteres a ser armazenada na
+     * posição indicada.
+     *
+     * @param indice Posição da sequência de caracteres cujo tamanho deve
+     *               ser registrado.
+     *
+     * @param valor Quantidade de caracteres da sequência a ser armazenada,
+     *              em bytes.
+     */
+    public void setTamanho(int indice, int valor) {
+        if (valor > 255) {
+            throw new IllegalArgumentException("tamanho maior que permitido");
+        }
+
+        bytes[indice] = (byte) valor;
     }
 
     public List<Integer> procurePor(String[] criterios) {
