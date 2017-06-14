@@ -2,14 +2,16 @@ package com.github.kyriosdata.bsus.cid10.preprocessor;
 
 import com.google.gson.Gson;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 
 /**
- * Agrupa conteúdo de arquivos JSON em um único arquivo cid10.json em
- * resources.
+ * Agrupa conteúdo de arquivos JSON em um único arquivo cid10.json depositado
+ * no diretório resources.
  */
 public class Agrupador {
     public static void main(String[] args) throws IOException {
