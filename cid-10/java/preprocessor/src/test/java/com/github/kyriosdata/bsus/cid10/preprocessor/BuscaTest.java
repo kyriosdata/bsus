@@ -34,11 +34,8 @@ public class BuscaTest {
         c = FileFromResourcesFolder.getConteudo("cid10.json", Cid.class);
 
         // TODO persistir cid.toByteArray() e sentencas (comparar tamanhos)
-        sentencas = new ArrayList<>();
-        for (int i = 0; i < sc.codigo.length; i++) {
-            sentencas.add(sc.codigo[i] + " " + sc.descricao[i]);
-        }
 
+        sentencas = sc.getSentencas();
         cid = new Sequencia(sentencas);
     }
 
@@ -53,6 +50,8 @@ public class BuscaTest {
         byte[] sentencasBytes = baos.toByteArray();
         byte[] sequenciaBytes = cid.toByteArray();
         assertTrue(sentencasBytes.length > sequenciaBytes.length);
+
+
     }
 
     @Test

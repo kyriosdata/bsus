@@ -40,8 +40,17 @@ public class Transformador {
 
     public static void main(String[] args) throws FileNotFoundException {
         Transformador t = Transformador.newInstance("cid10.json");
-
     }
+
+    public List<String> getSentencas() {
+        List<String> sentencas = new ArrayList<>();
+        for (int i = 0; i < codigo.length; i++) {
+            sentencas.add(codigo[i] + " " + descricao[i]);
+        }
+
+        return sentencas;
+    }
+
 
     public static Transformador newInstance(String fileName) throws FileNotFoundException {
         File file = FileFromResourcesFolder.get(fileName);
