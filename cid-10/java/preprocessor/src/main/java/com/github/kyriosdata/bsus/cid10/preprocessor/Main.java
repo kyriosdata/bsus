@@ -9,6 +9,7 @@
 
 package com.github.kyriosdata.bsus.cid10.preprocessor;
 
+import com.github.kyriosdata.bsus.cid10.preprocessor.json.Capitulos;
 import com.google.gson.Gson;
 
 import java.io.File;

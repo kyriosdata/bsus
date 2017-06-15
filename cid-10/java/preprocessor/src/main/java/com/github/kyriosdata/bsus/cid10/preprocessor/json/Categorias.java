@@ -7,12 +7,12 @@
  * Creative Commons Attribution 4.0 International License.
  */
 
-package com.github.kyriosdata.bsus.cid10.preprocessor;
+package com.github.kyriosdata.bsus.cid10.preprocessor.json;
 
 /**
  * Objeto auxiliar que representa CAPÍTULOS da CID-10.
  */
-public class Subcategorias {
-    public String[] SUBCAT;
+public class Categorias {
+    public String[] CAT;
     public String[] DESCRICAO;
 }

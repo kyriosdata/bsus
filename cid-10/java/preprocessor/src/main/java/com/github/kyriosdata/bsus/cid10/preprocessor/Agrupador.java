@@ -1,5 +1,6 @@
 package com.github.kyriosdata.bsus.cid10.preprocessor;
 
+import com.github.kyriosdata.bsus.cid10.preprocessor.json.*;
 import com.google.gson.Gson;
 
 import java.io.IOException;

@@ -8,8 +8,8 @@
  * meio de GSON, para reunir todos os códigos e descrições da CID-10 em um
  * único arquivo: cid10.json. Essa tarefa de agrupar os códigos faz uso de
  * várias classes:
- * {@link com.github.kyriosdata.bsus.cid10.preprocessor.Capitulos},
- * {@link com.github.kyriosdata.bsus.cid10.preprocessor.Categorias} e outras,
+ * {@link com.github.kyriosdata.bsus.cid10.preprocessor.json.Capitulos},
+ * {@link com.github.kyriosdata.bsus.cid10.preprocessor.json.Categorias} e outras,
  * de fato, uma classe para cada arquivo JSON obtido dos arquivos originais
  * (CSV) da CID-10.
  *

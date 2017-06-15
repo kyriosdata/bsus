@@ -7,12 +7,12 @@
  * Creative Commons Attribution 4.0 International License.
  */
 
-package com.github.kyriosdata.bsus.cid10.preprocessor;
+package com.github.kyriosdata.bsus.cid10.preprocessor.json;
 
 /**
  * Objeto auxiliar que representa CAPÍTULOS da CID-10.
  */
-public class Grupos {
+public class GruposO {
     public String[] CATINIC;
     public String[] CATFIM;
     public String[] DESCRICAO;
