@@ -17,6 +17,7 @@ import java.nio.file.Paths;
 import java.util.List;
 
 /**
+ * Gera vetor de bytes utilizado para busca.
  */
 public class Gerador {
 
