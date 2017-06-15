@@ -9,9 +9,12 @@
 
 package com.github.kyriosdata.bsus.cid10.preprocessor;
 
+import com.github.kyriosdata.bsus.cid10.preprocessor.json.Cid;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -23,5 +26,13 @@ public class Gerador {
         List<String> sentencas = t.getSentencas();
 
         Files.write(Paths.get("./src/main/resources/cid10.ser"), sentencas);
+
+        List<String> originais = new ArrayList<>();
+        Cid c = FileFromResourcesFolder.getConteudo("cid10.json", Cid.class);
+        for (int i = 0; i < c.codigo.size(); i++) {
+            originais.add(c.codigo.get(i) + " " + c.descricao.get(i));
+        }
+
+        Files.write(Paths.get("./src/main/resources/cid10.org"), originais);
     }
 }
