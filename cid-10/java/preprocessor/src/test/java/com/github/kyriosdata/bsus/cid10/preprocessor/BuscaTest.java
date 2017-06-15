@@ -50,7 +50,9 @@ public class BuscaTest {
         oos.flush();
         oos.close();
 
-        assertTrue(baos.toByteArray().length > cid.toByteArray().length);
+        byte[] sentencasBytes = baos.toByteArray();
+        byte[] sequenciaBytes = cid.toByteArray();
+        assertTrue(sentencasBytes.length > sequenciaBytes.length);
     }
 
     @Test
