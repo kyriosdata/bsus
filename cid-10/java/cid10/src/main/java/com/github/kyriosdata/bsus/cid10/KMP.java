@@ -1,12 +1,16 @@
 package com.github.kyriosdata.bsus.cid10;
 
+/**
+ * Implementação do Algoritmo KMP usando vetores de bytes.
+ * Emprego exclusivamente para experimentação de desempenho.
+ */
 public class KMP {
     // Texto sobre o qual serão feitas "muitas" buscas
     private byte[] text;
 
-    private final int R = 256;       // the radix
+    private final int R = 256;
 
-    private int[][] dfa;       // the KMP automoton
+    private int[][] dfa;
     private byte[] pattern;    // padrão a ser procurado
 
     public KMP(byte[] texto) {
