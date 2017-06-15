@@ -13,8 +13,8 @@ import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import java.io.FileNotFoundException;
-import java.io.UnsupportedEncodingException;
+import java.io.*;
+import java.nio.file.Files;
 import java.util.*;
 
 import static junit.framework.TestCase.*;
@@ -199,5 +199,28 @@ public class SequenciaTest {
         assertEquals(4, bytes.length);
 
         assertEquals("sala", new String(bytes, 0, 4, "ASCII"));
+    }
+
+    public File get(String fileName) {
+        ClassLoader classLoader = this.getClass().getClassLoader();
+        return new File(classLoader.getResource(fileName).getFile());
+    }
+
+    @Test
+    public void tamanhos() throws IOException {
+        List<String> sentencas = Files.readAllLines(get("cid10.ser").toPath());
+
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        ObjectOutputStream oos = new ObjectOutputStream(baos);
+        oos.writeObject(sentencas);
+        oos.flush();
+        oos.close();
+
+        byte[] sentencasBytes = baos.toByteArray();
+
+        Sequencia cid = new Sequencia(sentencas);
+        byte[] sequenciaBytes = cid.toByteArray();
+
+        assertTrue(sentencasBytes.length > sequenciaBytes.length);
     }
 }

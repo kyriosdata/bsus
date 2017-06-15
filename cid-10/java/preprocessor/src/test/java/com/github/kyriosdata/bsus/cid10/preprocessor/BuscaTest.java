@@ -42,19 +42,6 @@ public class BuscaTest {
     }
 
     @Test
-    public void tamanhos() throws IOException {
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        ObjectOutputStream oos = new ObjectOutputStream(baos);
-        oos.writeObject(sentencas);
-        oos.flush();
-        oos.close();
-
-        byte[] sentencasBytes = baos.toByteArray();
-        byte[] sequenciaBytes = cid.toByteArray();
-        assertTrue(sentencasBytes.length > sequenciaBytes.length);
-    }
-
-    @Test
     public void analisaSentencas() {
         int maxSize = 0;
         for (String sentenca : sentencas) {
