@@ -9,6 +9,8 @@
 
 package com.github.kyriosdata.bsus.cid10.preprocessor;
 
+import com.github.kyriosdata.bsus.cid10.Sequencia;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;

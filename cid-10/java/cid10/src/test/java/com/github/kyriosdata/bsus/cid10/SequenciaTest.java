@@ -7,7 +7,7 @@
  * Creative Commons Attribution 4.0 International License.
  */
 
-package com.github.kyriosdata.bsus.cid10.preprocessor;
+package com.github.kyriosdata.bsus.cid10;
 
 import org.junit.BeforeClass;
 import org.junit.Ignore;
@@ -16,8 +16,6 @@ import org.junit.Test;
 import java.io.FileNotFoundException;
 import java.io.UnsupportedEncodingException;
 import java.util.*;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import static junit.framework.TestCase.*;
 import static org.junit.Assert.assertArrayEquals;

@@ -1,4 +1,4 @@
-package com.github.kyriosdata.bsus.cid10.preprocessor;
+package com.github.kyriosdata.bsus.cid10;
 
 public class KMP {
     // Texto sobre o qual serão feitas "muitas" buscas
