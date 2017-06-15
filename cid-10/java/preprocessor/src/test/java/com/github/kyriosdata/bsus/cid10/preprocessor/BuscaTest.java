@@ -87,16 +87,4 @@ public class BuscaTest {
             idxCid = cid.proxima(idxCid);
         }
     }
-
-    @Test
-    public void buscaPorPalavraInexistente() {
-
-        final String[] criterios = {"y112", "intoxicacao", "anti" };
-
-        List<Integer> identificadas = cid.procurePor(criterios);
-        assertEquals(1, identificadas.size());
-
-        assertEquals(1, identificadas.size());
-        assertTrue(c.descricao.get(identificadas.get(0)).contains("[intoxicação]"));
-    }
 }
