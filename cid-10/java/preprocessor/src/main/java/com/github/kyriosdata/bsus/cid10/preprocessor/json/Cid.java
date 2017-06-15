@@ -7,7 +7,7 @@
  * Creative Commons Attribution 4.0 International License.
  */
 
-package com.github.kyriosdata.bsus.cid10.preprocessor;
+package com.github.kyriosdata.bsus.cid10.preprocessor.json;
 
 import java.util.ArrayList;
 import java.util.List;

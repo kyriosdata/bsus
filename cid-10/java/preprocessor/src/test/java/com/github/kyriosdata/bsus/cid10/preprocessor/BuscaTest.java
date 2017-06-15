@@ -1,5 +1,6 @@
 package com.github.kyriosdata.bsus.cid10.preprocessor;
 
+import com.github.kyriosdata.bsus.cid10.preprocessor.json.Cid;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
