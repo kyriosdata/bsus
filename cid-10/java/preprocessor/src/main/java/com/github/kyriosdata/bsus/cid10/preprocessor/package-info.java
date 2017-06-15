@@ -19,5 +19,13 @@
  * empregada para busca é diferente daquela empregada para consulta.
  * Todas as "transformações" são realizadas pela classe
  * {@link com.github.kyriosdata.bsus.cid10.preprocessor.Transformador}.
+ *
+ * <p>A classe
+ * {@link com.github.kyriosdata.bsus.cid10.preprocessor.Transformador} realiza
+ * várias transformações e oferece o método
+ * {@link com.github.kyriosdata.bsus.cid10.preprocessor.Transformador#getSentencas()}
+ * que fornece todas as sentenças da CID-10 no seguinte formato "codigo descricao",
+ * ou seja, o código de cada entrada da CID-10 é seguido da descrição
+ * correspondente.
  */
 package com.github.kyriosdata.bsus.cid10.preprocessor;
