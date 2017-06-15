@@ -25,9 +25,17 @@ import java.util.*;
  * dessa "aplicação de plural".
  */
 public class Transformador {
+    private static List<String> paraRemover = Arrays.asList(new String[]{
+            " de ", " da ", " das ", " do ", " dos ",
+            " a ", " as ", " e ", " o ", " os ",
+            " na ", " nas ", " no ", " nos ",
+            " para ",
+            " que ", " com ", " ou ",
+            " em ", " por "
+    });
+
     public String[] codigo;
     public String[] descricao;
-
     private int size;
 
     public static void main(String[] args) throws FileNotFoundException {
@@ -54,6 +62,7 @@ public class Transformador {
         obj.eliminaParenteses();
         obj.removeSinais(); // ç por c, á por a, ...
         obj.removeAspas();
+        obj.removeTermos();
         obj.doisOuMaisEspacosPorUm();
 
         return obj;
@@ -175,11 +184,19 @@ public class Transformador {
 
     public void doisOuMaisEspacosPorUm() {
         for (int i = 0; i < size; i++) {
-            if (descricao[i].contains("\"")) {
-                descricao[i] = descricao[i].replace("\"", " ");
+            if (descricao[i].contains("  ")) {
+                descricao[i] = descricao[i].replaceAll("[ ]{2,}", " ");
             }
+        }
+    }
 
-            descricao[i] = descricao[i].replaceAll("[ ]{2,}", " ");
+    public void removeTermos() {
+        for (int i = 0; i < size; i++) {
+            for (String eliminar : paraRemover) {
+                if (descricao[i].contains(eliminar)) {
+                    descricao[i] = descricao[i].replace(eliminar, " ");
+                }
+            }
         }
     }
 }

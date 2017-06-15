@@ -10,6 +10,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class BuscaTest {
 
@@ -22,6 +23,7 @@ public class BuscaTest {
     private static Sequencia descricoes;
     private static List<String> codigosList;
     private static List<String> descricoesList;
+    private static List<String> sentencas;
 
     private static Sequencia cid;
 
@@ -38,7 +40,7 @@ public class BuscaTest {
         codigos = new Sequencia(codigosList);
         descricoes = new Sequencia(descricoesList);
 
-        List<String> sentencas = new ArrayList<>();
+        sentencas = new ArrayList<>();
         for (int i = 0; i < sc.codigo.length; i++) {
             sentencas.add(sc.codigo[i] + " " + sc.descricao[i]);
         }
@@ -47,15 +49,44 @@ public class BuscaTest {
     }
 
     @Test
+    public void analisaSentencas() {
+        int maxSize = 0;
+        for (String sentenca : sentencas) {
+            if (sentenca.length() > maxSize) {
+                maxSize = sentenca.length();
+            }
+        }
+
+        assertTrue(maxSize < 256);
+    }
+
+    @Test
+    public void verificaCid() {
+        int indice = 0;
+        int total = 0;
+        while (indice != -1) {
+            System.out.println(cid.toString(indice));
+            indice = cid.proxima(indice);
+            total++;
+        }
+
+        System.out.println("Size in bytes: " + cid.toByteArray().length + " Total: " + total);
+    }
+
+    @Test
     public void montagemCorreta() {
         int idxCode = 0;
         int idxDesc = 0;
+        int idxCid = 0;
         for (int i = 0; i < sc.codigo.length; i++) {
             assertEquals(codigosList.get(i), sc.codigo[i]);
             assertEquals(sc.codigo[i], codigos.toString(idxCode));
             assertEquals(sc.descricao[i], descricoes.toString(idxDesc));
+            assertTrue(cid.toString(idxCid), cid.toString(idxCid).contains(sc.codigo[i]));
+            assertTrue(cid.toString(idxCid).contains(sc.descricao[i]));
             idxCode = codigos.proxima(idxCode);
             idxDesc = descricoes.proxima(idxDesc);
+            idxCid = cid.proxima(idxCid);
         }
     }
 

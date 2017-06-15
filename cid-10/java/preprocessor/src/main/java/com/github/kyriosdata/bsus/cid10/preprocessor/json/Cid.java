@@ -14,7 +14,7 @@ import java.util.List;
 
 /**
  * Objeto que reúne o conteúdo da CID-10 (capítulos, categorias, grupos
- * e demais).
+ * e demais) sem "transformações", ou seja, o conteúdo "original".
  */
 public class Cid {
     public List<String> codigo;
