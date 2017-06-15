@@ -4,7 +4,7 @@ import com.github.kyriosdata.bsus.cid10.preprocessor.json.Cid;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import java.io.FileNotFoundException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -19,33 +19,38 @@ public class BuscaTest {
     // Dados "originais" sem transformações
     private static Cid c;
 
-    private static Sequencia codigos;
-    private static Sequencia descricoes;
-    private static List<String> codigosList;
-    private static List<String> descricoesList;
     private static List<String> sentencas;
 
     private static Sequencia cid;
 
     @BeforeClass
     public static void montagemIndice() throws FileNotFoundException {
+
+        // Converte versão original em versão eficiente para consulta
         final String fileName = "cid10.json";
         sc = Transformador.newInstance(fileName);
 
+        // Empregado exclusivamente para retornar resultado (sem transformações)
         c = FileFromResourcesFolder.getConteudo("cid10.json", Cid.class);
 
-        codigosList = Arrays.asList(sc.codigo);
-        descricoesList = Arrays.asList(sc.descricao);
-
-        codigos = new Sequencia(codigosList);
-        descricoes = new Sequencia(descricoesList);
-
+        // TODO persistir cid.toByteArray() e sentencas (comparar tamanhos)
         sentencas = new ArrayList<>();
         for (int i = 0; i < sc.codigo.length; i++) {
             sentencas.add(sc.codigo[i] + " " + sc.descricao[i]);
         }
 
         cid = new Sequencia(sentencas);
+    }
+
+    @Test
+    public void tamanhos() throws IOException {
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        ObjectOutputStream oos = new ObjectOutputStream(baos);
+        oos.writeObject(sentencas);
+        oos.flush();
+        oos.close();
+
+        assertTrue(baos.toByteArray().length > cid.toByteArray().length);
     }
 
     @Test
@@ -65,7 +70,6 @@ public class BuscaTest {
         int indice = 0;
         int total = 0;
         while (indice != -1) {
-            System.out.println(cid.toString(indice));
             indice = cid.proxima(indice);
             total++;
         }
@@ -75,17 +79,10 @@ public class BuscaTest {
 
     @Test
     public void montagemCorreta() {
-        int idxCode = 0;
-        int idxDesc = 0;
         int idxCid = 0;
         for (int i = 0; i < sc.codigo.length; i++) {
-            assertEquals(codigosList.get(i), sc.codigo[i]);
-            assertEquals(sc.codigo[i], codigos.toString(idxCode));
-            assertEquals(sc.descricao[i], descricoes.toString(idxDesc));
             assertTrue(cid.toString(idxCid), cid.toString(idxCid).contains(sc.codigo[i]));
             assertTrue(cid.toString(idxCid).contains(sc.descricao[i]));
-            idxCode = codigos.proxima(idxCode);
-            idxDesc = descricoes.proxima(idxDesc);
             idxCid = cid.proxima(idxCid);
         }
     }

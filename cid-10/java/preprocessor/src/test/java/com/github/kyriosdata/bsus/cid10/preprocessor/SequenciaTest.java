@@ -22,6 +22,7 @@ import java.util.regex.Pattern;
 import static junit.framework.TestCase.*;
 import static org.junit.Assert.assertArrayEquals;
 
+// TODO mover @ignore para classe de teste especifica para desempenho (comparacao)
 public class SequenciaTest {
 
     final int ITERACOES = 10;
