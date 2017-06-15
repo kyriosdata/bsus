@@ -121,7 +121,7 @@ public class SequenciaTest {
     @Ignore
     public void desempenhoKmp() throws Exception {
 
-        KMP kmp = new KMP(sequencia.bytes);
+        KMP kmp = new KMP(sequencia.toByteArray());
         kmp.definePadrao(searchBytes);
 
         int total = 0;
@@ -136,7 +136,7 @@ public class SequenciaTest {
                 }
 
                 total++;
-                indice = indice + sequencia.bytes[indice] + 1;
+                indice = indice + sequencia.toByteArray()[indice] + 1;
             }
         }
 

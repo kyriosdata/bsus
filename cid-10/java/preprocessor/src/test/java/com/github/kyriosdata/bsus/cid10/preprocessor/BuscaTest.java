@@ -4,9 +4,10 @@ import com.github.kyriosdata.bsus.cid10.preprocessor.json.Cid;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import java.io.*;
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.io.ByteArrayOutputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
@@ -50,8 +51,6 @@ public class BuscaTest {
         byte[] sentencasBytes = baos.toByteArray();
         byte[] sequenciaBytes = cid.toByteArray();
         assertTrue(sentencasBytes.length > sequenciaBytes.length);
-
-
     }
 
     @Test
@@ -75,7 +74,7 @@ public class BuscaTest {
             total++;
         }
 
-        System.out.println("Size in bytes: " + cid.toByteArray().length + " Total: " + total);
+        assertEquals(15672, total);
     }
 
     @Test
@@ -94,10 +93,9 @@ public class BuscaTest {
         final String[] criterios = {"y112", "intoxicacao", "anti" };
 
         List<Integer> identificadas = cid.procurePor(criterios);
-        for (int i : identificadas) {
-            System.out.println(c.codigo.get(i) + " " + c.descricao.get(i));
-        }
+        assertEquals(1, identificadas.size());
 
         assertEquals(1, identificadas.size());
+        assertTrue(c.descricao.get(identificadas.get(0)).contains("[intoxicação]"));
     }
 }

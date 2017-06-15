@@ -34,7 +34,7 @@ public class Sequencia {
      * <p>Os bytes seguintes, na quantidade indicada pelo
      * primeiro byte, definem a palavra.
      */
-    public byte[] bytes;
+    private byte[] bytes;
 
     /**
      * Cria uma instância que encapsula o vetor de bytes fornecido.

@@ -14,6 +14,7 @@ import com.google.gson.Gson;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.nio.file.Files;
 import java.util.*;
 
 /**
@@ -34,12 +35,24 @@ public class Transformador {
             " em ", " por "
     });
 
+    /**
+     * Retém todos os códigos da CID-10.
+     */
     public String[] codigo;
+
+    /**
+     * Retém todas as descrições correspondentes aos códigos da CID-10.
+     */
     public String[] descricao;
+
     private int size;
 
     public static void main(String[] args) throws FileNotFoundException {
         Transformador t = Transformador.newInstance("cid10.json");
+        List<String> sentencas = t.getSentencas();
+        for (String sentenca : sentencas) {
+            System.out.println(sentenca);
+        }
     }
 
     public List<String> getSentencas() {
@@ -51,7 +64,14 @@ public class Transformador {
         return sentencas;
     }
 
-
+    /**
+     * Cria instância responsável pela "transformação" (preparação) do
+     * conteúdo da CID-10 para a estrutura de busca empregada.
+     *
+     * @param fileName Nome do arquivo contendo a CID-10
+     * @return
+     * @throws FileNotFoundException
+     */
     public static Transformador newInstance(String fileName) throws FileNotFoundException {
         File file = FileFromResourcesFolder.get(fileName);
         FileReader fileReader = new FileReader(file);
@@ -136,7 +156,6 @@ public class Transformador {
     }
 
     public void eliminaParenteses() {
-        int total = 0;
         for (int i = 0; i < size; i++) {
             String sentenca = descricao[i];
 
