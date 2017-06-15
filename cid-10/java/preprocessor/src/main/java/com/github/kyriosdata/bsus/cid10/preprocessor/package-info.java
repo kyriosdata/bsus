@@ -1,7 +1,7 @@
 /**
- * Pacote que reúne classes empregadas para geração de estrutura de dados
+ * Pacote que reúne classes empregadas para geração de dados
  * para busca de códigos na classificação CID-10. O principal resultado
- * esperado são os arquivos cid10.json e cid10.dat. O primeiro contendo
+ * esperado são os arquivos cid10.json e cid10.ser. O primeiro contendo
  * a CID-10 conforme "versão original", o segundo contendo "versão
  * preparada" especificamente para permitir busca eficiente.
  *
