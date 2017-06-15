@@ -1,4 +1,4 @@
-package com.github.kyriosdata.bsus.cid10;
+package com.github.kyriosdata.bsus.cid10.util;
 
 /**
  * Implementação do Algoritmo KMP usando vetores de bytes.

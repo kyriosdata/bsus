@@ -9,6 +9,7 @@
 
 package com.github.kyriosdata.bsus.cid10;
 
+import com.github.kyriosdata.bsus.cid10.util.KMP;
 import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -17,7 +18,6 @@ import java.io.*;
 import java.nio.file.Files;
 import java.util.*;
 
-import static junit.framework.TestCase.*;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
