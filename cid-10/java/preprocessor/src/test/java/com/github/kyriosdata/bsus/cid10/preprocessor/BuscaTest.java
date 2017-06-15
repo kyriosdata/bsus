@@ -1,17 +1,12 @@
 package com.github.kyriosdata.bsus.cid10.preprocessor;
 
-import com.github.kyriosdata.bsus.cid10.Sequencia;
 import com.github.kyriosdata.bsus.cid10.preprocessor.json.Cid;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class BuscaTest {
@@ -22,8 +17,6 @@ public class BuscaTest {
     private static Cid c;
 
     private static List<String> sentencas;
-
-    private static Sequencia cid;
 
     @BeforeClass
     public static void montagemIndice() throws FileNotFoundException {
@@ -38,7 +31,6 @@ public class BuscaTest {
         // TODO persistir cid.toByteArray() e sentencas (comparar tamanhos)
 
         sentencas = sc.getSentencas();
-        cid = new Sequencia(sentencas);
     }
 
     @Test
@@ -51,27 +43,5 @@ public class BuscaTest {
         }
 
         assertTrue(maxSize < 256);
-    }
-
-    @Test
-    public void verificaCid() {
-        int indice = 0;
-        int total = 0;
-        while (indice != -1) {
-            indice = cid.proxima(indice);
-            total++;
-        }
-
-        assertEquals(15672, total);
-    }
-
-    @Test
-    public void montagemCorreta() {
-        int idxCid = 0;
-        for (int i = 0; i < sc.codigo.length; i++) {
-            assertTrue(cid.toString(idxCid), cid.toString(idxCid).contains(sc.codigo[i]));
-            assertTrue(cid.toString(idxCid).contains(sc.descricao[i]));
-            idxCid = cid.proxima(idxCid);
-        }
     }
 }

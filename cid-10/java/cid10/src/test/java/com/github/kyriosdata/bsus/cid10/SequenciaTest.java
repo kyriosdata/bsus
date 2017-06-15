@@ -223,4 +223,19 @@ public class SequenciaTest {
 
         assertTrue(sentencasBytes.length > sequenciaBytes.length);
     }
+
+    @Test
+    public void verificaCid() throws IOException {
+        List<String> sentencas = Files.readAllLines(get("cid10.ser").toPath());
+        Sequencia cid = new Sequencia(sentencas);
+
+        int indice = 0;
+        int total = 0;
+        while (indice != -1) {
+            indice = cid.proxima(indice);
+            total++;
+        }
+
+        assertEquals(15672, total);
+    }
 }
