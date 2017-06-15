@@ -1,15 +1,32 @@
 package com.github.kyriosdata.bsus.cid10;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+
 /**
  * Created by fabio on 15/06/17.
  */
 public class Cid10 {
+
+    private byte[] bytes;
 
     /**
      * Permite que a instância da classe seja "preparada"
      * antes do uso.
      */
     public void load() {
+        File f = get("cid10.dat");
+        try {
+            bytes = Files.readAllBytes(f.toPath());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public File get(String fileName) {
+        ClassLoader classLoader = this.getClass().getClassLoader();
+        return new File(classLoader.getResource(fileName).getFile());
     }
 
     /**
