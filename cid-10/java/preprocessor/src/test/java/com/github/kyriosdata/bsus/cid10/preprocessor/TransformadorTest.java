@@ -21,6 +21,6 @@ public class TransformadorTest {
     @Test
     public void totalDeEntradas() throws FileNotFoundException {
         Transformador sub = Transformador.newInstance("cid10.json");
-        assertEquals(12451, sub.codigo.length);
+        assertEquals(15672, sub.codigo.length);
     }
 }
