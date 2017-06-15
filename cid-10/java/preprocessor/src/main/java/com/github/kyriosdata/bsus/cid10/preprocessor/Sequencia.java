@@ -282,13 +282,15 @@ public class Sequencia {
     private List<Integer> procurePor(byte[][] procuradas) {
         List<Integer> encontradas = new ArrayList<>();
 
-        int total = 0;
+        // IMPORTANTE: ordem das sentenças empregada para
+        // montagem da resposta que não indica a posição
+        // no vetor de bytes, mas a ordem da sentença no
+        // conjunto de sentenças.
+        int ordem = 0;
 
         // while que percorre todas as entradas
         int indice = 0;
         while (indice != -1) {
-
-            total++;
 
             // Procure por todas as entradas que contém os critérios
             // Inicialmente assume-se que todas estão presentes
@@ -301,10 +303,11 @@ public class Sequencia {
             }
 
             if (presente) {
-                encontradas.add(indice);
+                encontradas.add(ordem);
             }
 
             indice = proxima(indice);
+            ordem++;
         }
 
         return encontradas;

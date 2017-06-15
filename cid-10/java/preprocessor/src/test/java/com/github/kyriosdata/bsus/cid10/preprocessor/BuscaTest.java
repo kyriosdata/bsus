@@ -92,23 +92,14 @@ public class BuscaTest {
 
     @Test
     public void buscaPorPalavraInexistente() {
-        Busca idx = new Busca(sc.descricao);
 
-        final String[] criterios = {"ic", "costelas" };
-        List<Integer> encontradas = idx.encontre(criterios);
-        for (int encontrada : encontradas) {
-            System.out.println(sc.codigo[encontrada] + " " + sc.descricao[encontrada]);
-        }
+        final String[] criterios = {"y112", "intoxicacao", "anti" };
 
-        for (int encontrada : encontradas) {
-            System.out.println(c.codigo.get(encontrada) + " " + c.descricao.get(encontrada));
-        }
-
-        List<Integer> identificadas = descricoes.procurePor(criterios);
+        List<Integer> identificadas = cid.procurePor(criterios);
         for (int i : identificadas) {
-            System.out.println(descricoes.toString(i));
+            System.out.println(c.codigo.get(i) + " " + c.descricao.get(i));
         }
 
-        assertEquals(identificadas.size(), encontradas.size());
+        assertEquals(1, identificadas.size());
     }
 }
