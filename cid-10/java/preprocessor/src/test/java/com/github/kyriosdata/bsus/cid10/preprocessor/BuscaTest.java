@@ -28,8 +28,6 @@ public class BuscaTest {
         // Empregado exclusivamente para retornar resultado (sem transformações)
         c = FileFromResourcesFolder.getConteudo("cid10.json", Cid.class);
 
-        // TODO persistir cid.toByteArray() e sentencas (comparar tamanhos)
-
         sentencas = sc.getSentencas();
     }
 
