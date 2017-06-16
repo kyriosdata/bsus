@@ -1,23 +1,19 @@
 package com.github.kyriosdata.bsus.cid10;
 
+import org.junit.BeforeClass;
 import org.junit.Test;
-
-import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-/**
- * Created by fabio on 15/06/17.
- */
 public class Cid10Test {
 
     private static Cid10 cid;
 
-    @Test
-    public void buscaTrivial() {
-        Cid10 c = new Cid10();
-        c.load();
+    @BeforeClass
+    public static void setUp() {
+        cid = new Cid10();
+        cid.load();
     }
 
     @Test

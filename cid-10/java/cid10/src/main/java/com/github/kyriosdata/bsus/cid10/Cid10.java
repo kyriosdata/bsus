@@ -3,22 +3,28 @@ package com.github.kyriosdata.bsus.cid10;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.util.List;
 
 /**
  * Created by fabio on 15/06/17.
  */
 public class Cid10 {
 
-    private byte[] bytes;
+    private Sequencia cid;
+    private List<String> original;
 
     /**
      * Permite que a instância da classe seja "preparada"
      * antes do uso.
      */
     public void load() {
-        File f = get("cid10.dat");
         try {
-            bytes = Files.readAllBytes(f.toPath());
+            File dat = get("cid10.dat");
+            byte[] bytes = Files.readAllBytes(dat.toPath());
+            cid = new Sequencia(bytes);
+
+            File org = get("cid10.org");
+            original = Files.readAllLines(org.toPath());
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -34,6 +40,9 @@ public class Cid10 {
      * serão empregados.
      */
     public void unload() {
+        cid = null;
+        original.clear();
+        original = null;
     }
 
     /**
@@ -48,6 +57,16 @@ public class Cid10 {
      * os critérios.
      */
     String[] search(String[] criterios) {
-        return null;
+        List<Integer> encontradas = cid.procurePor(criterios);
+        if (encontradas.size() == 0) {
+            return null;
+        }
+
+        String[] resposta = new String[encontradas.size()];
+        for (int i = 0; i < resposta.length; i++) {
+            resposta[i] = original.get(encontradas.get(i));
+        }
+
+        return resposta;
     }
 }
