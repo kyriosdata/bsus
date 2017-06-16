@@ -1,8 +1,8 @@
 package com.github.kyriosdata.bsus.cid10;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.nio.file.Files;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -19,20 +19,40 @@ public class Cid10 {
      */
     public void load() {
         try {
-            File dat = get("cid10.dat");
-            byte[] bytes = Files.readAllBytes(dat.toPath());
+            InputStream dat = get("/cid10.dat");
+            byte[] bytes = getData(dat);
             cid = new Sequencia(bytes);
 
-            File org = get("cid10.org");
-            original = Files.readAllLines(org.toPath());
+            InputStream org = get("/cid10.org");
+            InputStreamReader isr = new InputStreamReader(org);
+            BufferedReader br = new BufferedReader(isr);
+            original = new ArrayList<>();
+            String linha;
+            while ((linha = br.readLine()) != null) {
+                original.add(linha);
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    public File get(String fileName) {
-        ClassLoader classLoader = this.getClass().getClassLoader();
-        return new File(classLoader.getResource(fileName).getFile());
+    public byte[] getData(InputStream is) throws IOException {
+        ByteArrayOutputStream buffer = new ByteArrayOutputStream();
+
+        int nRead;
+        byte[] data = new byte[16384];
+
+        while ((nRead = is.read(data, 0, data.length)) != -1) {
+            buffer.write(data, 0, nRead);
+        }
+
+        buffer.flush();
+
+        return buffer.toByteArray();
+    }
+
+    public InputStream get(String fileName) {
+        return this.getClass().getResourceAsStream(fileName);
     }
 
     /**
