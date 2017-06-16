@@ -101,6 +101,11 @@
                     <archive>
                         <addMavenDescriptor>false</addMavenDescriptor>
                     </archive>
+                    <excludes>
+                        <exclude>**/cid10.ser</exclude>
+                        <exclude>**/Gerador.class</exclude>
+                        <exclude>**/KMP.class</exclude>
+                    </excludes>
                 </configuration>
             </plugin>
 

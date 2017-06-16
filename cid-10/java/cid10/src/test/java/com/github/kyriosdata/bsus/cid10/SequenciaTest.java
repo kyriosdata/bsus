@@ -18,11 +18,9 @@ import java.io.*;
 import java.nio.file.Files;
 import java.util.*;
 
-import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-// TODO mover @ignore para classe de teste especifica para desempenho (comparacao)
 public class SequenciaTest {
 
     final int ITERACOES = 10;
