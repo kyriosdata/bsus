@@ -56,7 +56,7 @@ public class Cid10 {
      * seguido da descrição) para cada entrada da CID-10 que satisfaz
      * os critérios.
      */
-    String[] search(String[] criterios) {
+    public String[] search(String[] criterios) {
         List<Integer> encontradas = cid.procurePor(criterios);
         if (encontradas.size() == 0) {
             return null;
