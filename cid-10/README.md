@@ -1,15 +1,10 @@
-# CID-10
-
-A CID-10 (versão 2008) é contemplada em duas versões: (a) [Javascript](js) para uso de todos os dados no cliente (sem conexão com backend) e (b) versão [Java](java/preprocessor) para ser requisitada via cliente.
-
-# Copyright
-O conteúdo da CID-10 versão 2008 empregada pelo presente projeto foi obtida [aqui](http://www.datasus.gov.br/cid10/V2008/cid10.htm). Os devidos créditos (copyright) por esse trabalho são fornecidos [aqui](http://www.datasus.gov.br/cid10/V2008/copyright.htm).
-
-### Contexto
+## CID-10
 A Classificação Internacional de Doenças (CID) empregada pelo Brasil é a CID-10. Profissionais de saúde, em geral, empregam os códigos presentes nessa classificação para se referirem a doenças de forma não ambígua, por exemplo, usam o código **A90** em vez de "dengue". 
 
-### Objetivo
-Desenvolver componente de software para busca (localização) do código de uma doença da CID-10.
+O presente projeto implementa dois módulos: (a) um para acesso à CID-10 por meio de uma interface gráfica via browser (apenas para ilustrar) e (b) um para fornecer um serviço de busca aos códigos da CID-10. 
+
+## Copyright
+O conteúdo da CID-10 versão 2008 empregada pelo presente projeto foi obtida [aqui](http://www.datasus.gov.br/cid10/V2008/cid10.htm). Os devidos créditos (copyright) por esse trabalho são fornecidos [aqui](http://www.datasus.gov.br/cid10/V2008/copyright.htm).
 
 ### Requisitos
 - A busca pode ser feita apenas por parte do código, parte da descrição ou de ambos. 
