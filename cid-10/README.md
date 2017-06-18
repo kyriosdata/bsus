@@ -14,3 +14,6 @@ O conteúdo da CID-10 versão 2008 empregada pelo presente projeto foi obtida [a
 - O módulo **cid10-2008.jar** deve incluir a classe CID10 que deve conter os métodos públicos **load** e **unload**. O primeiro carrega e oferece oportunidade para iniciar o componente, enquanto o segundo indica que o componente não mais será utilizado. 
 - A principal operação dessa interface é **search**, que recebe como argumento um vetor de sequências de caracteres (**String[]**). Esse método retorna **null** caso a entrada fornecida não identifique código algum correspondente e, caso contrário, um vetor de sequências de caracteres, contendo tantas entradas quanto os códigos localizados. A resposta sempre é o código seguido de um espaço em branco seguido da descrição. Por exemplo, um retorno possível é **A90 Dengue (dengue clássico)**, ou seja, o código A90 seguido de espaço que é seguido da descrição correspondente ao código A90.
 
+## Projeto (software design)
+- Dois módulos: **cid10-cliente.jar** e **cid10-service.jar**.
+
