@@ -33,7 +33,9 @@ Os serviços oferecidos pelo barramento SUS (SOA-SUS) a serem contemplados pela 
 
 ### Módulos
 
-Os elementos a serem implementados são identificados no diagrama abaixo. Observe que para acesso a um serviço remoto é necessário a localização do serviço, bem como credencial de acesso, ambos registrados "fora" do código fonte, conforme ilustrado. 
+Os elementos a serem implementados são identificados no diagrama abaixo. Há dois grupos de módulos: (a) interface e (b) implementação. O cliente usa diretamente apenas a interface e independe da implementação desse módulo. Em consequência, a implementação pode variar, sem necessariamente exigir mudança no cliente. 
+
+Observe que para acesso a um serviço remoto é necessário a localização do serviço, bem como credencial de acesso, ambos registrados "fora" do código fonte, conforme ilustrado. 
 
 ![bsus-modulos](https://cloud.githubusercontent.com/assets/1735792/24927295/f55eae9e-1ed4-11e7-94e2-ed5c04235aa0.png)
 
