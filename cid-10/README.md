@@ -3,10 +3,10 @@ A Classificação Internacional de Doenças (CID) empregada pelo Brasil é a CID
 
 O presente projeto implementa dois módulos: (a) um para acesso à CID-10 por meio de uma interface gráfica via browser (apenas com o propósito de ilustração) e (b) um para fornecer um serviço de busca aos códigos da CID-10. Uma [Web App](http://www.icd10codesearch.com/) similar pode ser consultada para ilustrar a intenção do presente projeto.
 
-## Copyright (e versão)
+## Versão e copyright da CID-10
 O conteúdo da CID-10 versão 2008 empregada pelo presente projeto foi obtida [aqui](http://www.datasus.gov.br/cid10/V2008/cid10.htm). Os créditos (copyright) do conteúdo da CID-10 são fornecidos [aqui](http://www.datasus.gov.br/cid10/V2008/copyright.htm).
 
-### Requisitos
+## Requisitos
 - A busca pode ser feita apenas por parte do código, parte da descrição ou de ambos. 
 - A busca pela descrição por "dengue" deve trazer todas as entradas da CID-10 que contêm "dengue" como parte da descrição. Nesse caso, as entradas cujos códigos são A90 e A91. Observe que se a consulta for realizada apenas por "engue" (sem o d), o resultado também deve incluir aqueles oferecidos para "dengue".
 - A busca por "90" pelo código e por "dengue" pela descrição, apenas produz a entrada de código A90.
