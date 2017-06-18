@@ -1,5 +1,5 @@
 # Barramento SUS (bsus)
-Façade para acesso ao Barramento SUS (bsus) 
+Façade para acesso ao Barramento SUS (bsus).
 
 <br />
 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
