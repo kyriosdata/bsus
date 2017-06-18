@@ -12,7 +12,7 @@ Façade para acesso ao Barramento SUS (bsus)
  Instituto de Informática (UFG).
  
 ## Qual o objetivo do BSUS?
-O Ministério da Saúde (MS) é mantenedor de informações em saúde no Brasil. Algumas dessas informações são enviadas ao MS ou recebidas do MS por um Sistema de Informação em Saúde (SIS). Essa interação entre um SIS e o "barramento SUS" é ilustrada na figura abaixo.
+O Ministério da Saúde (MS) é um mantenedor e fornecedor de informações em saúde no Brasil. Tais informações são enviadas/recebidas por um Sistema de Informação em Saúde (SIS). Essa interação entre um SIS e o "barramento SUS" pode ser ilustrada na figura abaixo.
 
 ![bsus-context](https://cloud.githubusercontent.com/assets/1735792/24827988/9b06f354-1c2a-11e7-98dc-38a80be4de77.png)
 
