@@ -18,6 +18,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * Aplicativo que gera os dois arquivos esperados do pré-processamento.
+ * A saber: (a) arquivo "cid10.org" contendo versão original (utilizada
+ * para produção de resposta e (b) arquivo "cid10.ser" contendo versão
+ * empregada para as buscas.
  */
 public class Gerador {
 
