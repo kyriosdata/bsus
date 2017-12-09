@@ -14,7 +14,8 @@ de ISO-885901.
 Detalhes da licença estão disponíveis 
 [aqui](http://www.datasus.gov.br/cid10/V2008/cid10.htm).
 
-## Estrutura de dados para busca
+## Estratégia
+1. Descrição abreviada não é fornecida, apenas a descrição "completa".
 1. Eliminar sinais (acentos). 
 1. Eliminar duplicidades de palavras dentro de uma linha.
 
