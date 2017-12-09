@@ -4,7 +4,7 @@ para busca de códigos na CID-10. O principal atributo a ser
 atendido é o desempenho, ou tempo de resposta entre a submissão
 de uma consulta e a obtenção dos resultados correspondentes.
 
-### Versão e copyright da CID-10
+### Versão original e copyright da CID-10
 A versão utilizada encontra-se disponível pelo portal do 
 DATASUS 
 ([CID-10](http://www.datasus.gov.br/cid10/V2008/cid10.htm)). 
