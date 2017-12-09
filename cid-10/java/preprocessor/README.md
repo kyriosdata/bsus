@@ -14,8 +14,9 @@ de ISO-885901.
 Detalhes da licença estão disponíveis 
 [aqui](http://www.datasus.gov.br/cid10/V2008/cid10.htm).
 
-## Estratégia adotada
+## Estrutura de dados para busca
 - Eliminar sinais (acentos). 
+- Eliminar duplicidades de palavras dentro de uma linha.
 
 ### Conversão para JSON
 Arquivos que formam a base da CID-10 foram convertidos para o 
