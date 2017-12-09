@@ -11,6 +11,22 @@ DATASUS
 Em particular, trata-se da versão de 2008. Arquivos fazem uso 
 de ISO-885901. 
 
+## Organização da CID-10
+A CID-10 está organizada em capítulos. Cada capítulo está divido em
+grupos. Cada grupo em categorias e cada categoria em sub-categorias.
+
+<pre>
+CID-10
+|
+-- Capítulo 
+   |
+   -- Grupo 1
+      |
+      -- Categoria
+         |
+         -- Sub-categoria
+</pre>
+
 Detalhes da licença estão disponíveis 
 [aqui](http://www.datasus.gov.br/cid10/V2008/cid10.htm).
 
