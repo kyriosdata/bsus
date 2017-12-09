@@ -4,16 +4,20 @@ para busca de códigos na CID-10. O principal atributo a ser
 atendido é o desempenho, ou tempo de resposta entre a submissão
 de uma consulta e a obtenção dos resultados correspondentes.
 
-### Versão original e copyright da CID-10
+### Versão original e copyright (licença) da CID-10
 A versão utilizada encontra-se disponível pelo portal do 
 DATASUS 
 ([CID-10](http://www.datasus.gov.br/cid10/V2008/cid10.htm)). 
 Em particular, trata-se da versão de 2008. Arquivos fazem uso 
 de ISO-885901. 
 
+Detalhes da licença estão disponíveis 
+[aqui](http://www.datasus.gov.br/cid10/V2008/cid10.htm).
+
 ## Organização da CID-10
 A CID-10 está organizada em capítulos. Cada capítulo está divido em
-grupos. Cada grupo em categorias e cada categoria em sub-categorias.
+grupos. Cada grupo em categorias e cada categoria em sub-categorias,
+conforme ilustrado abaixo.
 
 <pre>
 CID-10
@@ -26,9 +30,6 @@ CID-10
          |
          -- Sub-categoria
 </pre>
-
-Detalhes da licença estão disponíveis 
-[aqui](http://www.datasus.gov.br/cid10/V2008/cid10.htm).
 
 ## Estratégia
 1. Descrição abreviada não é fornecida, apenas a descrição "completa".
