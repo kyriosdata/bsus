@@ -19,20 +19,6 @@ Segundo o Manual de Certificação da SBIS, o requisito identificado por ESTR.02
 - O S-RES deve possibilitar a representação de dados de natureza hierárquica em árvores ou hierarquias, preservando o relacionamento dos nodos pais com os nodos filhos, de tal forma que possibilite a navegação, busca e consulta destes dados em todas as direções e 
 - A representação hierárquica deverá ser respeitada minimamente para os seguintes casos: familiograma (caso o S-RES ofereça familiograma); busca e navegação na captura de códigos de terminologias e classificações hierárquicas, como CID e CIAP. Por exemplo, um item de terminologia deve apontar para seu nodo pai, e para seus nodos filhos, se não for nodo terminal, e o usuário, além de poder fazer uma pesquisa por código ou extenso da terminologia, poderá navegar na estrutura hierárquica de alguma maneira.
 
-## Organização da CID-10
-A CID-10 inclui códigos e as descrições correspondentes para doenças organizadas em capítulos. Cada capítulo reúne vários grupos. Cada grupo está organizado em categorias e, cada categoria, por sua vez, está organizada em sub-categorias, conforme ilustrado abaixo:
-<pre>
-CID-10
-|
--- Capítulo 
-   |
-   -- Grupo 1
-      |
-      -- Categoria
-         |
-         -- Sub-categoria
-</pre>
-
 ## Referências
 - Manual de Certificação da SBIS ([aqui](http://sbis.org.br/certificacao-sbis)).
 - Consulta e navegação podem fazer uso de [SlickGrid](http://mleibman.github.io/SlickGrid/examples/example5-collapsing.html) possivelmente.
