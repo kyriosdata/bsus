@@ -8,12 +8,14 @@ de uma consulta e a obtenção dos resultados correspondentes.
 A versão utilizada encontra-se disponível pelo portal do 
 DATASUS 
 ([CID-10](http://www.datasus.gov.br/cid10/V2008/cid10.htm)). 
-Em particular, trata-se da versão de 2008. 
+Em particular, trata-se da versão de 2008. Arquivos fazem uso 
+de ISO-885901. 
 
 Detalhes da licença estão disponíveis 
 [aqui](http://www.datasus.gov.br/cid10/V2008/cid10.htm).
 
 ## Estratégia adotada
+- Eliminar sinais (acentos). 
 
 ### Conversão para JSON
 Arquivos que formam a base da CID-10 foram convertidos para o 
