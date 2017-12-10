@@ -16,7 +16,7 @@ Detalhes da licença estão disponíveis
 
 ## Organização da CID-10
 A CID-10 está organizada em capítulos. Cada capítulo está divido em
-grupos. Cada grupo em categorias e cada categoria em sub-categorias,
+categorias e cada categoria em sub-categorias,
 conforme ilustrado abaixo.
 
 <pre>
@@ -24,12 +24,22 @@ CID-10
 |
 -- Capítulo 
    |
-   -- Grupo 1
+   -- Categoria
       |
-      -- Categoria
-         |
-         -- Sub-categoria
+      -- Sub-categoria
 </pre>
+
+A hierarquia acima pode ser ilustrada, por exemplo, para o capítulo 1, 
+que trada de "Algumas doenças infecciosas e parasitárias". Este capítulo
+inclui as categorias que vão de A00 ("Cólera") até B99 ("Doenças infecciosas, 
+outras e as não especificadas"). A categoria A00, por sua vez, está subdividida
+em três subcategorias: A000 ("Cólera devida a Vibrio cholerae 01, biótipo 
+cholerae"); A001 ("Cólera devida a Vibrio cholerae 01, biótipo El Tor") e 
+A009 ("Cólera não especificada"). 
+
+Ainda convém citar que as categorias estão agrupadas. Por exemplo, o
+grupo "Doenças infecciosas intestinais" reúne as categorias que vão da
+A00 até a A09 (inclusive).
 
 ## Estratégia
 1. Descrição abreviada não é fornecida, apenas a descrição "completa".
